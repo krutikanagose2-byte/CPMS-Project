@@ -1,0 +1,197 @@
+/* ─── Unified stats + recruiters card ─── */
+.stats-container {
+  display: flex;
+  align-items: stretch;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid #e8edf5;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  animation: fade-in-up 0.6s ease-out both;
+  animation-delay: 0.1s;
+}
+
+/* ─── Left: 4 stat boxes ─── */
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  flex: 0 0 60%;   /* was flex:1 */
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.0rem 0.3rem;   /* reduced horizontal padding */
+  text-align: center;
+  border-right: 1px solid #f0f4fa;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.2s; }
+.stat-card:nth-child(2) { animation-delay: 0.3s; }
+.stat-card:nth-child(3) { animation-delay: 0.4s; }
+.stat-card:nth-child(4) { animation-delay: 0.5s; }
+
+.stat-card:last-child {
+  border-right: none;
+}
+
+.stat-icon {
+  background: #eff6ff;
+  color: #2563eb;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: contents;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.6rem;
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.stat-desc {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
+/* ─── Vertical divider ─── */
+.stats-divider {
+  width: 1px;
+  background: #e8edf5;
+  flex-shrink: 0;
+  margin: 1rem 0;
+}
+
+/* ─── Right: Top Recruiters ─── */
+.top-recruiters {
+  flex: 0 0 70%;
+  max-width: 480px;      /* was 340px */
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.recruiter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+}
+
+.recruiter-title {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #0f172a;
+}
+
+.view-all-link {
+  color: #2563eb;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.view-all-link:hover {
+  text-decoration: underline;
+}
+
+/* logos in a single row */
+.recruiter-logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 logos per row */
+  gap: 12px;
+}
+.logo-box {
+  width: 92px;
+  height: 46px;
+  padding: 0.4rem;
+}
+
+.logo-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+.logo-img {
+  max-height: 48px;
+  max-width: 60px;
+  object-fit: contain;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .top-recruiters {
+    max-width: 100%;
+  }
+
+  .recruiter-logos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .stats-container {
+    flex-direction: column;
+  }
+
+  .stats-cards {
+    flex: none;
+    width: 100%;
+  }
+
+  .stats-divider {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+  }
+
+  .top-recruiters {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .recruiter-logos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-card {
+    border-bottom: 1px solid #f0f4fa;
+  }
+
+  .recruiter-logos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .logo-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .recruiter-logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

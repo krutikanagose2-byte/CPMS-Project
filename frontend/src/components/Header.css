@@ -1,0 +1,399 @@
+.hero {
+  position: relative;
+  margin: 0;
+  padding-top: 0;
+  min-height: 640px;
+  background-image: url("../assets/prmitr1.jpeg");
+  background-size: cover;
+  background-position: right 58%; /* important */
+  background-repeat: no-repeat;
+  overflow: hidden;
+  color: white;
+}
+
+.hero-body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  min-height: 540px;
+  padding: 0 60px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* Left dark overlay like the reference */
+  background: linear-gradient(
+    90deg,
+    rgba(2, 13, 39, 0.92) 0%,
+    rgba(2, 12, 36, 0.82) 28%,
+    rgba(3, 15, 41, 0.45) 50%,
+    rgba(4, 17, 48, 0.05) 72%,
+    rgba(7, 23, 61, 0) 100%
+  );
+
+  z-index: 1;
+}
+
+/* .hero-content {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  transform: translateY(10px);
+  opacity: 0;
+  animation: content-slide-up 0.9s ease-out 0.15s forwards;
+} */
+
+.hero-content {
+  max-width: 560px;
+}
+
+.nav-bar {
+  background-color: #ffffff;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.college {
+  font-weight: 700;
+  color: #0e1f4c;
+  font-size: 0.95rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.875rem;
+  color: #475569;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #1e40af;
+}
+
+.nav-links a.active {
+  color: #2563eb;
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 2px;
+  font-weight: 600;
+}
+
+.login-btn {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.login-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.welcome-text {
+  color: #93c5fd;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.sub-heading {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.hero-content h1 {
+  font-size: 58px;
+  line-height: 1.1;
+  font-weight: 800;
+  margin: 15px 0;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255,255,255,.9);
+  margin-bottom: 35px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:18px;
+    flex-wrap: wrap;
+}
+
+/* Hamburger button — hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.hamburger:hover {
+  background: rgba(0,0,0,0.06);
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #0e1f4c;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* X state */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  display: none;
+  flex-direction: column;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  padding: 1rem 1.5rem 1.5rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  animation: drawer-slide 0.25s ease;
+}
+
+@keyframes drawer-slide {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-drawer a {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #f1f5f9;
+  color: #475569;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.mobile-drawer a.active,
+.mobile-drawer a:hover {
+  color: #2563eb;
+}
+
+
+.btn{
+    padding:15px 28px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+}
+
+.btn.primary{
+    background:#2563eb;
+    color:white;
+}
+
+.btn.ghost{
+    background:transparent;
+    border:2px solid rgba(255,255,255,.5);
+    color:white;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+@keyframes content-slide-up {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 46px;
+  }
+
+  .hero-body {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .hero-body {
+    padding: 0 30px;
+    min-height: 420px;
+  }
+
+  .hero {
+    min-height: 480px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Show hamburger, hide desktop nav */
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-drawer {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .desktop-login {
+    display: none;
+  }
+
+  .nav-bar {
+    padding: 0.6rem 1rem;
+    position: relative;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-body {
+    padding: 0 20px;
+    min-height: 340px;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+
+  .hero {
+    min-height: 420px;
+    background-position: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .description {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .btn {
+    padding: 12px 22px;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .hero-body {
+    padding: 0 16px;
+    padding-top: 1.5rem;
+  }
+
+  .college {
+    font-size: 0.8rem;
+  }
+
+  .tag {
+    display: none;
+  }
+
+  .welcome-text {
+    font-size: 0.7rem;
+  }
+
+  .sub-heading {
+    font-size: 0.8rem;
+  }
+}
