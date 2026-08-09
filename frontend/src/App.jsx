@@ -17,11 +17,11 @@ export default function App() {
   }
 
   if (page === 'companies') {
-    return <Companies onBack={() => setPage('home')} onOpenPlacements={() => setPage('placements')} />;
+    return <Companies onBack={() => setPage('home')} onOpenPlacements={() => setPage('placements')} onOpenLogin={() => setPage('login')} />;
   }
 
   if (page === 'placements') {
-    return <Placements onBack={() => setPage('home')} onOpenCompanies={() => setPage('companies')} />;
+    return <Placements onBack={() => setPage('home')} onOpenCompanies={() => setPage('companies')} onOpenLogin={() => setPage('login')} />;
   }
 
   return (

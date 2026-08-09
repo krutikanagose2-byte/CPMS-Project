@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './Placements.css';
 import { COMPANIES } from './Companies';
+import Navbar from './Navbar';
 
-export default function Placements({ onBack, onOpenCompanies }) {
+export default function Placements({ onBack, onOpenCompanies, onOpenLogin }) {
   const [expandedCompanies, setExpandedCompanies] = useState({});
 
   const toggleCompany = (index) => {
@@ -63,27 +64,15 @@ export default function Placements({ onBack, onOpenCompanies }) {
 
   return (
     <div className="placements-page">
-      {/* NAV */}
-      <nav className="co-nav">
-        <div className="co-nav-left">
-          <div className="co-brand">
-            <div className="co-brand-logo">🎓</div>
-            <div>
-              <div className="co-brand-name">PRMIT&R, Badnera</div>
-              <div className="co-brand-sub">College Placement Management System</div>
-            </div>
-          </div>
-          <div className="co-nav-links">
-            <a href="/Home" onClick={(e) => handleNavClick(e, '/Home', onBack)}>Home</a>
-            <a href="/Companies" onClick={(e) => handleNavClick(e, '/Companies', onOpenCompanies)}>Companies</a>
-            <a href="/Placements" className="active" onClick={(e) => handleNavClick(e, '/Placements')}>Placements</a>
-            <a href="/Notice-Board" onClick={(e) => handleNavClick(e, '/Notice-Board')}>Notice Board</a>
-            <a href="/Contact" onClick={(e) => handleNavClick(e, '/Contact')}>Contact</a>
-          </div>
-        </div>
-        <div className="co-nav-right">
-        </div>
-      </nav>
+      <Navbar
+        activePage="placements"
+        onOpenLogin={onOpenLogin}
+        onOpenHome={onBack}
+        onOpenCompanies={onOpenCompanies}
+        onOpenPlacements={() => {}}
+        useEmojiLogo={true}
+        hideLogin={true}
+      />
 
       <div className="pl-body">
         <div className="pl-breadcrumb">

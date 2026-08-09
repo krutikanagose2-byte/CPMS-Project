@@ -7,76 +7,6 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* ── Navbar ── */
-.co-nav {
-  background: #fff;
-  border-bottom: 1px solid #e8edf5;
-  padding: 0 2rem;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-
-.co-nav-left {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-}
-
-.co-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.co-brand-logo {
-  font-size: 1.6rem;
-}
-
-.co-brand-name {
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: #0e1f4c;
-}
-
-.co-brand-sub {
-  font-size: 0.7rem;
-  color: #64748b;
-}
-
-.co-nav-links {
-  display: flex;
-  gap: 1.4rem;
-}
-
-.co-nav-links a {
-  text-decoration: none;
-  font-size: 0.85rem;
-  color: #475569;
-  font-weight: 500;
-  padding-bottom: 2px;
-  transition: color 0.2s;
-}
-
-.co-nav-links a:hover { color: #1e40af; }
-
-.co-nav-links a.active {
-  color: #2563eb;
-  border-bottom: 2px solid #2563eb;
-  font-weight: 700;
-}
-
-/* ── Nav Right (Empty now) ── */
-.co-nav-right {
-  display: flex;
-  align-items: center;
-}
-
 /* ── Body ── */
 .co-body {
   display: flex;
@@ -95,7 +25,6 @@
   min-width: 0;
   width: 100%;
 }
-
 
 /* ── Header row ── */
 .co-header {
@@ -188,18 +117,34 @@
 }
 
 .co-logo-box {
-  height: 120px;
+  height: 140px;
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
-  background: #ffffff;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
 
 .co-company-logo {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  object-position: center;
+}
+
+.co-company-logo.enlarged-logo {
+  transform: scale(1.35);
+}
+
+.co-company-logo.extra-enlarged-logo {
+  transform: scale(1.6);
+}
+
+.co-company-logo.reduced-logo {
+  transform: scale(1.1);
 }
 
 .co-card-body {

@@ -1,11 +1,11 @@
 import './RecentPlacements.css';
 
 const students = [
-  { name: 'Sneha Patil',     comp: 'TCS',        role: 'Software Engineer',    pkg: '7.5 LPA', img: 'https://i.pravatar.cc/150?img=32' },
-  { name: 'Rohan Deshmukh', comp: 'Infosys',     role: 'System Engineer',      pkg: '6.5 LPA', img: 'https://i.pravatar.cc/150?img=14' },
-  { name: 'Mayur Wakode',   comp: 'Capgemini',   role: 'Analyst',              pkg: '6.0 LPA', img: 'https://i.pravatar.cc/150?img=22' },
-  { name: 'Pooja Tayade',   comp: 'Wipro',       role: 'Project Engineer',     pkg: '4.5 LPA', img: 'https://i.pravatar.cc/150?img=45' },
-  { name: 'Omkar Khandare', comp: 'Cognizant',   role: 'Programmer Analyst',   pkg: '4.0 LPA', img: 'https://i.pravatar.cc/150?img=56' },
+  { name: 'Sneha Patil',     comp: 'TCS',        role: 'Software Engineer',    pkg: '7.5 LPA', img: '/ind_female_1.png' },
+  { name: 'Rohan Deshmukh', comp: 'Infosys',     role: 'System Engineer',      pkg: '6.5 LPA', img: '/ind_male_1.png' },
+  { name: 'Mayur Wakode',   comp: 'Capgemini',   role: 'Analyst',              pkg: '6.0 LPA', img: '/ind_male_2.png' },
+  { name: 'Pooja Tayade',   comp: 'Wipro',       role: 'Project Engineer',     pkg: '4.5 LPA', img: '/ind_female_2.png' },
+  { name: 'Omkar Khandare', comp: 'Cognizant',   role: 'Programmer Analyst',   pkg: '4.0 LPA', img: '/ind_male_3.png' },
 ];
 
 export default function RecentPlacements() {

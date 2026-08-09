@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CompanyDetails.css';
 
 const PLACED_STUDENTS = [
-  { id: 1, name: 'Sneha Patil', branch: 'CSE', image: 'https://randomuser.me/api/portraits/women/44.jpg' },
-  { id: 2, name: 'Rohan Deshmukh', branch: 'IT', image: 'https://randomuser.me/api/portraits/men/32.jpg' },
-  { id: 3, name: 'Mayur Wakode', branch: 'CSE', image: 'https://randomuser.me/api/portraits/men/46.jpg' },
-  { id: 4, name: 'Pooja Tayade', branch: 'AI & DS', image: 'https://randomuser.me/api/portraits/women/68.jpg' },
-  { id: 5, name: 'Omkar Khandare', branch: 'EXTC', image: 'https://randomuser.me/api/portraits/men/22.jpg' },
-  { id: 6, name: 'Priya Dhole', branch: 'CSE', image: 'https://randomuser.me/api/portraits/women/24.jpg' }
+  { id: 1, name: 'Sneha Patil', branch: 'CSE', image: '/ind_female_1.png' },
+  { id: 2, name: 'Rohan Deshmukh', branch: 'IT', image: '/ind_male_1.png' },
+  { id: 3, name: 'Mayur Wakode', branch: 'CSE', image: '/ind_male_2.png' },
+  { id: 4, name: 'Pooja Tayade', branch: 'AI & DS', image: '/ind_female_2.png' },
+  { id: 5, name: 'Omkar Khandare', branch: 'EXTC', image: '/ind_male_3.png' },
+  { id: 6, name: 'Priya Dhole', branch: 'CSE', image: '/ind_female_3.png' }
 ];
 
 const CompanyDetails = ({ company, onBack }) => {
@@ -20,6 +20,10 @@ const CompanyDetails = ({ company, onBack }) => {
   const toggleSection = (section) => {
     setExpandedSection((prev) => (prev === section ? null : section));
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const openLightbox = (index) => setLightboxIndex(index);
   const closeLightbox = () => setLightboxIndex(null);

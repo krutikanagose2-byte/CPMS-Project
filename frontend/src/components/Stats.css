@@ -114,8 +114,8 @@
   gap: 12px;
 }
 .logo-box {
-  width: 92px;
-  height: 46px;
+  width: 105px;
+  height: 56px;
   padding: 0.4rem;
 }
 
@@ -125,8 +125,8 @@
 }
 
 .logo-img {
-  max-height: 48px;
-  max-width: 60px;
+  max-height: 50px;
+  max-width: 85px;
   object-fit: contain;
 }
 
