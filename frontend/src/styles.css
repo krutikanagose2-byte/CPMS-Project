@@ -1,0 +1,77 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f0f4fa;
+  color: #1e293b;
+}
+
+/* Page Container */
+.page-root {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1280px;
+  margin: -2.5rem auto 0;
+  padding: 0 1.5rem 3rem;
+  position: relative;
+  z-index: 20;
+}
+
+/* Content Row: WhyChoose (narrower) + RecentPlacements (wider) matching reference */
+.content-row {
+  display: grid;
+  grid-template-columns: 3.5fr 8.5fr;
+  gap: 1.25rem;
+  margin-bottom: 0;
+}
+
+/* ─── Responsive Breakpoints ─── */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1rem 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .content-row {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    margin-top: 0;
+    padding: 0 0.75rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.5rem 1.5rem;
+  }
+}
+
+/* ─── Global Animations ─── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
