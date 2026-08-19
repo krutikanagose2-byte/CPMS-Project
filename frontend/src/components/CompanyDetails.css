@@ -462,11 +462,43 @@
   text-decoration: underline;
 }
 
+<<<<<<< HEAD
+.cd-students-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.cd-students-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 15s linear infinite;
+}
+
+.cd-students-track:hover {
+  animation-play-state: paused;
+}
+
+.cd-students-list {
+  display: flex;
+  gap: 32px;
+  padding-right: 32px; /* Same as gap */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+=======
 .cd-students-grid {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
+>>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 }
 
 .cd-student-profile {
@@ -475,6 +507,10 @@
   align-items: center;
   text-align: center;
   width: 120px;
+<<<<<<< HEAD
+  flex-shrink: 0;
+=======
+>>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 }
 
 .cd-student-avatar {

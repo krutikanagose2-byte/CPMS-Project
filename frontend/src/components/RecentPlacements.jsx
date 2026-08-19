@@ -8,12 +8,20 @@ const students = [
   { name: 'Omkar Khandare', comp: 'Cognizant',   role: 'Programmer Analyst',   pkg: '4.0 LPA', img: '/ind_male_3.png' },
 ];
 
+<<<<<<< HEAD
+export default function RecentPlacements({ onOpenPlacements }) {
+=======
 export default function RecentPlacements() {
+>>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
   return (
     <section className="placements">
       <div className="placements-header">
         <h3>Recent Placements</h3>
+<<<<<<< HEAD
+        <a href="/Placements" className="view-all" onClick={(e) => { e.preventDefault(); window.history.pushState({}, '', '/Placements'); if(onOpenPlacements) onOpenPlacements(); }}>View All Students &rarr;</a>
+=======
         <a href="#" className="view-all">View All Students &rarr;</a>
+>>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
       </div>
       <div className="placements-grid">
         {students.map((s, i) => (

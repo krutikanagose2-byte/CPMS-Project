@@ -157,6 +157,29 @@ const CompanyDetails = ({ company, onBack }) => {
             <h3 className="cd-section-title">Last Year Placed Students</h3>
             <span className="cd-view-all">View All →</span>
           </div>
+<<<<<<< HEAD
+          <div className="cd-students-marquee">
+            <div className="cd-students-track">
+              <div className="cd-students-list">
+                {PLACED_STUDENTS.map(student => (
+                  <div key={student.id} className="cd-student-profile">
+                    <img src={student.image} alt={student.name} className="cd-student-avatar" />
+                    <div className="cd-student-name">{student.name}</div>
+                    <div className="cd-student-branch">{student.branch}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="cd-students-list" aria-hidden="true">
+                {PLACED_STUDENTS.map(student => (
+                  <div key={student.id} className="cd-student-profile">
+                    <img src={student.image} alt={student.name} className="cd-student-avatar" />
+                    <div className="cd-student-name">{student.name}</div>
+                    <div className="cd-student-branch">{student.branch}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+=======
           <div className="cd-students-grid">
             {PLACED_STUDENTS.map(student => (
               <div key={student.id} className="cd-student-profile">
@@ -165,6 +188,7 @@ const CompanyDetails = ({ company, onBack }) => {
                 <div className="cd-student-branch">{student.branch}</div>
               </div>
             ))}
+>>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
           </div>
         </div>
 
