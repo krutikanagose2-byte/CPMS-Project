@@ -3,11 +3,18 @@
   margin: 0;
   padding-top: 0;
   min-height: 640px;
+<<<<<<< HEAD
   background-image: url("../assets/prmitr.png");
   background-size: cover;
   background-position: center 5%;
   background-repeat: no-repeat;
   background-attachment: local;
+=======
+  background-image: url("../assets/prmitr1.jpeg");
+  background-size: cover;
+  background-position: right 58%; /* important */
+  background-repeat: no-repeat;
+>>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
   overflow: hidden;
   color: white;
 }
@@ -27,12 +34,23 @@
   inset: 0;
 
   /* Left dark overlay like the reference */
+<<<<<<< HEAD
   background: linear-gradient(90deg,
       rgba(2, 13, 39, 0.92) 0%,
       rgba(2, 12, 36, 0.82) 28%,
       rgba(3, 15, 41, 0.45) 50%,
       rgba(4, 17, 48, 0.05) 72%,
       rgba(7, 23, 61, 0) 100%);
+=======
+  background: linear-gradient(
+    90deg,
+    rgba(2, 13, 39, 0.92) 0%,
+    rgba(2, 12, 36, 0.82) 28%,
+    rgba(3, 15, 41, 0.45) 50%,
+    rgba(4, 17, 48, 0.05) 72%,
+    rgba(7, 23, 61, 0) 100%
+  );
+>>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 
   z-index: 1;
 }
@@ -73,6 +91,7 @@
 .description {
   font-size: 18px;
   line-height: 1.7;
+<<<<<<< HEAD
   color: rgba(255, 255, 255, .9);
   margin-bottom: 35px;
 }
@@ -100,6 +119,35 @@
   background: transparent;
   border: 2px solid rgba(255, 255, 255, .5);
   color: white;
+=======
+  color: rgba(255,255,255,.9);
+  margin-bottom: 35px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:18px;
+    flex-wrap: wrap;
+}
+
+
+.btn{
+    padding:15px 28px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+}
+
+.btn.primary{
+    background:#2563eb;
+    color:white;
+}
+
+.btn.ghost{
+    background:transparent;
+    border:2px solid rgba(255,255,255,.5);
+    color:white;
+>>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 }
 
 .btn:hover {
@@ -117,7 +165,10 @@
   from {
     opacity: 0;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
   to {
     opacity: 1;
   }
@@ -209,4 +260,8 @@
   .sub-heading {
     font-size: 0.8rem;
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777

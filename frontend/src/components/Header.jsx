@@ -3,7 +3,11 @@ import './Header.css';
 import prmitrLogo from '../assets/prmitrlogojpg.jpg';
 import Navbar from './Navbar';
 
+<<<<<<< HEAD
 export default function Header({ onOpenLogin, onOpenCompanies, onOpenPlacements, onOpenNoticeBoard }) {
+=======
+export default function Header({ onOpenLogin, onOpenCompanies, onOpenPlacements }) {
+>>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
@@ -23,7 +27,10 @@ export default function Header({ onOpenLogin, onOpenCompanies, onOpenPlacements,
         onOpenHome={() => window.history.pushState({}, '', '/Home')}
         onOpenCompanies={onOpenCompanies}
         onOpenPlacements={onOpenPlacements}
+<<<<<<< HEAD
         onOpenNoticeBoard={onOpenNoticeBoard}
+=======
+>>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
       />
 
       {/* Hero Banner Body */}
