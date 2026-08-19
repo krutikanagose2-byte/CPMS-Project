@@ -3,10 +3,11 @@
   margin: 0;
   padding-top: 0;
   min-height: 640px;
-  background-image: url("../assets/prmitr1.jpeg");
+  background-image: url("../assets/prmitr.png");
   background-size: cover;
-  background-position: right 58%; /* important */
+  background-position: center 5%;
   background-repeat: no-repeat;
+  background-attachment: local;
   overflow: hidden;
   color: white;
 }
@@ -26,14 +27,12 @@
   inset: 0;
 
   /* Left dark overlay like the reference */
-  background: linear-gradient(
-    90deg,
-    rgba(2, 13, 39, 0.92) 0%,
-    rgba(2, 12, 36, 0.82) 28%,
-    rgba(3, 15, 41, 0.45) 50%,
-    rgba(4, 17, 48, 0.05) 72%,
-    rgba(7, 23, 61, 0) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(2, 13, 39, 0.92) 0%,
+      rgba(2, 12, 36, 0.82) 28%,
+      rgba(3, 15, 41, 0.45) 50%,
+      rgba(4, 17, 48, 0.05) 72%,
+      rgba(7, 23, 61, 0) 100%);
 
   z-index: 1;
 }
@@ -74,33 +73,33 @@
 .description {
   font-size: 18px;
   line-height: 1.7;
-  color: rgba(255,255,255,.9);
+  color: rgba(255, 255, 255, .9);
   margin-bottom: 35px;
 }
 
-.hero-actions{
-    display:flex;
-    gap:18px;
-    flex-wrap: wrap;
+.hero-actions {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 
 
-.btn{
-    padding:15px 28px;
-    border-radius:10px;
-    font-size:16px;
-    font-weight:600;
+.btn {
+  padding: 15px 28px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
-.btn.primary{
-    background:#2563eb;
-    color:white;
+.btn.primary {
+  background: #2563eb;
+  color: white;
 }
 
-.btn.ghost{
-    background:transparent;
-    border:2px solid rgba(255,255,255,.5);
-    color:white;
+.btn.ghost {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .5);
+  color: white;
 }
 
 .btn:hover {
@@ -118,6 +117,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

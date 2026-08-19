@@ -107,16 +107,38 @@
   text-decoration: underline;
 }
 
-/* logos in a single row */
-.recruiter-logos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 logos per row */
+/* logos sliding marquee */
+.recruiter-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.recruiter-track {
+  display: flex;
+  width: max-content;
+  animation: recruiterMarquee 15s linear infinite;
+}
+
+.recruiter-track:hover {
+  animation-play-state: paused;
+}
+
+.recruiter-list {
+  display: flex;
   gap: 12px;
+  padding-right: 12px; /* same as gap */
+}
+
+@keyframes recruiterMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 .logo-box {
   width: 105px;
   height: 56px;
   padding: 0.4rem;
+  flex-shrink: 0;
 }
 
 .logo-box:hover {
@@ -134,10 +156,6 @@
 @media (max-width: 1024px) {
   .top-recruiters {
     max-width: 100%;
-  }
-
-  .recruiter-logos {
-    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -162,10 +180,6 @@
     width: 100%;
     max-width: 100%;
   }
-
-  .recruiter-logos {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 @media (max-width: 640px) {
@@ -176,22 +190,10 @@
   .stat-card {
     border-bottom: 1px solid #f0f4fa;
   }
-
-  .recruiter-logos {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .logo-box {
-    width: 100%;
-  }
 }
 
 @media (max-width: 480px) {
   .stats-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .recruiter-logos {
     grid-template-columns: repeat(2, 1fr);
   }
 }

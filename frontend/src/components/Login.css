@@ -37,7 +37,7 @@ body {
 .login-left{
     width:48%;
     position:relative;
-    background:url("../assets/prmitr.jpeg") center/cover no-repeat;
+    background:url("../assets/prmitr.png") center/cover no-repeat;
 }
 
 .login-left::before{

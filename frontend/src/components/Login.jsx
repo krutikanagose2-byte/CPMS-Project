@@ -2,7 +2,6 @@ import { useState, useCallback } from "react";
 import "./Login.css";
 
 import prmitrLogo from "../assets/prmitrlogojpg.jpg";
-import campusImg from "../assets/prmitr.jpeg";
 
 /* ─── CAPTCHA helper ─── */
 const CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // no 0/O/1/I ambiguity
@@ -14,7 +13,7 @@ function generateCaptcha() {
   return code;
 }
 
-export default function Login({ onBack }) {
+export default function Login({ onBack, onLoginSuccess }) {
   const [mode, setMode] = useState("login");
 
   /* Login fields */
@@ -58,7 +57,9 @@ export default function Login({ onBack }) {
         const data = await response.json();
         if (response.ok) {
           alert(`Login successful! Welcome ${data.user.name}`);
-          // You could also redirect here or save a token
+          if (onLoginSuccess) {
+            onLoginSuccess(data.user);
+          }
         } else {
           alert(`Login failed: ${data.message}`);
         }
@@ -113,7 +114,7 @@ export default function Login({ onBack }) {
       <div className="login-container">
 
         {/* LEFT SECTION */}
-        <div className="login-left" style={{ backgroundImage: `url(${campusImg})` }}>
+        <div className="login-left">
           <div className="left-content">
 
             <div className="logo-row">
@@ -187,9 +188,9 @@ export default function Login({ onBack }) {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                   />
-                  <button 
-                    type="button" 
-                    className="password-toggle-btn" 
+                  <button
+                    type="button"
+                    className="password-toggle-btn"
                     onClick={() => setShowPassword(!showPassword)}
                     title={showPassword ? "Hide Password" : "Show Password"}
                   >
@@ -279,9 +280,9 @@ export default function Login({ onBack }) {
                     onChange={(e) => setSignupPassword(e.target.value)}
                     required
                   />
-                  <button 
-                    type="button" 
-                    className="password-toggle-btn" 
+                  <button
+                    type="button"
+                    className="password-toggle-btn"
                     onClick={() => setShowSignupPassword(!showSignupPassword)}
                     title={showSignupPassword ? "Hide Password" : "Show Password"}
                   >

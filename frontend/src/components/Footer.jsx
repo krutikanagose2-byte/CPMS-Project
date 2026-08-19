@@ -1,7 +1,7 @@
 import './Footer.css';
 import prmitrLogo from '../assets/prmitrlogojpg.jpg';
 
-export default function Footer() {
+export default function Footer({ onOpenHome, onOpenCompanies, onOpenPlacements, onOpenNoticeBoard, onOpenContact }) {
   return (
     <footer className="site-footer">
       <div className="footer-container">
@@ -15,17 +15,17 @@ export default function Footer() {
         <div className="footer-links">
           <div className="footer-column">
             <h4>Explore</h4>
-            <a href="#">Home</a>
-            <a href="#">Companies</a>
-            <a href="#">Placements</a>
+            <a href="/Home" onClick={(e) => { e.preventDefault(); window.history.pushState({}, '', '/Home'); if(onOpenHome) onOpenHome(); }}>Home</a>
+            <a href="/Companies" onClick={(e) => { e.preventDefault(); window.history.pushState({}, '', '/Companies'); if(onOpenCompanies) onOpenCompanies(); }}>Companies</a>
+            <a href="/Placements" onClick={(e) => { e.preventDefault(); window.history.pushState({}, '', '/Placements'); if(onOpenPlacements) onOpenPlacements(); }}>Placements</a>
             <a href="#">Students</a>
           </div>
           <div className="footer-column">
             <h4>Resources</h4>
             <a href="#">Training</a>
             <a href="#">Statistics</a>
-            <a href="#">Notice Board</a>
-            <a href="#">Contact</a>
+            <a href="/Notice-Board" onClick={(e) => { e.preventDefault(); window.history.pushState({}, '', '/Notice-Board'); if(onOpenNoticeBoard) onOpenNoticeBoard(); }}>Notice Board</a>
+            <a href="/Contact" onClick={(e) => { e.preventDefault(); window.history.pushState({}, '', '/Contact'); if(onOpenContact) onOpenContact(); }}>Contact</a>
           </div>
           <div className="footer-column">
             <h4>Contact</h4>

@@ -63,7 +63,7 @@ const recruiters = [
   { name: 'Microsoft', logo: microsoftLogo },
 ];
 
-export default function Stats() {
+export default function Stats({ onOpenCompanies }) {
   return (
     <section className="stats-container">
       {/* Left — metric cards */}
@@ -84,19 +84,35 @@ export default function Stats() {
       <div className="top-recruiters">
         <div className="recruiter-header">
           <span className="recruiter-title">Top Recruiters</span>
-          <a href="#" className="view-all-link">View All &rarr;</a>
+          <a href="/Companies" className="view-all-link" onClick={(e) => { e.preventDefault(); window.history.pushState({}, '', '/Companies'); if(onOpenCompanies) onOpenCompanies(); }}>View All &rarr;</a>
         </div>
-        <div className="recruiter-logos">
-          {recruiters.map((brand, i) => (
-            <div key={i} className="logo-box">
-              <img 
-                src={brand.logo} 
-                alt={brand.name} 
-                className="logo-img" 
-                style={brand.name === 'Microsoft' ? { transform: 'scale(1.6)' } : {}}
-              />
+        <div className="recruiter-marquee">
+          <div className="recruiter-track">
+            <div className="recruiter-list">
+              {recruiters.map((brand, i) => (
+                <div key={i} className="logo-box">
+                  <img 
+                    src={brand.logo} 
+                    alt={brand.name} 
+                    className="logo-img" 
+                    style={brand.name === 'Microsoft' ? { transform: 'scale(1.6)' } : {}}
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+            <div className="recruiter-list" aria-hidden="true">
+              {recruiters.map((brand, i) => (
+                <div key={`dup-${i}`} className="logo-box">
+                  <img 
+                    src={brand.logo} 
+                    alt={brand.name} 
+                    className="logo-img" 
+                    style={brand.name === 'Microsoft' ? { transform: 'scale(1.6)' } : {}}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

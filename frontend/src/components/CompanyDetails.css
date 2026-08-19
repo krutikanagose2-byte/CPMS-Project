@@ -462,11 +462,35 @@
   text-decoration: underline;
 }
 
-.cd-students-grid {
+.cd-students-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.cd-students-track {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
+  width: max-content;
+  animation: marquee 15s linear infinite;
+}
+
+.cd-students-track:hover {
+  animation-play-state: paused;
+}
+
+.cd-students-list {
+  display: flex;
+  gap: 32px;
+  padding-right: 32px; /* Same as gap */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .cd-student-profile {
@@ -475,6 +499,7 @@
   align-items: center;
   text-align: center;
   width: 120px;
+  flex-shrink: 0;
 }
 
 .cd-student-avatar {

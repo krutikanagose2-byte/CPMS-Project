@@ -20,6 +20,43 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    // New fields for Student Module
+    branch: {
+        type: String,
+        default: "",
+    },
+    cgpa: {
+        type: Number,
+        default: 0,
+    },
+    tenthPercentage: {
+        type: Number,
+        default: 0,
+    },
+    twelfthPercentage: {
+        type: Number,
+        default: 0,
+    },
+    diplomaPercentage: {
+        type: Number,
+        default: 0,
+    },
+    backlogCount: {
+        type: Number,
+        default: 0,
+    },
+    graduationYear: {
+        type: Number,
+        default: new Date().getFullYear(),
+    },
+    skills: {
+        type: [String],
+        default: [],
+    },
+    resumeUrl: {
+        type: String,
+        default: "",
+    }
 });
 
 userSchema.pre("save", async function() {
