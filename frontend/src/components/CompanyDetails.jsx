@@ -10,7 +10,7 @@ const PLACED_STUDENTS = [
   { id: 6, name: 'Priya Dhole', branch: 'CSE', image: '/ind_female_3.png' }
 ];
 
-const CompanyDetails = ({ company, onBack }) => {
+const CompanyDetails = ({ company, onBack, onOpenCompanyOffers }) => {
   const [isMoreInfoVisible, setIsMoreInfoVisible] = useState(false);
   const [expandedSection, setExpandedSection] = useState('study');
   const [lightboxIndex, setLightboxIndex] = useState(null);
@@ -157,7 +157,6 @@ const CompanyDetails = ({ company, onBack }) => {
             <h3 className="cd-section-title">Last Year Placed Students</h3>
             <span className="cd-view-all">View All →</span>
           </div>
-<<<<<<< HEAD
           <div className="cd-students-marquee">
             <div className="cd-students-track">
               <div className="cd-students-list">
@@ -179,16 +178,6 @@ const CompanyDetails = ({ company, onBack }) => {
                 ))}
               </div>
             </div>
-=======
-          <div className="cd-students-grid">
-            {PLACED_STUDENTS.map(student => (
-              <div key={student.id} className="cd-student-profile">
-                <img src={student.image} alt={student.name} className="cd-student-avatar" />
-                <div className="cd-student-name">{student.name}</div>
-                <div className="cd-student-branch">{student.branch}</div>
-              </div>
-            ))}
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
           </div>
         </div>
 
@@ -206,7 +195,26 @@ const CompanyDetails = ({ company, onBack }) => {
           </div>
           {expandedSection === 'offers' && (
             <div className="cd-acc-content">
-              <p style={{ padding: '16px', color: '#64748b' }}>Specific offers and packages available during the recruitment drive.</p>
+              <p style={{ padding: '16px', color: '#64748b' }}>Explore all the latest roles, packages, and eligibility criteria offered by {company.name}.</p>
+              <div style={{ padding: '0 16px 16px 16px' }}>
+                <button 
+                  onClick={onOpenCompanyOffers}
+                  style={{
+                    background: '#0284c7',
+                    color: 'white',
+                    border: 'none',
+                    padding: '10px 20px',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                    fontWeight: '500',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
+                  }}
+                >
+                  View All Placement Offers →
+                </button>
+              </div>
             </div>
           )}
         </div>

@@ -4,21 +4,19 @@ import Stats from './components/Stats';
 import WhyChoose from './components/WhyChoose';
 import RecentPlacements from './components/RecentPlacements';
 import FeatureHighlights from './components/FeatureHighlights';
-<<<<<<< HEAD
 import Testimonials from './components/Testimonials';
-=======
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Companies from './components/Companies';
 import Placements from './components/Placements';
-<<<<<<< HEAD
+import CompanyOffers from './components/CompanyOffers';
 import NoticeBoard from './components/NoticeBoard';
 import StudentDashboard from './components/student/StudentDashboard';
 
 export default function App() {
-  const [page, setPage] = useState('home'); // 'home' | 'login' | 'companies' | 'placements' | 'notice' | 'student-dashboard'
+  const [page, setPage] = useState('home'); // 'home' | 'login' | 'companies' | 'placements' | 'notice' | 'student-dashboard' | 'company-offers'
   const [user, setUser] = useState(null);
+  const [selectedCompany, setSelectedCompany] = useState(null);
 
   if (page === 'login') {
     return (
@@ -46,7 +44,24 @@ export default function App() {
   }
 
   if (page === 'companies') {
-    return <Companies onBack={() => setPage('home')} onOpenPlacements={() => setPage('placements')} onOpenLogin={() => setPage('login')} onOpenNoticeBoard={() => setPage('notice')} />;
+    return (
+      <Companies 
+        onBack={() => setPage('home')} 
+        onOpenPlacements={() => setPage('placements')} 
+        onOpenLogin={() => setPage('login')} 
+        onOpenNoticeBoard={() => setPage('notice')} 
+        onOpenCompanyOffers={(comp) => { setSelectedCompany(comp); setPage('company-offers'); }} 
+      />
+    );
+  }
+
+  if (page === 'company-offers') {
+    return (
+      <CompanyOffers 
+        company={selectedCompany} 
+        onBack={() => setPage('companies')} 
+      />
+    );
   }
 
   if (page === 'placements') {
@@ -55,22 +70,6 @@ export default function App() {
 
   if (page === 'notice') {
     return <NoticeBoard onBack={() => setPage('home')} onOpenCompanies={() => setPage('companies')} onOpenPlacements={() => setPage('placements')} onOpenLogin={() => setPage('login')} />;
-=======
-
-export default function App() {
-  const [page, setPage] = useState('home'); // 'home' | 'login' | 'companies'
-
-  if (page === 'login') {
-    return <Login onBack={() => setPage('home')} />;
-  }
-
-  if (page === 'companies') {
-    return <Companies onBack={() => setPage('home')} onOpenPlacements={() => setPage('placements')} onOpenLogin={() => setPage('login')} />;
-  }
-
-  if (page === 'placements') {
-    return <Placements onBack={() => setPage('home')} onOpenCompanies={() => setPage('companies')} onOpenLogin={() => setPage('login')} />;
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
   }
 
   return (
@@ -79,7 +78,6 @@ export default function App() {
         onOpenLogin={() => setPage('login')}
         onOpenCompanies={() => setPage('companies')}
         onOpenPlacements={() => setPage('placements')}
-<<<<<<< HEAD
         onOpenNoticeBoard={() => setPage('notice')}
       />
       <main className="container">
@@ -98,18 +96,6 @@ export default function App() {
         onOpenNoticeBoard={() => setPage('notice')}
         onOpenContact={() => {}} 
       />
-=======
-      />
-      <main className="container">
-        <Stats />
-        <div className="content-row">
-          <WhyChoose />
-          <RecentPlacements />
-        </div>
-        <FeatureHighlights />
-      </main>
-      <Footer />
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
     </div>
   );
 }

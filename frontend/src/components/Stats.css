@@ -107,7 +107,6 @@
   text-decoration: underline;
 }
 
-<<<<<<< HEAD
 /* logos sliding marquee */
 .recruiter-marquee {
   width: 100%;
@@ -134,22 +133,12 @@
 @keyframes recruiterMarquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
-=======
-/* logos in a single row */
-.recruiter-logos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 logos per row */
-  gap: 12px;
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 }
 .logo-box {
   width: 105px;
   height: 56px;
   padding: 0.4rem;
-<<<<<<< HEAD
   flex-shrink: 0;
-=======
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 }
 
 .logo-box:hover {
@@ -168,13 +157,6 @@
   .top-recruiters {
     max-width: 100%;
   }
-<<<<<<< HEAD
-=======
-
-  .recruiter-logos {
-    grid-template-columns: repeat(4, 1fr);
-  }
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 }
 
 @media (max-width: 900px) {
@@ -198,13 +180,6 @@
     width: 100%;
     max-width: 100%;
   }
-<<<<<<< HEAD
-=======
-
-  .recruiter-logos {
-    grid-template-columns: repeat(4, 1fr);
-  }
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 }
 
 @media (max-width: 640px) {
@@ -215,28 +190,10 @@
   .stat-card {
     border-bottom: 1px solid #f0f4fa;
   }
-<<<<<<< HEAD
-=======
-
-  .recruiter-logos {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .logo-box {
-    width: 100%;
-  }
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 }
 
 @media (max-width: 480px) {
   .stats-cards {
     grid-template-columns: repeat(2, 1fr);
   }
-<<<<<<< HEAD
-=======
-
-  .recruiter-logos {
-    grid-template-columns: repeat(2, 1fr);
-  }
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 }

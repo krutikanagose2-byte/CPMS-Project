@@ -145,7 +145,7 @@ const extraLargeLogos = ['KPMG', 'PwC', 'Bosch', 'Goldman Sachs', 'Mu Sigma', 'F
 const largeLogos = ['Capgemini', 'HDFC Bank'];
 const smallLogos = [];
 
-export default function Companies({ onBack, onOpenPlacements, onOpenLogin }) {
+export default function Companies({ onBack, onOpenPlacements, onOpenLogin, onOpenNoticeBoard, onOpenCompanyOffers }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [search, setSearch] = useState('');
   const [sector, setSector] = useState('All Sectors');
@@ -183,7 +183,7 @@ export default function Companies({ onBack, onOpenPlacements, onOpenLogin }) {
       <div className="co-body">
 
         {activeCompany ? (
-          <CompanyDetails company={activeCompany} onBack={() => setSelectedCompany(null)} />
+          <CompanyDetails company={activeCompany} onBack={() => setActiveCompany(null)} onOpenCompanyOffers={() => onOpenCompanyOffers(activeCompany)} />
         ) : (
           <main className="co-main">
 
