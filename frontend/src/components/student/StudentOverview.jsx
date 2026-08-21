@@ -40,14 +40,7 @@ const StudentOverview = ({ user }) => {
                         <span className="stat-sub">Shortlisted</span>
                     </div>
                 </div>
-                <div className="t-card stat-box">
-                    <div className="stat-icon-bg bg-yellow-light text-yellow"><i className="fas fa-calendar-check"></i></div>
-                    <div className="stat-content">
-                        <span className="stat-label">Upcoming Drives</span>
-                        <span className="stat-value">03</span>
-                        <span className="stat-sub">Next 30 days</span>
-                    </div>
-                </div>
+
                 <div className="t-card stat-box">
                     <div className="stat-icon-bg bg-green-light text-green"><i className="fas fa-medal"></i></div>
                     <div className="stat-content">
@@ -103,37 +96,7 @@ const StudentOverview = ({ user }) => {
                     </table>
                 </div>
 
-                {/* Upcoming Drives */}
-                <div className="t-card">
-                    <div className="t-card-header">
-                        <h3 className="t-card-title">Upcoming Placement Drives</h3>
-                        <a href="#" className="view-all-link">View All</a>
-                    </div>
-                    <div className="drive-list">
-                        <div className="drive-item">
-                            <div className="drive-logo">TCS</div>
-                            <div className="drive-info">
-                                <h4>TCS</h4>
-                                <p>Software Engineer</p>
-                            </div>
-                            <div className="drive-date">
-                                <span><i className="far fa-calendar"></i> 25 May 2025</span>
-                                <span className="text-green text-xs">Registration Open</span>
-                            </div>
-                        </div>
-                        <div className="drive-item">
-                            <div className="drive-logo bg-blue text-white">INF</div>
-                            <div className="drive-info">
-                                <h4>Infosys</h4>
-                                <p>System Engineer</p>
-                            </div>
-                            <div className="drive-date">
-                                <span><i className="far fa-calendar"></i> 02 Jun 2025</span>
-                                <span className="text-green text-xs">Registration Open</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
 
                 {/* Application Status Chart */}
                 <div className="t-card">
@@ -156,34 +119,15 @@ const StudentOverview = ({ user }) => {
                     </div>
                 </div>
 
-                {/* Announcements & Quick Links */}
-                <div className="t-card span-2 split-card">
-                    <div className="half-section border-right">
-                        <div className="t-card-header no-border">
-                            <h3 className="t-card-title">Announcements</h3>
-                            <a href="#" className="view-all-link">View All</a>
-                        </div>
-                        <div className="announcement-list">
-                            <div className="ann-item">
-                                <i className="fas fa-bullhorn text-blue"></i>
-                                <div className="ann-text">
-                                    <h4>TCS NQT Drive</h4>
-                                    <p>TCS NQT drive is scheduled on 25 May 2025. Prepare well and apply on time.</p>
-                                </div>
-                                <span className="ann-date">10 May 2025</span>
-                            </div>
-                        </div>
+                {/* Quick Links */}
+                <div className="t-card span-2">
+                    <div className="t-card-header no-border">
+                        <h3 className="t-card-title">Quick Links</h3>
                     </div>
-                    <div className="half-section">
-                        <div className="t-card-header no-border">
-                            <h3 className="t-card-title">Quick Links</h3>
-                        </div>
-                        <div className="quick-links-grid">
-                            <button className="ql-btn"><i className="fas fa-user"></i> My Profile</button>
-                            <button className="ql-btn"><i className="fas fa-file-alt"></i> My Applications</button>
-                            <button className="ql-btn"><i className="fas fa-book"></i> Study Materials</button>
-                            <button className="ql-btn"><i className="fas fa-building"></i> Placement Drives</button>
-                        </div>
+                    <div className="quick-links-grid">
+                        <button className="ql-btn"><i className="fas fa-user"></i> My Profile</button>
+                        <button className="ql-btn"><i className="fas fa-file-alt"></i> My Applications</button>
+                        <button className="ql-btn"><i className="fas fa-book"></i> Study Materials</button>
                     </div>
                 </div>
 

@@ -33,40 +33,7 @@ const StudentStudyMaterials = () => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Aptitude - Basic to Advanced</td>
-                            <td>PrepInsta Aptitude Course</td>
-                            <td>Video</td>
-                            <td><button className="t-action-btn">View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Data Structures & Algorithms</td>
-                            <td>Striver A2Z DSA Sheet</td>
-                            <td>PDF</td>
-                            <td><button className="t-action-btn">Download</button></td>
-                        </tr>
-                        <tr>
-                            <td>SQL - Important Queries</td>
-                            <td>SQL Practice Guide</td>
-                            <td>PDF</td>
-                            <td><button className="t-action-btn">Download</button></td>
-                        </tr>
-                        <tr>
-                            <td>Java - OOPs Concepts</td>
-                            <td>Java Tutorial (W3Schools)</td>
-                            <td>Link</td>
-                            <td><button className="t-action-btn">View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Resume Building Tips</td>
-                            <td>Resume Guide for Freshers</td>
-                            <td>PDF</td>
-                            <td><button className="t-action-btn">Download</button></td>
-                        </tr>
-                        <tr>
-                            <td>HR Interview Preparation</td>
-                            <td>Interview Q&A Guide</td>
-                            <td>PDF</td>
-                            <td><button className="t-action-btn">Download</button></td>
+                            <td colSpan="4" style={{ textAlign: 'center', padding: '24px' }}>No study materials available at the moment.</td>
                         </tr>
                     </tbody>
                 </table>

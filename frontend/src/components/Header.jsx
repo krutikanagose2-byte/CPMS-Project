@@ -3,7 +3,7 @@ import './Header.css';
 import prmitrLogo from '../assets/prmitrlogojpg.jpg';
 import Navbar from './Navbar';
 
-export default function Header({ onOpenLogin, onOpenCompanies, onOpenPlacements, onOpenNoticeBoard }) {
+export default function Header({ user, onOpenProfile, onOpenLogin, onOpenCompanies, onOpenPlacements, onOpenNoticeBoard }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
@@ -19,6 +19,8 @@ export default function Header({ onOpenLogin, onOpenCompanies, onOpenPlacements,
     <header className="hero">
       <Navbar
         activePage="home"
+        user={user}
+        onOpenProfile={onOpenProfile}
         onOpenLogin={onOpenLogin}
         onOpenHome={() => window.history.pushState({}, '', '/Home')}
         onOpenCompanies={onOpenCompanies}

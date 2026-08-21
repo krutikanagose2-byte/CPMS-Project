@@ -10,6 +10,8 @@ export default function Navbar({
   onOpenNoticeBoard, 
   onOpenContact,
   onOpenLogin,
+  onOpenProfile,
+  user,
   useEmojiLogo,
   hideLogin
 }) {
@@ -51,18 +53,38 @@ export default function Navbar({
           <a href="/Contact" className={activePage === 'contact' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Contact', onOpenContact)}>Contact</a>
         </div>
 
-        <button 
-          className="login-btn desktop-login" 
-          onClick={onOpenLogin} 
-          type="button"
-          style={{ visibility: hideLogin ? 'hidden' : 'visible' }}
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-          Login
-        </button>
+        {user ? (
+          <div 
+            className="navbar-user-profile desktop-profile" 
+            onClick={onOpenProfile} 
+            style={{ display: hideLogin ? 'none' : 'flex' }}
+          >
+              <div className="navbar-user-avatar" style={{ overflow: 'hidden' }}>
+                  {user?.photoUrl ? (
+                      <img src={user.photoUrl} alt="Avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  ) : (
+                      user?.name ? user.name.substring(0, 2).toUpperCase() : 'S'
+                  )}
+              </div>
+              <div className="navbar-user-info">
+                  <span className="navbar-user-name">{user?.name || 'Student Name'}</span>
+                  <span className="navbar-user-role">{user?.branch || 'Branch & Year'}</span>
+              </div>
+          </div>
+        ) : (
+          <button 
+            className="login-btn desktop-login" 
+            onClick={onOpenLogin} 
+            type="button"
+            style={{ visibility: hideLogin ? 'hidden' : 'visible' }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Login
+          </button>
+        )}
 
         {/* Hamburger — mobile only */}
         <button
@@ -85,6 +107,28 @@ export default function Navbar({
           <a href="/Placements" className={activePage === 'placements' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Placements', onOpenPlacements)}>Placements</a>
           <a href="/Notice-Board" className={activePage === 'notice' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Notice-Board', onOpenNoticeBoard)}>Notice Board</a>
           <a href="/Contact" className={activePage === 'contact' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Contact', onOpenContact)}>Contact</a>
+          {user ? (
+          <div 
+            className="navbar-user-profile mobile-profile" 
+            onClick={() => { if(onOpenProfile) onOpenProfile(); closeMenu(); }}
+            style={{ 
+              marginTop: '1rem',
+              display: hideLogin ? 'none' : 'flex' 
+            }}
+          >
+              <div className="navbar-user-avatar" style={{ overflow: 'hidden' }}>
+                  {user?.photoUrl ? (
+                      <img src={user.photoUrl} alt="Avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  ) : (
+                      user?.name ? user.name.substring(0, 2).toUpperCase() : 'S'
+                  )}
+              </div>
+              <div className="navbar-user-info">
+                  <span className="navbar-user-name">{user?.name || 'Student Name'}</span>
+                  <span className="navbar-user-role">{user?.branch || 'Branch & Year'}</span>
+              </div>
+          </div>
+          ) : (
           <button
             className="login-btn"
             onClick={() => { if(onOpenLogin) onOpenLogin(); closeMenu(); }}
@@ -98,6 +142,7 @@ export default function Navbar({
           >
             Login
           </button>
+          )}
         </div>
       )}
     </>

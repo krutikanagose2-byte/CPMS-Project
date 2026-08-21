@@ -12,9 +12,10 @@ import Placements from './components/Placements';
 import CompanyOffers from './components/CompanyOffers';
 import NoticeBoard from './components/NoticeBoard';
 import StudentDashboard from './components/student/StudentDashboard';
+import StudyAndPreparationResources from './components/StudyAndPreparationResources/StudyAndPreparationResources';
 
 export default function App() {
-  const [page, setPage] = useState('home'); // 'home' | 'login' | 'companies' | 'placements' | 'notice' | 'student-dashboard' | 'company-offers'
+  const [page, setPage] = useState('home'); // 'home' | 'login' | 'companies' | 'placements' | 'notice' | 'student-dashboard' | 'company-offers' | 'company-study'
   const [user, setUser] = useState(null);
   const [selectedCompany, setSelectedCompany] = useState(null);
 
@@ -24,7 +25,7 @@ export default function App() {
         onBack={() => setPage('home')} 
         onLoginSuccess={(userData) => {
           setUser(userData);
-          setPage('student-dashboard');
+          setPage('home');
         }}
       />
     );
@@ -39,6 +40,7 @@ export default function App() {
           setUser(null);
           setPage('home');
         }} 
+        onBack={() => setPage('home')}
       />
     );
   }
@@ -46,11 +48,14 @@ export default function App() {
   if (page === 'companies') {
     return (
       <Companies 
+        user={user}
+        onOpenProfile={() => setPage('student-dashboard')}
         onBack={() => setPage('home')} 
         onOpenPlacements={() => setPage('placements')} 
         onOpenLogin={() => setPage('login')} 
         onOpenNoticeBoard={() => setPage('notice')} 
         onOpenCompanyOffers={(comp) => { setSelectedCompany(comp); setPage('company-offers'); }} 
+        onOpenCompanyStudy={(comp) => { setSelectedCompany(comp); setPage('company-study'); }}
       />
     );
   }
@@ -58,6 +63,19 @@ export default function App() {
   if (page === 'company-offers') {
     return (
       <CompanyOffers 
+        user={user}
+        onOpenProfile={() => setPage('student-dashboard')}
+        company={selectedCompany} 
+        onBack={() => setPage('companies')} 
+      />
+    );
+  }
+
+  if (page === 'company-study') {
+    return (
+      <StudyAndPreparationResources
+        user={user}
+        onOpenProfile={() => setPage('student-dashboard')}
         company={selectedCompany} 
         onBack={() => setPage('companies')} 
       />
@@ -65,16 +83,18 @@ export default function App() {
   }
 
   if (page === 'placements') {
-    return <Placements onBack={() => setPage('home')} onOpenCompanies={() => setPage('companies')} onOpenLogin={() => setPage('login')} onOpenNoticeBoard={() => setPage('notice')} />;
+    return <Placements user={user} onOpenProfile={() => setPage('student-dashboard')} onBack={() => setPage('home')} onOpenCompanies={() => setPage('companies')} onOpenLogin={() => setPage('login')} onOpenNoticeBoard={() => setPage('notice')} />;
   }
 
   if (page === 'notice') {
-    return <NoticeBoard onBack={() => setPage('home')} onOpenCompanies={() => setPage('companies')} onOpenPlacements={() => setPage('placements')} onOpenLogin={() => setPage('login')} />;
+    return <NoticeBoard user={user} onOpenProfile={() => setPage('student-dashboard')} onBack={() => setPage('home')} onOpenCompanies={() => setPage('companies')} onOpenPlacements={() => setPage('placements')} onOpenLogin={() => setPage('login')} />;
   }
 
   return (
     <div className="page-root">
       <Header
+        user={user}
+        onOpenProfile={() => setPage('student-dashboard')}
         onOpenLogin={() => setPage('login')}
         onOpenCompanies={() => setPage('companies')}
         onOpenPlacements={() => setPage('placements')}
