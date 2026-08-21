@@ -38,8 +38,8 @@ export default function Header({ user, onOpenProfile, onOpenLogin, onOpenCompani
             Bridging Talent with Opportunities.<br />Building Successful Careers.
           </p>
           <div className="hero-actions">
-            <button className="btn primary">Explore Companies &rarr;</button>
-            <button className="btn ghost">View Placements &rarr;</button>
+            <button className="btn primary" onClick={(e) => handleNavClick(e, '/companies', onOpenCompanies)}>Explore Companies &rarr;</button>
+            <button className="btn ghost" onClick={(e) => handleNavClick(e, '/placements', onOpenPlacements)}>View Placements &rarr;</button>
           </div>
         </div>
       </div>
