@@ -447,9 +447,9 @@ const CompanyStudyResources = ({ company, onBack }) => {
                   <div style={{ marginLeft: '16px' }}>
                     <p style={{ fontWeight: 'bold', margin: '8px 0' }}>1. Communication Assessment Round</p>
                     <ul className="csr-curr-list bullet-list" style={{ marginLeft: '24px' }}>
-                      <li>Reading</li>
+                      <li><u style={{ textDecorationThickness: '2px', textUnderlineOffset: '4px' }}>Reading</u></li>
                       <li><u style={{ textDecorationThickness: '2px', textUnderlineOffset: '4px' }}>Grammar and Comprehension</u></li>
-                      <li>Listening and Speaking</li>
+                      <li><u style={{ textDecorationThickness: '2px', textUnderlineOffset: '4px' }}>Listening and Speaking</u></li>
                     </ul>
 
                     <p style={{ fontWeight: 'bold', margin: '8px 0' }}>2. Quants + Game Based Round</p>

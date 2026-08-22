@@ -74,14 +74,18 @@ const CognizantMenu = ({ company, onBack }) => {
             className={`csr-menu-item ${activeMenu === 'Syllabus' ? 'active' : ''}`}
             onClick={() => {
               setActiveMenu('Syllabus');
-              setIsSyllabusExpanded(!isSyllabusExpanded);
+              setIsSyllabusExpanded(true);
             }}
           >
             <span className="csr-menu-icon">📋</span>
             {company.name} Syllabus
             <span
               className="csr-dropdown-arrow"
-              style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', transform: isSyllabusExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', padding: '0 4px' }}
+              style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', transform: isSyllabusExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', padding: '0 4px', cursor: 'pointer' }}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsSyllabusExpanded(!isSyllabusExpanded);
+              }}
             >
               <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                 <polyline points="6 9 12 15 18 9"></polyline>

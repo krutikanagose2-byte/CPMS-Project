@@ -103,8 +103,11 @@
 /* Top Tabs */
 .csr-tabs-wrapper {
   background-color: #eef2ff;
-  padding: 0 40px;
+  padding: 0 24px;
   border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .csr-tabs {
