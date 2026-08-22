@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import LogicalReasoning from './LogicalReasoning';
+import QuantitativeAptitude from './QuantitativeAptitude';
 
 const aptitudeTopics = [
   { id: 1, title: 'Quantitative Aptitude', questions: 150, color: '#e0f2fe', iconColor: '#0ea5e9' },
@@ -13,6 +15,26 @@ const aptitudeTopics = [
 ];
 
 const Aptitude = ({ company }) => {
+  const [selectedTopic, setSelectedTopic] = useState(null);
+
+  if (selectedTopic === 'Logical Reasoning') {
+    return (
+      <div style={{ padding: '20px' }}>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Aptitude</button>
+         <LogicalReasoning />
+      </div>
+    );
+  }
+
+  if (selectedTopic === 'Quantitative Aptitude') {
+    return (
+      <div style={{ padding: '20px' }}>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Aptitude</button>
+         <QuantitativeAptitude />
+      </div>
+    );
+  }
+
   return (
     <div className="csr-content-body">
       <div className="csr-aptitude-header">
@@ -31,7 +53,12 @@ const Aptitude = ({ company }) => {
       
       <div className="csr-topics-grid">
         {aptitudeTopics.map((topic) => (
-          <div key={topic.id} className="csr-topic-card">
+          <div 
+            key={topic.id} 
+            className="csr-topic-card" 
+            onClick={() => setSelectedTopic(topic.title)}
+            style={{ cursor: 'pointer' }}
+          >
             <div className="csr-topic-icon" style={{ backgroundColor: topic.color, color: topic.iconColor }}>
               <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
