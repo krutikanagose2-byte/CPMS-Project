@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Companies.css';
 import CompanyDetails from './CompanyDetails';
 
@@ -8,6 +8,9 @@ import accentureLogo from '../assets/accenture.png';
 import capgeminiLogo from '../assets/capgemini.svg';
 import wiproLogo from '../assets/wipro.png';
 import cognizantLogo from '../assets/cognizant.png';
+import cognizantOffice1 from '../assets/Company-img/cognizant_office_1.jpg';
+import cognizantOffice2 from '../assets/Company-img/cognizant_office_2.jpg';
+import cognizantOffice3 from '../assets/Company-img/cognizant_office_3.jpg';
 import microsoftLogo from '../assets/microsoft.png';
 import deloitteLogo from '../assets/Company-img/Deloitte.jpg';
 import kpmgLogo from '../assets/Company-img/kpmg.png';
@@ -54,7 +57,7 @@ Guided by its core purpose of unleashing human energy through technology for an 
 Wipro is widely recognized for its extensive global portfolio of services, deep domain expertise, and a strong, unwavering commitment to sustainability and active corporate citizenship. The company operates globally with a vast workforce of over 240,000 professionals dedicated to delivering innovative solutions and enhancing customer experiences across six continents. Through strategic initiatives and robust technology partnerships, Wipro continuously adapts to the dynamic technological landscape, ensuring that its clients remain competitive, agile, and future-ready. Furthermore, the Azim Premji Foundation, which is inextricably linked to Wipro's legacy, drives significant philanthropic efforts in education, healthcare, and social development in India, reflecting the company's deeply ingrained ethos of giving back to society and fostering inclusive, equitable growth for all.`, officeImages: officeImagesPlaceholder },
   { id: 5, name: 'Cognizant', fullName: 'Cognizant Technology Solutions', category: 'it', sector: 'IT & Software', location: 'Teaneck, USA', logo: cognizantLogo, website: 'https://www.cognizant.com', startedFrom: '1994', founder: 'Kumar Mahadeva', employees: '350,000+', workCulture: 'Collaboration, Transparency, Empowerment', studentsPlaced: '850+ (Approx.)', description: 'Cognizant engineers modern businesses to improve everyday life.', moreInfo: `Cognizant Technology Solutions is an American multinational information technology services and consulting company headquartered in Teaneck, New Jersey. Founded in 1994 as an in-house technology unit of The Dun & Bradstreet Corporation, Cognizant has rapidly grown into one of the world's most prominent digital transformation and IT services providers. The company helps clients modernize technology, reimagine processes, and transform experiences so they can stay ahead in a fast-changing, hyper-competitive world. Cognizant specializes in advanced areas such as digital strategy, the Internet of Things (IoT), artificial intelligence, software engineering, and cloud enablement, serving key global industries including healthcare, financial services, communications, media, and consumer goods.
 
-Consistently ranked amongst the most admired and fastest-growing companies globally, Cognizant delivers deep industry expertise and robust technology solutions tailored to the unique operational needs of its clients. The company’s unique global delivery model and deeply ingrained client-centric approach have been central to its consistent growth, industry leadership, and strong market positioning. Cognizant is heavily invested in continuously upskilling its workforce and fostering an inclusive, diverse workplace culture that encourages innovation and agile problem-solving. By expanding its digital capabilities through strategic acquisitions and building strong partnerships with leading technology vendors, Cognizant enables modern businesses to effectively navigate digital disruptions, optimize their core operations, and dramatically improve everyday life for millions of end-users worldwide.`, officeImages: officeImagesPlaceholder },
+Consistently ranked amongst the most admired and fastest-growing companies globally, Cognizant delivers deep industry expertise and robust technology solutions tailored to the unique operational needs of its clients. The company’s unique global delivery model and deeply ingrained client-centric approach have been central to its consistent growth, industry leadership, and strong market positioning. Cognizant is heavily invested in continuously upskilling its workforce and fostering an inclusive, diverse workplace culture that encourages innovation and agile problem-solving. By expanding its digital capabilities through strategic acquisitions and building strong partnerships with leading technology vendors, Cognizant enables modern businesses to effectively navigate digital disruptions, optimize their core operations, and dramatically improve everyday life for millions of end-users worldwide.`, officeImages: [cognizantOffice1, cognizantOffice2, cognizantOffice3] },
   { id: 6, name: 'Google', fullName: 'Google LLC', category: 'it', sector: 'IT & Software', location: 'Mountain View, USA', logo: googleLogo, website: 'https://about.google', startedFrom: '1998', founder: 'Larry Page & Sergey Brin', employees: '180,000+', workCulture: 'Creativity, Openness, Innovation', studentsPlaced: '50+ (Premium)', description: 'Google specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware.', moreInfo: `Google LLC is an American multinational corporation and technology giant focusing extensively on online advertising, search engine technology, cloud computing, computer software, e-commerce, consumer electronics, and artificial intelligence. Founded in 1998 by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University, Google has evolved from a simple algorithmic search engine into a global technological behemoth. The company offers a vast, interconnected ecosystem of products and services, including Google Workspace, the Android mobile operating system, Google Cloud, and hardware devices like the Pixel smartphones and Nest smart home products. Google's foundational mission is to organize the world's information and make it universally accessible and useful, a visionary goal that drives its continuous innovation.
 
 Widely renowned for its vibrant, innovative work culture, massive global scale, and incredibly robust technological infrastructure, Google remains one of the most powerful and influential technology companies in the world today. The company stands at the absolute forefront of artificial intelligence research, developing cutting-edge AI models, such as Gemini, and integrating them seamlessly across its entire product suite to enhance user experiences. Google is also deeply committed to operating sustainably, boldly aiming to run its entire global operations on carbon-free energy by 2030. With a workforce composed of some of the brightest engineering minds in the industry, Google continues to push the boundaries of what is technologically possible, fundamentally shaping human interaction with technology.`, officeImages: officeImagesPlaceholder },
@@ -145,16 +148,20 @@ const extraLargeLogos = ['KPMG', 'PwC', 'Bosch', 'Goldman Sachs', 'Mu Sigma', 'F
 const largeLogos = ['Capgemini', 'HDFC Bank'];
 const smallLogos = [];
 
-export default function Companies({ user, onBack, onOpenPlacements, onOpenLogin, onOpenNoticeBoard, onOpenCompanyOffers, onOpenCompanyStudy }) {
+export default function Companies({ user, onBack, onOpenPlacements, onOpenLogin, onOpenNoticeBoard, onOpenCompanyOffers, onOpenCompanyStudy, initialCompany, onOpenPlacementsForCompany, onOpenProfile }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [search, setSearch] = useState('');
   const [sector, setSector] = useState('All Sectors');
   const [page, setPage] = useState(1);
   const [showLoginPopup, setShowLoginPopup] = useState(false);
-  const [selectedCompany, setSelectedCompany] = useState(null);
+  const [selectedCompany, setSelectedCompany] = useState(initialCompany || null);
 
   const activeCompany = selectedCompany ? COMPANIES.find(c => c.id === selectedCompany.id) : null;
   const totalPages = 10;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [selectedCompany]);
 
   const handleViewDetails = (company) => {
     if (!user) {
@@ -183,16 +190,24 @@ export default function Companies({ user, onBack, onOpenPlacements, onOpenLogin,
         activePage="companies"
         onOpenLogin={onOpenLogin}
         onOpenHome={onBack}
-        onOpenCompanies={() => {}}
+        onOpenCompanies={() => { setSelectedCompany(null); window.scrollTo(0, 0); }}
         onOpenPlacements={onOpenPlacements}
+        onOpenNoticeBoard={onOpenNoticeBoard}
+        onOpenProfile={onOpenProfile}
+        user={user}
         useEmojiLogo={true}
-        hideLogin={true}
       />
 
       <div className="co-body">
 
         {activeCompany ? (
-          <CompanyDetails company={activeCompany} onBack={() => setSelectedCompany(null)} onOpenCompanyOffers={() => onOpenCompanyOffers(activeCompany)} onOpenCompanyStudy={() => onOpenCompanyStudy(activeCompany)} />
+          <CompanyDetails 
+          company={activeCompany} 
+          onBack={() => setSelectedCompany(null)} 
+          onOpenCompanyOffers={() => onOpenCompanyOffers(activeCompany)} 
+          onOpenCompanyStudy={() => onOpenCompanyStudy(activeCompany)} 
+          onViewAllPlacements={() => onOpenPlacementsForCompany(activeCompany.name)}
+        />
         ) : (
           <main className="co-main">
 

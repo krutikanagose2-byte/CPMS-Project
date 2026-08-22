@@ -1,6 +1,7 @@
 .nb-hero-section {
   background: linear-gradient(to right, #f8fafc, #f1f5f9);
   border-bottom: 1px solid #e2e8f0;
+  padding-top: 74px;
 }
 
 .nb-hero-body {

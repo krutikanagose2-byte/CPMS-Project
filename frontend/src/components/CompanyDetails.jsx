@@ -10,7 +10,7 @@ const PLACED_STUDENTS = [
   { id: 6, name: 'Priya Dhole', branch: 'CSE', image: '/ind_female_3.png' }
 ];
 
-const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStudy }) => {
+const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStudy, onViewAllPlacements }) => {
   const [isMoreInfoVisible, setIsMoreInfoVisible] = useState(false);
   const [expandedSection, setExpandedSection] = useState('study');
   const [lightboxIndex, setLightboxIndex] = useState(null);
@@ -155,7 +155,7 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
         <div className="cd-card cd-students-section">
           <div className="cd-students-header">
             <h3 className="cd-section-title">Last Year Placed Students</h3>
-            <span className="cd-view-all">View All →</span>
+            <span className="cd-view-all" onClick={onViewAllPlacements}>View All →</span>
           </div>
           <div className="cd-students-marquee">
             <div className="cd-students-track">
@@ -181,9 +181,9 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
           </div>
         </div>
 
-        {/* Accordion 2 */}
+        {/* Placement Offers Link (Replaced Accordion) */}
         <div className="cd-card cd-accordion">
-          <div className="cd-acc-header" onClick={() => toggleSection('offers')}>
+          <div className="cd-acc-header" onClick={onOpenCompanyOffers}>
             <div className="cd-acc-header-left">
               <div className="cd-acc-icon-box" style={{ background: '#e0f2fe', color: '#0284c7' }}>💼</div>
               <div>
@@ -191,32 +191,7 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
                 <p className="cd-acc-subtitle">View job roles, apply process, eligibility criteria, package and job locations.</p>
               </div>
             </div>
-            <span className={`cd-acc-chevron ${expandedSection === 'offers' ? 'expanded' : ''}`}>▼</span>
           </div>
-          {expandedSection === 'offers' && (
-            <div className="cd-acc-content">
-              <p style={{ padding: '16px', color: '#64748b' }}>Explore all the latest roles, packages, and eligibility criteria offered by {company.name}.</p>
-              <div style={{ padding: '0 16px 16px 16px' }}>
-                <button 
-                  onClick={onOpenCompanyOffers}
-                  style={{
-                    background: '#0284c7',
-                    color: 'white',
-                    border: 'none',
-                    padding: '10px 20px',
-                    borderRadius: '6px',
-                    cursor: 'pointer',
-                    fontWeight: '500',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px'
-                  }}
-                >
-                  View All Placement Offers →
-                </button>
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Study Resources Link (Replaced Accordion) */}
@@ -229,7 +204,6 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
                 <p className="cd-acc-subtitle">Access complete study materials, syllabus, and exam patterns.</p>
               </div>
             </div>
-            <span className="cd-acc-chevron expanded" style={{transform: 'rotate(-90deg)'}}>▼</span>
           </div>
         </div>
 
@@ -243,7 +217,6 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
                 <p className="cd-acc-subtitle">Reach out to {company.name} HR team or visit official careers page.</p>
               </div>
             </div>
-            <span className={`cd-acc-chevron ${expandedSection === 'hr' ? 'expanded' : ''}`}>▼</span>
           </div>
           {expandedSection === 'hr' && (
             <div className="cd-acc-content">

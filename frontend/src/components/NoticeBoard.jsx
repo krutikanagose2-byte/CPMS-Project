@@ -101,7 +101,7 @@ The WebEx joining link will be shared via your official college email groups one
   }
 ];
 
-export default function NoticeBoard({ onBack, onOpenLogin, onOpenCompanies, onOpenPlacements, onOpenContact }) {
+export default function NoticeBoard({ onBack, onOpenLogin, onOpenCompanies, onOpenPlacements, onOpenContact, user, onOpenProfile }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState('All');
   const [expandedNoticeId, setExpandedNoticeId] = useState(null);
@@ -132,6 +132,9 @@ export default function NoticeBoard({ onBack, onOpenLogin, onOpenCompanies, onOp
           onOpenPlacements={onOpenPlacements}
           onOpenContact={onOpenContact}
           onOpenNoticeBoard={() => {}}
+          onOpenProfile={onOpenProfile}
+          user={user}
+          useEmojiLogo={true}
         />
         <div className="nb-hero-body">
           <div className="nb-hero-content">

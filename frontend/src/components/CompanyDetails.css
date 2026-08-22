@@ -540,8 +540,8 @@
   top: 20px;
   right: 30px;
   color: white;
-  font-size: 40px;
-  font-weight: bold;
+  font-size: 36px;
+  font-weight: normal;
   cursor: pointer;
   z-index: 10001;
 }
@@ -553,11 +553,11 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 36px;
+  font-weight: normal;
   cursor: pointer;
-  padding: 20px;
+  padding: 16px;
   user-select: none;
   z-index: 10001;
   transition: 0.3s ease;

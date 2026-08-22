@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   margin: 0;
-  padding-top: 0;
+  padding-top: 74px;
   min-height: 640px;
   background-image: url("../assets/prmitr.png");
   background-size: cover;

@@ -3,8 +3,28 @@ import './Placements.css';
 import { COMPANIES } from './Companies';
 import Navbar from './Navbar';
 
-export default function Placements({ onBack, onOpenCompanies, onOpenLogin }) {
+export default function Placements({ onBack, onOpenCompanies, onOpenLogin, targetCompany, user, onOpenProfile, onOpenNoticeBoard }) {
   const [expandedCompanies, setExpandedCompanies] = useState({});
+
+  React.useEffect(() => {
+    if (targetCompany) {
+      const index = COMPANIES.findIndex(c => c.name === targetCompany);
+      if (index !== -1) {
+        setExpandedCompanies(prev => ({
+          ...prev,
+          [index]: true
+        }));
+        setTimeout(() => {
+          const el = document.getElementById(`placement-section-${index}`);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [targetCompany]);
 
   const toggleCompany = (index) => {
     setExpandedCompanies(prev => ({
@@ -70,8 +90,10 @@ export default function Placements({ onBack, onOpenCompanies, onOpenLogin }) {
         onOpenHome={onBack}
         onOpenCompanies={onOpenCompanies}
         onOpenPlacements={() => {}}
+        onOpenNoticeBoard={onOpenNoticeBoard}
+        onOpenProfile={onOpenProfile}
+        user={user}
         useEmojiLogo={true}
-        hideLogin={true}
       />
 
       <div className="pl-body">
@@ -80,7 +102,7 @@ export default function Placements({ onBack, onOpenCompanies, onOpenLogin }) {
         </div>
 
         {placementsData.map((companyData, index) => (
-          <div key={index} className="pl-company-section">
+          <div key={index} id={`placement-section-${index}`} className="pl-company-section">
             <div className="pl-header-section">
               <div className="pl-header-left">
                 <div className="pl-icon-bg">

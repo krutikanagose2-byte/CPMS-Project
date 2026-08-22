@@ -2,6 +2,7 @@
   font-family: 'Inter', sans-serif;
   background-color: #f8f9fa;
   min-height: 100vh;
+  padding-top: 74px;
 }
 
 .pl-body {
@@ -18,6 +19,7 @@
 
 .pl-company-section {
   margin-bottom: 4rem;
+  scroll-margin-top: 100px;
 }
 
 .pl-header-section {
