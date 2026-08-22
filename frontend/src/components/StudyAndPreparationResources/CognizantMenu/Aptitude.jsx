@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import LogicalReasoning from './LogicalReasoning';
 import QuantitativeAptitude from './QuantitativeAptitude';
 import VerbalAbility from './VerbalAbility';
+import GameBasedAptitude from './GameBasedAptitude';
+import DataInterpretation from './DataInterpretation';
+import VisualReasoning from './VisualReasoning';
+import Psychometric from './Psychometric';
+import Cryptarithmetic from './Cryptarithmetic';
+import EssayWriting from './EssayWriting';
 
 const aptitudeTopics = [
   { id: 1, title: 'Quantitative Aptitude', questions: 150, color: '#e0f2fe', iconColor: '#0ea5e9' },
@@ -41,6 +47,60 @@ const Aptitude = ({ company }) => {
       <div style={{ padding: '20px' }}>
          <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Aptitude</button>
          <VerbalAbility />
+      </div>
+    );
+  }
+
+  if (selectedTopic === 'Game Based Aptitude') {
+    return (
+      <div style={{ padding: '20px' }}>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Aptitude</button>
+         <GameBasedAptitude />
+      </div>
+    );
+  }
+
+  if (selectedTopic === 'Data Interpretation') {
+    return (
+      <div style={{ padding: '20px' }}>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Aptitude</button>
+         <DataInterpretation />
+      </div>
+    );
+  }
+
+  if (selectedTopic === 'Visual Reasoning') {
+    return (
+      <div style={{ padding: '20px' }}>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Aptitude</button>
+         <VisualReasoning />
+      </div>
+    );
+  }
+
+  if (selectedTopic === 'Psychometric') {
+    return (
+      <div style={{ padding: '20px' }}>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Aptitude</button>
+         <Psychometric />
+      </div>
+    );
+  }
+
+  if (selectedTopic === 'Cryptarithmetic') {
+    return (
+      <div style={{ padding: '20px' }}>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Aptitude</button>
+         <Cryptarithmetic />
+      </div>
+    );
+  }
+
+  if (selectedTopic === 'Essay Writing') {
+    return (
+      <div style={{ padding: '20px' }}>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Aptitude</button>
+         <EssayWriting />
       </div>
     );
   }
