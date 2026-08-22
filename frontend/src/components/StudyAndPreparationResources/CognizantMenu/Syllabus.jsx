@@ -5,10 +5,6 @@ const Syllabus = ({ company, currentYear }) => {
 
   return (
     <div className="csr-content-body">
-      <div className="csr-breadcrumbs">
-        Home &gt; {company.name} Syllabus {currentYear}
-      </div>
-
       <h1 className="csr-page-title">
         {company.name} Syllabus {currentYear}
       </h1>

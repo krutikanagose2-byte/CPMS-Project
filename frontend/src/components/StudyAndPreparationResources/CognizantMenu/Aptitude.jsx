@@ -1,12 +1,18 @@
 import React from 'react';
 
-const communicationTopics = [
-  { id: 1, title: 'Reading', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9' },
-  { id: 2, title: 'Grammar and Comprehension', questions: 20, color: '#fef3c7', iconColor: '#f59e0b' },
-  { id: 3, title: 'Speaking and Listening', questions: 20, color: '#f3e8ff', iconColor: '#a855f7' },
+const aptitudeTopics = [
+  { id: 1, title: 'Quantitative Aptitude', questions: 150, color: '#e0f2fe', iconColor: '#0ea5e9' },
+  { id: 2, title: 'Logical Reasoning', questions: 120, color: '#fef3c7', iconColor: '#f59e0b' },
+  { id: 3, title: 'Verbal', questions: 100, color: '#f3e8ff', iconColor: '#a855f7' },
+  { id: 4, title: 'Game Based Aptitude', questions: 80, color: '#dcfce7', iconColor: '#22c55e' },
+  { id: 5, title: 'Data Interpretation', questions: 90, color: '#ffedd5', iconColor: '#f97316' },
+  { id: 6, title: 'Visual Reasoning', questions: 60, color: '#fee2e2', iconColor: '#ef4444' },
+  { id: 7, title: 'Psychometric', questions: 50, color: '#fef3c7', iconColor: '#f59e0b' },
+  { id: 8, title: 'Cryptarithmetic', questions: 40, color: '#e0f2fe', iconColor: '#0ea5e9' },
+  { id: 9, title: 'Essay Writing', questions: 20, color: '#dcfce7', iconColor: '#22c55e' },
 ];
 
-const CommunicationAssessment = ({ company }) => {
+const Aptitude = ({ company }) => {
   return (
     <div className="csr-content-body">
       <div className="csr-aptitude-header">
@@ -24,7 +30,7 @@ const CommunicationAssessment = ({ company }) => {
       </div>
       
       <div className="csr-topics-grid">
-        {communicationTopics.map((topic) => (
+        {aptitudeTopics.map((topic) => (
           <div key={topic.id} className="csr-topic-card">
             <div className="csr-topic-icon" style={{ backgroundColor: topic.color, color: topic.iconColor }}>
               <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
@@ -47,4 +53,4 @@ const CommunicationAssessment = ({ company }) => {
   );
 };
 
-export default CommunicationAssessment;
+export default Aptitude;

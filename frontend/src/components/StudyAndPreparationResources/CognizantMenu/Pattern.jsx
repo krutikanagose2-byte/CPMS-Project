@@ -5,10 +5,6 @@ const Pattern = ({ company, currentYear }) => {
 
   return (
     <div className="csr-content-body">
-      <div className="csr-breadcrumbs">
-        Home &gt; {company.name} Previous Year Placement Papers {currentYear}
-      </div>
-
       <h1 className="csr-page-title">
         {company.name} Previous Year Placement Papers {currentYear}
       </h1>

@@ -1,12 +1,15 @@
 import React from 'react';
 
-const communicationTopics = [
-  { id: 1, title: 'Reading', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9' },
-  { id: 2, title: 'Grammar and Comprehension', questions: 20, color: '#fef3c7', iconColor: '#f59e0b' },
-  { id: 3, title: 'Speaking and Listening', questions: 20, color: '#f3e8ff', iconColor: '#a855f7' },
+const technicalTopics = [
+  { id: 1, title: 'C', questions: 50, color: '#e0f2fe', iconColor: '#0ea5e9' },
+  { id: 2, title: 'C++', questions: 60, color: '#fef3c7', iconColor: '#f59e0b' },
+  { id: 3, title: 'Java', questions: 70, color: '#f3e8ff', iconColor: '#a855f7' },
+  { id: 4, title: 'Python', questions: 65, color: '#dcfce7', iconColor: '#22c55e' },
+  { id: 5, title: 'SQL', questions: 80, color: '#ffedd5', iconColor: '#f97316' },
+  { id: 6, title: 'Javascript', questions: 55, color: '#fee2e2', iconColor: '#ef4444' },
 ];
 
-const CommunicationAssessment = ({ company }) => {
+const Technical = ({ company }) => {
   return (
     <div className="csr-content-body">
       <div className="csr-aptitude-header">
@@ -24,7 +27,7 @@ const CommunicationAssessment = ({ company }) => {
       </div>
       
       <div className="csr-topics-grid">
-        {communicationTopics.map((topic) => (
+        {technicalTopics.map((topic) => (
           <div key={topic.id} className="csr-topic-card">
             <div className="csr-topic-icon" style={{ backgroundColor: topic.color, color: topic.iconColor }}>
               <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
@@ -47,4 +50,4 @@ const CommunicationAssessment = ({ company }) => {
   );
 };
 
-export default CommunicationAssessment;
+export default Technical;

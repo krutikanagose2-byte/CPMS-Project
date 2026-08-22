@@ -1,12 +1,12 @@
 import React from 'react';
 
-const communicationTopics = [
-  { id: 1, title: 'Reading', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9' },
-  { id: 2, title: 'Grammar and Comprehension', questions: 20, color: '#fef3c7', iconColor: '#f59e0b' },
-  { id: 3, title: 'Speaking and Listening', questions: 20, color: '#f3e8ff', iconColor: '#a855f7' },
+const interviewTopics = [
+  { id: 1, title: 'Technical Interview', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9' },
+  { id: 2, title: 'Managerial Interview', questions: 10, color: '#fef3c7', iconColor: '#f59e0b' },
+  { id: 3, title: 'HR Interview', questions: 15, color: '#f3e8ff', iconColor: '#a855f7' },
 ];
 
-const CommunicationAssessment = ({ company }) => {
+const Interview = ({ company }) => {
   return (
     <div className="csr-content-body">
       <div className="csr-aptitude-header">
@@ -24,7 +24,7 @@ const CommunicationAssessment = ({ company }) => {
       </div>
       
       <div className="csr-topics-grid">
-        {communicationTopics.map((topic) => (
+        {interviewTopics.map((topic) => (
           <div key={topic.id} className="csr-topic-card">
             <div className="csr-topic-icon" style={{ backgroundColor: topic.color, color: topic.iconColor }}>
               <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
@@ -47,4 +47,4 @@ const CommunicationAssessment = ({ company }) => {
   );
 };
 
-export default CommunicationAssessment;
+export default Interview;

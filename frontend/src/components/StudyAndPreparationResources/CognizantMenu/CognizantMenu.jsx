@@ -4,10 +4,14 @@ import Pattern from './Pattern';
 import Syllabus from './Syllabus';
 import CommunicationAssessment from './CommunicationAssessment';
 import GameBasedAptitude from './GameBasedAptitude';
+import Aptitude from './Aptitude';
+import Technical from './Technical';
+import Interview from './Interview';
 
 const CognizantMenu = ({ company, onBack }) => {
   const [activeTab, setActiveTab] = useState('Overview');
   const [activeMenu, setActiveMenu] = useState('Pattern');
+  const [isSyllabusExpanded, setIsSyllabusExpanded] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,21 +21,7 @@ const CognizantMenu = ({ company, onBack }) => {
 
   const currentYear = new Date().getFullYear();
 
-  const menuItems = [
-    { id: 'Pattern', label: `${company.name} Pattern`, icon: '🧩' },
-    { id: 'Syllabus', label: `${company.name} Syllabus`, icon: '📋' },
-    { id: 'Communication Assessment', label: 'Communication Assessment', icon: '🗣️' },
-    { id: 'Game Based Aptitude', label: 'Game Based Aptitude', icon: '🎮' },
-    { id: 'Aptitude', label: 'Aptitude', icon: '🧮' },
-    { id: 'Logical Reasoning', label: 'Logical Reasoning', icon: '🧠' },
-    { id: 'Verbal Ability', label: 'Verbal Ability', icon: '📝' },
-    { id: 'Coding', label: 'Coding', icon: '💻' },
-    { id: 'Advanced Coding', label: 'Advanced Coding', icon: '🚀' },
-    { id: 'Recruitment Process', label: 'Recruitment Process', icon: '🔄' },
-    { id: 'Interview Experience', label: 'Interview Experience', icon: '💬' },
-    { id: 'Technical Interview', label: 'Technical Interview', icon: '⚙️' },
-    { id: 'HR Interview', label: 'HR Interview Questions', icon: '👥' },
-  ];
+
 
   const renderContent = () => {
     switch (activeMenu) {
@@ -43,6 +33,12 @@ const CognizantMenu = ({ company, onBack }) => {
         return <CommunicationAssessment company={company} currentYear={currentYear} />;
       case 'Game Based Aptitude':
         return <GameBasedAptitude company={company} currentYear={currentYear} />;
+      case 'Aptitude':
+        return <Aptitude company={company} currentYear={currentYear} />;
+      case 'Technical':
+        return <Technical company={company} currentYear={currentYear} />;
+      case 'Interview':
+        return <Interview company={company} currentYear={currentYear} />;
       default:
         return (
           <div className="csr-content-body">
@@ -66,16 +62,49 @@ const CognizantMenu = ({ company, onBack }) => {
           <h2 className="csr-menu-title">{company.name.toUpperCase()} MENU</h2>
         </div>
         <nav className="csr-menu">
-          {menuItems.map(item => (
-            <div
-              key={item.id}
-              className={`csr-menu-item ${activeMenu === item.id ? 'active' : ''}`}
-              onClick={() => setActiveMenu(item.id)}
+          <div
+            className={`csr-menu-item ${activeMenu === 'Pattern' ? 'active' : ''}`}
+            onClick={() => setActiveMenu('Pattern')}
+          >
+            <span className="csr-menu-icon">🧩</span>
+            {company.name} Pattern
+          </div>
+          
+          <div
+            className={`csr-menu-item ${activeMenu === 'Syllabus' ? 'active' : ''}`}
+            onClick={() => {
+              setActiveMenu('Syllabus');
+              setIsSyllabusExpanded(!isSyllabusExpanded);
+            }}
+          >
+            <span className="csr-menu-icon">📋</span>
+            {company.name} Syllabus
+            <span 
+              className="csr-dropdown-arrow" 
+              style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', transform: isSyllabusExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', padding: '0 4px' }}
             >
-              <span className="csr-menu-icon">{item.icon}</span>
-              {item.label}
+              <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </div>
+
+          {isSyllabusExpanded && (
+            <div className="csr-submenu">
+              <div className={`csr-menu-item ${activeMenu === 'Communication Assessment' ? 'active' : ''}`} onClick={() => setActiveMenu('Communication Assessment')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
+                <span className="csr-menu-icon">🗣️</span> Communication Assessment
+              </div>
+              <div className={`csr-menu-item ${activeMenu === 'Aptitude' ? 'active' : ''}`} onClick={() => setActiveMenu('Aptitude')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
+                <span className="csr-menu-icon">🧮</span> Aptitude
+              </div>
+              <div className={`csr-menu-item ${activeMenu === 'Technical' ? 'active' : ''}`} onClick={() => setActiveMenu('Technical')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
+                <span className="csr-menu-icon">⚙️</span> Technical
+              </div>
+              <div className={`csr-menu-item ${activeMenu === 'Interview' ? 'active' : ''}`} onClick={() => setActiveMenu('Interview')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
+                <span className="csr-menu-icon">💬</span> Interview
+              </div>
             </div>
-          ))}
+          )}
         </nav>
       </aside>
 
@@ -84,11 +113,9 @@ const CognizantMenu = ({ company, onBack }) => {
         {/* Top Tabs */}
         <div className="csr-tabs-wrapper">
           <div className="csr-tabs">
-            {['Overview', 'Syllabus', 'Prepare', 'Interview'].map(tab => {
-              const isActive = (activeMenu === 'Pattern' && tab === 'Overview') ||
-                (activeMenu === 'Syllabus' && tab === 'Syllabus') ||
-                (activeMenu.includes('Interview') && tab === 'Interview') ||
-                (!['Pattern', 'Syllabus'].includes(activeMenu) && !activeMenu.includes('Interview') && tab === 'Prepare');
+            {['Pattern', 'Syllabus'].map(tab => {
+              const isActive = (activeMenu === 'Pattern' && tab === 'Pattern') ||
+                (activeMenu !== 'Pattern' && tab === 'Syllabus');
               
               return (
                 <button
@@ -96,10 +123,8 @@ const CognizantMenu = ({ company, onBack }) => {
                   className={`csr-tab ${isActive ? 'active' : ''}`}
                   onClick={() => {
                     setActiveTab(tab);
-                    if (tab === 'Overview') setActiveMenu('Pattern');
+                    if (tab === 'Pattern') setActiveMenu('Pattern');
                     else if (tab === 'Syllabus') setActiveMenu('Syllabus');
-                    else if (tab === 'Interview') setActiveMenu('Technical Interview');
-                    else if (tab === 'Prepare') setActiveMenu('Communication Assessment');
                   }}
                 >
                   {tab}
