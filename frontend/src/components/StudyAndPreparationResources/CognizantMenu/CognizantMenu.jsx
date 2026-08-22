@@ -4,6 +4,8 @@ import Pattern from './Pattern';
 import Syllabus from './Syllabus';
 import CommunicationAssessment from './CommunicationAssessment';
 import GameBasedAptitude from './GameBasedAptitude';
+import LogicalReasoning from './LogicalReasoning';
+import Aptitude from './Aptitude';
 
 const CognizantMenu = ({ company, onBack }) => {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -43,6 +45,10 @@ const CognizantMenu = ({ company, onBack }) => {
         return <CommunicationAssessment company={company} currentYear={currentYear} />;
       case 'Game Based Aptitude':
         return <GameBasedAptitude company={company} currentYear={currentYear} />;
+      case 'Logical Reasoning':
+        return <LogicalReasoning />;
+      case 'Aptitude':
+        return <Aptitude />;
       default:
         return (
           <div className="csr-content-body">
