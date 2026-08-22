@@ -3,27 +3,19 @@ import './StudentDashboard.css';
 import StudentOverview from './StudentOverview';
 import StudentProfile from './StudentProfile';
 import EligibilityStatus from './EligibilityStatus';
-import StudentJobs from './StudentJobs';
 import StudentApplications from './StudentApplications';
 import StudentStudyMaterials from './StudentStudyMaterials';
-import PlacementDrives from './PlacementDrives';
-import Announcements from './Announcements';
 import MyDocuments from './MyDocuments';
 import PlacementStatistics from './PlacementStatistics';
+import prmitrLogo from '../../assets/prmitrlogojpg.jpg';
 
-const StudentDashboard = ({ user, onLogout, onUpdateUser }) => {
-    const [activeTab, setActiveTab] = useState('overview');
+const StudentDashboard = ({ user, onLogout, onUpdateUser, onBack }) => {
+    const [activeTab, setActiveTab] = useState('profile');
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
     const navItems = [
-        { id: 'overview', icon: 'fas fa-tachometer-alt', label: 'Dashboard' },
         { id: 'profile', icon: 'fas fa-user', label: 'My Profile' },
-        { id: 'eligibility', icon: 'fas fa-check-circle', label: 'Eligibility Status' },
-        { id: 'jobs', icon: 'fas fa-briefcase', label: 'Job Opportunities' },
-        { id: 'applications', icon: 'fas fa-file-alt', label: 'My Applications' },
         { id: 'materials', icon: 'fas fa-book', label: 'Study Materials' },
-        { id: 'drives', icon: 'fas fa-building', label: 'Placement Drives' },
-        { id: 'announcements', icon: 'fas fa-bullhorn', label: 'Announcements' },
         { id: 'documents', icon: 'fas fa-folder', label: 'My Documents' },
         { id: 'statistics', icon: 'fas fa-chart-pie', label: 'Placement Statistics' },
     ];
@@ -33,12 +25,9 @@ const StudentDashboard = ({ user, onLogout, onUpdateUser }) => {
             case 'overview': return <StudentOverview user={user} />;
             case 'profile': return <StudentProfile user={user} onUpdateUser={onUpdateUser} />;
             case 'eligibility': return <EligibilityStatus user={user} />;
-            case 'jobs': return <StudentJobs user={user} />;
             case 'applications': return <StudentApplications user={user} />;
             case 'materials': return <StudentStudyMaterials user={user} />;
-            case 'drives': return <PlacementDrives user={user} />;
-            case 'announcements': return <Announcements user={user} />;
-            case 'documents': return <MyDocuments user={user} />;
+            case 'documents': return <MyDocuments user={user} onUpdateUser={onUpdateUser} />;
             case 'statistics': return <PlacementStatistics user={user} />;
             default: return <StudentOverview user={user} />;
         }
@@ -50,7 +39,7 @@ const StudentDashboard = ({ user, onLogout, onUpdateUser }) => {
             <aside className={`new-sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
                 <div className="new-sidebar-header">
                     <div className="new-logo-container">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/PRMIT%26R_Logo.jpg/220px-PRMIT%26R_Logo.jpg" alt="Logo" className="college-logo" />
+                        <img src={prmitrLogo} alt="Logo" className="college-logo" />
                         {isSidebarOpen && (
                             <div className="college-text">
                                 <h3>PRMIT&R, Badnera</h3>
@@ -85,6 +74,10 @@ const StudentDashboard = ({ user, onLogout, onUpdateUser }) => {
                 </nav>
                 
                 <div className="new-sidebar-footer">
+                    <button className="new-nav-item" onClick={onBack} title="Go to Home">
+                        <i className="fas fa-arrow-left"></i>
+                        {isSidebarOpen && <span>Back to Home Page</span>}
+                    </button>
                     <button className="new-nav-item" title="Help & Support">
                         <i className="fas fa-question-circle"></i>
                         {isSidebarOpen && <span>Help & Support</span>}

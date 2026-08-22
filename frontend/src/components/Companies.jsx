@@ -145,15 +145,24 @@ const extraLargeLogos = ['KPMG', 'PwC', 'Bosch', 'Goldman Sachs', 'Mu Sigma', 'F
 const largeLogos = ['Capgemini', 'HDFC Bank'];
 const smallLogos = [];
 
-export default function Companies({ onBack, onOpenPlacements, onOpenLogin }) {
+export default function Companies({ user, onBack, onOpenPlacements, onOpenLogin, onOpenNoticeBoard, onOpenCompanyOffers, onOpenCompanyStudy }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [search, setSearch] = useState('');
   const [sector, setSector] = useState('All Sectors');
   const [page, setPage] = useState(1);
+  const [showLoginPopup, setShowLoginPopup] = useState(false);
   const [selectedCompany, setSelectedCompany] = useState(null);
 
   const activeCompany = selectedCompany ? COMPANIES.find(c => c.id === selectedCompany.id) : null;
   const totalPages = 10;
+
+  const handleViewDetails = (company) => {
+    if (!user) {
+      setShowLoginPopup(true);
+    } else {
+      setSelectedCompany(company);
+    }
+  };
 
   const filtered = COMPANIES.filter(c => {
     const matchSearch = c.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -183,7 +192,7 @@ export default function Companies({ onBack, onOpenPlacements, onOpenLogin }) {
       <div className="co-body">
 
         {activeCompany ? (
-          <CompanyDetails company={activeCompany} onBack={() => setSelectedCompany(null)} />
+          <CompanyDetails company={activeCompany} onBack={() => setSelectedCompany(null)} onOpenCompanyOffers={() => onOpenCompanyOffers(activeCompany)} onOpenCompanyStudy={() => onOpenCompanyStudy(activeCompany)} />
         ) : (
           <main className="co-main">
 
@@ -232,7 +241,7 @@ export default function Companies({ onBack, onOpenPlacements, onOpenLogin }) {
                     <div className="co-card-name">{company.name}</div>
                     <div className="co-card-sector">{company.sector}</div>
                     <div className="co-card-location">📍 {company.location}</div>
-                    <button className="co-view-btn" onClick={() => setSelectedCompany(company)}>View Details →</button>
+                    <button className="co-view-btn" onClick={() => handleViewDetails(company)}>View Details →</button>
                   </div>
                 </div>
               ))}
@@ -253,6 +262,35 @@ export default function Companies({ onBack, onOpenPlacements, onOpenLogin }) {
         <span>© 2025 PRMIT&R, Badnera. All rights reserved.</span>
         <span>Placement Management System →</span>
       </footer>
+
+      {/* Custom Login Popup */}
+      {showLoginPopup && (
+        <div className="co-modal-overlay">
+          <div className="co-modal-card">
+            <div className="co-modal-icon-container">
+              <i className="fas fa-lock"></i>
+            </div>
+            <h3 className="co-modal-title">Login Required</h3>
+            <p className="co-modal-desc">
+              Please login first to view detailed company information and access placement resources.
+            </p>
+            <div className="co-modal-actions">
+              <button 
+                className="co-modal-btn co-modal-btn-cancel"
+                onClick={() => setShowLoginPopup(false)} 
+              >
+                Cancel
+              </button>
+              <button 
+                className="co-modal-btn co-modal-btn-primary"
+                onClick={() => { setShowLoginPopup(false); if(onOpenLogin) onOpenLogin(); }} 
+              >
+                Go to Login
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

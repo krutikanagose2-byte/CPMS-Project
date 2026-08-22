@@ -68,25 +68,55 @@ const StudentProfile = ({ user, onUpdateUser }) => {
     const handlePhotoUpload = (e) => {
         const file = e.target.files[0];
         if (file) {
-            const fileUrl = URL.createObjectURL(file);
-            setFormData(prev => ({ ...prev, photoUrl: fileUrl }));
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setFormData(prev => ({ ...prev, photoUrl: reader.result }));
+            };
+            reader.readAsDataURL(file);
         }
     };
 
     const handleSignatureUpload = (e) => {
         const file = e.target.files[0];
         if (file) {
-            const fileUrl = URL.createObjectURL(file);
-            setFormData(prev => ({ ...prev, signatureUrl: fileUrl }));
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setFormData(prev => ({ ...prev, signatureUrl: reader.result }));
+            };
+            reader.readAsDataURL(file);
         }
     };
 
-    const handleSave = () => {
-        setIsEditing(false);
-        if (onUpdateUser) {
-            onUpdateUser({ ...user, ...formData });
+    const handleSave = async () => {
+        try {
+            const userId = user?._id || user?.id;
+            if (userId) {
+                const response = await fetch(`http://localhost:5000/api/student/profile/${userId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
+                    const updatedUser = await response.json();
+                    if (onUpdateUser) {
+                        onUpdateUser(updatedUser);
+                    }
+                    setIsEditing(false);
+                    alert("Profile updated successfully!");
+                } else {
+                    const errData = await response.json();
+                    alert(`Failed to save profile: ${errData.message}`);
+                }
+            } else {
+                // If user is not logged in / ID not found
+                setIsEditing(false);
+                if (onUpdateUser) onUpdateUser({ ...user, ...formData });
+            }
+        } catch (error) {
+            console.error("Error saving profile:", error);
+            alert("Error connecting to server. Is it running?");
         }
-        // API call to save formData would go here
     };
 
     const handleCancel = () => {
@@ -168,7 +198,7 @@ const StudentProfile = ({ user, onUpdateUser }) => {
                         <div className="detail-item">
                             <span className="d-label">Date of Birth</span>
                             {isEditing ? (
-                                <input type="text" name="dob" className="edit-input" value={formData.dob} onChange={handleInputChange} />
+                                <input type="date" name="dob" className="edit-input" value={formData.dob} onChange={handleInputChange} />
                             ) : (
                                 <span className="d-value">{formData.dob}</span>
                             )}

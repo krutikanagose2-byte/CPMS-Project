@@ -37,11 +37,7 @@ body {
 .login-left{
     width:48%;
     position:relative;
-<<<<<<< HEAD
     background:url("../assets/prmitr.png") center/cover no-repeat;
-=======
-    background:url("../assets/prmitr.jpeg") center/cover no-repeat;
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 }
 
 .login-left::before{
@@ -219,7 +215,6 @@ body {
 }
 
 /* ========================= */
-<<<<<<< HEAD
 /* PASSWORD INPUT */
 /* ========================= */
 .password-input-container {
@@ -247,8 +242,6 @@ body {
 }
 
 /* ========================= */
-=======
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 /* REMEMBER ROW */
 /* ========================= */
 

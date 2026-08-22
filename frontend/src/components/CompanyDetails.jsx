@@ -10,7 +10,7 @@ const PLACED_STUDENTS = [
   { id: 6, name: 'Priya Dhole', branch: 'CSE', image: '/ind_female_3.png' }
 ];
 
-const CompanyDetails = ({ company, onBack }) => {
+const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStudy }) => {
   const [isMoreInfoVisible, setIsMoreInfoVisible] = useState(false);
   const [expandedSection, setExpandedSection] = useState('study');
   const [lightboxIndex, setLightboxIndex] = useState(null);
@@ -157,7 +157,6 @@ const CompanyDetails = ({ company, onBack }) => {
             <h3 className="cd-section-title">Last Year Placed Students</h3>
             <span className="cd-view-all">View All →</span>
           </div>
-<<<<<<< HEAD
           <div className="cd-students-marquee">
             <div className="cd-students-track">
               <div className="cd-students-list">
@@ -179,16 +178,6 @@ const CompanyDetails = ({ company, onBack }) => {
                 ))}
               </div>
             </div>
-=======
-          <div className="cd-students-grid">
-            {PLACED_STUDENTS.map(student => (
-              <div key={student.id} className="cd-student-profile">
-                <img src={student.image} alt={student.name} className="cd-student-avatar" />
-                <div className="cd-student-name">{student.name}</div>
-                <div className="cd-student-branch">{student.branch}</div>
-              </div>
-            ))}
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
           </div>
         </div>
 
@@ -206,82 +195,42 @@ const CompanyDetails = ({ company, onBack }) => {
           </div>
           {expandedSection === 'offers' && (
             <div className="cd-acc-content">
-              <p style={{ padding: '16px', color: '#64748b' }}>Specific offers and packages available during the recruitment drive.</p>
+              <p style={{ padding: '16px', color: '#64748b' }}>Explore all the latest roles, packages, and eligibility criteria offered by {company.name}.</p>
+              <div style={{ padding: '0 16px 16px 16px' }}>
+                <button 
+                  onClick={onOpenCompanyOffers}
+                  style={{
+                    background: '#0284c7',
+                    color: 'white',
+                    border: 'none',
+                    padding: '10px 20px',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                    fontWeight: '500',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
+                  }}
+                >
+                  View All Placement Offers →
+                </button>
+              </div>
             </div>
           )}
         </div>
 
-        {/* Accordion 3 (Expanded by default) */}
+        {/* Study Resources Link (Replaced Accordion) */}
         <div className="cd-card cd-accordion">
-          <div className="cd-acc-header" onClick={() => toggleSection('study')}>
+          <div className="cd-acc-header" onClick={() => onOpenCompanyStudy(company)}>
             <div className="cd-acc-header-left">
               <div className="cd-acc-icon-box" style={{ background: '#fae8ff', color: '#c026d3' }}>🎓</div>
               <div>
                 <h3 className="cd-acc-title">Study & Preparation Resources</h3>
-                <p className="cd-acc-subtitle">Access study materials, courses, practice tests, quizzes, interview questions and more.</p>
+                <p className="cd-acc-subtitle">Access complete study materials, syllabus, and exam patterns.</p>
               </div>
             </div>
-            <span className={`cd-acc-chevron ${expandedSection === 'study' ? 'expanded' : ''}`}>▼</span>
+            <span className="cd-acc-chevron expanded" style={{transform: 'rotate(-90deg)'}}>▼</span>
           </div>
-          {expandedSection === 'study' && (
-            <div className="cd-acc-content cd-resources-list">
-              
-              <div className="cd-resource-item">
-                <div className="cd-res-icon" style={{ background: '#dcfce7', color: '#16a34a' }}>📄</div>
-                <div className="cd-res-info">
-                  <h4 className="cd-res-title">Recommended Courses</h4>
-                  <p className="cd-res-desc">Curated courses to help you crack {company.name} placement.</p>
-                </div>
-                <span className="cd-res-arrow">›</span>
-              </div>
-
-              <div className="cd-resource-item">
-                <div className="cd-res-icon" style={{ background: '#ffedd5', color: '#ea580c' }}>📝</div>
-                <div className="cd-res-info">
-                  <h4 className="cd-res-title">Practice Tests & Quizzes</h4>
-                  <p className="cd-res-desc">Take practice tests and quizzes to assess your preparation.</p>
-                </div>
-                <span className="cd-res-arrow">›</span>
-              </div>
-
-              <div className="cd-resource-item">
-                <div className="cd-res-icon" style={{ background: '#fce7f3', color: '#db2777' }}>📃</div>
-                <div className="cd-res-info">
-                  <h4 className="cd-res-title">Previous Year Questions</h4>
-                  <p className="cd-res-desc">Solve previous year placement papers and track your progress.</p>
-                </div>
-                <span className="cd-res-arrow">›</span>
-              </div>
-
-              <div className="cd-resource-item">
-                <div className="cd-res-icon" style={{ background: '#fef3c7', color: '#d97706' }}>💬</div>
-                <div className="cd-res-info">
-                  <h4 className="cd-res-title">Interview Questions</h4>
-                  <p className="cd-res-desc">Commonly asked interview questions and expert answers.</p>
-                </div>
-                <span className="cd-res-arrow">›</span>
-              </div>
-
-              <div className="cd-resource-item">
-                <div className="cd-res-icon" style={{ background: '#fee2e2', color: '#ef4444' }}>▶️</div>
-                <div className="cd-res-info">
-                  <h4 className="cd-res-title">YouTube Playlists</h4>
-                  <p className="cd-res-desc">Curated YouTube playlists for {company.name} preparation.</p>
-                </div>
-                <span className="cd-res-arrow">›</span>
-              </div>
-
-              <div className="cd-resource-item">
-                <div className="cd-res-icon" style={{ background: '#f5f3ff', color: '#7c3aed' }}>⭐</div>
-                <div className="cd-res-info">
-                  <h4 className="cd-res-title">Previous & Experiences</h4>
-                  <p className="cd-res-desc">Read reviews and experiences shared by placed students.</p>
-                </div>
-                <span className="cd-res-arrow">›</span>
-              </div>
-
-            </div>
-          )}
         </div>
 
         {/* Accordion 4 */}

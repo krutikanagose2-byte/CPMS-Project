@@ -2,10 +2,6 @@ import { useState, useCallback } from "react";
 import "./Login.css";
 
 import prmitrLogo from "../assets/prmitrlogojpg.jpg";
-<<<<<<< HEAD
-=======
-import campusImg from "../assets/prmitr.jpeg";
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 
 /* ─── CAPTCHA helper ─── */
 const CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // no 0/O/1/I ambiguity
@@ -17,11 +13,7 @@ function generateCaptcha() {
   return code;
 }
 
-<<<<<<< HEAD
 export default function Login({ onBack, onLoginSuccess }) {
-=======
-export default function Login({ onBack }) {
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
   const [mode, setMode] = useState("login");
 
   /* Login fields */
@@ -33,32 +25,22 @@ export default function Login({ onBack }) {
   const [email, setEmail] = useState("");
   const [signupEnrollment, setSignupEnrollment] = useState("");
   const [signupPassword, setSignupPassword] = useState("");
-<<<<<<< HEAD
   const [showSignupPassword, setShowSignupPassword] = useState(false);
-=======
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 
   /* CAPTCHA */
   const [captchaCode, setCaptchaCode] = useState(generateCaptcha);
   const [captchaInput, setCaptchaInput] = useState("");
   const [captchaError, setCaptchaError] = useState(false);
 
-<<<<<<< HEAD
   const [showPassword, setShowPassword] = useState(false);
 
-=======
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
   const refreshCaptcha = useCallback(() => {
     setCaptchaCode(generateCaptcha());
     setCaptchaInput("");
     setCaptchaError(false);
   }, []);
 
-<<<<<<< HEAD
   const handleSubmit = async (e) => {
-=======
-  const handleSubmit = (e) => {
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
     e.preventDefault();
     if (mode === "login") {
       if (captchaInput.toUpperCase() !== captchaCode) {
@@ -66,7 +48,6 @@ export default function Login({ onBack }) {
         refreshCaptcha();
         return;
       }
-<<<<<<< HEAD
       try {
         const response = await fetch("http://localhost:5000/api/auth/login", {
           method: "POST",
@@ -75,10 +56,12 @@ export default function Login({ onBack }) {
         });
         const data = await response.json();
         if (response.ok) {
-          alert(`Login successful! Welcome ${data.user.name}`);
           if (onLoginSuccess) {
             onLoginSuccess(data.user);
           }
+          setTimeout(() => {
+            alert(`Login successful! Welcome ${data.user.name}`);
+          }, 10);
         } else {
           alert(`Login failed: ${data.message}`);
         }
@@ -102,11 +85,6 @@ export default function Login({ onBack }) {
       } catch (error) {
         alert("Error connecting to the server. Is it running?");
       }
-=======
-      alert(`Login: Enrollment ${enrollmentNo}`);
-    } else {
-      alert(`Signup: ${name}, Enrollment: ${signupEnrollment}, Email: ${email}`);
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
     }
   };
 
@@ -138,11 +116,7 @@ export default function Login({ onBack }) {
       <div className="login-container">
 
         {/* LEFT SECTION */}
-<<<<<<< HEAD
         <div className="login-left">
-=======
-        <div className="login-left" style={{ backgroundImage: `url(${campusImg})` }}>
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
           <div className="left-content">
 
             <div className="logo-row">
@@ -198,24 +172,16 @@ export default function Login({ onBack }) {
               <>
                 <label>Enrollment No.</label>
                 <input
-<<<<<<< HEAD
                   type="text"
                   placeholder="Enter Enrollment No."
                   value={enrollmentNo}
                   onChange={(e) => setEnrollmentNo(e.target.value.toUpperCase())}
                   pattern="^\d{2}[A-Z]{4}\d{4}$"
                   title="Format should be like 24BTIT2005"
-=======
-                  type="number"
-                  placeholder="Enter Enrollment No."
-                  value={enrollmentNo}
-                  onChange={(e) => setEnrollmentNo(e.target.value)}
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
                   required
                 />
 
                 <label>Password</label>
-<<<<<<< HEAD
                 <div className="password-input-container">
                   <input
                     type={showPassword ? "text" : "password"}
@@ -233,15 +199,6 @@ export default function Login({ onBack }) {
                     {showPassword ? "👁️‍🗨️" : "👁️"}
                   </button>
                 </div>
-=======
-                <input
-                  type="password"
-                  placeholder="Enter Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
 
                 <div className="remember-row">
                   <label className="remember">
@@ -298,19 +255,12 @@ export default function Login({ onBack }) {
 
                 <label>Enrollment No.</label>
                 <input
-<<<<<<< HEAD
                   type="text"
                   placeholder="Enter Enrollment No."
                   value={signupEnrollment}
                   onChange={(e) => setSignupEnrollment(e.target.value.toUpperCase())}
                   pattern="^\d{2}[A-Z]{4}\d{4}$"
                   title="Format should be like 24BTIT2005"
-=======
-                  type="number"
-                  placeholder="Enter Enrollment No."
-                  value={signupEnrollment}
-                  onChange={(e) => setSignupEnrollment(e.target.value)}
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
                   required
                 />
 
@@ -324,7 +274,6 @@ export default function Login({ onBack }) {
                 />
 
                 <label>Password</label>
-<<<<<<< HEAD
                 <div className="password-input-container">
                   <input
                     type={showSignupPassword ? "text" : "password"}
@@ -342,15 +291,6 @@ export default function Login({ onBack }) {
                     {showSignupPassword ? "👁️‍🗨️" : "👁️"}
                   </button>
                 </div>
-=======
-                <input
-                  type="password"
-                  placeholder="Enter Password"
-                  value={signupPassword}
-                  onChange={(e) => setSignupPassword(e.target.value)}
-                  required
-                />
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
               </>
             )}
 

@@ -84,14 +84,12 @@ exports.login = async (req, res) => {
             return res.status(400).json({ message: "Invalid enrollment number or password" });
         }
 
+        const userObj = user.toObject();
+        delete userObj.password;
+
         return res.status(200).json({
             message: "Login successful",
-            user: {
-                id: user._id,
-                name: user.name,
-                email: user.email,
-                enrollmentNo: user.enrollmentNo
-            }
+            user: userObj
         });
 
     } catch (error) {

@@ -3,11 +3,7 @@ import './Header.css';
 import prmitrLogo from '../assets/prmitrlogojpg.jpg';
 import Navbar from './Navbar';
 
-<<<<<<< HEAD
-export default function Header({ onOpenLogin, onOpenCompanies, onOpenPlacements, onOpenNoticeBoard }) {
-=======
-export default function Header({ onOpenLogin, onOpenCompanies, onOpenPlacements }) {
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
+export default function Header({ user, onOpenProfile, onOpenLogin, onOpenCompanies, onOpenPlacements, onOpenNoticeBoard }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
@@ -23,14 +19,13 @@ export default function Header({ onOpenLogin, onOpenCompanies, onOpenPlacements 
     <header className="hero">
       <Navbar
         activePage="home"
+        user={user}
+        onOpenProfile={onOpenProfile}
         onOpenLogin={onOpenLogin}
         onOpenHome={() => window.history.pushState({}, '', '/Home')}
         onOpenCompanies={onOpenCompanies}
         onOpenPlacements={onOpenPlacements}
-<<<<<<< HEAD
         onOpenNoticeBoard={onOpenNoticeBoard}
-=======
->>>>>>> c64ada1de75afc67d5344d7afacaffa7dd74b777
       />
 
       {/* Hero Banner Body */}
@@ -43,8 +38,8 @@ export default function Header({ onOpenLogin, onOpenCompanies, onOpenPlacements 
             Bridging Talent with Opportunities.<br />Building Successful Careers.
           </p>
           <div className="hero-actions">
-            <button className="btn primary">Explore Companies &rarr;</button>
-            <button className="btn ghost">View Placements &rarr;</button>
+            <button className="btn primary" onClick={(e) => handleNavClick(e, '/companies', onOpenCompanies)}>Explore Companies &rarr;</button>
+            <button className="btn ghost" onClick={(e) => handleNavClick(e, '/placements', onOpenPlacements)}>View Placements &rarr;</button>
           </div>
         </div>
       </div>
