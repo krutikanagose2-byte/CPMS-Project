@@ -77,7 +77,7 @@ export default function App() {
         user={user}
         onOpenProfile={() => setPage('student-dashboard')}
         company={selectedCompany} 
-        onBack={() => setPage('companies')} 
+        onBack={() => setPage('company-offers')} 
       />
     );
   }
