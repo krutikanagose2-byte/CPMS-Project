@@ -2,128 +2,128 @@ import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
 
-const GameBasedAptitude = () => {
+const Cryptarithmetic = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
 
   const topics = [
   {
     "id": 1,
-    "title": "Number Games",
-    "questions": 4,
+    "title": "Alphabet-to-Number Coding",
+    "questions": 2,
     "color": "blue"
   },
   {
     "id": 2,
-    "title": "Memory Games",
-    "questions": 4,
+    "title": "Number-to-Letter Coding",
+    "questions": 2,
     "color": "green"
   },
   {
     "id": 3,
-    "title": "Pattern Recognition",
-    "questions": 4,
+    "title": "Letter Value Problems",
+    "questions": 2,
     "color": "purple"
   },
   {
     "id": 4,
-    "title": "Logical Puzzle Games",
-    "questions": 4,
+    "title": "Simple Addition Cryptarithms",
+    "questions": 2,
     "color": "red"
   },
   {
     "id": 5,
-    "title": "Sequence & Series Games",
-    "questions": 4,
+    "title": "Subtraction Cryptarithms",
+    "questions": 2,
     "color": "orange"
   },
   {
     "id": 6,
-    "title": "Spatial Reasoning Games",
-    "questions": 4,
+    "title": "Multiplication Cryptarithms",
+    "questions": 2,
     "color": "yellow"
   },
   {
     "id": 7,
-    "title": "Decision-Making Games",
-    "questions": 4,
+    "title": "Division Cryptarithms",
+    "questions": 2,
     "color": "blue"
   },
   {
     "id": 8,
-    "title": "Strategy Games",
-    "questions": 4,
+    "title": "Carry-Based Problems",
+    "questions": 2,
     "color": "green"
   },
   {
     "id": 9,
-    "title": "Probability Games",
-    "questions": 4,
+    "title": "Missing Digit Problems",
+    "questions": 2,
     "color": "purple"
   },
   {
     "id": 10,
-    "title": "Grid-Based Games",
-    "questions": 4,
+    "title": "Unique Digit Assignment",
+    "questions": 2,
     "color": "red"
   },
   {
     "id": 11,
-    "title": "Matching & Grouping Games",
-    "questions": 4,
+    "title": "Alphametic Puzzles",
+    "questions": 2,
     "color": "orange"
   },
   {
     "id": 12,
-    "title": "Scheduling Games",
-    "questions": 4,
+    "title": "Word Addition",
+    "questions": 2,
     "color": "yellow"
   },
   {
     "id": 13,
-    "title": "Optimization Games",
-    "questions": 4,
+    "title": "Word Subtraction",
+    "questions": 2,
     "color": "blue"
   },
   {
     "id": 14,
-    "title": "Reaction & Attention Games",
-    "questions": 4,
+    "title": "Word Multiplication",
+    "questions": 2,
     "color": "green"
   },
   {
     "id": 15,
-    "title": "Mathematical Games",
-    "questions": 4,
+    "title": "Word Division",
+    "questions": 2,
     "color": "purple"
   },
   {
     "id": 16,
-    "title": "Visual Pattern Games",
-    "questions": 4,
+    "title": "Base-10 Cryptarithms",
+    "questions": 2,
     "color": "red"
   },
   {
     "id": 17,
-    "title": "Resource Management Games",
-    "questions": 4,
+    "title": "Constraint-Based Cryptarithms",
+    "questions": 2,
     "color": "orange"
   },
   {
     "id": 18,
-    "title": "Path-Finding Games",
-    "questions": 4,
+    "title": "Repeated Letter Problems",
+    "questions": 2,
     "color": "yellow"
   },
   {
     "id": 19,
-    "title": "Ranking & Ordering Games",
-    "questions": 4,
+    "title": "Leading-Digit Restrictions",
+    "questions": 2,
     "color": "blue"
   },
   {
     "id": 20,
-    "title": "Rules-Based Logic Games",
-    "questions": 4,
+    "title": "Multi-Word Cryptarithms",
+    "questions": 2,
     "color": "green"
   }
 ];
@@ -159,7 +159,7 @@ const GameBasedAptitude = () => {
             <img src="/pyq/custom_cover.png" alt="PYQ 1" className="pyq-image" />
           </div>
           <div className="pyq-info">
-            <h4 className="pyq-name">Game Based Aptitude PYQ 1</h4>
+            <h4 className="pyq-name">Cryptarithmetic PYQ 1</h4>
           </div>
         </a>
         <a href="/pyq/pyq2.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
@@ -167,7 +167,7 @@ const GameBasedAptitude = () => {
             <img src="/pyq/custom_cover.png" alt="PYQ 2" className="pyq-image" />
           </div>
           <div className="pyq-info">
-            <h4 className="pyq-name">Game Based Aptitude PYQ 2</h4>
+            <h4 className="pyq-name">Cryptarithmetic PYQ 2</h4>
           </div>
         </a>
         <a href="/pyq/pyq3.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
@@ -175,7 +175,7 @@ const GameBasedAptitude = () => {
             <img src="/pyq/custom_cover.png" alt="PYQ 3" className="pyq-image" />
           </div>
           <div className="pyq-info">
-            <h4 className="pyq-name">Game Based Aptitude PYQ 3</h4>
+            <h4 className="pyq-name">Cryptarithmetic PYQ 3</h4>
           </div>
         </a>
       </div>
@@ -185,13 +185,13 @@ const GameBasedAptitude = () => {
   return (
     <TopicsGrid 
       topics={topics}
-      bannerTitle="Ready to Test Your Game Based Aptitude?"
+      bannerTitle="Ready to Test Your Cryptarithmetic?"
       bannerSubtitle="Take a full length test and analyze your performance."
-      bannerButtonText="Take an Online Game Based Aptitude Test Now!"
+      bannerButtonText="Take an Online Cryptarithmetic Test Now!"
       onTopicClick={handleTopicClick}
       headerContent={pyqHeaderContent}
     />
   );
 };
 
-export default GameBasedAptitude;
+export default Cryptarithmetic;

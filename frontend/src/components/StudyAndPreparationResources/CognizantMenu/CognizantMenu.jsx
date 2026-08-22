@@ -69,7 +69,7 @@ const CognizantMenu = ({ company, onBack }) => {
             <span className="csr-menu-icon">🧩</span>
             {company.name} Pattern
           </div>
-          
+
           <div
             className={`csr-menu-item ${activeMenu === 'Syllabus' ? 'active' : ''}`}
             onClick={() => {
@@ -79,8 +79,8 @@ const CognizantMenu = ({ company, onBack }) => {
           >
             <span className="csr-menu-icon">📋</span>
             {company.name} Syllabus
-            <span 
-              className="csr-dropdown-arrow" 
+            <span
+              className="csr-dropdown-arrow"
               style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', transform: isSyllabusExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', padding: '0 4px' }}
             >
               <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
@@ -116,7 +116,7 @@ const CognizantMenu = ({ company, onBack }) => {
             {['Pattern', 'Syllabus'].map(tab => {
               const isActive = (activeMenu === 'Pattern' && tab === 'Pattern') ||
                 (activeMenu !== 'Pattern' && tab === 'Syllabus');
-              
+
               return (
                 <button
                   key={tab}

@@ -2,129 +2,159 @@ import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
 
-const GameBasedAptitude = () => {
+const DataInterpretation = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
 
   const topics = [
   {
     "id": 1,
-    "title": "Number Games",
+    "title": "Table DI",
     "questions": 4,
     "color": "blue"
   },
   {
     "id": 2,
-    "title": "Memory Games",
+    "title": "Bar Graph",
     "questions": 4,
     "color": "green"
   },
   {
     "id": 3,
-    "title": "Pattern Recognition",
+    "title": "Line Graph",
     "questions": 4,
     "color": "purple"
   },
   {
     "id": 4,
-    "title": "Logical Puzzle Games",
+    "title": "Pie Chart",
     "questions": 4,
     "color": "red"
   },
   {
     "id": 5,
-    "title": "Sequence & Series Games",
+    "title": "Histogram",
     "questions": 4,
     "color": "orange"
   },
   {
     "id": 6,
-    "title": "Spatial Reasoning Games",
+    "title": "Caselet DI",
     "questions": 4,
     "color": "yellow"
   },
   {
     "id": 7,
-    "title": "Decision-Making Games",
+    "title": "Mixed Graph DI",
     "questions": 4,
     "color": "blue"
   },
   {
     "id": 8,
-    "title": "Strategy Games",
+    "title": "Tabular Data",
     "questions": 4,
     "color": "green"
   },
   {
     "id": 9,
-    "title": "Probability Games",
+    "title": "Percentage-Based DI",
     "questions": 4,
     "color": "purple"
   },
   {
     "id": 10,
-    "title": "Grid-Based Games",
+    "title": "Ratio-Based DI",
     "questions": 4,
     "color": "red"
   },
   {
     "id": 11,
-    "title": "Matching & Grouping Games",
+    "title": "Average-Based DI",
     "questions": 4,
     "color": "orange"
   },
   {
     "id": 12,
-    "title": "Scheduling Games",
+    "title": "Profit & Loss DI",
     "questions": 4,
     "color": "yellow"
   },
   {
     "id": 13,
-    "title": "Optimization Games",
+    "title": "Time & Work DI",
     "questions": 4,
     "color": "blue"
   },
   {
     "id": 14,
-    "title": "Reaction & Attention Games",
+    "title": "Time, Speed & Distance DI",
     "questions": 4,
     "color": "green"
   },
   {
     "id": 15,
-    "title": "Mathematical Games",
+    "title": "Population DI",
     "questions": 4,
     "color": "purple"
   },
   {
     "id": 16,
-    "title": "Visual Pattern Games",
-    "questions": 4,
+    "title": "Sales & Revenue DI",
+    "questions": 3,
     "color": "red"
   },
   {
     "id": 17,
-    "title": "Resource Management Games",
-    "questions": 4,
+    "title": "Production DI",
+    "questions": 3,
     "color": "orange"
   },
   {
     "id": 18,
-    "title": "Path-Finding Games",
-    "questions": 4,
+    "title": "Growth & Decline DI",
+    "questions": 3,
     "color": "yellow"
   },
   {
     "id": 19,
-    "title": "Ranking & Ordering Games",
-    "questions": 4,
+    "title": "Missing Data DI",
+    "questions": 3,
     "color": "blue"
   },
   {
     "id": 20,
-    "title": "Rules-Based Logic Games",
-    "questions": 4,
+    "title": "Data Sufficiency",
+    "questions": 3,
     "color": "green"
+  },
+  {
+    "id": 21,
+    "title": "Comparison-Based DI",
+    "questions": 3,
+    "color": "purple"
+  },
+  {
+    "id": 22,
+    "title": "Combination of Tables & Graphs",
+    "questions": 3,
+    "color": "red"
+  },
+  {
+    "id": 23,
+    "title": "Quantitative Data Analysis",
+    "questions": 3,
+    "color": "orange"
+  },
+  {
+    "id": 24,
+    "title": "Approximation-Based DI",
+    "questions": 3,
+    "color": "yellow"
+  },
+  {
+    "id": 25,
+    "title": "Data-Based Percentage Change",
+    "questions": 3,
+    "color": "blue"
   }
 ];
 
@@ -159,7 +189,7 @@ const GameBasedAptitude = () => {
             <img src="/pyq/custom_cover.png" alt="PYQ 1" className="pyq-image" />
           </div>
           <div className="pyq-info">
-            <h4 className="pyq-name">Game Based Aptitude PYQ 1</h4>
+            <h4 className="pyq-name">Data Interpretation PYQ 1</h4>
           </div>
         </a>
         <a href="/pyq/pyq2.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
@@ -167,7 +197,7 @@ const GameBasedAptitude = () => {
             <img src="/pyq/custom_cover.png" alt="PYQ 2" className="pyq-image" />
           </div>
           <div className="pyq-info">
-            <h4 className="pyq-name">Game Based Aptitude PYQ 2</h4>
+            <h4 className="pyq-name">Data Interpretation PYQ 2</h4>
           </div>
         </a>
         <a href="/pyq/pyq3.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
@@ -175,7 +205,7 @@ const GameBasedAptitude = () => {
             <img src="/pyq/custom_cover.png" alt="PYQ 3" className="pyq-image" />
           </div>
           <div className="pyq-info">
-            <h4 className="pyq-name">Game Based Aptitude PYQ 3</h4>
+            <h4 className="pyq-name">Data Interpretation PYQ 3</h4>
           </div>
         </a>
       </div>
@@ -185,13 +215,13 @@ const GameBasedAptitude = () => {
   return (
     <TopicsGrid 
       topics={topics}
-      bannerTitle="Ready to Test Your Game Based Aptitude?"
+      bannerTitle="Ready to Test Your Data Interpretation?"
       bannerSubtitle="Take a full length test and analyze your performance."
-      bannerButtonText="Take an Online Game Based Aptitude Test Now!"
+      bannerButtonText="Take an Online Data Interpretation Test Now!"
       onTopicClick={handleTopicClick}
       headerContent={pyqHeaderContent}
     />
   );
 };
 
-export default GameBasedAptitude;
+export default DataInterpretation;

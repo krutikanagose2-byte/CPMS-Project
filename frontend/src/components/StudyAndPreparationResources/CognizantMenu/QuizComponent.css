@@ -89,6 +89,7 @@
   color: #1e293b;
   margin-bottom: 20px;
   line-height: 1.5;
+  white-space: pre-wrap;
 }
 
 .csr-options-list {
@@ -197,6 +198,7 @@
   font-size: 14px;
   color: #334155;
   line-height: 1.5;
+  white-space: pre-wrap;
 }
 
 @keyframes fadeIn {
