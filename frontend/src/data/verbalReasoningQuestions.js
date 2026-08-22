@@ -1,37 +1,262 @@
 export const verbalReasoningQuestions = [
-  // Easy
-  { id: 1, text: "All roses are flowers. Which statement is definitely true?", options: ["All flowers are roses", "Some roses are flowers", "No rose is a flower", "All flowers are red"], answer: 1, explanation: "Roses belong to flowers.", difficulty: "Easy" },
-  { id: 2, text: "All students are learners. Ravi is a student. Ravi is a:", options: ["Teacher", "Learner", "Doctor", "Worker"], answer: 1, explanation: "Since all students are learners and Ravi is a student, Ravi is a learner.", difficulty: "Easy" },
-  { id: 3, text: "If today is Monday, tomorrow is:", options: ["Sunday", "Tuesday", "Wednesday", "Friday"], answer: 1, explanation: "The day after Monday is Tuesday.", difficulty: "Easy" },
-  { id: 4, text: "A is taller than B. B is taller than C. Who is shortest?", options: ["A", "B", "C", "Cannot say"], answer: 2, explanation: "A > B > C. Therefore, C is the shortest.", difficulty: "Easy" },
-  { id: 5, text: "If all cats are animals, then a cat is:", options: ["Plant", "Animal", "Bird", "Insect"], answer: 1, explanation: "A cat is an animal.", difficulty: "Easy" },
-  { id: 6, text: "Ravi is older than Amit. Amit is older than Raj. Who is youngest?", options: ["Ravi", "Amit", "Raj", "Cannot say"], answer: 2, explanation: "Ravi > Amit > Raj. Therefore, Raj is the youngest.", difficulty: "Easy" },
-  { id: 7, text: "If BOOK is related to READING, then FOOD is related to:", options: ["Eating", "Sleeping", "Walking", "Writing"], answer: 0, explanation: "A book is used for reading, food is used for eating.", difficulty: "Easy" },
-  { id: 8, text: "All pens are stationery. A blue pen is:", options: ["Stationery", "Furniture", "Food", "Clothing"], answer: 0, explanation: "A blue pen is a pen, so it is stationery.", difficulty: "Easy" },
-  { id: 9, text: "If A > B and B > C, then:", options: ["A < C", "A = C", "A > C", "B > A"], answer: 2, explanation: "Transitive property: If A > B and B > C, then A > C.", difficulty: "Easy" },
-  { id: 10, text: "If January comes before February, February comes:", options: ["Before January", "After January", "Before December", "Same time"], answer: 1, explanation: "February comes after January.", difficulty: "Easy" },
-
-  // Medium
-  { id: 11, text: "Some doctors are writers. All writers are readers. Which follows?", options: ["Some doctors are readers", "All doctors are readers", "No doctor is a reader", "All readers are doctors"], answer: 0, explanation: "Those doctors who are writers must also be readers.", difficulty: "Medium" },
-  { id: 12, text: "All engineers are graduates. Some graduates are managers. Which is definitely true?", options: ["All managers are engineers", "All engineers are graduates", "Some managers are engineers", "No engineer is manager"], answer: 1, explanation: "This is restating a given premise.", difficulty: "Medium" },
-  { id: 13, text: "No birds are mammals. All sparrows are birds. Therefore:", options: ["Sparrows are mammals", "Sparrows are not mammals", "All mammals are sparrows", "Cannot say"], answer: 1, explanation: "Since sparrows are birds and birds are not mammals, sparrows are not mammals.", difficulty: "Medium" },
-  { id: 14, text: "Some books are expensive. All expensive things are valuable. Therefore:", options: ["Some books are valuable", "All books are valuable", "No books are valuable", "All valuable things are books"], answer: 0, explanation: "The expensive books are valuable.", difficulty: "Medium" },
-  { id: 15, text: "All managers are employees. Some employees are graduates. Which is certain?", options: ["All graduates are managers", "All managers are employees", "Some managers are graduates", "No employee is manager"], answer: 1, explanation: "Restates the premise.", difficulty: "Medium" },
-  { id: 16, text: "If P is greater than Q, and Q is greater than R, then P is:", options: ["Less than R", "Equal to R", "Greater than R", "Equal to Q"], answer: 2, explanation: "Transitivity: P > Q > R means P > R.", difficulty: "Medium" },
-  { id: 17, text: "A is before B. C is after B. Who comes first?", options: ["A", "B", "C", "Cannot determine"], answer: 0, explanation: "A comes before B, and B comes before C. Order: A, B, C.", difficulty: "Medium" },
-  { id: 18, text: "All laptops are computers. Some computers are expensive. Which is valid?", options: ["All laptops are expensive", "Some laptops may be expensive", "No laptop is expensive", "All expensive things are laptops"], answer: 1, explanation: "It's a possibility, but not a certainty. Valid as a 'may be' statement.", difficulty: "Medium" },
-  { id: 19, text: "If no teachers are students and Ravi is a teacher, Ravi cannot be:", options: ["Teacher", "Student", "Employee", "Graduate"], answer: 1, explanation: "Ravi is a teacher, so he cannot be a student.", difficulty: "Medium" },
-  { id: 20, text: "All fruits contain nutrients. Apple is a fruit. Therefore apple:", options: ["Contains nutrients", "Is a vegetable", "Contains no nutrients", "Is a grain"], answer: 0, explanation: "Apples belong to the category of fruits.", difficulty: "Medium" },
-
-  // Hard
-  { id: 21, text: "All A are B. No B is C. Some D are A. Which conclusion follows?", options: ["Some D are B", "Some D are C", "All D are C", "No D is B"], answer: 0, explanation: "Since some D are A and all A are B, some D are B.", difficulty: "Hard" },
-  { id: 22, text: "Some programmers are designers. All designers are creative. Therefore:", options: ["Some programmers are creative", "All programmers are creative", "No programmer is creative", "All creative people are programmers"], answer: 0, explanation: "The programmers who are designers must be creative.", difficulty: "Hard" },
-  { id: 23, text: "No X is Y. Some Z are X. Therefore:", options: ["Some Z are not Y", "All Z are Y", "Some Z are Y", "All Y are X"], answer: 0, explanation: "The Z that are X cannot be Y.", difficulty: "Hard" },
-  { id: 24, text: "All A are B. All B are C. Some C are D. Which must be true?", options: ["All A are C", "All C are A", "Some A are D", "No A is D"], answer: 0, explanation: "Transitive subset relationship: A is in B, B is in C, so A is in C.", difficulty: "Hard" },
-  { id: 25, text: "Some teachers are writers. No writer is a doctor. Which follows?", options: ["Some teachers are not doctors", "All teachers are doctors", "Some doctors are writers", "All writers are teachers"], answer: 0, explanation: "The teachers who are writers cannot be doctors.", difficulty: "Hard" },
-  { id: 26, text: "All managers are leaders. No leader is careless. Therefore:", options: ["No manager is careless", "All careless people are managers", "Some managers are careless", "All leaders are managers"], answer: 0, explanation: "Managers are a subset of leaders, and leaders do not intersect with careless.", difficulty: "Hard" },
-  { id: 27, text: "Some A are B. All B are C. No C is D. Therefore:", options: ["Some A are not D", "All A are D", "Some A are D", "All D are A"], answer: 0, explanation: "The A that are B are also C, and cannot be D.", difficulty: "Hard" },
-  { id: 28, text: "All scientists are educated. Some educated people are artists. Which conclusion is valid?", options: ["Some scientists are artists", "All scientists are educated", "All artists are scientists", "No scientist is artist"], answer: 1, explanation: "Restates the premise.", difficulty: "Hard" },
-  { id: 29, text: "No engineers are poets. Some writers are engineers. Therefore:", options: ["Some writers are not poets", "All writers are poets", "Some poets are engineers", "All poets are writers"], answer: 0, explanation: "The writers who are engineers cannot be poets.", difficulty: "Hard" },
-  { id: 30, text: "All A are B, some B are C, and no C is D. Which statement is definitely true?", options: ["All A are B", "Some A are C", "Some A are D", "All C are A"], answer: 0, explanation: "Restates the premise.", difficulty: "Hard" }
+  {
+    "id": 1,
+    "text": "Statement & Conclusion\n\nQ1. Statement: All students in the class have identity cards. Rahul is a student in the class.\n\nConclusion: Rahul has an identity card.",
+    "options": [
+      "Definitely follows",
+      "Definitely does not follow",
+      "Cannot say",
+      "None"
+    ],
+    "answer": 0,
+    "explanation": "Correct Answer is A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 2,
+    "text": "Statement & Conclusion\n\nQ2. Statement: All programmers know programming. Amit is a programmer.\n\nConclusion: Amit knows programming.",
+    "options": [
+      "Follows",
+      "Does not follow",
+      "Cannot say",
+      "None"
+    ],
+    "answer": 0,
+    "explanation": "Correct Answer is A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 3,
+    "text": "Statement & Conclusion\n\nQ3. Statement: Some employees work remotely.\n\nConclusion: All employees work remotely.",
+    "options": [
+      "Follows",
+      "Does not follow",
+      "Both",
+      "Cannot say"
+    ],
+    "answer": 1,
+    "explanation": "Correct Answer is B",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 4,
+    "text": "Statement & Conclusion\n\nQ4. Statement: No cats are dogs. Tommy is a cat.\n\nConclusion: Tommy is not a dog.",
+    "options": [
+      "Follows",
+      "Does not follow",
+      "Cannot say",
+      "None"
+    ],
+    "answer": 0,
+    "explanation": "Correct Answer is A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 5,
+    "text": "Statement & Conclusion\n\nQ5. Statement: All flowers need water. Roses are flowers.\n\nConclusion: Roses need water.\n\nStatement & Assumption",
+    "options": [
+      "Follows",
+      "Does not follow",
+      "Cannot say",
+      "None"
+    ],
+    "answer": 0,
+    "explanation": "Correct Answer is A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 6,
+    "text": "Statement & Conclusion\n\nQ6. Statement: \"Use this app to save time.\"\n\nAssumption:",
+    "options": [
+      "The app can help save time",
+      "Nobody uses apps",
+      "Time is not important",
+      "Apps are expensive"
+    ],
+    "answer": 0,
+    "explanation": "Correct Answer is A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 7,
+    "text": "Statement & Conclusion\n\nQ7. Statement: \"Wear a helmet while riding a motorcycle.\"\n\nAssumption:",
+    "options": [
+      "Helmets can improve safety",
+      "Motorcycles are slow",
+      "Roads are empty",
+      "Helmets are unnecessary"
+    ],
+    "answer": 0,
+    "explanation": "Correct Answer is A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 8,
+    "text": "Statement & Conclusion\n\nQ8. Statement: \"Join our course to improve your programming skills.\"\n\nAssumption:",
+    "options": [
+      "The course can help improve programming skills",
+      "Programming is useless",
+      "Nobody wants to learn programming",
+      "Courses are always free"
+    ],
+    "answer": 0,
+    "explanation": "Correct Answer is A",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 9,
+    "text": "Statement & Conclusion\n\nQ9. Statement: \"Carry an umbrella because it may rain.\"\n\nAssumption:",
+    "options": [
+      "Rain is possible",
+      "It will never rain",
+      "Umbrellas are harmful",
+      "It is always sunny"
+    ],
+    "answer": 0,
+    "explanation": "Correct Answer is A",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 10,
+    "text": "Statement & Conclusion\n\nQ10. Statement: \"Study regularly to score better marks.\"\n\nAssumption:\n\nCause & Effect",
+    "options": [
+      "Regular study can help improve performance",
+      "Studying has no benefit",
+      "Marks do not matter",
+      "Exams are cancelled"
+    ],
+    "answer": 0,
+    "explanation": "Correct Answer is A",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 11,
+    "text": "Statement & Conclusion\n\nQ11. Heavy rain caused flooding in the city. What is the cause?",
+    "options": [
+      "Flooding",
+      "Heavy rain",
+      "City",
+      "Roads"
+    ],
+    "answer": 1,
+    "explanation": "Correct Answer is B",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 12,
+    "text": "Statement & Conclusion\n\nQ12. The student studied hard and scored high marks. What is the effect?",
+    "options": [
+      "Studying",
+      "Student",
+      "High marks",
+      "Examination"
+    ],
+    "answer": 2,
+    "explanation": "Correct Answer is C",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 13,
+    "text": "Statement & Conclusion\n\nQ13. The computer overheated because the cooling fan stopped. What is the cause?",
+    "options": [
+      "Computer",
+      "Overheating",
+      "Cooling fan stopped",
+      "Electricity"
+    ],
+    "answer": 2,
+    "explanation": "Correct Answer is C",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 14,
+    "text": "Statement & Conclusion\n\nQ14. The company trained employees, resulting in improved productivity. What is the effect?",
+    "options": [
+      "Training",
+      "Employees",
+      "Improved productivity",
+      "Company"
+    ],
+    "answer": 2,
+    "explanation": "Correct Answer is C",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 15,
+    "text": "Statement & Conclusion\n\nQ15. The road was blocked due to an accident. What caused the blockage?\n\nCourse of Action",
+    "options": [
+      "Road",
+      "Accident",
+      "Traffic",
+      "Weather"
+    ],
+    "answer": 1,
+    "explanation": "Correct Answer is B",
+    "difficulty": "Hard"
+  },
+  {
+    "id": 16,
+    "text": "Statement & Conclusion\n\nQ16. Problem: Many students are unable to understand programming.\n\nWhat should be done?",
+    "options": [
+      "Stop teaching programming",
+      "Provide additional programming practice",
+      "Cancel exams",
+      "Remove computers"
+    ],
+    "answer": 1,
+    "explanation": "Correct Answer is B",
+    "difficulty": "Hard"
+  },
+  {
+    "id": 17,
+    "text": "Statement & Conclusion\n\nQ17. Problem: Employees are frequently arriving late.\n\nBest action:",
+    "options": [
+      "Ignore the issue",
+      "Introduce attendance monitoring and discuss the problem",
+      "Close the company",
+      "Fire everyone immediately"
+    ],
+    "answer": 1,
+    "explanation": "Correct Answer is B",
+    "difficulty": "Hard"
+  },
+  {
+    "id": 18,
+    "text": "Statement & Conclusion\n\nQ18. Problem: A website is frequently crashing.\n\nBest action:",
+    "options": [
+      "Ignore it",
+      "Identify and fix the technical problem",
+      "Delete the website",
+      "Stop using the internet"
+    ],
+    "answer": 1,
+    "explanation": "Correct Answer is B",
+    "difficulty": "Hard"
+  },
+  {
+    "id": 19,
+    "text": "Statement & Conclusion\n\nQ19. Problem: Students are not submitting assignments on time.\n\nBest action:",
+    "options": [
+      "Set clear deadlines and reminders",
+      "Stop giving assignments",
+      "Ignore everyone",
+      "Cancel the course"
+    ],
+    "answer": 0,
+    "explanation": "Correct Answer is A",
+    "difficulty": "Hard"
+  },
+  {
+    "id": 20,
+    "text": "Statement & Conclusion\n\nQ20. Problem: A team is unable to complete a project because of poor communication.\n\nBest action:",
+    "options": [
+      "Improve communication and conduct regular team meetings",
+      "Stop the project",
+      "Remove all team members",
+      "Avoid meetings completely"
+    ],
+    "answer": 0,
+    "explanation": "Correct Answer is A",
+    "difficulty": "Hard"
+  }
 ];

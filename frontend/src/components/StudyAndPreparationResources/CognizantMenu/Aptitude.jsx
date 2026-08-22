@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import LogicalReasoning from './LogicalReasoning';
 import QuantitativeAptitude from './QuantitativeAptitude';
+import VerbalAbility from './VerbalAbility';
 
 const aptitudeTopics = [
   { id: 1, title: 'Quantitative Aptitude', questions: 150, color: '#e0f2fe', iconColor: '#0ea5e9' },
@@ -31,6 +32,15 @@ const Aptitude = ({ company }) => {
       <div style={{ padding: '20px' }}>
          <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Aptitude</button>
          <QuantitativeAptitude />
+      </div>
+    );
+  }
+
+  if (selectedTopic === 'Verbal') {
+    return (
+      <div style={{ padding: '20px' }}>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Aptitude</button>
+         <VerbalAbility />
       </div>
     );
   }
