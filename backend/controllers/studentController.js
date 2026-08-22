@@ -18,11 +18,11 @@ exports.getProfile = async (req, res) => {
 
 exports.updateProfile = async (req, res) => {
     try {
-        const { branch, cgpa, tenthPercentage, twelfthPercentage, diplomaPercentage, backlogCount, graduationYear, skills, resumeUrl } = req.body;
+        const { branch, cgpa, tenthPercentage, twelfthPercentage, diplomaPercentage, backlogCount, graduationYear, skills, resumeUrl, dob, gender, address, linkedin, github, photoUrl, signatureUrl, academics, myDocuments } = req.body;
         
         const user = await User.findByIdAndUpdate(
             req.params.id,
-            { branch, cgpa, tenthPercentage, twelfthPercentage, diplomaPercentage, backlogCount, graduationYear, skills, resumeUrl },
+            { branch, cgpa, tenthPercentage, twelfthPercentage, diplomaPercentage, backlogCount, graduationYear, skills, resumeUrl, dob, gender, address, linkedin, github, photoUrl, signatureUrl, academics, myDocuments },
             { new: true, runValidators: true }
         ).select("-password");
 

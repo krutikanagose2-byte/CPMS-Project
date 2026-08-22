@@ -56,10 +56,12 @@ export default function Login({ onBack, onLoginSuccess }) {
         });
         const data = await response.json();
         if (response.ok) {
-          alert(`Login successful! Welcome ${data.user.name}`);
           if (onLoginSuccess) {
             onLoginSuccess(data.user);
           }
+          setTimeout(() => {
+            alert(`Login successful! Welcome ${data.user.name}`);
+          }, 10);
         } else {
           alert(`Login failed: ${data.message}`);
         }

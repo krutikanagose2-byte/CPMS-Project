@@ -7,6 +7,7 @@ import StudentApplications from './StudentApplications';
 import StudentStudyMaterials from './StudentStudyMaterials';
 import MyDocuments from './MyDocuments';
 import PlacementStatistics from './PlacementStatistics';
+import prmitrLogo from '../../assets/prmitrlogojpg.jpg';
 
 const StudentDashboard = ({ user, onLogout, onUpdateUser, onBack }) => {
     const [activeTab, setActiveTab] = useState('profile');
@@ -26,7 +27,7 @@ const StudentDashboard = ({ user, onLogout, onUpdateUser, onBack }) => {
             case 'eligibility': return <EligibilityStatus user={user} />;
             case 'applications': return <StudentApplications user={user} />;
             case 'materials': return <StudentStudyMaterials user={user} />;
-            case 'documents': return <MyDocuments user={user} />;
+            case 'documents': return <MyDocuments user={user} onUpdateUser={onUpdateUser} />;
             case 'statistics': return <PlacementStatistics user={user} />;
             default: return <StudentOverview user={user} />;
         }
@@ -38,7 +39,7 @@ const StudentDashboard = ({ user, onLogout, onUpdateUser, onBack }) => {
             <aside className={`new-sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
                 <div className="new-sidebar-header">
                     <div className="new-logo-container">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/PRMIT%26R_Logo.jpg/220px-PRMIT%26R_Logo.jpg" alt="Logo" className="college-logo" />
+                        <img src={prmitrLogo} alt="Logo" className="college-logo" />
                         {isSidebarOpen && (
                             <div className="college-text">
                                 <h3>PRMIT&R, Badnera</h3>
