@@ -103,7 +103,7 @@
 /* Top Tabs */
 .csr-tabs-wrapper {
   background-color: #eef2ff;
-  padding: 0 40px;
+  padding: 0 24px;
   border-bottom: 1px solid #e2e8f0;
 }
 
@@ -146,8 +146,8 @@
 
 /* Content Body */
 .csr-content-body {
-  padding: 32px 40px;
-  max-width: 1100px;
+  padding: 32px 24px;
+  max-width: 100%;
 }
 
 .csr-breadcrumbs {
