@@ -144,9 +144,14 @@ Amazon adheres incredibly strictly to four highly pivotal, foundational principl
 const ITEMS_PER_PAGE = 10;
 const SECTORS = ['All Sectors', 'IT & Software', 'Core Engineering', 'Consulting', 'Finance', 'Analytics', 'Telecom', 'Others'];
 
-const extraLargeLogos = ['KPMG', 'PwC', 'Bosch', 'Goldman Sachs', 'Mu Sigma', 'Fractal Analytics', 'LatentView', 'Jio', 'Amazon', 'Microsoft'];
-const largeLogos = ['Capgemini', 'HDFC Bank'];
+const superEnlargedLogos = ['Capgemini', 'Microsoft', 'Bosch', 'Goldman Sachs', 'Mu Sigma', 'Fractal Analytics', 'Jio', 'IBM', 'Amazon'];
+const doubleEnlargedLogos = ['KPMG', 'PwC', 'Siemens'];
+const extraLargeLogos = ['LatentView'];
+const largeLogos = ['HDFC Bank'];
 const smallLogos = [];
+const increaseLittleLogos = ['TCS', 'Infosys', 'Cognizant', 'SAP', 'Accenture', 'Deloitte', 'Airtel', 'Google'];
+const increaseDoubleLogos = ['Byju\'s', 'Morgan Stanley', 'Tata Motors', 'Wipro'];
+const decreaseLittleLogos = [];
 
 export default function Companies({ user, onBack, onOpenPlacements, onOpenLogin, onOpenNoticeBoard, onOpenCompanyOffers, onOpenCompanyStudy, initialCompany, onOpenPlacementsForCompany, onOpenProfile }) {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -246,10 +251,15 @@ export default function Companies({ user, onBack, onOpenPlacements, onOpenLogin,
                       src={company.logo} 
                       alt={`${company.name} logo`} 
                       className={`co-company-logo ${
+                        superEnlargedLogos.includes(company.name) ? 'super-enlarged-logo' : 
+                        doubleEnlargedLogos.includes(company.name) ? 'double-enlarged-logo' : 
                         extraLargeLogos.includes(company.name) ? 'extra-enlarged-logo' : 
                         largeLogos.includes(company.name) ? 'enlarged-logo' : 
                         smallLogos.includes(company.name) ? 'reduced-logo' : ''
-                      }`} 
+                      } ${decreaseLittleLogos.includes(company.name) ? 'decrease-little' : ''
+                      } ${increaseLittleLogos.includes(company.name) ? 'increase-little' : ''
+                      } ${increaseDoubleLogos.includes(company.name) ? 'increase-double' : ''
+                      } ${(!increaseLittleLogos.includes(company.name) && !increaseDoubleLogos.includes(company.name) && !decreaseLittleLogos.includes(company.name)) ? 'increase-thrice' : ''}`} 
                     />
                   </div>
                   <div className="co-card-body">

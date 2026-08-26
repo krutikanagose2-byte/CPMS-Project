@@ -124,6 +124,7 @@
   justify-content: center;
   padding: 1.5rem;
   background: #ffffff;
+  overflow: hidden;
 }
 
 .co-company-logo {
@@ -141,8 +142,54 @@
   transform: scale(1.6);
 }
 
+.co-company-logo.super-enlarged-logo,
+.co-company-logo.super-enlarged-logo.increase-thrice {
+  transform: scale(3.0);
+}
+
+.co-company-logo.double-enlarged-logo,
+.co-company-logo.double-enlarged-logo.increase-thrice {
+  transform: scale(2.0);
+}
+
 .co-company-logo.reduced-logo {
   transform: scale(1.1);
+}
+
+.co-company-logo.decrease-little {
+  transform: scale(0.85);
+}
+
+.co-company-logo.increase-little {
+  transform: scale(1.15);
+}
+
+.co-company-logo.extra-enlarged-logo.increase-little {
+  transform: scale(1.75);
+}
+
+.co-company-logo.increase-double {
+  transform: scale(1.3);
+}
+
+.co-company-logo.enlarged-logo.increase-double {
+  transform: scale(1.65);
+}
+
+.co-company-logo.extra-enlarged-logo.increase-double {
+  transform: scale(1.9);
+}
+
+.co-company-logo.increase-thrice {
+  transform: scale(1.45);
+}
+
+.co-company-logo.enlarged-logo.increase-thrice {
+  transform: scale(1.8);
+}
+
+.co-company-logo.extra-enlarged-logo.increase-thrice {
+  transform: scale(2.05);
 }
 
 .co-card-body {
