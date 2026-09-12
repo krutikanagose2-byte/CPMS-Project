@@ -79,26 +79,31 @@ import wiproOffice1 from '../assets/Company-img/Wipro/wipro_office_1.jpg';
 import wiproOffice2 from '../assets/Company-img/Wipro/wipro_office_2.jpg';
 import wiproOffice3 from '../assets/Company-img/Wipro/wipro_office_3.jpg';
 
-import boschOffice1 from '../assets/Company-img/All Companies/Bosch/bos1.jpg';
-import boschOffice2 from '../assets/Company-img/All Companies/Bosch/bos2.jpg';
-import boschOffice3 from '../assets/Company-img/All Companies/Bosch/bos3.jpg';
 
-import hdfcOffice1 from '../assets/Company-img/All Companies/HDFC bank/hdfc1.jpg';
-import hdfcOffice2 from '../assets/Company-img/All Companies/HDFC bank/hdfc2.jpg';
-import hdfcOffice3 from '../assets/Company-img/All Companies/HDFC bank/hdfc3.jpg';
 
-import iciciOffice1 from '../assets/Company-img/All Companies/icici bank/icici1.jpg';
-import iciciOffice2 from '../assets/Company-img/All Companies/icici bank/icici2.jpg';
-import iciciOffice3 from '../assets/Company-img/All Companies/icici bank/icici3.jpg';
 
-import gsOffice1 from '../assets/Company-img/All Companies/Goldman Sachs/gs1.jpg';
-import gsOffice2 from '../assets/Company-img/All Companies/Goldman Sachs/gs2.jpg';
-import gsOffice3 from '../assets/Company-img/All Companies/Goldman Sachs/gs3.jpg';
 
-import morganOffice1 from '../assets/Company-img/All Companies/Morgan Stanley/mg1.jpg';
-import morganOffice2 from '../assets/Company-img/All Companies/Morgan Stanley/mg2.jpg';
-import morganOffice3 from '../assets/Company-img/All Companies/Morgan Stanley/mg3.jpg';
 
+
+import boschOffice1 from '../assets/Company-img/Bosch/bos1.jpg';
+import boschOffice2 from '../assets/Company-img/Bosch/bos2.jpg';
+import boschOffice3 from '../assets/Company-img/Bosch/bos3.jpg';
+
+import hdfcOffice1 from '../assets/Company-img/HDFCBank/hdfc1.jpg';
+import hdfcOffice2 from '../assets/Company-img/HDFCBank/hdfc2.jpg';
+import hdfcOffice3 from '../assets/Company-img/HDFCBank/hdfc3.jpg';
+
+import iciciOffice1 from '../assets/Company-img/ICICIBank/icici1.jpg';
+import iciciOffice2 from '../assets/Company-img/ICICIBank/icici2.jpg';
+import iciciOffice3 from '../assets/Company-img/ICICIBank/icici3.jpg';
+
+import goldmanOffice1 from '../assets/Company-img/GoldmanSachs/gs1.jpg';
+import goldmanOffice2 from '../assets/Company-img/GoldmanSachs/gs2.jpg';
+import goldmanOffice3 from '../assets/Company-img/GoldmanSachs/gs3.jpg';
+
+import morganOffice1 from '../assets/Company-img/MorganStanley/mg1.jpg';
+import morganOffice2 from '../assets/Company-img/MorganStanley/mg2.jpg';
+import morganOffice3 from '../assets/Company-img/MorganStanley/mg3.jpg';
 
 import Navbar from './Navbar';
 
