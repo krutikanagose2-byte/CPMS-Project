@@ -8,9 +8,9 @@ import accentureLogo from '../assets/accenture.png';
 import capgeminiLogo from '../assets/capgemini.svg';
 import wiproLogo from '../assets/wipro.png';
 import cognizantLogo from '../assets/cognizant.png';
-import cognizantOffice1 from '../assets/Company-img/cognizant_office_1.jpg';
-import cognizantOffice2 from '../assets/Company-img/cognizant_office_2.jpg';
-import cognizantOffice3 from '../assets/Company-img/cognizant_office_3.jpg';
+import cognizantOffice1 from '../assets/Company-img/Cognizant/cognizant_office_1.jpeg';
+import cognizantOffice2 from '../assets/Company-img/Cognizant/cognizant_office_2.jpeg';
+import cognizantOffice3 from '../assets/Company-img/Cognizant/cognizant_office_3.jpeg';
 import microsoftLogo from '../assets/microsoft.png';
 import deloitteLogo from '../assets/Company-img/Deloitte.jpg';
 import kpmgLogo from '../assets/Company-img/kpmg.png';
@@ -39,12 +39,12 @@ import oracleLogo from '../assets/Company-img/Oracle.png';
 import accentureOffice1 from '../assets/Company-img/Accenture/accenture_office_1.png';
 import accentureOffice2 from '../assets/Company-img/Accenture/accenture_office_2.jpg';
 import accentureOffice3 from '../assets/Company-img/Accenture/accenture_office_3.jpg';
-import capgeminiOffice1 from '../assets/Company-img/Capgemini/capgemini_office_1.jpg';
+import capgeminiOffice1 from '../assets/Company-img/Capgemini/capgemini_office_1.png';
 import capgeminiOffice2 from '../assets/Company-img/Capgemini/capgemini_office_2.jpg';
-import capgeminiOffice3 from '../assets/Company-img/Capgemini/capgemini_office_3.png';
+import capgeminiOffice3 from '../assets/Company-img/Capgemini/capgemini_office_3.jpg';
 import deloitteOffice1 from '../assets/Company-img/Deloitte/deloitte_office_1.jpg';
-import deloitteOffice2 from '../assets/Company-img/Deloitte/deloitte_office_2.jpg';
-import deloitteOffice3 from '../assets/Company-img/Deloitte/deloitte_office_3.jpg';
+import deloitteOffice2 from '../assets/Company-img/Deloitte/deloitte_office_2.png';
+import deloitteOffice3 from '../assets/Company-img/Deloitte/deloitte_office_3.png';
 import googleOffice1 from '../assets/Company-img/Google/google_office_1.jpg';
 import googleOffice2 from '../assets/Company-img/Google/google_office_2.jpg';
 import googleOffice3 from '../assets/Company-img/Google/google_office_3.png';
@@ -52,11 +52,11 @@ import infosysOffice1 from '../assets/Company-img/Infosys/infosys_office_1.jpg';
 import infosysOffice2 from '../assets/Company-img/Infosys/infosys_office_2.png';
 import infosysOffice3 from '../assets/Company-img/Infosys/infosys_office_3.png';
 import kpmgOffice1 from '../assets/Company-img/KPMG/kpmg_office_1.png';
-import kpmgOffice2 from '../assets/Company-img/KPMG/kpmg_office_2.jpg';
+import kpmgOffice2 from '../assets/Company-img/KPMG/kpmg_office_2.jpeg';
 import kpmgOffice3 from '../assets/Company-img/KPMG/kpmg_office_3.jpg';
-import ltOffice1 from '../assets/Company-img/LT/lt_office_1.jpg';
-import ltOffice2 from '../assets/Company-img/LT/lt_office_2.jpg';
-import ltOffice3 from '../assets/Company-img/LT/lt_office_3.png';
+import ltOffice1 from '../assets/Company-img/L&T/lt_office_1.jpg';
+import ltOffice2 from '../assets/Company-img/L&T/lt_office_2.jpg';
+import ltOffice3 from '../assets/Company-img/L&T/lt_office_3.png';
 import microsoftOffice1 from '../assets/Company-img/Microsoft/microsoft_office_1.jpg';
 import microsoftOffice2 from '../assets/Company-img/Microsoft/microsoft_office_2.jpg';
 import microsoftOffice3 from '../assets/Company-img/Microsoft/microsoft_office_3.jpg';
@@ -73,37 +73,32 @@ import tatamotorsOffice1 from '../assets/Company-img/TataMotors/tatamotors_offic
 import tatamotorsOffice2 from '../assets/Company-img/TataMotors/tatamotors_office_2.jpg';
 import tatamotorsOffice3 from '../assets/Company-img/TataMotors/tatamotors_office_3.jpg';
 import tcsOffice1 from '../assets/Company-img/TCS/tcs_office_1.png';
-import tcsOffice2 from '../assets/Company-img/TCS/tcs_office_2.jpg';
-import tcsOffice3 from '../assets/Company-img/TCS/tcs_office_3.png';
-import wiproOffice1 from '../assets/Company-img/Wipro/wipro_office_1.jpg';
+import tcsOffice2 from '../assets/Company-img/TCS/tcs_office_2.png';
+import tcsOffice3 from '../assets/Company-img/TCS/tcs_office_3.jpg';
+import wiproOffice1 from '../assets/Company-img/Wipro/wipro_office_1.jpeg';
 import wiproOffice2 from '../assets/Company-img/Wipro/wipro_office_2.jpg';
 import wiproOffice3 from '../assets/Company-img/Wipro/wipro_office_3.jpg';
 
+import boschOffice1 from '../assets/Company-img/Bosch/bosch_office_1.jpg';
+import boschOffice2 from '../assets/Company-img/Bosch/bosch_office_2.jpg';
+import boschOffice3 from '../assets/Company-img/Bosch/bosch_office_3.jpg';
 
+import hdfcOffice1 from '../assets/Company-img/HDFCBank/hdfcbank_office_1.jpg';
+import hdfcOffice2 from '../assets/Company-img/HDFCBank/hdfcbank_office_2.jpg';
+import hdfcOffice3 from '../assets/Company-img/HDFCBank/hdfcbank_office_3.jpg';
 
+import iciciOffice1 from '../assets/Company-img/ICICIBank/icicibank_office_1.jpg';
+import iciciOffice2 from '../assets/Company-img/ICICIBank/icicibank_office_2.jpg';
+import iciciOffice3 from '../assets/Company-img/ICICIBank/icicibank_office_3.jpg';
 
+import gsOffice1 from '../assets/Company-img/GoldmanSachs/goldmansachs_office_1.jpg';
+import gsOffice2 from '../assets/Company-img/GoldmanSachs/goldmansachs_office_2.jpg';
+import gsOffice3 from '../assets/Company-img/GoldmanSachs/goldmansachs_office_3.jpg';
 
+import morganOffice1 from '../assets/Company-img/MorganStanley/morganstanley_office_1.jpg';
+import morganOffice2 from '../assets/Company-img/MorganStanley/morganstanley_office_2.jpg';
+import morganOffice3 from '../assets/Company-img/MorganStanley/morganstanley_office_3.jpg';
 
-
-import boschOffice1 from '../assets/Company-img/Bosch/bos1.jpg';
-import boschOffice2 from '../assets/Company-img/Bosch/bos2.jpg';
-import boschOffice3 from '../assets/Company-img/Bosch/bos3.jpg';
-
-import hdfcOffice1 from '../assets/Company-img/HDFCBank/hdfc1.jpg';
-import hdfcOffice2 from '../assets/Company-img/HDFCBank/hdfc2.jpg';
-import hdfcOffice3 from '../assets/Company-img/HDFCBank/hdfc3.jpg';
-
-import iciciOffice1 from '../assets/Company-img/ICICIBank/icici1.jpg';
-import iciciOffice2 from '../assets/Company-img/ICICIBank/icici2.jpg';
-import iciciOffice3 from '../assets/Company-img/ICICIBank/icici3.jpg';
-
-import goldmanOffice1 from '../assets/Company-img/GoldmanSachs/gs1.jpg';
-import goldmanOffice2 from '../assets/Company-img/GoldmanSachs/gs2.jpg';
-import goldmanOffice3 from '../assets/Company-img/GoldmanSachs/gs3.jpg';
-
-import morganOffice1 from '../assets/Company-img/MorganStanley/mg1.jpg';
-import morganOffice2 from '../assets/Company-img/MorganStanley/mg2.jpg';
-import morganOffice3 from '../assets/Company-img/MorganStanley/mg3.jpg';
 
 import Navbar from './Navbar';
 
@@ -175,7 +170,7 @@ HDFC Bank is incredibly deeply committed to maintaining the absolute highest pos
 ICICI Bank has consistently and remarkably been at the absolute forefront of rapid technological innovation within the broader banking sector, aggressively championing digital banking and highly customer-centric digital platforms. The institution heavily leverages advanced data analytics, artificial intelligence, and highly robust enterprise financial frameworks to deliver deeply personalized banking experiences and significantly streamline its complex internal operations. The bank is also incredibly deeply committed to widespread corporate social responsibility, focusing very heavily on improving primary healthcare, advancing elementary education, and fostering sustainable livelihoods through the dedicated ICICI Foundation. With a tremendously strong cultural emphasis on organizational agility, intense passion, and steadfast customer-first values, ICICI Bank remains a highly dominant, influential player.`, officeImages: [iciciOffice1, iciciOffice2, iciciOffice3] },
   { id: 19, name: 'Goldman Sachs', fullName: 'Goldman Sachs Group', category: 'finance', sector: 'Finance', location: 'New York, USA', logo: goldmanSachsLogo, website: 'https://www.goldmansachs.com', startedFrom: '1869', founder: 'Marcus Goldman', employees: '45,000+', workCulture: 'Excellence, Teamwork, Diversity', studentsPlaced: '40+ (Premium)', description: 'Goldman Sachs is a leading global investment banking, securities and investment management firm.', moreInfo: `The Goldman Sachs Group, Inc. is an incredibly leading, massively influential global investment banking, securities, and strategic investment management firm headquartered prominently in New York City. Founded back in 1869 by Marcus Goldman, the firm has painstakingly built a truly formidable, almost unparalleled reputation as one of the most highly prestigious and deeply influential financial institutions in the entire world. Goldman Sachs provides an exceedingly expansive, highly sophisticated array of complex financial services to a very substantial and incredibly diversified global client base that fundamentally includes major multinational corporations, large financial institutions, sovereign governments, and high-net-worth individuals. The firm's core global operations span high-level investment banking, global markets, asset management, and rapidly expanding consumer and wealth management.
 
-Goldman Sachs successfully and masterfully navigates incredibly complex global markets to manage vast, multi-billion-dollar portfolios and proactively provide highly strategic, high-stakes advisory services, standing firmly as a critical, load-bearing pillar in global financial markets and massive macro-economic structuring. The firm is globally renowned for its incredibly intense, unapologetically high-performance organizational culture, consistently attracting many of the absolute brightest, most driven minds in global finance and advanced quantitative analysis. In recent years, Goldman Sachs has significantly increased its strategic focus on technology and advanced engineering, internally developing highly sophisticated algorithmic trading platforms and digital financial tools. Committed strongly to sustainable finance and broad inclusive growth, the firm continually strives to firmly deliver excellence.`, officeImages: [goldmanOffice1, goldmanOffice2, goldmanOffice3] },
+Goldman Sachs successfully and masterfully navigates incredibly complex global markets to manage vast, multi-billion-dollar portfolios and proactively provide highly strategic, high-stakes advisory services, standing firmly as a critical, load-bearing pillar in global financial markets and massive macro-economic structuring. The firm is globally renowned for its incredibly intense, unapologetically high-performance organizational culture, consistently attracting many of the absolute brightest, most driven minds in global finance and advanced quantitative analysis. In recent years, Goldman Sachs has significantly increased its strategic focus on technology and advanced engineering, internally developing highly sophisticated algorithmic trading platforms and digital financial tools. Committed strongly to sustainable finance and broad inclusive growth, the firm continually strives to firmly deliver excellence.`, officeImages: [gsOffice1, gsOffice2, gsOffice3] },
   { id: 20, name: 'Morgan Stanley', fullName: 'Morgan Stanley', category: 'finance', sector: 'Finance', location: 'New York, USA', logo: morganStanleyLogo, website: 'https://www.morganstanley.com', startedFrom: '1935', founder: 'Henry Sturgis Morgan', employees: '82,000+', workCulture: 'Integrity, Community Role', studentsPlaced: '30+ (Premium)', description: 'Morgan Stanley is an American multinational investment bank and financial services company.', moreInfo: `Morgan Stanley is a massive, highly prestigious American multinational investment bank and incredibly diversified financial services company based prominently in New York City. Operating successfully in more than 41 different countries globally, the firm was originally founded in 1935 by Henry Sturgis Morgan and Harold Stanley. Morgan Stanley actively and aggressively provides a highly comprehensive, sophisticated range of critical services that explicitly include top-tier investment banking, institutional securities, massive wealth management, and strategic investment management. The firm caters directly to a wonderfully diverse, highly globalized group of clients worldwide, broadly encompassing massive corporations, sovereign governments, institutional investors, and very high-net-worth individuals, significantly helping them raise, manage, and seamlessly distribute vast capital in incredibly complex global markets.
 
 Morgan Stanley consistently, reliably mobilizes enormous sums of capital to comprehensively help its numerous clients successfully achieve their complex financial objectives, proudly standing as an absolutely critical, foundational pillar in broad global financial markets and global macro-economic structuring. The firm is incredibly deeply committed to consistently conducting first-class business in a strictly first-class way, prioritizing absolute integrity, exceptional financial performance, and a very strong, abiding sense of community responsibility. Morgan Stanley heavily leverages highly advanced technological infrastructure and incredibly deep, data-driven market insights to reliably deliver premier, world-class wealth management and institutional securities services. The firm is also a very strong, vocal advocate for highly sustainable investing and workplace diversity, continuously working to create long-term value.`, officeImages: [morganOffice1, morganOffice2, morganOffice3] },
@@ -389,3 +384,10 @@ export default function Companies({ user, onBack, onOpenPlacements, onOpenLogin,
     </div>
   );
 }
+
+
+
+
+
+
+
