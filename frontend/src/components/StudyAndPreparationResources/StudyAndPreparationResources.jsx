@@ -1,13 +1,13 @@
 import React from 'react';
 import CognizantMenu from './CognizantMenu/CognizantMenu';
 
-const StudyAndPreparationResources = ({ company, onBack, user, onOpenProfile }) => {
+const StudyAndPreparationResources = ({ company, onBack, user, onOpenProfile, onOpenAIInterview }) => {
   if (!company) return null;
 
   // Render specific company menu if it exists
   switch (company.name) {
     case 'Cognizant':
-      return <CognizantMenu company={company} onBack={onBack} user={user} onOpenProfile={onOpenProfile} />;
+      return <CognizantMenu company={company} onBack={onBack} user={user} onOpenProfile={onOpenProfile} onOpenAIInterview={onOpenAIInterview} />;
     
     // Add other companies here as you build their menus
     // case 'TCS':

@@ -1,6 +1,26 @@
 import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
+import { rulesbasedLogicGamesQuestions } from '../../../data/rulesbasedLogicGamesQuestions';
+import { rankingOrderingGamesQuestions } from '../../../data/rankingOrderingGamesQuestions';
+import { pathfindingGameQuestions } from '../../../data/pathfindingGameQuestions';
+import { numberGamesQuestions } from '../../../data/numberGamesQuestions';
+import { memoryGamesQuestions } from '../../../data/memoryGamesQuestions';
+import { patternRecognitionQuestions } from '../../../data/patternRecognitionQuestions';
+import { logicalPuzzleGamesQuestions } from '../../../data/logicalPuzzleGamesQuestions';
+import { sequenceSeriesGamesQuestions } from '../../../data/sequenceSeriesGamesQuestions';
+import { strategyGamesQuestions } from '../../../data/strategyGamesQuestions';
+import { probabilityGamesQuestions } from '../../../data/probabilityGamesQuestions';
+import { gridbasedGamesQuestions } from '../../../data/gridbasedGamesQuestions';
+import { matchingGroupingGamesQuestions } from '../../../data/matchingGroupingGamesQuestions';
+import { schedulingGamesQuestions } from '../../../data/schedulingGamesQuestions';
+import { optimizationGamesQuestions } from '../../../data/optimizationGamesQuestions';
+import { reactionAttentionGamesQuestions } from '../../../data/reactionAttentionGamesQuestions';
+import { mathematicalGamesQuestions } from '../../../data/mathematicalGamesQuestions';
+import { visualPatternGamesQuestions } from '../../../data/visualPatternGamesQuestions';
+import { resourceManagementGamesQuestions } from '../../../data/resourceManagementGamesQuestions';
+import { pathfindingGamesQuestions } from '../../../data/pathfindingGamesQuestions';
+
 
 const GameBasedAptitude = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
@@ -9,31 +29,36 @@ const GameBasedAptitude = () => {
   {
     "id": 1,
     "title": "Number Games",
-    "questions": 4,
+    "data": numberGamesQuestions,
+    "questions": numberGamesQuestions.length,
     "color": "blue"
   },
   {
     "id": 2,
     "title": "Memory Games",
-    "questions": 4,
+    "data": memoryGamesQuestions,
+    "questions": memoryGamesQuestions.length,
     "color": "green"
   },
   {
     "id": 3,
     "title": "Pattern Recognition",
-    "questions": 4,
+    "data": patternRecognitionQuestions,
+    "questions": patternRecognitionQuestions.length,
     "color": "purple"
   },
   {
     "id": 4,
     "title": "Logical Puzzle Games",
-    "questions": 4,
+    "data": logicalPuzzleGamesQuestions,
+    "questions": logicalPuzzleGamesQuestions.length,
     "color": "red"
   },
   {
     "id": 5,
     "title": "Sequence & Series Games",
-    "questions": 4,
+    "data": sequenceSeriesGamesQuestions,
+    "questions": sequenceSeriesGamesQuestions.length,
     "color": "orange"
   },
   {
@@ -51,79 +76,92 @@ const GameBasedAptitude = () => {
   {
     "id": 8,
     "title": "Strategy Games",
-    "questions": 4,
+    "data": strategyGamesQuestions,
+    "questions": strategyGamesQuestions.length,
     "color": "green"
   },
   {
     "id": 9,
     "title": "Probability Games",
-    "questions": 4,
+    "data": probabilityGamesQuestions,
+    "questions": probabilityGamesQuestions.length,
     "color": "purple"
   },
   {
     "id": 10,
     "title": "Grid-Based Games",
-    "questions": 4,
+    "data": gridbasedGamesQuestions,
+    "questions": gridbasedGamesQuestions.length,
     "color": "red"
   },
   {
     "id": 11,
     "title": "Matching & Grouping Games",
-    "questions": 4,
+    "data": matchingGroupingGamesQuestions,
+    "questions": matchingGroupingGamesQuestions.length,
     "color": "orange"
   },
   {
     "id": 12,
     "title": "Scheduling Games",
-    "questions": 4,
+    "data": schedulingGamesQuestions,
+    "questions": schedulingGamesQuestions.length,
     "color": "yellow"
   },
   {
     "id": 13,
     "title": "Optimization Games",
-    "questions": 4,
+    "data": optimizationGamesQuestions,
+    "questions": optimizationGamesQuestions.length,
     "color": "blue"
   },
   {
     "id": 14,
     "title": "Reaction & Attention Games",
-    "questions": 4,
+    "data": reactionAttentionGamesQuestions,
+    "questions": reactionAttentionGamesQuestions.length,
     "color": "green"
   },
   {
     "id": 15,
     "title": "Mathematical Games",
-    "questions": 4,
+    "data": mathematicalGamesQuestions,
+    "questions": mathematicalGamesQuestions.length,
     "color": "purple"
   },
   {
     "id": 16,
     "title": "Visual Pattern Games",
-    "questions": 4,
+    "data": visualPatternGamesQuestions,
+    "questions": visualPatternGamesQuestions.length,
     "color": "red"
   },
   {
     "id": 17,
     "title": "Resource Management Games",
-    "questions": 4,
+    "data": resourceManagementGamesQuestions,
+    "questions": resourceManagementGamesQuestions.length,
     "color": "orange"
   },
   {
     "id": 18,
     "title": "Path-Finding Games",
-    "questions": 4,
+    "data": pathfindingGameQuestions,
+    "questions": pathfindingGameQuestions.length,
     "color": "yellow"
   },
   {
     "id": 19,
     "title": "Ranking & Ordering Games",
-    "questions": 4,
+    "data": rankingOrderingGamesQuestions,
+    "questions": rankingOrderingGamesQuestions.length,
     "color": "blue"
   },
   {
     "id": 20,
     "title": "Rules-Based Logic Games",
-    "questions": 4,
+    "data": rulesbasedLogicGamesQuestions,
+    "questions": rulesbasedLogicGamesQuestions.length,
     "color": "green"
   }
 ];

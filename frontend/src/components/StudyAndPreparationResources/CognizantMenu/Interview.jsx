@@ -1,12 +1,12 @@
 import React from 'react';
 
 const interviewTopics = [
-  { id: 1, title: 'Technical Interview', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9' },
+  { id: 1, title: 'Technical Interview', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', isAI: true },
   { id: 2, title: 'Managerial Interview', questions: 10, color: '#fef3c7', iconColor: '#f59e0b' },
   { id: 3, title: 'HR Interview', questions: 15, color: '#f3e8ff', iconColor: '#a855f7' },
 ];
 
-const Interview = ({ company }) => {
+const Interview = ({ company, onOpenAIInterview }) => {
   return (
     <div className="csr-content-body">
       <div className="csr-aptitude-header">
@@ -25,7 +25,12 @@ const Interview = ({ company }) => {
       
       <div className="csr-topics-grid">
         {interviewTopics.map((topic) => (
-          <div key={topic.id} className="csr-topic-card">
+          <div
+            key={topic.id}
+            className="csr-topic-card"
+            onClick={topic.isAI && onOpenAIInterview ? () => onOpenAIInterview(company) : undefined}
+            style={{ cursor: topic.isAI ? 'pointer' : 'default' }}
+          >
             <div className="csr-topic-icon" style={{ backgroundColor: topic.color, color: topic.iconColor }}>
               <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
@@ -33,7 +38,9 @@ const Interview = ({ company }) => {
             </div>
             <div className="csr-topic-info">
               <h3 className="csr-topic-title">{topic.title}</h3>
-              <span className="csr-topic-questions">{topic.questions} Questions</span>
+              <span className="csr-topic-questions">
+                {topic.isAI ? '🎙️ Start AI Interview' : `${topic.questions} Questions`}
+              </span>
             </div>
             <div className="csr-topic-arrow">
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -48,3 +55,4 @@ const Interview = ({ company }) => {
 };
 
 export default Interview;
+
