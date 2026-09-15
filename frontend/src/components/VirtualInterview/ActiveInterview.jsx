@@ -2,23 +2,35 @@ import React, { useState, useEffect, useRef } from 'react';
 import './VirtualInterview.css';
 import VoiceVisualizer from './VoiceVisualizer';
 
-const FALLBACK_QUESTIONS = [
-  'Tell me about yourself.',
-  'Describe a challenging technical problem you solved.',
-  'How would you design a scalable system for a high-traffic application?',
-  'Where do you see yourself in the next 3 to 5 years?',
-];
-
 const ActiveInterview = ({ company, sessionId, questions, onEndInterview, onQuit }) => {
-  const interviewQuestions = questions?.length ? questions : FALLBACK_QUESTIONS;
+  const interviewQuestions = questions || [];
+
+  // Guard: if questions are missing, show an error
+  if (!interviewQuestions.length) {
+    return (
+      <div style={{ maxWidth: '560px', margin: '64px auto', padding: '28px', textAlign: 'center', fontFamily: "'Inter', system-ui, sans-serif" }}>
+        <div style={{ fontSize: '48px', marginBottom: '16px' }}>⚠️</div>
+        <h2 style={{ color: '#1e293b', fontWeight: '700', marginBottom: '8px' }}>No questions loaded</h2>
+        <p style={{ color: '#64748b', fontSize: '14px', marginBottom: '24px' }}>
+          The interview questions could not be generated. Please go back and try again — make sure your resume and job description are uploaded.
+        </p>
+        <button onClick={onQuit} style={{
+          background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', color: 'white',
+          border: 'none', padding: '12px 28px', borderRadius: '10px',
+          fontWeight: '700', cursor: 'pointer', fontSize: '15px'
+        }}>← Go Back</button>
+      </div>
+    );
+  }
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isRecording, setIsRecording] = useState(false);
-  const [transcript, setTranscript] = useState('');
+  const [transcript, setTranscript] = useState('');       // confirmed final text
+  const [interimText, setInterimText] = useState('');    // live interim preview
   const [status, setStatus] = useState('ai_speaking');
   const [cameraError, setCameraError] = useState(false);
-  // Store all answers: [{ question, transcript }]
   const [allAnswers, setAllAnswers] = useState([]);
+  const finalTranscriptRef = useRef(''); // accumulates only isFinal segments
 
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   const recognitionRef = useRef(null);
@@ -51,14 +63,30 @@ const ActiveInterview = ({ company, sessionId, questions, onEndInterview, onQuit
     recognitionRef.current = new SpeechRecognition();
     recognitionRef.current.continuous = true;
     recognitionRef.current.interimResults = true;
+    recognitionRef.current.lang = 'en-US';
+
     recognitionRef.current.onresult = (event) => {
-      let t = '';
+      let interim = '';
+      // Walk only NEW results from resultIndex onwards
       for (let i = event.resultIndex; i < event.results.length; i++) {
-        t += event.results[i][0].transcript;
+        const seg = event.results[i][0].transcript;
+        if (event.results[i].isFinal) {
+          // Append to our ref accumulator (no duplication)
+          finalTranscriptRef.current += (finalTranscriptRef.current ? ' ' : '') + seg.trim();
+          setTranscript(finalTranscriptRef.current);
+          setInterimText(''); // clear interim once finalized
+        } else {
+          interim += seg; // live preview only
+        }
       }
-      setTranscript(prev => prev ? prev + ' ' + t : t);
+      if (interim) setInterimText(interim);
     };
-    recognitionRef.current.onerror = () => setIsRecording(false);
+
+    recognitionRef.current.onerror = (e) => {
+      console.error('Speech recognition error:', e.error);
+      setIsRecording(false);
+      setInterimText('');
+    };
   }, []);
 
   // ── Speak question on change ──────────────────────────────────────
@@ -82,7 +110,9 @@ const ActiveInterview = ({ company, sessionId, questions, onEndInterview, onQuit
   };
 
   const startRecording = () => {
+    finalTranscriptRef.current = ''; // reset accumulator for new question
     setTranscript('');
+    setInterimText('');
     setIsRecording(true);
     setStatus('listening');
     try { recognitionRef.current?.start(); } catch (e) { console.error(e); }
@@ -221,11 +251,26 @@ const ActiveInterview = ({ company, sessionId, questions, onEndInterview, onQuit
           {/* Transcript */}
           {status !== 'ai_speaking' && (
             <div style={{
-              background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px',
-              padding: '12px', minHeight: '60px', fontSize: '14px', marginBottom: '22px',
-              color: transcript ? '#334155' : '#94a3b8', fontStyle: transcript ? 'normal' : 'italic'
+              background: '#f8fafc', border: `1px solid ${isRecording ? '#c7d2fe' : '#e2e8f0'}`,
+              borderRadius: '8px', padding: '12px', minHeight: '70px', fontSize: '14px',
+              marginBottom: '22px', lineHeight: '1.7', transition: 'border-color 0.3s'
             }}>
-              {transcript || 'Your answer will appear here as you speak...'}
+              {/* Confirmed final text */}
+              {transcript && (
+                <span style={{ color: '#1e293b', fontWeight: '500' }}>{transcript}</span>
+              )}
+              {/* Live interim preview (lighter, italic) */}
+              {interimText && (
+                <span style={{ color: '#94a3b8', fontStyle: 'italic' }}>
+                  {transcript ? ' ' : ''}{interimText}
+                </span>
+              )}
+              {/* Placeholder */}
+              {!transcript && !interimText && (
+                <span style={{ color: '#94a3b8', fontStyle: 'italic' }}>
+                  {isRecording ? '🎙️ Listening... speak your answer' : 'Your answer will appear here as you speak...'}
+                </span>
+              )}
             </div>
           )}
 
