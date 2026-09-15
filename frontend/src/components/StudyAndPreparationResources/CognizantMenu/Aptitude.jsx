@@ -14,11 +14,11 @@ const aptitudeTopics = [
   { id: 2, title: 'Logical Reasoning', questions: 120, color: '#fef3c7', iconColor: '#f59e0b' },
   { id: 3, title: 'Verbal', questions: 100, color: '#f3e8ff', iconColor: '#a855f7' },
   { id: 4, title: 'Game Based Aptitude', questions: 80, color: '#dcfce7', iconColor: '#22c55e' },
-  { id: 5, title: 'Data Interpretation', questions: 90, color: '#ffedd5', iconColor: '#f97316' },
-  { id: 6, title: 'Visual Reasoning', questions: 60, color: '#fee2e2', iconColor: '#ef4444' },
-  { id: 7, title: 'Psychometric', questions: 50, color: '#fef3c7', iconColor: '#f59e0b' },
-  { id: 8, title: 'Cryptarithmetic', questions: 40, color: '#e0f2fe', iconColor: '#0ea5e9' },
-  { id: 9, title: 'Essay Writing', questions: 20, color: '#dcfce7', iconColor: '#22c55e' },
+  { id: 5, title: 'Data Interpretation', questions: 500, color: '#ffedd5', iconColor: '#f97316' },
+  { id: 6, title: 'Visual Reasoning', questions: 375, color: '#fee2e2', iconColor: '#ef4444' },
+  { id: 7, title: 'Psychometric', questions: 450, color: '#fef3c7', iconColor: '#f59e0b' },
+  { id: 8, title: 'Cryptarithmetic', questions: 200, color: '#e0f2fe', iconColor: '#0ea5e9' },
+  { id: 9, title: 'Essay Writing', questions: 50, color: '#dcfce7', iconColor: '#22c55e' },
 ];
 
 const Aptitude = ({ company }) => {

@@ -1,6 +1,20 @@
 import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
+import { 
+  tableDIQuestions, barGraphQuestions, lineGraphQuestions, pieChartQuestions, 
+  histogramQuestions, caseletDIQuestions, mixedGraphQuestions, tabularDataQuestions 
+} from './DataInterpretationQuestions';
+import {
+  percentageBasedDIQuestions, ratioBasedDIQuestions, averageBasedDIQuestions,
+  profitAndLossDIQuestions, timeAndWorkDIQuestions, tsdDIQuestions,
+  populationDIQuestions, salesAndRevenueDIQuestions, productionDIQuestions
+} from './DataInterpretationQuestions2';
+import {
+  growthAndDeclineDIQuestions, missingDataDIQuestions, dataSufficiencyQuestions,
+  comparisonBasedDIQuestions, combinationOfTablesAndGraphsQuestions, quantitativeDataAnalysisQuestions,
+  approximationBasedDIQuestions, dataBasedPercentageChangeQuestions
+} from './DataInterpretationQuestions3';
 
 const DataInterpretation = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
@@ -9,152 +23,177 @@ const DataInterpretation = () => {
   {
     "id": 1,
     "title": "Table DI",
-    "questions": 4,
-    "color": "blue"
+    "questions": 20,
+    "color": "blue",
+    "data": tableDIQuestions
   },
   {
     "id": 2,
     "title": "Bar Graph",
-    "questions": 4,
-    "color": "green"
+    "questions": 20,
+    "color": "green",
+    "data": barGraphQuestions
   },
   {
     "id": 3,
     "title": "Line Graph",
-    "questions": 4,
-    "color": "purple"
+    "questions": 20,
+    "color": "purple",
+    "data": lineGraphQuestions
   },
   {
     "id": 4,
     "title": "Pie Chart",
-    "questions": 4,
-    "color": "red"
+    "questions": 20,
+    "color": "red",
+    "data": pieChartQuestions
   },
   {
     "id": 5,
     "title": "Histogram",
-    "questions": 4,
-    "color": "orange"
+    "questions": 20,
+    "color": "orange",
+    "data": histogramQuestions
   },
   {
     "id": 6,
     "title": "Caselet DI",
-    "questions": 4,
-    "color": "yellow"
+    "questions": 20,
+    "color": "yellow",
+    "data": caseletDIQuestions
   },
   {
     "id": 7,
     "title": "Mixed Graph DI",
-    "questions": 4,
-    "color": "blue"
+    "questions": 20,
+    "color": "blue",
+    "data": mixedGraphQuestions
   },
   {
     "id": 8,
     "title": "Tabular Data",
-    "questions": 4,
-    "color": "green"
+    "questions": 20,
+    "color": "green",
+    "data": tabularDataQuestions
   },
   {
     "id": 9,
     "title": "Percentage-Based DI",
-    "questions": 4,
-    "color": "purple"
+    "questions": 20,
+    "color": "purple",
+    "data": percentageBasedDIQuestions
   },
   {
     "id": 10,
     "title": "Ratio-Based DI",
-    "questions": 4,
-    "color": "red"
+    "questions": 20,
+    "color": "red",
+    "data": ratioBasedDIQuestions
   },
   {
     "id": 11,
     "title": "Average-Based DI",
-    "questions": 4,
-    "color": "orange"
+    "questions": 20,
+    "color": "orange",
+    "data": averageBasedDIQuestions
   },
   {
     "id": 12,
     "title": "Profit & Loss DI",
-    "questions": 4,
-    "color": "yellow"
+    "questions": 20,
+    "color": "yellow",
+    "data": profitAndLossDIQuestions
   },
   {
     "id": 13,
     "title": "Time & Work DI",
-    "questions": 4,
-    "color": "blue"
+    "questions": 20,
+    "color": "blue",
+    "data": timeAndWorkDIQuestions
   },
   {
     "id": 14,
     "title": "Time, Speed & Distance DI",
-    "questions": 4,
-    "color": "green"
+    "questions": 20,
+    "color": "green",
+    "data": tsdDIQuestions
   },
   {
     "id": 15,
     "title": "Population DI",
-    "questions": 4,
-    "color": "purple"
+    "questions": 20,
+    "color": "purple",
+    "data": populationDIQuestions
   },
   {
     "id": 16,
     "title": "Sales & Revenue DI",
-    "questions": 3,
-    "color": "red"
+    "questions": 20,
+    "color": "red",
+    "data": salesAndRevenueDIQuestions
   },
   {
     "id": 17,
     "title": "Production DI",
-    "questions": 3,
-    "color": "orange"
+    "questions": 20,
+    "color": "orange",
+    "data": productionDIQuestions
   },
   {
     "id": 18,
     "title": "Growth & Decline DI",
-    "questions": 3,
-    "color": "yellow"
+    "questions": 20,
+    "color": "yellow",
+    "data": growthAndDeclineDIQuestions
   },
   {
     "id": 19,
     "title": "Missing Data DI",
-    "questions": 3,
-    "color": "blue"
+    "questions": 20,
+    "color": "blue",
+    "data": missingDataDIQuestions
   },
   {
     "id": 20,
     "title": "Data Sufficiency",
-    "questions": 3,
-    "color": "green"
+    "questions": 20,
+    "color": "green",
+    "data": dataSufficiencyQuestions
   },
   {
     "id": 21,
     "title": "Comparison-Based DI",
-    "questions": 3,
-    "color": "purple"
+    "questions": 20,
+    "color": "purple",
+    "data": comparisonBasedDIQuestions
   },
   {
     "id": 22,
     "title": "Combination of Tables & Graphs",
-    "questions": 3,
-    "color": "red"
+    "questions": 20,
+    "color": "red",
+    "data": combinationOfTablesAndGraphsQuestions
   },
   {
     "id": 23,
     "title": "Quantitative Data Analysis",
-    "questions": 3,
-    "color": "orange"
+    "questions": 20,
+    "color": "orange",
+    "data": quantitativeDataAnalysisQuestions
   },
   {
     "id": 24,
     "title": "Approximation-Based DI",
-    "questions": 3,
-    "color": "yellow"
+    "questions": 20,
+    "color": "yellow",
+    "data": approximationBasedDIQuestions
   },
   {
     "id": 25,
     "title": "Data-Based Percentage Change",
-    "questions": 3,
-    "color": "blue"
+    "questions": 20,
+    "color": "blue",
+    "data": dataBasedPercentageChangeQuestions
   }
 ];
 

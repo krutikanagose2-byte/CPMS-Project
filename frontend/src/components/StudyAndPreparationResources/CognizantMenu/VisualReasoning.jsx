@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
+import {
+  figureClassificationQuestions, figureAnalogyQuestions, figureSeriesQuestions,
+  missingFigureQuestions, oddFigureOutQuestions, mirrorImagesQuestions,
+  waterImagesQuestions, rotationOfFiguresQuestions
+} from './VisualReasoningQuestions1';
+import {
+  paperFoldingQuestions, paperCuttingQuestions, embeddedFiguresQuestions,
+  figureCompletionQuestions, patternCompletionQuestions, shapeMatchingQuestions,
+  visualCountingQuestions, cubeAndDiceQuestions
+} from './VisualReasoningQuestions2';
+import {
+  visualization2DTo3DQuestions, spatialOrientationQuestions, imageComparisonQuestions,
+  visualMemoryQuestions, positionDirectionQuestions, symmetryQuestions,
+  hiddenFiguresQuestions, matrixBasedFiguresQuestions, shapeTransformationQuestions
+} from './VisualReasoningQuestions3';
 
 const VisualReasoning = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
@@ -9,152 +24,177 @@ const VisualReasoning = () => {
   {
     "id": 1,
     "title": "Figure Classification",
-    "questions": 3,
-    "color": "blue"
+    "questions": 15,
+    "color": "blue",
+    "data": figureClassificationQuestions
   },
   {
     "id": 2,
     "title": "Figure Analogy",
-    "questions": 3,
-    "color": "green"
+    "questions": 15,
+    "color": "green",
+    "data": figureAnalogyQuestions
   },
   {
     "id": 3,
     "title": "Figure Series",
-    "questions": 3,
-    "color": "purple"
+    "questions": 15,
+    "color": "purple",
+    "data": figureSeriesQuestions
   },
   {
     "id": 4,
     "title": "Missing Figure",
-    "questions": 3,
-    "color": "red"
+    "questions": 15,
+    "color": "red",
+    "data": missingFigureQuestions
   },
   {
     "id": 5,
     "title": "Odd Figure Out",
-    "questions": 3,
-    "color": "orange"
+    "questions": 15,
+    "color": "orange",
+    "data": oddFigureOutQuestions
   },
   {
     "id": 6,
     "title": "Mirror Images",
-    "questions": 3,
-    "color": "yellow"
+    "questions": 15,
+    "color": "yellow",
+    "data": mirrorImagesQuestions
   },
   {
     "id": 7,
     "title": "Water Images",
-    "questions": 3,
-    "color": "blue"
+    "questions": 15,
+    "color": "blue",
+    "data": waterImagesQuestions
   },
   {
     "id": 8,
     "title": "Rotation of Figures",
-    "questions": 3,
-    "color": "green"
+    "questions": 15,
+    "color": "green",
+    "data": rotationOfFiguresQuestions
   },
   {
     "id": 9,
     "title": "Paper Folding",
-    "questions": 3,
-    "color": "purple"
+    "questions": 15,
+    "color": "purple",
+    "data": paperFoldingQuestions
   },
   {
     "id": 10,
     "title": "Paper Cutting",
-    "questions": 3,
-    "color": "red"
+    "questions": 15,
+    "color": "red",
+    "data": paperCuttingQuestions
   },
   {
     "id": 11,
     "title": "Embedded Figures",
-    "questions": 2,
-    "color": "orange"
+    "questions": 15,
+    "color": "orange",
+    "data": embeddedFiguresQuestions
   },
   {
     "id": 12,
     "title": "Figure Completion",
-    "questions": 2,
-    "color": "yellow"
+    "questions": 15,
+    "color": "yellow",
+    "data": figureCompletionQuestions
   },
   {
     "id": 13,
     "title": "Pattern Completion",
-    "questions": 2,
-    "color": "blue"
+    "questions": 15,
+    "color": "blue",
+    "data": patternCompletionQuestions
   },
   {
     "id": 14,
     "title": "Shape Matching",
-    "questions": 2,
-    "color": "green"
+    "questions": 15,
+    "color": "green",
+    "data": shapeMatchingQuestions
   },
   {
     "id": 15,
     "title": "Visual Counting",
-    "questions": 2,
-    "color": "purple"
+    "questions": 15,
+    "color": "purple",
+    "data": visualCountingQuestions
   },
   {
     "id": 16,
     "title": "Cube & Dice",
-    "questions": 2,
-    "color": "red"
+    "questions": 15,
+    "color": "red",
+    "data": cubeAndDiceQuestions
   },
   {
     "id": 17,
     "title": "2D to 3D Visualization",
-    "questions": 2,
-    "color": "orange"
+    "questions": 15,
+    "color": "orange",
+    "data": visualization2DTo3DQuestions
   },
   {
     "id": 18,
     "title": "Spatial Orientation",
-    "questions": 2,
-    "color": "yellow"
+    "questions": 15,
+    "color": "yellow",
+    "data": spatialOrientationQuestions
   },
   {
     "id": 19,
     "title": "Image Comparison",
-    "questions": 2,
-    "color": "blue"
+    "questions": 15,
+    "color": "blue",
+    "data": imageComparisonQuestions
   },
   {
     "id": 20,
     "title": "Visual Memory",
-    "questions": 2,
-    "color": "green"
+    "questions": 15,
+    "color": "green",
+    "data": visualMemoryQuestions
   },
   {
     "id": 21,
     "title": "Position & Direction",
-    "questions": 2,
-    "color": "purple"
+    "questions": 15,
+    "color": "purple",
+    "data": positionDirectionQuestions
   },
   {
     "id": 22,
     "title": "Symmetry",
-    "questions": 2,
-    "color": "red"
+    "questions": 15,
+    "color": "red",
+    "data": symmetryQuestions
   },
   {
     "id": 23,
     "title": "Hidden Figures",
-    "questions": 2,
-    "color": "orange"
+    "questions": 15,
+    "color": "orange",
+    "data": hiddenFiguresQuestions
   },
   {
     "id": 24,
     "title": "Matrix-Based Figures",
-    "questions": 2,
-    "color": "yellow"
+    "questions": 15,
+    "color": "yellow",
+    "data": matrixBasedFiguresQuestions
   },
   {
     "id": 25,
     "title": "Shape Transformation",
-    "questions": 2,
-    "color": "blue"
+    "questions": 15,
+    "color": "blue",
+    "data": shapeTransformationQuestions
   }
 ];
 

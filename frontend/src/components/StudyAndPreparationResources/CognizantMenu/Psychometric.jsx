@@ -1,6 +1,22 @@
 import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
+import {
+  personalityTraitsQuestions, introversionExtroversionQuestions, emotionalStabilityQuestions,
+  opennessToExperienceQuestions, conscientiousnessQuestions, agreeablenessQuestions,
+  leadershipTraitsQuestions, confidenceQuestions, adaptabilityQuestions, responsibilityQuestions
+} from './PsychometricQuestions1';
+import {
+  teamworkQuestions, communicationQuestions, timeManagementQuestions,
+  decisionMakingQuestions, problemSolvingQuestions, stressManagementQuestions,
+  conflictManagementQuestions, initiativeQuestions, accountabilityQuestions, workEthicsQuestions
+} from './PsychometricQuestions2';
+import {
+  workplaceScenariosQuestions, ethicalSituationsQuestions, teamConflictsQuestions,
+  leadershipSituationsQuestions, customerSituationsQuestions, deadlineManagementQuestions,
+  workplacePrioritizationQuestions, handlingFailureQuestions, handlingCriticismQuestions,
+  workplaceDecisionMakingQuestions
+} from './PsychometricQuestions3';
 
 const Psychometric = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
@@ -9,182 +25,212 @@ const Psychometric = () => {
   {
     "id": 1,
     "title": "Personality Traits",
-    "questions": 2,
-    "color": "blue"
+    "questions": 15,
+    "color": "blue",
+    "data": personalityTraitsQuestions
   },
   {
     "id": 2,
     "title": "Introversion & Extroversion",
-    "questions": 2,
-    "color": "green"
+    "questions": 15,
+    "color": "green",
+    "data": introversionExtroversionQuestions
   },
   {
     "id": 3,
     "title": "Emotional Stability",
-    "questions": 2,
-    "color": "purple"
+    "questions": 15,
+    "color": "purple",
+    "data": emotionalStabilityQuestions
   },
   {
     "id": 4,
     "title": "Openness to Experience",
-    "questions": 2,
-    "color": "red"
+    "questions": 15,
+    "color": "red",
+    "data": opennessToExperienceQuestions
   },
   {
     "id": 5,
     "title": "Conscientiousness",
-    "questions": 2,
-    "color": "orange"
+    "questions": 15,
+    "color": "orange",
+    "data": conscientiousnessQuestions
   },
   {
     "id": 6,
     "title": "Agreeableness",
-    "questions": 2,
-    "color": "yellow"
+    "questions": 15,
+    "color": "yellow",
+    "data": agreeablenessQuestions
   },
   {
     "id": 7,
     "title": "Leadership Traits",
-    "questions": 2,
-    "color": "blue"
+    "questions": 15,
+    "color": "blue",
+    "data": leadershipTraitsQuestions
   },
   {
     "id": 8,
     "title": "Confidence",
-    "questions": 2,
-    "color": "green"
+    "questions": 15,
+    "color": "green",
+    "data": confidenceQuestions
   },
   {
     "id": 9,
     "title": "Adaptability",
-    "questions": 2,
-    "color": "purple"
+    "questions": 15,
+    "color": "purple",
+    "data": adaptabilityQuestions
   },
   {
     "id": 10,
     "title": "Responsibility",
-    "questions": 2,
-    "color": "red"
+    "questions": 15,
+    "color": "red",
+    "data": responsibilityQuestions
   },
   {
     "id": 11,
     "title": "Teamwork",
-    "questions": 2,
-    "color": "orange"
+    "questions": 15,
+    "color": "orange",
+    "data": teamworkQuestions
   },
   {
     "id": 12,
     "title": "Communication",
-    "questions": 2,
-    "color": "yellow"
+    "questions": 15,
+    "color": "yellow",
+    "data": communicationQuestions
   },
   {
     "id": 13,
     "title": "Time Management",
-    "questions": 2,
-    "color": "blue"
+    "questions": 15,
+    "color": "blue",
+    "data": timeManagementQuestions
   },
   {
     "id": 14,
     "title": "Decision Making",
-    "questions": 2,
-    "color": "green"
+    "questions": 15,
+    "color": "green",
+    "data": decisionMakingQuestions
   },
   {
     "id": 15,
     "title": "Problem Solving",
-    "questions": 2,
-    "color": "purple"
+    "questions": 15,
+    "color": "purple",
+    "data": problemSolvingQuestions
   },
   {
     "id": 16,
     "title": "Stress Management",
-    "questions": 2,
-    "color": "red"
+    "questions": 15,
+    "color": "red",
+    "data": stressManagementQuestions
   },
   {
     "id": 17,
     "title": "Conflict Management",
-    "questions": 2,
-    "color": "orange"
+    "questions": 15,
+    "color": "orange",
+    "data": conflictManagementQuestions
   },
   {
     "id": 18,
     "title": "Initiative",
-    "questions": 2,
-    "color": "yellow"
+    "questions": 15,
+    "color": "yellow",
+    "data": initiativeQuestions
   },
   {
     "id": 19,
     "title": "Accountability",
-    "questions": 2,
-    "color": "blue"
+    "questions": 15,
+    "color": "blue",
+    "data": accountabilityQuestions
   },
   {
     "id": 20,
     "title": "Work Ethics",
-    "questions": 2,
-    "color": "green"
+    "questions": 15,
+    "color": "green",
+    "data": workEthicsQuestions
   },
   {
     "id": 21,
     "title": "Workplace Scenarios",
-    "questions": 1,
-    "color": "purple"
+    "questions": 15,
+    "color": "purple",
+    "data": workplaceScenariosQuestions
   },
   {
     "id": 22,
     "title": "Ethical Situations",
-    "questions": 1,
-    "color": "red"
+    "questions": 15,
+    "color": "red",
+    "data": ethicalSituationsQuestions
   },
   {
     "id": 23,
     "title": "Team Conflicts",
-    "questions": 1,
-    "color": "orange"
+    "questions": 15,
+    "color": "orange",
+    "data": teamConflictsQuestions
   },
   {
     "id": 24,
     "title": "Leadership Situations",
-    "questions": 1,
-    "color": "yellow"
+    "questions": 15,
+    "color": "yellow",
+    "data": leadershipSituationsQuestions
   },
   {
     "id": 25,
     "title": "Customer Situations",
-    "questions": 1,
-    "color": "blue"
+    "questions": 15,
+    "color": "blue",
+    "data": customerSituationsQuestions
   },
   {
     "id": 26,
     "title": "Deadline Management",
-    "questions": 1,
-    "color": "green"
+    "questions": 15,
+    "color": "green",
+    "data": deadlineManagementQuestions
   },
   {
     "id": 27,
     "title": "Workplace Prioritization",
-    "questions": 1,
-    "color": "purple"
+    "questions": 15,
+    "color": "purple",
+    "data": workplacePrioritizationQuestions
   },
   {
     "id": 28,
     "title": "Handling Failure",
-    "questions": 1,
-    "color": "red"
+    "questions": 15,
+    "color": "red",
+    "data": handlingFailureQuestions
   },
   {
     "id": 29,
     "title": "Handling Criticism",
-    "questions": 1,
-    "color": "orange"
+    "questions": 15,
+    "color": "orange",
+    "data": handlingCriticismQuestions
   },
   {
     "id": 30,
     "title": "Workplace Decision Making",
-    "questions": 1,
-    "color": "yellow"
+    "questions": 15,
+    "color": "yellow",
+    "data": workplaceDecisionMakingQuestions
   }
 ];
 

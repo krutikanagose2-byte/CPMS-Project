@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
+import {
+  alphabetToNumberCodingQuestions, numberToLetterCodingQuestions, letterValueProblemsQuestions,
+  simpleAdditionCryptarithmsQuestions, subtractionCryptarithmsQuestions, multiplicationCryptarithmsQuestions,
+  divisionCryptarithmsQuestions, carryBasedProblemsQuestions, missingDigitProblemsQuestions, uniqueDigitAssignmentQuestions
+} from './CryptarithmeticQuestions1';
+import {
+  alphameticPuzzlesQuestions, wordAdditionQuestions, wordSubtractionQuestions,
+  wordMultiplicationQuestions, wordDivisionQuestions, base10CryptarithmsQuestions,
+  constraintBasedCryptarithmsQuestions, repeatedLetterProblemsQuestions,
+  leadingDigitRestrictionsQuestions, multiWordCryptarithmsQuestions
+} from './CryptarithmeticQuestions2';
 
 const Cryptarithmetic = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
@@ -9,122 +20,142 @@ const Cryptarithmetic = () => {
   {
     "id": 1,
     "title": "Alphabet-to-Number Coding",
-    "questions": 2,
-    "color": "blue"
+    "questions": 10,
+    "color": "blue",
+    "data": alphabetToNumberCodingQuestions
   },
   {
     "id": 2,
     "title": "Number-to-Letter Coding",
-    "questions": 2,
-    "color": "green"
+    "questions": 10,
+    "color": "green",
+    "data": numberToLetterCodingQuestions
   },
   {
     "id": 3,
     "title": "Letter Value Problems",
-    "questions": 2,
-    "color": "purple"
+    "questions": 10,
+    "color": "purple",
+    "data": letterValueProblemsQuestions
   },
   {
     "id": 4,
     "title": "Simple Addition Cryptarithms",
-    "questions": 2,
-    "color": "red"
+    "questions": 10,
+    "color": "red",
+    "data": simpleAdditionCryptarithmsQuestions
   },
   {
     "id": 5,
     "title": "Subtraction Cryptarithms",
-    "questions": 2,
-    "color": "orange"
+    "questions": 10,
+    "color": "orange",
+    "data": subtractionCryptarithmsQuestions
   },
   {
     "id": 6,
     "title": "Multiplication Cryptarithms",
-    "questions": 2,
-    "color": "yellow"
+    "questions": 10,
+    "color": "yellow",
+    "data": multiplicationCryptarithmsQuestions
   },
   {
     "id": 7,
     "title": "Division Cryptarithms",
-    "questions": 2,
-    "color": "blue"
+    "questions": 10,
+    "color": "blue",
+    "data": divisionCryptarithmsQuestions
   },
   {
     "id": 8,
     "title": "Carry-Based Problems",
-    "questions": 2,
-    "color": "green"
+    "questions": 10,
+    "color": "green",
+    "data": carryBasedProblemsQuestions
   },
   {
     "id": 9,
     "title": "Missing Digit Problems",
-    "questions": 2,
-    "color": "purple"
+    "questions": 10,
+    "color": "purple",
+    "data": missingDigitProblemsQuestions
   },
   {
     "id": 10,
     "title": "Unique Digit Assignment",
-    "questions": 2,
-    "color": "red"
+    "questions": 10,
+    "color": "red",
+    "data": uniqueDigitAssignmentQuestions
   },
   {
     "id": 11,
     "title": "Alphametic Puzzles",
-    "questions": 2,
-    "color": "orange"
+    "questions": 10,
+    "color": "orange",
+    "data": alphameticPuzzlesQuestions
   },
   {
     "id": 12,
     "title": "Word Addition",
-    "questions": 2,
-    "color": "yellow"
+    "questions": 10,
+    "color": "yellow",
+    "data": wordAdditionQuestions
   },
   {
     "id": 13,
     "title": "Word Subtraction",
-    "questions": 2,
-    "color": "blue"
+    "questions": 10,
+    "color": "blue",
+    "data": wordSubtractionQuestions
   },
   {
     "id": 14,
     "title": "Word Multiplication",
-    "questions": 2,
-    "color": "green"
+    "questions": 10,
+    "color": "green",
+    "data": wordMultiplicationQuestions
   },
   {
     "id": 15,
     "title": "Word Division",
-    "questions": 2,
-    "color": "purple"
+    "questions": 10,
+    "color": "purple",
+    "data": wordDivisionQuestions
   },
   {
     "id": 16,
     "title": "Base-10 Cryptarithms",
-    "questions": 2,
-    "color": "red"
+    "questions": 10,
+    "color": "red",
+    "data": base10CryptarithmsQuestions
   },
   {
     "id": 17,
     "title": "Constraint-Based Cryptarithms",
-    "questions": 2,
-    "color": "orange"
+    "questions": 10,
+    "color": "orange",
+    "data": constraintBasedCryptarithmsQuestions
   },
   {
     "id": 18,
     "title": "Repeated Letter Problems",
-    "questions": 2,
-    "color": "yellow"
+    "questions": 10,
+    "color": "yellow",
+    "data": repeatedLetterProblemsQuestions
   },
   {
     "id": 19,
     "title": "Leading-Digit Restrictions",
-    "questions": 2,
-    "color": "blue"
+    "questions": 10,
+    "color": "blue",
+    "data": leadingDigitRestrictionsQuestions
   },
   {
     "id": 20,
     "title": "Multi-Word Cryptarithms",
-    "questions": 2,
-    "color": "green"
+    "questions": 10,
+    "color": "green",
+    "data": multiWordCryptarithmsQuestions
   }
 ];
 
