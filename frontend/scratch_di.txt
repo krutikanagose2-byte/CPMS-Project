@@ -1,0 +1,1671 @@
+# 1. TABLE DI — 20 Questions
+Q1. What was the total value for TCS from 2021 to 2025?
+A) 800
+B) 850
+C) 900
+D) 950
+Q2. What was the total value for Infosys in 2023 and 2024?
+A) 300
+B) 320
+C) 330
+D) 350
+Q3. What was the percentage increase in TCS from 2021 to 2025?
+A) 80%
+B) 90%
+C) 100%
+D) 120%
+Q4. What was the difference between Accenture and Wipro in 2024?
+A) 80
+B) 90
+C) 100
+D) 110
+Q5. Which company had the highest value in 2025?
+A) TCS
+B) Infosys
+C) Wipro
+D) Accenture
+Q6. What was the average value of Wipro over the five years?
+A) 120
+B) 126
+C) 130
+D) 136
+Q7. What was the combined value of TCS and Infosys in 2022?
+A) 250
+B) 260
+C) 270
+D) 280
+Q8. What was the ratio of TCS to Wipro in 2023?
+A) 2:1
+B) 3:2
+C) 4:3
+D) 5:3
+Q9. What was the total value of all four companies in 2021?
+A) 420
+B) 430
+C) 440
+D) 450
+Q10. What was the increase in Accenture from 2021 to 2025?
+A) 120
+B) 130
+C) 140
+D) 150
+Q11. In which year was the combined value of all companies highest?
+A) 2022
+B) 2023
+C) 2024
+D) 2025
+Q12. What was the average value of Infosys?
+A) 150
+B) 152
+C) 160
+D) 165
+Q13. What percentage of the 2025 total belonged to Wipro?
+A) 15.7%
+B) 18.2%
+C) 19.8%
+D) 21.4%
+Q14. What was the difference between TCS and Infosys in 2025?
+A) 20
+B) 25
+C) 30
+D) 35
+Q15. What was the combined value of Wipro and Accenture in 2023?
+A) 300
+B) 310
+C) 320
+D) 330
+Q16. TCS increased from 120 to 240. The increase is:
+A) 50%
+B) 75%
+C) 100%
+D) 125%
+Q17. What is the ratio of Infosys 2024 to Infosys 2022?
+A) 2:3
+B) 3:2
+C) 4:3
+D) 5:3
+Q18. What was the total value of Wipro in 2022 and 2025?
+A) 260
+B) 270
+C) 280
+D) 290
+Q19. Which company had the second-highest value in 2024?
+A) TCS
+B) Infosys
+C) Wipro
+D) Accenture
+Q20. What was the total value of all companies in 2025?
+A) 890
+B) 900
+C) 910
+D) 920
+
+# 2. BAR GRAPH DI — 20 Questions
+Q21. Total students placed from College A in both years?
+A) 250
+B) 260
+C) 270
+D) 280
+Q22. Which college had the highest placements in 2024?
+A) A
+B) B
+C) C
+D) D
+Q23. What was the increase in College B?
+A) 30
+B) 40
+C) 50
+D) 60
+Q24. Percentage increase in College C?
+A) 30%
+B) 35%
+C) 40%
+D) 45%
+Q25. Total placements in 2023?
+A) 680
+B) 700
+C) 720
+D) 740
+Q26. Total placements in 2024?
+A) 850
+B) 860
+C) 870
+D) 880
+Q27. Difference between total placements in 2024 and 2023?
+A) 140
+B) 150
+C) 160
+D) 170
+Q28. Ratio of College D's 2023 placements to 2024 placements?
+A) 5:6
+B) 6:7
+C) 7:8
+D) 8:9
+Q29. Average placements of College E?
+A) 150
+B) 155
+C) 160
+D) 165
+Q30. Which college showed the greatest absolute increase?
+A) A
+B) B
+C) C
+D) D
+Q31. Total increase across all colleges?
+A) 140
+B) 150
+C) 160
+D) 170
+Q32. Percentage increase in total placements?
+A) 20%
+B) 21.43%
+C) 22.5%
+D) 25%
+Q33. Difference between B and C in 2024?
+A) 50
+B) 60
+C) 70
+D) 80
+Q34. Combined placements of A and E in 2023?
+A) 240
+B) 250
+C) 260
+D) 270
+Q35. Combined placements of B and D in 2024?
+A) 390
+B) 400
+C) 410
+D) 420
+Q36. What percentage of 2024 placements came from D?
+A) 22.14%
+B) 23.14%
+C) 24.14%
+D) 25.14%
+Q37. Difference between the highest and lowest placements in 2023?
+A) 70
+B) 80
+C) 90
+D) 100
+Q38. Ratio of total 2023 placements to total 2024 placements?
+A) 70:87
+B) 72:87
+C) 14:17
+D) 7:9
+Q39. If each student from College C in 2024 generated ₹2,000 revenue, total revenue is:
+A) ₹2.4 lakh
+B) ₹2.6 lakh
+C) ₹2.8 lakh
+D) ₹3 lakh
+Q40. Which college had a 30-student increase?
+A) A
+B) B
+C) C
+D) E
+
+# 3. LINE GRAPH DI — 20 Questions
+Q41. What were total sales from January to March?
+A) 125
+B) 130
+C) 135
+D) 140
+Q42. Which month had the highest sales?
+A) March
+B) April
+C) May
+D) June
+Q43. Sales increased by how much from January to May?
+A) 25
+B) 30
+C) 35
+D) 40
+Q44. Percentage increase from January to May?
+A) 75%
+B) 80%
+C) 87.5%
+D) 90%
+Q45. Difference between May and June sales?
+A) 5
+B) 10
+C) 15
+D) 20
+Q46. Average monthly sales?
+A) 55
+B) 56.67
+C) 58.33
+D) 60
+Q47. Ratio of January to April sales?
+A) 2:3
+B) 3:2
+C) 4:5
+D) 5:6
+Q48. Total sales in April and May?
+A) 125
+B) 130
+C) 135
+D) 140
+Q49. Percentage decrease from May to June?
+A) 5.67%
+B) 6.67%
+C) 7.67%
+D) 8.67%
+Q50. In which month did sales decrease compared with the previous month?
+A) February
+B) March
+C) April
+D) May
+Q51. Total sales in the first half of the year?
+A) 330
+B) 340
+C) 350
+D) 360
+Q52. Difference between the highest and lowest sales?
+A) 25
+B) 30
+C) 35
+D) 40
+Q53. Sales in April were what percentage of May sales?
+A) 75%
+B) 80%
+C) 85%
+D) 90%
+Q54. Combined sales in February and June?
+A) 110
+B) 115
+C) 120
+D) 125
+Q55. What was the average sales of April and May?
+A) 65
+B) 67.5
+C) 70
+D) 72.5
+Q56. If July sales were 20% greater than June, July sales would be:
+A) 82
+B) 84
+C) 86
+D) 88
+Q57. What is the ratio of March sales to June sales?
+A) 9:14
+B) 9:15
+C) 9:16
+D) 10:15
+Q58. Total sales from February to May?
+A) 220
+B) 225
+C) 230
+D) 235
+Q59. Which month had the second-highest sales?
+A) April
+B) May
+C) June
+D) February
+Q60. If profit is 20% of sales in May, profit is:
+A) ₹12 lakh
+B) ₹15 lakh
+C) ₹18 lakh
+D) ₹20 lakh
+
+# 4. PIE CHART DI — 20 Questions
+Q61. Amount spent on salaries?
+A) ₹3 lakh
+B) ₹4 lakh
+C) ₹5 lakh
+D) ₹6 lakh
+Q62. Amount spent on rent?
+A) ₹1 lakh
+B) ₹1.5 lakh
+C) ₹2 lakh
+D) ₹2.5 lakh
+Q63. Amount spent on marketing?
+A) ₹1.5 lakh
+B) ₹2 lakh
+C) ₹2.5 lakh
+D) ₹3 lakh
+Q64. Which category has the second-highest expenditure?
+A) Rent
+B) Marketing
+C) Transport
+D) Electricity
+Q65. Total expenditure on transport and electricity?
+A) ₹1 lakh
+B) ₹1.5 lakh
+C) ₹2 lakh
+D) ₹2.5 lakh
+Q66. Ratio of salaries to rent?
+A) 5:2
+B) 8:3
+C) 3:2
+D) 4:3
+Q67. Difference between salaries and marketing expenditure?
+A) ₹1 lakh
+B) ₹1.5 lakh
+C) ₹2 lakh
+D) ₹2.5 lakh
+Q68. What percentage is spent on non-salary expenses?
+A) 50%
+B) 55%
+C) 60%
+D) 65%
+Q69. Central angle for salaries?
+A) 120°
+B) 135°
+C) 144°
+D) 150°
+Q70. Central angle for marketing?
+A) 60°
+B) 72°
+C) 90°
+D) 108°
+Q71. Central angle for rent?
+A) 45°
+B) 54°
+C) 60°
+D) 72°
+Q72. What percentage is spent on rent and transport together?
+A) 20%
+B) 25%
+C) 30%
+D) 35%
+Q73. Miscellaneous expenditure is:
+A) ₹50,000
+B) ₹75,000
+C) ₹1 lakh
+D) ₹1.5 lakh
+Q74. Marketing expenditure is how much more than transport?
+A) ₹50,000
+B) ₹75,000
+C) ₹1 lakh
+D) ₹1.5 lakh
+Q75. Ratio of electricity to miscellaneous?
+A) 1:1
+B) 1:2
+C) 2:1
+D) 1:3
+Q76. If total expenditure increases to ₹12 lakh with same percentages, salary expenditure becomes:
+A) ₹4.2 lakh
+B) ₹4.8 lakh
+C) ₹5.2 lakh
+D) ₹6 lakh
+Q77. Total expenditure on rent, transport and electricity?
+A) ₹2.5 lakh
+B) ₹3 lakh
+C) ₹3.5 lakh
+D) ₹4 lakh
+Q78. Which categories together account for 50%?
+A) Salary + Rent
+B) Salary + Marketing
+C) Marketing + Transport
+D) Rent + Miscellaneous
+Q79. If electricity expenditure is reduced by 20%, new electricity expenditure is:
+A) ₹40,000
+B) ₹50,000
+C) ₹60,000
+D) ₹70,000
+Q80. Marketing expenditure as a fraction of total expenditure is:
+A) 1/10
+B) 1/5
+C) 1/4
+D) 1/3
+
+# 5. HISTOGRAM DI — 20 Questions
+Q81. Total number of employees?
+A) 260
+B) 270
+C) 280
+D) 290
+Q82. Which age group has the highest number of employees?
+A) 20–25
+B) 25–30
+C) 30–35
+D) 35–40
+Q83. Number of employees aged below 30?
+A) 90
+B) 100
+C) 110
+D) 120
+Q84. Number of employees aged 35 or above?
+A) 90
+B) 100
+C) 110
+D) 120
+Q85. Difference between employees aged 30–35 and 40–45?
+A) 40
+B) 50
+C) 60
+D) 70
+Q86. Ratio of employees aged 25–30 to 45–50?
+A) 2:1
+B) 3:1
+C) 4:1
+D) 5:1
+Q87. What percentage of employees are in the 30–35 group?
+A) 25%
+B) 28.57%
+C) 30%
+D) 32%
+Q88. Average number of employees per age group?
+A) 45
+B) 46.67
+C) 48
+D) 50
+Q89. Combined employees in 25–30 and 35–40?
+A) 100
+B) 110
+C) 120
+D) 130
+Q90. What percentage of employees are aged 40–50?
+A) 15.86%
+B) 17.86%
+C) 20%
+D) 22%
+Q91. Number of employees aged 20–35?
+A) 160
+B) 170
+C) 180
+D) 190
+Q92. Difference between employees below 35 and above 35?
+A) 120
+B) 130
+C) 140
+D) 150
+Q93. If 10 employees from the 30–35 group leave, what percentage of total employees remain in that group?
+A) 20%
+B) 25%
+C) 30%
+D) 35%
+Q94. Which two groups together have 100 employees?
+A) 20–25 and 45–50
+B) 25–30 and 45–50
+C) 35–40 and 40–45
+D) 20–25 and 40–45
+Q95. Employees aged 25–40 are:
+A) 180
+B) 190
+C) 200
+D) 210
+Q96. If 20% of employees aged 20–25 are women, how many women are there?
+A) 6
+B) 8
+C) 10
+D) 12
+Q97. Ratio of employees aged 30–35 to total employees?
+A) 2:7
+B) 3:7
+C) 4:7
+D) 5:7
+Q98. If 25% of the 25–30 group are managers, number of managers?
+A) 10
+B) 12
+C) 15
+D) 20
+Q99. How many more employees are in 30–35 than 45–50?
+A) 50
+B) 60
+C) 70
+D) 80
+Q100. The two smallest age groups together contain:
+A) 40
+B) 50
+C) 60
+D) 70
+
+# 6. CASELET DI — 20 Questions
+Q101. Number of male employees?
+A) 400
+B) 450
+C) 480
+D) 500
+Q102. Number of female employees?
+A) 300
+B) 320
+C) 340
+D) 360
+Q103. Male employees in IT?
+A) 100
+B) 120
+C) 140
+D) 160
+Q104. Male employees in HR?
+A) 120
+B) 130
+C) 144
+D) 150
+Q105. Male employees in Finance?
+A) 180
+B) 200
+C) 216
+D) 240
+Q106. Female employees in IT?
+A) 120
+B) 128
+C) 140
+D) 150
+Q107. Female employees in HR?
+A) 100
+B) 112
+C) 120
+D) 128
+Q108. Female employees in Finance?
+A) 70
+B) 80
+C) 90
+D) 100
+Q109. Total employees in IT?
+A) 240
+B) 248
+C) 260
+D) 280
+Q110. Total employees in HR?
+A) 240
+B) 250
+C) 256
+D) 270
+Q111. Total employees in Finance?
+A) 296
+B) 300
+C) 304
+D) 320
+Q112. Ratio of male IT employees to female IT employees?
+A) 12:13
+B) 15:16
+C) 16:15
+D) 20:21
+Q113. What percentage of total employees work in IT?
+A) 28%
+B) 29%
+C) 31%
+D) 32%
+Q114. What percentage of total employees work in Finance?
+A) 36%
+B) 38%
+C) 40%
+D) 42%
+Q115. Difference between total HR and total IT employees?
+A) 4
+B) 8
+C) 12
+D) 16
+Q116. Ratio of Finance employees to HR employees?
+A) 19:16
+B) 19:17
+C) 19:18
+D) 20:17
+Q117. If 10% of IT employees leave, how many IT employees remain?
+A) 216
+B) 220
+C) 224
+D) 230
+Q118. If 20% of female Finance employees are promoted, how many are promoted?
+A) 12
+B) 16
+C) 20
+D) 24
+Q119. Male employees form what percentage of Finance employees?
+A) 60%
+B) 65.79%
+C) 70%
+D) 72%
+Q120. Total employees in IT and HR together?
+A) 480
+B) 496
+C) 500
+D) 520
+
+# 7. MIXED GRAPH DI — 20 Questions
+Q121. Profit in 2021?
+A) ₹15 lakh
+B) ₹20 lakh
+C) ₹25 lakh
+D) ₹30 lakh
+Q122. Profit in 2022?
+A) ₹25 lakh
+B) ₹30 lakh
+C) ₹35 lakh
+D) ₹40 lakh
+Q123. Profit in 2023?
+A) ₹40 lakh
+B) ₹45 lakh
+C) ₹50 lakh
+D) ₹55 lakh
+Q124. Profit in 2024?
+A) ₹60 lakh
+B) ₹65 lakh
+C) ₹72 lakh
+D) ₹75 lakh
+Q125. Profit in 2025?
+A) ₹68 lakh
+B) ₹70 lakh
+C) ₹72 lakh
+D) ₹75 lakh
+Q126. Total sales from 2021–2025?
+A) ₹1,400 lakh
+B) ₹1,450 lakh
+C) ₹1,510 lakh
+D) ₹1,550 lakh
+Q127. Total profit from all five years?
+A) ₹230 lakh
+B) ₹239 lakh
+C) ₹245 lakh
+D) ₹250 lakh
+Q128. Which year had the highest profit?
+A) 2022
+B) 2023
+C) 2024
+D) 2025
+Q129. Sales increased from 2021 to 2025 by:
+A) 80%
+B) 90%
+C) 100%
+D) 110%
+Q130. Profit increased from 2021 to 2024 by:
+A) ₹42 lakh
+B) ₹45 lakh
+C) ₹52 lakh
+D) ₹55 lakh
+Q131. Ratio of sales in 2023 to 2025?
+A) 2:3
+B) 3:4
+C) 4:5
+D) 5:6
+Q132. Profit as a percentage of total sales over all years is approximately:
+A) 14.5%
+B) 15.83%
+C) 16.5%
+D) 17.2%
+Q133. Difference between profit in 2024 and 2022?
+A) ₹40 lakh
+B) ₹42 lakh
+C) ₹44 lakh
+D) ₹46 lakh
+Q134. Sales in 2024 were what percentage of 2025 sales?
+A) 80%
+B) 85%
+C) 90%
+D) 95%
+Q135. Combined profit of 2023 and 2024?
+A) ₹107 lakh
+B) ₹112 lakh
+C) ₹117 lakh
+D) ₹120 lakh
+Q136. If 2026 sales increase by 25% over 2025, sales would be:
+A) ₹450 lakh
+B) ₹480 lakh
+C) ₹500 lakh
+D) ₹520 lakh
+Q137. If 2026 profit rate is 20%, profit would be:
+A) ₹90 lakh
+B) ₹95 lakh
+C) ₹100 lakh
+D) ₹110 lakh
+Q138. Which year had the highest profit margin?
+A) 2021
+B) 2022
+C) 2023
+D) 2024
+Q139. Difference in sales between 2022 and 2024?
+A) ₹100 lakh
+B) ₹110 lakh
+C) ₹120 lakh
+D) ₹130 lakh
+Q140. Average annual sales?
+A) ₹300 lakh
+B) ₹302 lakh
+C) ₹305 lakh
+D) ₹310 lakh
+
+# 8. TABULAR DATA — 20 Questions
+Q141. Total production of P?
+A) 500
+B) 520
+C) 540
+D) 560
+Q142. Total production of Q?
+A) 420
+B) 440
+C) 450
+D) 460
+Q143. Total production in January?
+A) 340
+B) 350
+C) 360
+D) 370
+Q144. Total production in April?
+A) 570
+B) 580
+C) 590
+D) 600
+Q145. Which product has the highest total production?
+A) P
+B) Q
+C) R
+D) S
+Q146. Difference between total production of R and S?
+A) 180
+B) 190
+C) 200
+D) 210
+Q147. Average production of P per month?
+A) 125
+B) 130
+C) 135
+D) 140
+Q148. Percentage increase in S from January to April?
+A) 80%
+B) 90%
+C) 100%
+D) 110%
+Q149. Ratio of P's March production to Q's March production?
+A) 6:5
+B) 7:6
+C) 8:7
+D) 9:8
+Q150. Combined production of P and R in February?
+A) 240
+B) 250
+C) 260
+D) 270
+Q151. Total production in March?
+A) 490
+B) 500
+C) 510
+D) 520
+Q152. Difference between April and January total production?
+A) 210
+B) 220
+C) 230
+D) 240
+Q153. Product S's total production as a percentage of total production of all products?
+A) 18.4%
+B) 19.1%
+C) 20.0%
+D) 21.5%
+Q154. Total production of all products?
+A) 1,850
+B) 1,900
+C) 1,940
+D) 2,000
+Q155. Which month had the highest total production?
+A) January
+B) February
+C) March
+D) April
+Q156. Production of R increased from January to April by:
+A) 40
+B) 50
+C) 60
+D) 70
+Q157. Percentage increase in P from January to April?
+A) 40%
+B) 50%
+C) 60%
+D) 70%
+Q158. Combined production of Q and S in March?
+A) 210
+B) 220
+C) 230
+D) 240
+Q159. Ratio of total P production to total Q production?
+A) 5:4
+B) 6:5
+C) 7:6
+D) 8:7
+Q160. If April production of every product increases by 10%, new total April production is:
+A) 640
+B) 649
+C) 660
+D) 670
+
+# 18. GROWTH & DECLINE DI — 20 Questions
+Q341. What was the increase from 2021 to 2022?
+A) ₹30 lakh
+B) ₹40 lakh
+C) ₹50 lakh
+D) ₹60 lakh
+Q342. Percentage growth from 2021 to 2022?
+A) 15%
+B) 20%
+C) 25%
+D) 30%
+Q343. Percentage growth from 2022 to 2023?
+A) 20%
+B) 25%
+C) 30%
+D) 35%
+Q344. What was the decline from 2023 to 2024?
+A) ₹20 lakh
+B) ₹25 lakh
+C) ₹30 lakh
+D) ₹35 lakh
+Q345. Percentage decline from 2023 to 2024?
+A) 8%
+B) 10%
+C) 12%
+D) 15%
+Q346. Percentage growth from 2024 to 2025?
+A) 15%
+B) 18%
+C) 20%
+D) 25%
+Q347. Overall growth from 2021 to 2025?
+A) 50%
+B) 55%
+C) 62%
+D) 70%
+Q348. Which year had the highest revenue?
+A) 2022
+B) 2023
+C) 2024
+D) 2025
+Q349. Which year recorded a decline?
+A) 2022
+B) 2023
+C) 2024
+D) 2025
+Q350. Average revenue over the five years?
+A) ₹256.8 lakh
+B) ₹266.8 lakh
+C) ₹276.8 lakh
+D) ₹286.8 lakh
+Q351. Difference between highest and lowest revenue?
+A) ₹100 lakh
+B) ₹104 lakh
+C) ₹124 lakh
+D) ₹134 lakh
+Q352. Revenue in 2025 was what percentage of 2023 revenue?
+A) 100%
+B) 104%
+C) 108%
+D) 112%
+Q353. Combined revenue of 2021 and 2025?
+A) ₹500 lakh
+B) ₹524 lakh
+C) ₹534 lakh
+D) ₹544 lakh
+Q354. Ratio of 2022 revenue to 2024 revenue?
+A) 8:9
+B) 9:10
+C) 10:9
+D) 12:13
+Q355. If 2026 revenue grows by 25% over 2025, it will be:
+A) ₹385 lakh
+B) ₹400 lakh
+C) ₹405 lakh
+D) ₹425 lakh
+Q356. If 2026 revenue declines by 10% from 2025, it will be:
+A) ₹291.6 lakh
+B) ₹300.6 lakh
+C) ₹311.6 lakh
+D) ₹324 lakh
+Q357. Total increase from 2021 to 2023?
+A) ₹80 lakh
+B) ₹90 lakh
+C) ₹100 lakh
+D) ₹110 lakh
+Q358. Revenue declined by what percentage from 2023 to 2024 and then increased by what percentage from 2024 to 2025?
+A) 10%, 20%
+B) 10%, 25%
+C) 12%, 20%
+D) 15%, 20%
+Q359. If revenue in 2025 were 10% higher, it would be:
+A) ₹346.4 lakh
+B) ₹350.4 lakh
+C) ₹356.4 lakh
+D) ₹360.4 lakh
+Q360. Average growth rate considering year-to-year percentage changes is closest to:
+A) 10%
+B) 11.25%
+C) 12.5%
+D) 15%
+
+# 19. MISSING DATA DI — 20 Questions
+Q361. Find B for 2022.
+A) 120
+B) 130
+C) 140
+D) 150
+Q362. Find C for 2023.
+A) 90
+B) 100
+C) 110
+D) 120
+Q363. Find A for 2024.
+A) 120
+B) 130
+C) 140
+D) 150
+Q364. Find B for 2025.
+A) 140
+B) 150
+C) 160
+D) 170
+Q365. Total A from 2021–2025?
+A) 700
+B) 720
+C) 740
+D) 760
+Q366. Total B from 2021–2025?
+A) 720
+B) 730
+C) 740
+D) 750
+Q367. Total C from 2021–2025?
+A) 570
+B) 580
+C) 590
+D) 600
+Q368. Total D from all five years?
+A) 680
+B) 700
+C) 720
+D) 740
+Q369. Which category has the highest total?
+A) A
+B) B
+C) C
+D) D
+Q370. Difference between total A and total C?
+A) 130
+B) 140
+C) 150
+D) 160
+Q371. Total of all categories over five years?
+A) 2,650
+B) 2,700
+C) 2,770
+D) 2,800
+Q372. What percentage of the 2024 total is contributed by A?
+A) 20%
+B) 22.58%
+C) 25%
+D) 27.42%
+Q373. Ratio of A to B in 2022?
+A) 10:9
+B) 1:1
+C) 9:10
+D) 7:8
+Q374. Difference between B and D in 2025?
+A) 10
+B) 20
+C) 30
+D) 40
+Q375. Combined C and D in 2023?
+A) 240
+B) 250
+C) 260
+D) 270
+Q376. Average of A in the five years?
+A) 145
+B) 148
+C) 150
+D) 152
+Q377. Average of C in the five years?
+A) 116
+B) 118
+C) 120
+D) 122
+Q378. Which year has the highest total?
+A) 2022
+B) 2023
+C) 2024
+D) 2025
+Q379. Increase in total from 2021 to 2025?
+A) 250
+B) 280
+C) 300
+D) 320
+Q380. In 2025, B is what percentage of total?
+A) 20%
+B) 22.86%
+C) 25%
+D) 28.57%
+
+# 20. DATA SUFFICIENCY — 20 Questions
+Q381. What is the value of x?
+I. x + 5 = 15
+II. x is a positive integer.
+A) A
+B) B
+C) C
+D) D
+Q382. What is the value of y?
+I. 2y = 20
+II. y is greater than 5.
+A) A
+B) B
+C) C
+D) D
+Q383. Is n an even number?
+I. n is divisible by 4.
+II. n is divisible by 2.
+A) A
+B) B
+C) C
+D) D
+Q384. What is the area of a rectangle?
+I. Length = 10 cm.
+II. Breadth = 5 cm.
+A) A
+B) B
+C) C
+D) D
+Q385. What is the speed of a car?
+I. It covers 120 km.
+II. It takes 2 hours.
+A) A
+B) B
+C) C
+D) D
+Q386. What is the average of three numbers?
+I. Their sum is 60.
+II. There are exactly three numbers.
+A) A
+B) B
+C) C
+D) D
+Q387. Is x > y?
+I. x = 20.
+II. y = 15.
+A) A
+B) B
+C) C
+D) D
+Q388. What is the profit percentage?
+I. Cost price = ₹500.
+II. Selling price = ₹600.
+A) A
+B) B
+C) C
+D) D
+Q389. What is the value of a + b?
+I. a = 10.
+II. b = 20.
+A) A
+B) B
+C) C
+D) D
+Q390. What is the age of Rahul?
+I. Rahul is 5 years older than Amit.
+II. Amit is 20 years old.
+A) A
+B) B
+C) C
+D) D
+Q391. Is a triangle equilateral?
+I. All three sides are equal.
+II. One angle is 60°.
+A) A
+B) B
+C) C
+D) D
+Q392. What is the distance travelled?
+I. Speed = 60 km/h.
+II. Time = 3 hours.
+A) A
+B) B
+C) C
+D) D
+Q393. What is the value of x?
+I. x² = 25.
+II. x is positive.
+A) A
+B) B
+C) C
+D) D
+Q394. What is the total number of students?
+I. Boys = 40.
+II. Girls = 30.
+A) A
+B) B
+C) C
+D) D
+Q395. What is the selling price?
+I. Cost price = ₹800.
+II. Profit = 25%.
+A) A
+B) B
+C) C
+D) D
+Q396. What is the perimeter of a square?
+I. Side = 8 cm.
+II. Area = 64 cm².
+A) A
+B) B
+C) C
+D) D
+Q397. What is the value of x + y?
+I. x - y = 5.
+II. x = 15.
+A) A
+B) B
+C) C
+D) D
+Q398. What is the average speed?
+I. Total distance = 200 km.
+II. Total time = 4 hours.
+A) A
+B) B
+C) C
+D) D
+Q399. Is the number divisible by 5?
+I. The number ends in 0.
+II. The number is even.
+A) A
+B) B
+C) C
+D) D
+Q400. What is the value of z?
+I. z + 10 = 25.
+II. z is less than 20.
+A) A
+B) B
+C) C
+D) D
+
+# 21. COMPARISON-BASED DI — 20 Questions
+Q401. Who scored highest in Maths?
+A) A
+B) B
+C) C
+D) D
+Q402. Who scored highest in English?
+A) B
+B) C
+C) D
+D) E
+Q403. Who scored highest in Science?
+A) A
+B) B
+C) C
+D) D
+Q404. Who has the highest total score?
+A) A
+B) B
+C) C
+D) E
+Q405. Total score of A?
+A) 230
+B) 240
+C) 250
+D) 260
+Q406. Total score of B?
+A) 230
+B) 240
+C) 250
+D) 260
+Q407. Total score of C?
+A) 245
+B) 250
+C) 255
+D) 260
+Q408. Difference between C's and E's total scores?
+A) 15
+B) 20
+C) 25
+D) 30
+Q409. Who has the lowest total?
+A) A
+B) B
+C) D
+D) E
+Q410. Difference between highest and lowest Maths scores?
+A) 15
+B) 20
+C) 25
+D) 30
+Q411. Average score of A?
+A) 75
+B) 80
+C) 85
+D) 90
+Q412. Average score of C?
+A) 80
+B) 82.33
+C) 85
+D) 87.33
+Q413. Who scored above 80 in at least two subjects?
+A) A only
+B) B and C
+C) C only
+D) C and D
+Q414. Difference between E's English and Maths?
+A) 15
+B) 20
+C) 25
+D) 30
+Q415. Ratio of A's Science to B's Science?
+A) 8:9
+B) 9:8
+C) 10:9
+D) 9:10
+Q416. Combined English score of A and D?
+A) 140
+B) 145
+C) 150
+D) 155
+Q417. Combined Maths score of C and D?
+A) 165
+B) 170
+C) 175
+D) 180
+Q418. Which student has the same score in two subjects?
+A) A
+B) B
+C) C
+D) D
+Q419. How many students scored at least 80 in Science?
+A) 2
+B) 3
+C) 4
+D) 5
+Q420. Difference between highest total and lowest total?
+A) 20
+B) 25
+C) 30
+D) 35
+
+# 22. COMBINATION OF TABLES & GRAPHS — 20 Questions
+Q421. Revenue from A in 2022?
+A) ₹40,000
+B) ₹50,000
+C) ₹60,000
+D) ₹70,000
+Q422. Revenue from B in 2022?
+A) ₹48,000
+B) ₹50,000
+C) ₹52,000
+D) ₹54,000
+Q423. Total revenue in 2022?
+A) ₹96,000
+B) ₹98,000
+C) ₹1,00,000
+D) ₹1,02,000
+Q424. Revenue from A in 2025?
+A) ₹70,000
+B) ₹75,000
+C) ₹80,000
+D) ₹85,000
+Q425. Revenue from B in 2025?
+A) ₹80,000
+B) ₹85,000
+C) ₹90,000
+D) ₹95,000
+Q426. Total revenue in 2025?
+A) ₹1.6 lakh
+B) ₹1.7 lakh
+C) ₹1.8 lakh
+D) ₹1.9 lakh
+Q427. Increase in A units from 2022 to 2025?
+A) 200
+B) 250
+C) 300
+D) 350
+Q428. Percentage increase in B units?
+A) 75%
+B) 80%
+C) 87.5%
+D) 90%
+Q429. Difference between 2025 revenues of A and B?
+A) ₹5,000
+B) ₹10,000
+C) ₹15,000
+D) ₹20,000
+Q430. Total revenue over all four years?
+A) ₹4.5 lakh
+B) ₹4.76 lakh
+C) ₹4.86 lakh
+D) ₹5 lakh
+Q431. Which year had highest revenue?
+A) 2022
+B) 2023
+C) 2024
+D) 2025
+Q432. Ratio of A revenue to B revenue in 2024?
+A) 7:8
+B) 35:39
+C) 14:15
+D) 10:11
+Q433. Total units sold in 2023?
+A) 1,000
+B) 1,100
+C) 1,200
+D) 1,300
+Q434. Total units sold in 2024?
+A) 1,250
+B) 1,300
+C) 1,350
+D) 1,400
+Q435. Revenue increase from 2023 to 2024?
+A) ₹25,000
+B) ₹27,000
+C) ₹29,000
+D) ₹31,000
+Q436. Revenue increase from 2022 to 2025?
+A) ₹70,000
+B) ₹80,000
+C) ₹90,000
+D) ₹1,00,000
+Q437. If A's price increases by 10%, 2025 A revenue becomes:
+A) ₹84,000
+B) ₹88,000
+C) ₹90,000
+D) ₹92,000
+Q438. If B's price decreases by 10%, 2025 B revenue becomes:
+A) ₹81,000
+B) ₹82,000
+C) ₹84,000
+D) ₹86,000
+Q439. Combined units of A from 2022–2025?
+A) 2,400
+B) 2,500
+C) 2,600
+D) 2,700
+Q440. Combined units of B from 2022–2025?
+A) 2,200
+B) 2,300
+C) 2,400
+D) 2,500
+
+# 23. QUANTITATIVE DATA ANALYSIS — 20 Questions
+Q441. Profit in 2022?
+A) ₹100 lakh
+B) ₹150 lakh
+C) ₹160 lakh
+D) ₹170 lakh
+Q442. Profit in 2025?
+A) ₹220 lakh
+B) ₹240 lakh
+C) ₹260 lakh
+D) ₹280 lakh
+Q443. Profit percentage on cost in 2022?
+A) 40%
+B) 42.86%
+C) 45%
+D) 50%
+Q444. Profit percentage on cost in 2025?
+A) 40%
+B) 42.86%
+C) 45%
+D) 50%
+Q445. Sales per employee in 2022?
+A) ₹4 lakh
+B) ₹5 lakh
+C) ₹6 lakh
+D) ₹7 lakh
+Q446. Sales per employee in 2025?
+A) ₹4 lakh
+B) ₹5 lakh
+C) ₹6 lakh
+D) ₹7 lakh
+Q447. Which year has the highest sales per employee?
+A) 2022
+B) 2023
+C) 2024
+D) 2025
+Q448. Total sales over four years?
+A) ₹2,520 lakh
+B) ₹2,620 lakh
+C) ₹2,720 lakh
+D) ₹2,820 lakh
+Q449. Total cost over four years?
+A) ₹1,710 lakh
+B) ₹1,810 lakh
+C) ₹1,910 lakh
+D) ₹2,010 lakh
+Q450. Total profit?
+A) ₹810 lakh
+B) ₹820 lakh
+C) ₹830 lakh
+D) ₹840 lakh
+Q451. Percentage increase in sales from 2022 to 2025?
+A) 50%
+B) 55%
+C) 60%
+D) 65%
+Q452. Percentage increase in employees?
+A) 50%
+B) 55%
+C) 60%
+D) 65%
+Q453. Difference between 2024 sales and cost?
+A) ₹220 lakh
+B) ₹240 lakh
+C) ₹250 lakh
+D) ₹260 lakh
+Q454. Ratio of 2023 profit to 2024 profit?
+A) 2:3
+B) 3:4
+C) 4:5
+D) 5:6
+Q455. Average sales per year?
+A) ₹650 lakh
+B) ₹655 lakh
+C) ₹655?
+D) ₹680 lakh
+Q456. Which year has the highest profit?
+A) 2022
+B) 2023
+C) 2024
+D) 2025
+Q457. Employee productivity in 2024 compared with 2022 is:
+A) 80% higher
+B) 90% higher
+C) 96% higher
+D) 100% higher
+Q458. If 2026 sales rise by 10% over 2025, sales will be:
+A) ₹860 lakh
+B) ₹880 lakh
+C) ₹900 lakh
+D) ₹920 lakh
+Q459. If 2026 cost rises by 10% over 2025, cost will be:
+A) ₹606 lakh
+B) ₹616 lakh
+C) ₹626 lakh
+D) ₹636 lakh
+Q460. Based on Q458 and Q459, 2026 profit would be:
+A) ₹240 lakh
+B) ₹250 lakh
+C) ₹264 lakh
+D) ₹280 lakh
+
+# 24. APPROXIMATION-BASED DI — 20 Questions
+Q461. 498 × 21 ≈ ?
+A) 9,500
+B) 10,000
+C) 10,500
+D) 11,000
+Q462. 1,002 ÷ 49 ≈ ?
+A) 18
+B) 20
+C) 22
+D) 25
+Q463. 19.8% of 500 ≈ ?
+A) 90
+B) 95
+C) 100
+D) 110
+Q464. 399 + 601 + 198 ≈ ?
+A) 1,100
+B) 1,200
+C) 1,300
+D) 1,400
+Q465. 49.8 × 10.2 ≈ ?
+A) 450
+B) 500
+C) 550
+D) 600
+Q466. 799 ÷ 40 ≈ ?
+A) 18
+B) 20
+C) 22
+D) 25
+Q467. 29.9% of 800 ≈ ?
+A) 220
+B) 240
+C) 260
+D) 280
+Q468. 1,998 + 3,002 ≈ ?
+A) 4,500
+B) 4,800
+C) 5,000
+D) 5,500
+Q469. 599 × 2.01 ≈ ?
+A) 1,000
+B) 1,100
+C) 1,200
+D) 1,300
+Q470. 1,499 ÷ 30 ≈ ?
+A) 40
+B) 45
+C) 50
+D) 55
+Q471. 24.9% of 1,200 ≈ ?
+A) 250
+B) 300
+C) 350
+D) 400
+Q472. 99.8 × 50.1 ≈ ?
+A) 4,000
+B) 4,500
+C) 5,000
+D) 5,500
+Q473. 2,997 - 1,502 ≈ ?
+A) 1,300
+B) 1,400
+C) 1,500
+D) 1,600
+Q474. 75.2% of 400 ≈ ?
+A) 280
+B) 300
+C) 320
+D) 340
+Q475. 6,001 ÷ 100 ≈ ?
+A) 50
+B) 55
+C) 60
+D) 65
+Q476. 399 × 25 ≈ ?
+A) 8,000
+B) 9,000
+C) 10,000
+D) 11,000
+Q477. 2,500 × 19.8% ≈ ?
+A) 450
+B) 500
+C) 550
+D) 600
+Q478. 4,998 ÷ 51 ≈ ?
+A) 90
+B) 95
+C) 100
+D) 105
+Q479. 89.9% of 900 ≈ ?
+A) 750
+B) 800
+C) 810
+D) 850
+Q480. 1,201 + 798 - 499 ≈ ?
+A) 1,400
+B) 1,500
+C) 1,600
+D) 1,700
+
+# 25. DATA-BASED PERCENTAGE CHANGE — 20 Questions
+Q481. Percentage increase in A?
+A) 15%
+B) 20%
+C) 25%
+D) 30%
+Q482. Percentage increase in B?
+A) 8%
+B) 10%
+C) 12%
+D) 15%
+Q483. Percentage change in C?
+A) 5% decrease
+B) 10% decrease
+C) 15% decrease
+D) 20% decrease
+Q484. Percentage increase in D?
+A) 20%
+B) 25%
+C) 30%
+D) 35%
+Q485. Percentage increase in E?
+A) 20%
+B) 25%
+C) 30%
+D) 35%
+Q486. Which product has the highest percentage increase?
+A) A
+B) B
+C) D
+D) E
+Q487. Which product has a decline?
+A) A
+B) B
+C) C
+D) E
+Q488. Total sales in 2024?
+A) 3,200
+B) 3,300
+C) 3,400
+D) 3,500
+Q489. Total sales in 2025?
+A) 3,530
+B) 3,580
+C) 3,630
+D) 3,680
+Q490. Overall percentage change in sales?
+A) 5.76%
+B) 6.76%
+C) 7.76%
+D) 8.76%
+Q491. Absolute increase in A?
+A) 50
+B) 100
+C) 150
+D) 200
+Q492. Absolute increase in D?
+A) 100
+B) 125
+C) 150
+D) 175
+Q493. Absolute decrease in C?
+A) 50
+B) 100
+C) 150
+D) 200
+Q494. Combined percentage increase of A and E based on their combined 2024 sales?
+A) 20%
+B) 22.22%
+C) 25%
+D) 30%
+Q495. Ratio of 2025 sales of A to B?
+A) 3:4
+B) 15:22
+C) 2:3
+D) 5:7
+Q496. Difference in percentage change between D and B?
+A) 10 percentage points
+B) 12 percentage points
+C) 15 percentage points
+D) 18 percentage points
+Q497. If C's 2026 sales increase by 20% over 2025, sales become:
+A) 1,020
+B) 1,040
+C) 1,080
+D) 1,100
+Q498. If B's 2026 sales decrease by 10%, sales become:
+A) 780
+B) 792
+C) 800
+D) 810
+Q499. Which product contributes the largest absolute increase?
+A) A
+B) B
+C) D
+D) E
+Q500. How many products showed an increase in sales?
+A) 2
+B) 3
+C) 4
+D) 5

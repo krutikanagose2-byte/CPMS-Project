@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
+import DataInterpretationMenu from './DataInterpretationMenu';
 
 import { numberSystemQuestions } from '../../../data/numberSystemQuestions';
 import { hcfLcmQuestions } from '../../../data/hcfLcmQuestions';
@@ -20,7 +21,6 @@ import { permutationCombinationQuestions } from '../../../data/permutationCombin
 import { probabilityQuestions } from '../../../data/probabilityQuestions';
 import { mensurationQuestions } from '../../../data/mensurationQuestions';
 import { dataInterpretationQuestions } from '../../../data/dataInterpretationQuestions';
-
 
 const QuantitativeAptitude = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
@@ -42,11 +42,11 @@ const QuantitativeAptitude = () => {
     { id: 14, title: 'Permutation & Combination', questions: 20, color: 'green', data: permutationCombinationQuestions },
     { id: 15, title: 'Probability', questions: 20, color: 'purple', data: probabilityQuestions },
     { id: 16, title: 'Mensuration', questions: 20, color: 'orange', data: mensurationQuestions },
-    { id: 17, title: 'Data Interpretation', questions: 20, color: 'yellow', data: dataInterpretationQuestions },
+    { id: 17, title: 'Data Interpretation', questions: 320, color: 'yellow', data: 'SUBMENU' },
   ];
 
   const handleTopicClick = (topic) => {
-    if (topic.data) {
+    if (topic.data === 'SUBMENU' || topic.data) {
       setSelectedTopic(topic);
     } else {
       alert(`Content for ${topic.title} will be added soon!`);
@@ -58,6 +58,9 @@ const QuantitativeAptitude = () => {
   };
 
   if (selectedTopic) {
+    if (selectedTopic.data === 'SUBMENU') {
+      return <DataInterpretationMenu onBack={handleBackToTopics} />;
+    }
     return (
       <QuizComponent 
         topicTitle={selectedTopic.title} 

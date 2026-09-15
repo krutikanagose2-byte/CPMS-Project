@@ -2,7 +2,7 @@ import json
 import re
 
 text = """
-1. Reading Comprehension — 20 Questions
+1. Reading Comprehension — 40 Questions
 Passage 1
 
 Passage:
@@ -167,6 +167,171 @@ B) Types of sports
 C) Professional fitness
 D) Competitive games
 Answer: A
+
+Passage 6
+
+Passage:
+Remote work has become increasingly common in many organizations. It allows employees to work from locations outside the traditional office and can reduce commuting time. Employees may also experience greater flexibility in managing their schedules. However, remote work requires discipline and effective communication. Without proper planning, employees may become distracted or feel disconnected from their teams. Therefore, organizations need to provide appropriate tools and maintain regular communication with remote employees.
+
+Q21. What is one major benefit of remote work?
+A) More office meetings
+B) Reduced commuting time
+C) Increased travel
+D) Less flexibility
+Answer: B
+
+Q22. What does remote work require from employees?
+A) Discipline and communication
+B) More commuting
+C) Less planning
+D) Physical meetings every day
+Answer: A
+
+Q23. What problem may remote employees face?
+A) Too much office space
+B) Increased commuting
+C) Feeling disconnected from their teams
+D) Lack of flexibility
+Answer: C
+
+Q24. What should organizations provide to remote employees?
+A) More travel opportunities
+B) Appropriate tools and regular communication
+C) Fewer responsibilities
+D) Traditional offices only
+Answer: B
+
+Passage 7
+
+Passage:
+Environmental protection has become an important responsibility for individuals, businesses, and governments. Rapid industrialization and excessive consumption of natural resources have contributed to pollution and climate change. Simple actions such as reducing plastic use, saving electricity, using public transportation, and planting trees can help protect the environment. Although individual actions may seem small, collective efforts can create significant positive changes.
+
+Q25. Why has environmental protection become important?
+A) Because pollution and climate change are increasing
+B) Because people are travelling less
+C) Because industries are disappearing
+D) Because natural resources are unlimited
+Answer: A
+
+Q26. Which action can help protect the environment?
+A) Increasing plastic use
+B) Wasting electricity
+C) Planting trees
+D) Using more private vehicles
+Answer: C
+
+Q27. What does "collective efforts" mean?
+A) Actions taken by one person
+B) Actions taken together by many people
+C) Government actions only
+D) Industrial activities
+Answer: B
+
+Q28. What is the main message of the passage?
+A) Only governments can protect the environment
+B) Individual and collective actions can help protect the environment
+C) Industrialization should stop completely
+D) Environmental problems cannot be solved
+Answer: B
+
+Passage 8
+
+Passage:
+Failure is often considered a negative experience, but it can provide valuable lessons. When people fail, they can identify their weaknesses and understand what needs improvement. Successful individuals often experience failures before achieving their goals. Instead of giving up after failure, people should analyze what went wrong and make another attempt with a better strategy. In this way, failure can become an important part of personal and professional growth.
+
+Q29. What can failure help people identify?
+A) Their strengths only
+B) Their weaknesses
+C) Their friends
+D) Their salary
+Answer: B
+
+Q30. What should people do after failure?
+A) Give up immediately
+B) Ignore the problem
+C) Analyze what went wrong and try again
+D) Blame others
+Answer: C
+
+Q31. According to the passage, successful individuals:
+A) Never experience failure
+B) Often experience failure before achieving their goals
+C) Always avoid challenges
+D) Never change their strategies
+Answer: B
+
+Q32. What can failure become according to the passage?
+A) A reason to stop learning
+B) An important part of growth
+C) A permanent disadvantage
+D) A waste of time
+Answer: B
+
+Passage 9
+
+Passage:
+Online education has made learning accessible to people from different locations. Students can attend classes, watch recorded lectures, and access study materials through digital platforms. It also provides flexibility for learners who may have work or other responsibilities. However, online learning requires self-discipline because students may easily become distracted. Technical problems and limited interaction with teachers can also create challenges.
+
+Q33. What has online education made possible?
+A) Learning only in classrooms
+B) Learning from different locations
+C) Eliminating teachers
+D) Avoiding study materials
+Answer: B
+
+Q34. Which is an advantage of online education?
+A) Flexibility
+B) More commuting
+C) Less access to materials
+D) No learning resources
+Answer: A
+
+Q35. Why does online learning require self-discipline?
+A) Students may become distracted
+B) Teachers are always present
+C) Classes are always difficult
+D) Students cannot access lectures
+Answer: A
+
+Q36. Which is a challenge of online education?
+A) Too many classrooms
+B) Technical problems
+C) Excessive travelling
+D) Lack of flexibility
+Answer: B
+
+Passage 10
+
+Passage:
+A positive workplace environment can improve employee satisfaction and productivity. Employees are more likely to perform well when they feel respected and supported by their colleagues and managers. Clear communication, recognition of good work, and opportunities for professional development can contribute to a healthy workplace. On the other hand, poor communication and excessive stress may reduce motivation. Therefore, organizations should create an environment where employees can communicate openly and develop their skills.
+
+Q37. What can a positive workplace environment improve?
+A) Employee satisfaction and productivity
+B) Employee stress only
+C) Working hours
+D) Office expenses only
+Answer: A
+
+Q38. When are employees more likely to perform well?
+A) When they feel respected and supported
+B) When they receive no feedback
+C) When communication is poor
+D) When they experience excessive stress
+Answer: A
+
+Q39. Which can contribute to a healthy workplace?
+A) Poor communication
+B) Recognition of good work
+C) Excessive stress
+D) Lack of development opportunities
+Answer: B
+
+Q40. What should organizations encourage?
+A) Employees working without communication
+B) Open communication and skill development
+C) Excessive competition
+D) Avoiding professional development
+Answer: B
 
 2. Grammar — 20 Questions
 
