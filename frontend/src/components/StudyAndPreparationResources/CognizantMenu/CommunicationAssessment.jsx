@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import QuizComponent from './QuizComponent';
 import { readingComprehensionQuestions } from '../../../data/readingComprehensionQuestions';
 import { speakingAndListeningQuestions } from '../../../data/speakingAndListeningQuestions';
+import { grammarAndComprehensionQuestions } from '../../../data/grammarAndComprehensionQuestions';
 
 const communicationTopics = [
   { id: 1, title: 'Reading', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', data: readingComprehensionQuestions },
-  { id: 2, title: 'Grammar and Comprehension', questions: 20, color: '#fef3c7', iconColor: '#f59e0b', data: null },
+  { id: 2, title: 'Grammar and Comprehension', questions: 20, color: '#fef3c7', iconColor: '#f59e0b', data: grammarAndComprehensionQuestions },
   { id: 3, title: 'Speaking and Listening', questions: 40, color: '#f3e8ff', iconColor: '#a855f7', data: speakingAndListeningQuestions },
 ];
 

@@ -1,3 +1,9 @@
+import { diceGamesQuestions } from '../../../data/diceGamesQuestions';
+import { cardsPlayingGamesQuestions } from '../../../data/cardsPlayingGamesQuestions';
+import { coinGamesQuestions } from '../../../data/coinGamesQuestions';
+import { selectionGamesQuestions } from '../../../data/selectionGamesQuestions';
+import { arrangementGamesQuestions } from '../../../data/arrangementGamesQuestions';
+import { scoreBasedGamesQuestions } from '../../../data/scoreBasedGamesQuestions';
 import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
@@ -25,7 +31,16 @@ import { pathfindingGamesQuestions } from '../../../data/pathfindingGamesQuestio
 const GameBasedAptitude = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
 
-  const topics = []; // Placeholder for actual topics
+  const topics = [
+    { id: 1, title: 'Number Games', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', data: numberGamesQuestions },
+    { id: 2, title: 'Dice Games', questions: 20, color: '#fef3c7', iconColor: '#f59e0b', data: diceGamesQuestions },
+    { id: 3, title: 'Cards & Playing Games', questions: 20, color: '#f3e8ff', iconColor: '#a855f7', data: cardsPlayingGamesQuestions },
+    { id: 4, title: 'Coin Games', questions: 20, color: '#e0e7ff', iconColor: '#6366f1', data: coinGamesQuestions },
+    { id: 5, title: 'Selection Games', questions: 20, color: '#dcfce7', iconColor: '#22c55e', data: selectionGamesQuestions },
+    { id: 6, title: 'Arrangement Games', questions: 20, color: '#ffedd5', iconColor: '#f97316', data: arrangementGamesQuestions },
+    { id: 7, title: 'Game/Score Based Problems', questions: 20, color: '#fce7f3', iconColor: '#ec4899', data: scoreBasedGamesQuestions },
+    { id: 8, title: 'Logical Game Puzzles', questions: 20, color: '#ccfbf1', iconColor: '#14b8a6', data: logicalPuzzleGamesQuestions },
+  ];
 
   const handleTopicClick = (t) => {
     if (t.data) {

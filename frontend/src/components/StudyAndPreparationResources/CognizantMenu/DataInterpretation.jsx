@@ -19,7 +19,20 @@ import {
 const DataInterpretation = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
 
-  const topics = []; // Placeholder for actual topics
+  const topics = [
+    { id: 1, title: 'Tables', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', data: tableDIQuestions },
+    { id: 2, title: 'Bar Graphs', questions: 20, color: '#fef3c7', iconColor: '#f59e0b', data: barGraphQuestions },
+    { id: 3, title: 'Line Graphs', questions: 20, color: '#f3e8ff', iconColor: '#a855f7', data: lineGraphQuestions },
+    { id: 4, title: 'Pie Charts', questions: 20, color: '#e0e7ff', iconColor: '#6366f1', data: pieChartQuestions },
+    { id: 5, title: 'Caselets', questions: 20, color: '#dcfce7', iconColor: '#22c55e', data: caseletDIQuestions },
+    { id: 6, title: 'Mixed Graphs', questions: 20, color: '#ffedd5', iconColor: '#f97316', data: mixedGraphQuestions },
+    { id: 7, title: 'Data Sufficiency', questions: 20, color: '#fce7f3', iconColor: '#ec4899', data: dataSufficiencyQuestions },
+    { id: 8, title: 'Missing Data', questions: 20, color: '#ccfbf1', iconColor: '#14b8a6', data: missingDataDIQuestions },
+    { id: 9, title: 'Percentage-based DI', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', data: percentageBasedDIQuestions },
+    { id: 10, title: 'Ratio-based DI', questions: 20, color: '#fef3c7', iconColor: '#f59e0b', data: ratioBasedDIQuestions },
+    { id: 11, title: 'Average-based DI', questions: 20, color: '#f3e8ff', iconColor: '#a855f7', data: averageBasedDIQuestions },
+    { id: 12, title: 'Profit & Loss DI', questions: 20, color: '#e0e7ff', iconColor: '#6366f1', data: profitAndLossDIQuestions },
+  ];
 
   const handleTopicClick = (t) => {
     if (t.data) {

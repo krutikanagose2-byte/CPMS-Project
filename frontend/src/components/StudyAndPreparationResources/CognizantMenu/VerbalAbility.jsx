@@ -43,17 +43,17 @@ const VerbalAbility = () => {
 
   if (selectedTopic) {
     return (
-      <QuizComponent 
-        topicTitle={selectedTopic.title} 
-        questions={selectedTopic.data} 
-        onBack={handleBackToTopics} 
+      <QuizComponent
+        topicTitle={selectedTopic.title}
+        questions={selectedTopic.data}
+        onBack={handleBackToTopics}
       />
     );
   }
 
   const pyqHeaderContent = (
     <div className="pyq-section">
-      <h2 className="csr-topics-title" style={{marginBottom: '20px'}}>Previous Year Questions</h2>
+      <h2 className="csr-topics-title" style={{ marginBottom: '20px' }}>Previous Year Questions</h2>
       <div className="pyq-grid">
         <a href="/pyq/verbal_pyq1.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
           <div className="pyq-image-container">
@@ -84,7 +84,7 @@ const VerbalAbility = () => {
   );
 
   return (
-    <TopicsGrid 
+    <TopicsGrid
       topics={verbalTopics}
       bannerTitle="Ready to Test Your Verbal Ability?"
       bannerSubtitle="Take a full length test and analyze your English skills."

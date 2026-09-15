@@ -1,26 +1,31 @@
+import { paperFoldingQuestions } from '../../../data/paperFoldingQuestions';
+import { paperCuttingQuestions } from '../../../data/paperCuttingQuestions';
+import { embeddedFiguresQuestions } from '../../../data/embeddedFiguresQuestions';
+import { countingFiguresQuestions } from '../../../data/countingFiguresQuestions';
+import { patternCompletionQuestions } from '../../../data/patternCompletionQuestions';
+import { cubeAndDiceQuestions } from '../../../data/cubeAndDiceQuestions';
 import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
-import {
-  figureClassificationQuestions, figureAnalogyQuestions, figureSeriesQuestions,
-  missingFigureQuestions, oddFigureOutQuestions, mirrorImagesQuestions,
-  waterImagesQuestions, rotationOfFiguresQuestions
-} from './VisualReasoningQuestions1';
-import {
-  paperFoldingQuestions, paperCuttingQuestions, embeddedFiguresQuestions,
-  figureCompletionQuestions, patternCompletionQuestions, shapeMatchingQuestions,
-  visualCountingQuestions, cubeAndDiceQuestions
-} from './VisualReasoningQuestions2';
-import {
-  visualization2DTo3DQuestions, spatialOrientationQuestions, imageComparisonQuestions,
-  visualMemoryQuestions, positionDirectionQuestions, symmetryQuestions,
-  hiddenFiguresQuestions, matrixBasedFiguresQuestions, shapeTransformationQuestions
-} from './VisualReasoningQuestions3';
+
 
 const VisualReasoning = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
 
-  const topics = []; // Placeholder for actual topics
+  const topics = [
+    { id: 1, title: 'Figure Series', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', data: null },
+    { id: 2, title: 'Figure Analogy', questions: 20, color: '#fef3c7', iconColor: '#f59e0b', data: null },
+    { id: 3, title: 'Figure Classification', questions: 20, color: '#f3e8ff', iconColor: '#a855f7', data: null },
+    { id: 4, title: 'Mirror Images', questions: 20, color: '#e0e7ff', iconColor: '#6366f1', data: null },
+    { id: 5, title: 'Water Images', questions: 20, color: '#dcfce7', iconColor: '#22c55e', data: null },
+    { id: 6, title: 'Paper Folding', questions: 20, color: '#ffedd5', iconColor: '#f97316', data: paperFoldingQuestions },
+    { id: 7, title: 'Paper Cutting', questions: 20, color: '#fce7f3', iconColor: '#ec4899', data: paperCuttingQuestions },
+    { id: 8, title: 'Embedded Figures', questions: 20, color: '#ccfbf1', iconColor: '#14b8a6', data: embeddedFiguresQuestions },
+    { id: 9, title: 'Counting Figures', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', data: countingFiguresQuestions },
+    { id: 10, title: 'Pattern Completion', questions: 20, color: '#fef3c7', iconColor: '#f59e0b', data: patternCompletionQuestions },
+    { id: 11, title: 'Cube & Dice', questions: 20, color: '#f3e8ff', iconColor: '#a855f7', data: cubeAndDiceQuestions },
+    { id: 12, title: 'Figure Rotation', questions: 20, color: '#e0e7ff', iconColor: '#6366f1', data: null },
+  ];
 
   const handleTopicClick = (t) => {
     if (t.data) {
