@@ -1,27 +1,39 @@
 import React, { useState } from 'react';
-import Reading from './Reading';
-import GrammarAndComprehension from './GrammarAndComprehension';
-import SpeakingAndListening from './SpeakingAndListening';
+import QuizComponent from './QuizComponent';
+import { readingComprehensionQuestions } from '../../../data/readingComprehensionQuestions';
+import { speakingAndListeningQuestions } from '../../../data/speakingAndListeningQuestions';
 
 const communicationTopics = [
-  { id: 1, title: 'Reading', questions: 40, color: '#e0f2fe', iconColor: '#0ea5e9' },
-  { id: 2, title: 'Grammar and Comprehension', questions: 20, color: '#fef3c7', iconColor: '#f59e0b' },
-  { id: 3, title: 'Speaking and Listening', questions: 40, color: '#f3e8ff', iconColor: '#a855f7' },
+  { id: 1, title: 'Reading', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', data: readingComprehensionQuestions },
+  { id: 2, title: 'Grammar and Comprehension', questions: 20, color: '#fef3c7', iconColor: '#f59e0b', data: null },
+  { id: 3, title: 'Speaking and Listening', questions: 40, color: '#f3e8ff', iconColor: '#a855f7', data: speakingAndListeningQuestions },
 ];
 
 const CommunicationAssessment = ({ company }) => {
   const [selectedTopic, setSelectedTopic] = useState(null);
 
-  if (selectedTopic === 'Reading') {
-    return <Reading onBack={() => setSelectedTopic(null)} />;
-  }
+  const handleTopicClick = (topic) => {
+    if (topic.data) {
+      // slice the first 20 questions for the reading test since we only need 20
+      const dataToPass = topic.id === 1 ? topic.data.slice(0, 20) : topic.data;
+      setSelectedTopic({ ...topic, data: dataToPass });
+    } else {
+      alert(`Content for ${topic.title} will be added soon!`);
+    }
+  };
 
-  if (selectedTopic === 'Grammar and Comprehension') {
-    return <GrammarAndComprehension onBack={() => setSelectedTopic(null)} />;
-  }
+  const handleBackToTopics = () => {
+    setSelectedTopic(null);
+  };
 
-  if (selectedTopic === 'Speaking and Listening') {
-    return <SpeakingAndListening onBack={() => setSelectedTopic(null)} />;
+  if (selectedTopic) {
+    return (
+      <QuizComponent 
+        topicTitle={selectedTopic.title} 
+        questions={selectedTopic.data} 
+        onBack={handleBackToTopics} 
+      />
+    );
   }
 
   return (
@@ -44,8 +56,8 @@ const CommunicationAssessment = ({ company }) => {
         {communicationTopics.map((topic) => (
           <div 
             key={topic.id} 
-            className="csr-topic-card"
-            onClick={() => setSelectedTopic(topic.title)}
+            className="csr-topic-card" 
+            onClick={() => handleTopicClick(topic)}
             style={{ cursor: 'pointer' }}
           >
             <div className="csr-topic-icon" style={{ backgroundColor: topic.color, color: topic.iconColor }}>

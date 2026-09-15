@@ -72,17 +72,17 @@ const LogicalReasoning = () => {
 
   if (selectedTopic) {
     return (
-      <QuizComponent 
-        topicTitle={selectedTopic.title} 
-        questions={selectedTopic.data} 
-        onBack={handleBackToTopics} 
+      <QuizComponent
+        topicTitle={selectedTopic.title}
+        questions={selectedTopic.data}
+        onBack={handleBackToTopics}
       />
     );
   }
 
   const pyqHeaderContent = (
     <div className="pyq-section">
-      <h2 className="csr-topics-title" style={{marginBottom: '20px'}}>Previous Year Questions</h2>
+      <h2 className="csr-topics-title" style={{ marginBottom: '20px' }}>Previous Year Questions</h2>
       <div className="pyq-grid">
         <a href="/pyq/pyq1.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
           <div className="pyq-image-container">
@@ -113,7 +113,7 @@ const LogicalReasoning = () => {
   );
 
   return (
-    <TopicsGrid 
+    <TopicsGrid
       topics={logicalReasoningTopics}
       bannerTitle="Ready to Test Your Skills?"
       bannerSubtitle="Take a full length test and analyze your performance."
