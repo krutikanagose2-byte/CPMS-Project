@@ -178,21 +178,7 @@ const InterviewSetup = ({ company, onBack, onStartInterview }) => {
             )}
           </div>
           
-          <div style={{ marginBottom: '16px', textAlign: 'left', width: '100%', boxSizing: 'border-box' }}>
-            <label style={{ display: 'block', fontWeight: '600', color: '#1e293b', fontSize: '14px', marginBottom: '8px' }}>
-              Job Description (Optional)
-            </label>
-            <textarea
-              value={jobDescription}
-              onChange={(e) => setJobDescription(e.target.value)}
-              placeholder="Paste the job description here to generate highly relevant questions..."
-              style={{
-                width: '100%', minHeight: '100px', padding: '12px', borderRadius: '10px',
-                border: '1px solid #cbd5e1', fontSize: '14px', color: '#334155', fontFamily: 'inherit',
-                resize: 'vertical', boxSizing: 'border-box'
-              }}
-            />
-          </div>
+
 
           {error && <p style={{ color: '#ef4444', fontSize: '13px', marginBottom: '12px' }}>{error}</p>}
 

@@ -1,0 +1,121 @@
+export const cCodingQuestions = [
+  { id: 1, text: '### Q1. Print Hello World\n\n```c\n#include <stdio.h>\nint main() {\n    printf("Hello World");\n    return 0;\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 2, text: '### Q2. Add two numbers\n\n```c\n#include <stdio.h>\nint main() {\n    int a = 10, b = 20;\n    printf("%d", a + b);\n    return 0;\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 3, text: '### Q3. Check even or odd\n\n```c\n#include <stdio.h>\nint main() {\n    int n = 7;\n    if(n % 2 == 0)\n        printf("Even");\n    else\n        printf("Odd");\n    return 0;\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 4, text: '### Q4. Find largest of two numbers\n\n```c\nint a = 10, b = 20;\nprintf("%d", a > b ? a : b);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 5, text: '### Q5. Find largest of three numbers\n\n```c\nint a = 10, b = 25, c = 15;\nif(a >= b && a >= c)\n    printf("%d", a);\nelse if(b >= a && b >= c)\n    printf("%d", b);\nelse\n    printf("%d", c);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 6, text: '### Q6. Check positive, negative or zero\n\n```c\nint n = -5;\n\nif(n > 0)\n    printf("Positive");\nelse if(n < 0)\n    printf("Negative");\nelse\n    printf("Zero");\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 7, text: '### Q7. Find factorial\n\n```c\nint n = 5, fact = 1;\n\nfor(int i = 1; i <= n; i++)\n    fact *= i;\n\nprintf("%d", fact);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 8, text: '### Q8. Reverse a number\n\n```c\nint n = 1234, rev = 0;\n\nwhile(n > 0) {\n    rev = rev * 10 + n % 10;\n    n /= 10;\n}\n\nprintf("%d", rev);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 9, text: '### Q9. Check palindrome number\n\n```c\nint n = 121, temp = n, rev = 0;\n\nwhile(n > 0) {\n    rev = rev * 10 + n % 10;\n    n /= 10;\n}\n\nif(temp == rev)\n    printf("Palindrome");\nelse\n    printf("Not Palindrome");\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 10, text: '### Q10. Check prime number\n\n```c\nint n = 17, flag = 1;\n\nfor(int i = 2; i < n; i++) {\n    if(n % i == 0) {\n        flag = 0;\n        break;\n    }\n}\n\nif(flag)\n    printf("Prime");\nelse\n    printf("Not Prime");\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 11, text: '### Q11. Fibonacci series\n\n```c\nint a = 0, b = 1;\n\nfor(int i = 0; i < 10; i++) {\n    printf("%d ", a);\n    int c = a + b;\n    a = b;\n    b = c;\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 12, text: '### Q12. Sum of digits\n\n```c\nint n = 1234, sum = 0;\n\nwhile(n > 0) {\n    sum += n % 10;\n    n /= 10;\n}\n\nprintf("%d", sum);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 13, text: '### Q13. Count digits\n\n```c\nint n = 12345, count = 0;\n\nwhile(n > 0) {\n    count++;\n    n /= 10;\n}\n\nprintf("%d", count);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 14, text: '### Q14. Swap two numbers\n\n```c\nint a = 10, b = 20, temp;\n\ntemp = a;\na = b;\nb = temp;\n\nprintf("%d %d", a, b);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 15, text: '### Q15. Reverse a string\n\n```c\n#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[] = "hello";\n\n    for(int i = strlen(s)-1; i >= 0; i--)\n        printf("%c", s[i]);\n\n    return 0;\n}\n```', options: ['Mark as Read'], answer: 0 }
+];
+
+export const cppCodingQuestions = [
+  { id: 1, text: '### Q1. Print Hello World\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << "Hello World";\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 2, text: '### Q2. Add two numbers\n\n```cpp\nint a = 10, b = 20;\ncout << a + b;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 3, text: '### Q3. Even or Odd\n\n```cpp\nint n = 8;\n\nif(n % 2 == 0)\n    cout << "Even";\nelse\n    cout << "Odd";\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 4, text: '### Q4. Largest of three\n\n```cpp\nint a = 10, b = 30, c = 20;\n\ncout << max(a, max(b, c));\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 5, text: '### Q5. Factorial\n\n```cpp\nint n = 5, fact = 1;\n\nfor(int i = 1; i <= n; i++)\n    fact *= i;\n\ncout << fact;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 6, text: '### Q6. Reverse number\n\n```cpp\nint n = 1234, rev = 0;\n\nwhile(n) {\n    rev = rev * 10 + n % 10;\n    n /= 10;\n}\n\ncout << rev;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 7, text: '### Q7. Palindrome\n\n```cpp\nint n = 121, temp = n, rev = 0;\n\nwhile(n) {\n    rev = rev * 10 + n % 10;\n    n /= 10;\n}\n\ncout << (temp == rev ? "Palindrome" : "Not Palindrome");\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 8, text: '### Q8. Prime number\n\n```cpp\nint n = 17;\nbool prime = true;\n\nfor(int i = 2; i < n; i++) {\n    if(n % i == 0) {\n        prime = false;\n        break;\n    }\n}\n\ncout << (prime ? "Prime" : "Not Prime");\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 9, text: '### Q9. Fibonacci\n\n```cpp\nint a = 0, b = 1;\n\nfor(int i = 0; i < 10; i++) {\n    cout << a << " ";\n    int c = a + b;\n    a = b;\n    b = c;\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 10, text: '### Q10. Sum of digits\n\n```cpp\nint n = 12345, sum = 0;\n\nwhile(n) {\n    sum += n % 10;\n    n /= 10;\n}\n\ncout << sum;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 11, text: '### Q11. Find array sum\n\n```cpp\nint arr[] = {1, 2, 3, 4, 5};\nint sum = 0;\n\nfor(int x : arr)\n    sum += x;\n\ncout << sum;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 12, text: '### Q12. Find maximum in array\n\n```cpp\nint arr[] = {10, 25, 5, 40};\n\nint mx = arr[0];\n\nfor(int x : arr)\n    mx = max(mx, x);\n\ncout << mx;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 13, text: '### Q13. Count vowels\n\n```cpp\nstring s = "hello";\nint count = 0;\n\nfor(char c : s) {\n    if(c==\'a\'||c==\'e\'||c==\'i\'||c==\'o\'||c==\'u\')\n        count++;\n}\n\ncout << count;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 14, text: '### Q14. Reverse string\n\n```cpp\nstring s = "hello";\n\nreverse(s.begin(), s.end());\n\ncout << s;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 15, text: '### Q15. Sort array\n\n```cpp\nint arr[] = {5, 2, 8, 1};\n\nsort(arr, arr + 4);\n\nfor(int x : arr)\n    cout << x << " ";\n```', options: ['Mark as Read'], answer: 0 }
+];
+
+export const javaCodingQuestions = [
+  { id: 1, text: '### Q1. Print Hello World\n\n```java\nclass Main {\n    public static void main(String[] args) {\n        System.out.println("Hello World");\n    }\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 2, text: '### Q2. Add two numbers\n\n```java\nint a = 10, b = 20;\nSystem.out.println(a + b);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 3, text: '### Q3. Even or Odd\n\n```java\nint n = 7;\n\nif(n % 2 == 0)\n    System.out.println("Even");\nelse\n    System.out.println("Odd");\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 4, text: '### Q4. Largest of three\n\n```java\nint a = 10, b = 30, c = 20;\n\nSystem.out.println(Math.max(a, Math.max(b, c)));\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 5, text: '### Q5. Factorial\n\n```java\nint n = 5;\nint fact = 1;\n\nfor(int i = 1; i <= n; i++)\n    fact *= i;\n\nSystem.out.println(fact);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 6, text: '### Q6. Reverse number\n\n```java\nint n = 1234;\nint rev = 0;\n\nwhile(n > 0) {\n    rev = rev * 10 + n % 10;\n    n /= 10;\n}\n\nSystem.out.println(rev);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 7, text: '### Q7. Palindrome\n\n```java\nint n = 121;\nint temp = n, rev = 0;\n\nwhile(n > 0) {\n    rev = rev * 10 + n % 10;\n    n /= 10;\n}\n\nSystem.out.println(temp == rev ? "Palindrome" : "Not Palindrome");\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 8, text: '### Q8. Prime number\n\n```java\nint n = 17;\nboolean prime = true;\n\nfor(int i = 2; i < n; i++) {\n    if(n % i == 0) {\n        prime = false;\n        break;\n    }\n}\n\nSystem.out.println(prime ? "Prime" : "Not Prime");\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 9, text: '### Q9. Fibonacci\n\n```java\nint a = 0, b = 1;\n\nfor(int i = 0; i < 10; i++) {\n    System.out.print(a + " ");\n    int c = a + b;\n    a = b;\n    b = c;\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 10, text: '### Q10. Sum of digits\n\n```java\nint n = 1234;\nint sum = 0;\n\nwhile(n > 0) {\n    sum += n % 10;\n    n /= 10;\n}\n\nSystem.out.println(sum);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 11, text: '### Q11. Find maximum in array\n\n```java\nint[] arr = {10, 25, 5, 40};\nint max = arr[0];\n\nfor(int x : arr)\n    max = Math.max(max, x);\n\nSystem.out.println(max);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 12, text: '### Q12. Array sum\n\n```java\nint[] arr = {1, 2, 3, 4, 5};\nint sum = 0;\n\nfor(int x : arr)\n    sum += x;\n\nSystem.out.println(sum);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 13, text: '### Q13. Count vowels\n\n```java\nString s = "hello";\nint count = 0;\n\nfor(char c : s.toCharArray()) {\n    if("aeiou".indexOf(c) != -1)\n        count++;\n}\n\nSystem.out.println(count);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 14, text: '### Q14. Reverse string\n\n```java\nString s = "hello";\n\nString rev = new StringBuilder(s).reverse().toString();\n\nSystem.out.println(rev);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 15, text: '### Q15. Sort array\n\n```java\nimport java.util.Arrays;\n\nint[] arr = {5, 2, 8, 1};\n\nArrays.sort(arr);\n\nSystem.out.println(Arrays.toString(arr));\n```', options: ['Mark as Read'], answer: 0 }
+];
+
+export const pythonCodingQuestions = [
+  { id: 1, text: '### Q1. Print Hello World\n\n```python\nprint("Hello World")\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 2, text: '### Q2. Add two numbers\n\n```python\na = 10\nb = 20\n\nprint(a + b)\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 3, text: '### Q3. Even or Odd\n\n```python\nn = 7\n\nif n % 2 == 0:\n    print("Even")\nelse:\n    print("Odd")\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 4, text: '### Q4. Largest of three\n\n```python\na, b, c = 10, 30, 20\n\nprint(max(a, b, c))\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 5, text: '### Q5. Factorial\n\n```python\nn = 5\nfact = 1\n\nfor i in range(1, n + 1):\n    fact *= i\n\nprint(fact)\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 6, text: '### Q6. Reverse number\n\n```python\nn = 1234\n\nprint(int(str(n)[::-1]))\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 7, text: '### Q7. Palindrome\n\n```python\nn = 121\n\nif str(n) == str(n)[::-1]:\n    print("Palindrome")\nelse:\n    print("Not Palindrome")\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 8, text: '### Q8. Prime number\n\n```python\nn = 17\nprime = True\n\nfor i in range(2, n):\n    if n % i == 0:\n        prime = False\n        break\n\nprint("Prime" if prime else "Not Prime")\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 9, text: '### Q9. Fibonacci\n\n```python\na, b = 0, 1\n\nfor i in range(10):\n    print(a, end=" ")\n    a, b = b, a + b\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 10, text: '### Q10. Sum of digits\n\n```python\nn = 1234\nprint(sum(map(int, str(n))))\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 11, text: '### Q11. Find maximum in list\n\n```python\narr = [10, 25, 5, 40]\n\nprint(max(arr))\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 12, text: '### Q12. Sum of list\n\n```python\narr = [1, 2, 3, 4, 5]\n\nprint(sum(arr))\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 13, text: '### Q13. Count vowels\n\n```python\ns = "hello"\n\ncount = 0\n\nfor ch in s:\n    if ch in "aeiou":\n        count += 1\n\nprint(count)\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 14, text: '### Q14. Reverse string\n\n```python\ns = "hello"\n\nprint(s[::-1])\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 15, text: '### Q15. Sort list\n\n```python\narr = [5, 2, 8, 1]\n\narr.sort()\n\nprint(arr)\n```', options: ['Mark as Read'], answer: 0 }
+];
+
+export const sqlCodingQuestions = [
+  { id: 1, text: '### Q1. Display all employees\n\nAssume table: Employee(id, name, salary, department, age)\n\n```sql\nSELECT * FROM Employee;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 2, text: '### Q2. Display employee names\n\n```sql\nSELECT name FROM Employee;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 3, text: '### Q3. Employees with salary > 50000\n\n```sql\nSELECT *\nFROM Employee\nWHERE salary > 50000;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 4, text: '### Q4. Employees from IT department\n\n```sql\nSELECT *\nFROM Employee\nWHERE department = \'IT\';\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 5, text: '### Q5. Find maximum salary\n\n```sql\nSELECT MAX(salary)\nFROM Employee;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 6, text: '### Q6. Find minimum salary\n\n```sql\nSELECT MIN(salary)\nFROM Employee;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 7, text: '### Q7. Find average salary\n\n```sql\nSELECT AVG(salary)\nFROM Employee;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 8, text: '### Q8. Find total salary\n\n```sql\nSELECT SUM(salary)\nFROM Employee;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 9, text: '### Q9. Count employees\n\n```sql\nSELECT COUNT(*)\nFROM Employee;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 10, text: '### Q10. Sort employees by salary\n\n```sql\nSELECT *\nFROM Employee\nORDER BY salary DESC;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 11, text: '### Q11. Find second highest salary\n\n```sql\nSELECT MAX(salary)\nFROM Employee\nWHERE salary < (\n    SELECT MAX(salary)\n    FROM Employee\n);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 12, text: '### Q12. Find employees age > 25\n\n```sql\nSELECT *\nFROM Employee\nWHERE age > 25;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 13, text: '### Q13. Department-wise employee count\n\n```sql\nSELECT department, COUNT(*)\nFROM Employee\nGROUP BY department;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 14, text: '### Q14. Department-wise average salary\n\n```sql\nSELECT department, AVG(salary)\nFROM Employee\nGROUP BY department;\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 15, text: '### Q15. Departments having average salary > 50000\n\n```sql\nSELECT department, AVG(salary)\nFROM Employee\nGROUP BY department\nHAVING AVG(salary) > 50000;\n```', options: ['Mark as Read'], answer: 0 }
+];
+
+export const javascriptCodingQuestions = [
+  { id: 1, text: '### Q1. Print Hello World\n\n```javascript\nconsole.log("Hello World");\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 2, text: '### Q2. Add two numbers\n\n```javascript\nlet a = 10;\nlet b = 20;\n\nconsole.log(a + b);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 3, text: '### Q3. Even or Odd\n\n```javascript\nlet n = 7;\n\nif (n % 2 === 0)\n    console.log("Even");\nelse\n    console.log("Odd");\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 4, text: '### Q4. Largest of three\n\n```javascript\nlet a = 10, b = 30, c = 20;\n\nconsole.log(Math.max(a, b, c));\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 5, text: '### Q5. Factorial\n\n```javascript\nlet n = 5;\nlet fact = 1;\n\nfor(let i = 1; i <= n; i++)\n    fact *= i;\n\nconsole.log(fact);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 6, text: '### Q6. Reverse number\n\n```javascript\nlet n = 1234;\n\nlet rev = Number(String(n).split(\'\').reverse().join(\'\'));\n\nconsole.log(rev);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 7, text: '### Q7. Palindrome\n\n```javascript\nlet str = "madam";\n\nlet rev = str.split(\'\').reverse().join(\'\');\n\nconsole.log(str === rev ? "Palindrome" : "Not Palindrome");\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 8, text: '### Q8. Prime number\n\n```javascript\nlet n = 17;\nlet prime = true;\n\nfor(let i = 2; i < n; i++) {\n    if(n % i === 0) {\n        prime = false;\n        break;\n    }\n}\n\nconsole.log(prime ? "Prime" : "Not Prime");\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 9, text: '### Q9. Fibonacci\n\n```javascript\nlet a = 0, b = 1;\n\nfor(let i = 0; i < 10; i++) {\n    console.log(a);\n    let c = a + b;\n    a = b;\n    b = c;\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 10, text: '### Q10. Sum of digits\n\n```javascript\nlet n = 1234;\nlet sum = 0;\n\nwhile(n > 0) {\n    sum += n % 10;\n    n = Math.floor(n / 10);\n}\n\nconsole.log(sum);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 11, text: '### Q11. Find maximum in array\n\n```javascript\nlet arr = [10, 25, 5, 40];\n\nconsole.log(Math.max(...arr));\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 12, text: '### Q12. Sum of array\n\n```javascript\nlet arr = [1, 2, 3, 4, 5];\n\nlet sum = arr.reduce((a, b) => a + b, 0);\n\nconsole.log(sum);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 13, text: '### Q13. Count vowels\n\n```javascript\nlet str = "hello";\nlet count = 0;\n\nfor(let ch of str) {\n    if("aeiou".includes(ch))\n        count++;\n}\n\nconsole.log(count);\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 14, text: '### Q14. Reverse string\n\n```javascript\nlet str = "hello";\n\nconsole.log(str.split(\'\').reverse().join(\'\'));\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 15, text: '### Q15. Sort array\n\n```javascript\nlet arr = [5, 2, 8, 1];\n\narr.sort((a, b) => a - b);\n\nconsole.log(arr);\n```', options: ['Mark as Read'], answer: 0 }
+];
+
+export const webDevCodingQuestions = [
+  { id: 1, text: '### Q1. Counter Application ⭐⭐⭐⭐⭐\n\n**Task:** Create a counter with `+`, `-`, and `Reset` buttons.\n\n**Expected Output:** Clicking `+` increases count, `-` decreases, `Reset` sets to 0.\n\n**Main JavaScript:**\n```javascript\nlet count = 0;\n\nfunction increase() {\n    count++;\n    document.getElementById("count").innerText = count;\n}\n\nfunction decrease() {\n    count--;\n    document.getElementById("count").innerText = count;\n}\n\nfunction reset() {\n    count = 0;\n    document.getElementById("count").innerText = count;\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 2, text: '### Q2. To-Do List ⭐⭐⭐⭐⭐\n\n**Task:** Create an input box, Add button, Task list, and Delete button.\n\n**Expected Output:** Enter task and click Add to append it. Click Delete to remove it.\n\n**Main JavaScript:**\n```javascript\nfunction addTask() {\n    let input = document.getElementById("task");\n    let text = input.value;\n\n    if (text === "") {\n        alert("Enter a task");\n        return;\n    }\n\n    let li = document.createElement("li");\n    li.innerHTML = text + " <button onclick=\'deleteTask(this)\'>Delete</button>";\n\n    document.getElementById("list").appendChild(li);\n\n    input.value = "";\n}\n\nfunction deleteTask(btn) {\n    btn.parentElement.remove();\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 3, text: '### Q3. Form Validation ⭐⭐⭐⭐⭐\n\n**Task:** Create a registration form validating Name, Email, and Password (min 6 chars).\n\n**Expected Output:** Show alerts based on validation rules.\n\n**Main JavaScript:**\n```javascript\nfunction validateForm() {\n    let name = document.getElementById("name").value;\n    let email = document.getElementById("email").value;\n    let password = document.getElementById("password").value;\n\n    if (name === "") {\n        alert("Name is required");\n        return false;\n    }\n\n    if (!email.includes("@")) {\n        alert("Enter valid email");\n        return false;\n    }\n\n    if (password.length < 6) {\n        alert("Password must contain 6 characters");\n        return false;\n    }\n\n    alert("Registration Successful!");\n    return true;\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 4, text: '### Q4. Digital Clock ⭐⭐⭐⭐⭐\n\n**Task:** Create a digital clock that updates every second.\n\n**Expected Output:** Displays current time continuously updating.\n\n**Main JavaScript:**\n```javascript\nfunction showTime() {\n    let now = new Date();\n    let time = now.toLocaleTimeString();\n    document.getElementById("clock").innerText = time;\n}\n\nsetInterval(showTime, 1000);\nshowTime();\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 5, text: '### Q5. Calculator ⭐⭐⭐⭐⭐\n\n**Task:** Create a calculator with basic operations.\n\n**Expected Output:** Perform arithmetic operations correctly.\n\n**Main JavaScript:**\n```javascript\nlet expression = "";\n\nfunction press(value) {\n    expression += value;\n    document.getElementById("display").value = expression;\n}\n\nfunction calculate() {\n    document.getElementById("display").value = eval(expression);\n}\n\nfunction clearDisplay() {\n    expression = "";\n    document.getElementById("display").value = "";\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 6, text: '### Q6. Show / Hide Password ⭐⭐⭐⭐\n\n**Task:** Create a password field with a toggle button.\n\n**Expected Output:** Toggles input type between password and text.\n\n**Main JavaScript:**\n```javascript\nfunction togglePassword() {\n    let password = document.getElementById("password");\n\n    if (password.type === "password") {\n        password.type = "text";\n        document.getElementById("btn").innerText = "Hide";\n    } else {\n        password.type = "password";\n        document.getElementById("btn").innerText = "Show";\n    }\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 7, text: '### Q7. Search / Filter List ⭐⭐⭐⭐⭐\n\n**Task:** Create a search box that filters a list of products.\n\n**Expected Output:** As user types, non-matching items are hidden.\n\n**Main JavaScript:**\n```javascript\nfunction searchProduct() {\n    let input = document.getElementById("search").value.toLowerCase();\n    let items = document.querySelectorAll("#products li");\n\n    items.forEach(function(item) {\n        let text = item.innerText.toLowerCase();\n\n        if (text.includes(input)) {\n            item.style.display = "block";\n        } else {\n            item.style.display = "none";\n        }\n    });\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 8, text: '### Q8. Background Color Changer ⭐⭐⭐⭐\n\n**Task:** Create buttons to change the background color.\n\n**Expected Output:** Clicking a button sets document background.\n\n**Main JavaScript:**\n```javascript\nfunction changeColor(color) {\n    document.body.style.backgroundColor = color;\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 9, text: '### Q9. Student Marks / Grade Calculator ⭐⭐⭐⭐⭐\n\n**Task:** Input marks and output a grade (A, B, C, D, F).\n\n**Expected Output:** Grades assigned based on value.\n\n**Main JavaScript:**\n```javascript\nfunction calculateGrade() {\n    let marks = Number(document.getElementById("marks").value);\n    let grade;\n\n    if (marks >= 90)\n        grade = "A";\n    else if (marks >= 80)\n        grade = "B";\n    else if (marks >= 70)\n        grade = "C";\n    else if (marks >= 60)\n        grade = "D";\n    else\n        grade = "F";\n\n    document.getElementById("result").innerText = "Grade: " + grade;\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 10, text: '### Q10. Dynamic Table / Employee Search ⭐⭐⭐⭐⭐\n\n**Task:** Create a table of employees and search by name.\n\n**Expected Output:** Filters table rows matching the search input.\n\n**Main JavaScript:**\n```javascript\nfunction searchEmployee() {\n    let search = document.getElementById("search").value.toLowerCase();\n    let rows = document.querySelectorAll("#employeeTable tbody tr");\n\n    rows.forEach(function(row) {\n        let name = row.cells[0].innerText.toLowerCase();\n\n        if (name.includes(search)) {\n            row.style.display = "";\n        } else {\n            row.style.display = "none";\n        }\n    });\n}\n```', options: ['Mark as Read'], answer: 0 },
+  { id: 11, text: '### Outputs of 10 Important HTML, CSS, JavaScript Tasks', image: '/webdev_output.png', options: ['Mark as Read'], answer: 0 }
+];

@@ -136,6 +136,7 @@ const CognizantMenu = ({ company, onBack, onOpenAIInterview }) => {
               );
             })}
           </div>
+          <div id="csr-portal-back-btn"></div>
         </div>
 
         {/* Content Body */}

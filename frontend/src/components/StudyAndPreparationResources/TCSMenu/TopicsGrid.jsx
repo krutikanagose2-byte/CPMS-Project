@@ -41,19 +41,6 @@ const TopicsGrid = ({ topics, bannerTitle, bannerSubtitle, bannerButtonText, onT
           ))}
         </div>
 
-        <div className="csr-banner">
-          <div className="csr-banner-content">
-            <div className="csr-banner-icon">🎯</div>
-            <div className="csr-banner-text">
-              <h3>{bannerTitle}</h3>
-              <p>{bannerSubtitle}</p>
-            </div>
-          </div>
-          <button className="csr-banner-btn">
-            {bannerButtonText} →
-          </button>
-        </div>
-
       </div>
     </div>
   );

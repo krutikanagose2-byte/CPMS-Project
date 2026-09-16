@@ -6,7 +6,7 @@ import Aptitude from './Aptitude';
 import Technical from './Technical';
 import Interview from './Interview';
 
-const TCSMenu = ({ company, onBack }) => {
+const TCSMenu = ({ company, onBack, onOpenAIInterview }) => {
   const [activeTab, setActiveTab] = useState('Overview');
   const [activeMenu, setActiveMenu] = useState('Pattern');
   const [isSyllabusExpanded, setIsSyllabusExpanded] = useState(false);
@@ -32,7 +32,7 @@ const TCSMenu = ({ company, onBack }) => {
       case 'Technical':
         return <Technical company={company} currentYear={currentYear} />;
       case 'Interview':
-        return <Interview company={company} currentYear={currentYear} />;
+        return <Interview company={company} currentYear={currentYear} onOpenAIInterview={onOpenAIInterview} />;
       default:
         return (
           <div className="csr-content-body">
@@ -127,6 +127,7 @@ const TCSMenu = ({ company, onBack }) => {
               );
             })}
           </div>
+          <div id="csr-portal-back-btn"></div>
         </div>
 
         {/* Content Body */}

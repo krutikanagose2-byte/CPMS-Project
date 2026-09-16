@@ -96,7 +96,7 @@ export default function App() {
     return (
       <InterviewSetup 
         company={selectedCompany}
-        onBack={() => setPage('companies')}
+        onBack={() => setPage('company-study')}
         onStartInterview={(sessionData) => {
           setInterviewSession(sessionData);
           setPage('active-interview');

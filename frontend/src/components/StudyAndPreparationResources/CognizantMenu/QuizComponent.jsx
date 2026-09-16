@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import './QuizComponent.css';
 
 const QuizComponent = ({ topicTitle, questions, onBack, hideOptions = false }) => {
@@ -86,12 +87,24 @@ const QuizComponent = ({ topicTitle, questions, onBack, hideOptions = false }) =
     });
   };
 
+  const portalTarget = document.getElementById('csr-portal-back-btn');
+
   return (
     <div className="csr-quiz-view">
+      {portalTarget && createPortal(
+        <div style={{ paddingBottom: '12px' }}>
+          <button className="csr-quiz-back-btn" onClick={onBack} style={{ backgroundColor: 'white' }}>
+            ← Back to Topics
+          </button>
+        </div>,
+        portalTarget
+      )}
       <div className="csr-quiz-header">
-        <button className="csr-quiz-back-btn" onClick={onBack}>
-          ← Back to Topics
-        </button>
+        {!portalTarget && (
+          <button className="csr-quiz-back-btn" onClick={onBack}>
+            ← Back to Topics
+          </button>
+        )}
         <h2 className="csr-quiz-title">{topicTitle} — {questions.length} Questions</h2>
       </div>
 
