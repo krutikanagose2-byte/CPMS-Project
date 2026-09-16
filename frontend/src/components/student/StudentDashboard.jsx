@@ -27,6 +27,7 @@ const StudentDashboard = ({
 
     const studentNavItems = [
         { id: 'profile', icon: 'fas fa-user', label: 'My Profile' },
+        { id: 'eligibility', icon: 'fas fa-check-circle', label: 'Eligibility Criteria' },
         { id: 'materials', icon: 'fas fa-book', label: 'Study Materials' },
         { id: 'documents', icon: 'fas fa-folder', label: 'My Documents' },
         { id: 'messages', icon: 'fas fa-comments', label: 'Help & Queries' },

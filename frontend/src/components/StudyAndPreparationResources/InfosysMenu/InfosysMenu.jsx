@@ -4,8 +4,6 @@ import Pattern from './Pattern';
 import Syllabus from './Syllabus';
 import OnlineAssessment from './OnlineAssessment';
 import CodingRound from './CodingRound';
-import TechnicalInterview from './TechnicalInterview';
-import HRInterview from './HRInterview';
 import Interview from './Interview';
 
 const InfosysMenu = ({ company, onBack, onOpenAIInterview }) => {
