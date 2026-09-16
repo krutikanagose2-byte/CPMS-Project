@@ -1,132 +1,46 @@
+import { diceGamesQuestions } from '../../../data/diceGamesQuestions';
+import { cardsPlayingGamesQuestions } from '../../../data/cardsPlayingGamesQuestions';
+import { coinGamesQuestions } from '../../../data/coinGamesQuestions';
+import { selectionGamesQuestions } from '../../../data/selectionGamesQuestions';
+import { arrangementGamesQuestions } from '../../../data/arrangementGamesQuestions';
+import { scoreBasedGamesQuestions } from '../../../data/scoreBasedGamesQuestions';
 import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
+import { rulesbasedLogicGamesQuestions } from '../../../data/rulesbasedLogicGamesQuestions';
+import { rankingOrderingGamesQuestions } from '../../../data/rankingOrderingGamesQuestions';
+import { pathfindingGameQuestions } from '../../../data/pathfindingGameQuestions';
+import { numberGamesQuestions } from '../../../data/numberGamesQuestions';
+import { memoryGamesQuestions } from '../../../data/memoryGamesQuestions';
+import { patternRecognitionQuestions } from '../../../data/patternRecognitionQuestions';
+import { logicalPuzzleGamesQuestions } from '../../../data/logicalPuzzleGamesQuestions';
+import { sequenceSeriesGamesQuestions } from '../../../data/sequenceSeriesGamesQuestions';
+import { strategyGamesQuestions } from '../../../data/strategyGamesQuestions';
+import { probabilityGamesQuestions } from '../../../data/probabilityGamesQuestions';
+import { gridbasedGamesQuestions } from '../../../data/gridbasedGamesQuestions';
+import { matchingGroupingGamesQuestions } from '../../../data/matchingGroupingGamesQuestions';
+import { schedulingGamesQuestions } from '../../../data/schedulingGamesQuestions';
+import { optimizationGamesQuestions } from '../../../data/optimizationGamesQuestions';
+import { reactionAttentionGamesQuestions } from '../../../data/reactionAttentionGamesQuestions';
+import { mathematicalGamesQuestions } from '../../../data/mathematicalGamesQuestions';
+import { visualPatternGamesQuestions } from '../../../data/visualPatternGamesQuestions';
+import { resourceManagementGamesQuestions } from '../../../data/resourceManagementGamesQuestions';
+import { pathfindingGamesQuestions } from '../../../data/pathfindingGamesQuestions';
+
 
 const GameBasedAptitude = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
 
   const topics = [
-  {
-    "id": 1,
-    "title": "Number Games",
-    "questions": 4,
-    "color": "blue"
-  },
-  {
-    "id": 2,
-    "title": "Memory Games",
-    "questions": 4,
-    "color": "green"
-  },
-  {
-    "id": 3,
-    "title": "Pattern Recognition",
-    "questions": 4,
-    "color": "purple"
-  },
-  {
-    "id": 4,
-    "title": "Logical Puzzle Games",
-    "questions": 4,
-    "color": "red"
-  },
-  {
-    "id": 5,
-    "title": "Sequence & Series Games",
-    "questions": 4,
-    "color": "orange"
-  },
-  {
-    "id": 6,
-    "title": "Spatial Reasoning Games",
-    "questions": 4,
-    "color": "yellow"
-  },
-  {
-    "id": 7,
-    "title": "Decision-Making Games",
-    "questions": 4,
-    "color": "blue"
-  },
-  {
-    "id": 8,
-    "title": "Strategy Games",
-    "questions": 4,
-    "color": "green"
-  },
-  {
-    "id": 9,
-    "title": "Probability Games",
-    "questions": 4,
-    "color": "purple"
-  },
-  {
-    "id": 10,
-    "title": "Grid-Based Games",
-    "questions": 4,
-    "color": "red"
-  },
-  {
-    "id": 11,
-    "title": "Matching & Grouping Games",
-    "questions": 4,
-    "color": "orange"
-  },
-  {
-    "id": 12,
-    "title": "Scheduling Games",
-    "questions": 4,
-    "color": "yellow"
-  },
-  {
-    "id": 13,
-    "title": "Optimization Games",
-    "questions": 4,
-    "color": "blue"
-  },
-  {
-    "id": 14,
-    "title": "Reaction & Attention Games",
-    "questions": 4,
-    "color": "green"
-  },
-  {
-    "id": 15,
-    "title": "Mathematical Games",
-    "questions": 4,
-    "color": "purple"
-  },
-  {
-    "id": 16,
-    "title": "Visual Pattern Games",
-    "questions": 4,
-    "color": "red"
-  },
-  {
-    "id": 17,
-    "title": "Resource Management Games",
-    "questions": 4,
-    "color": "orange"
-  },
-  {
-    "id": 18,
-    "title": "Path-Finding Games",
-    "questions": 4,
-    "color": "yellow"
-  },
-  {
-    "id": 19,
-    "title": "Ranking & Ordering Games",
-    "questions": 4,
-    "color": "blue"
-  },
-  {
-    "id": 20,
-    "title": "Rules-Based Logic Games",
-    "questions": 4,
-    "color": "green"
-  }
-];
+    { id: 1, title: 'Number Games', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', data: numberGamesQuestions },
+    { id: 2, title: 'Dice Games', questions: 20, color: '#fef3c7', iconColor: '#f59e0b', data: diceGamesQuestions },
+    { id: 3, title: 'Cards & Playing Games', questions: 20, color: '#f3e8ff', iconColor: '#a855f7', data: cardsPlayingGamesQuestions },
+    { id: 4, title: 'Coin Games', questions: 20, color: '#e0e7ff', iconColor: '#6366f1', data: coinGamesQuestions },
+    { id: 5, title: 'Selection Games', questions: 20, color: '#dcfce7', iconColor: '#22c55e', data: selectionGamesQuestions },
+    { id: 6, title: 'Arrangement Games', questions: 20, color: '#ffedd5', iconColor: '#f97316', data: arrangementGamesQuestions },
+    { id: 7, title: 'Game/Score Based Problems', questions: 20, color: '#fce7f3', iconColor: '#ec4899', data: scoreBasedGamesQuestions },
+    { id: 8, title: 'Logical Game Puzzles', questions: 20, color: '#ccfbf1', iconColor: '#14b8a6', data: logicalPuzzleGamesQuestions },
+  ];
 
   const handleTopicClick = (t) => {
     if (t.data) {

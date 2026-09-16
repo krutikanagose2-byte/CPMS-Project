@@ -13,12 +13,17 @@ import CompanyOffers from './components/CompanyOffers';
 import NoticeBoard from './components/NoticeBoard';
 import StudentDashboard from './components/student/StudentDashboard';
 import StudyAndPreparationResources from './components/StudyAndPreparationResources/StudyAndPreparationResources';
+import InterviewSetup from './components/VirtualInterview/InterviewSetup';
+import ActiveInterview from './components/VirtualInterview/ActiveInterview';
+import InterviewReport from './components/VirtualInterview/InterviewReport';
 
 export default function App() {
-  const [page, setPage] = useState('home'); // 'home' | 'login' | 'companies' | 'placements' | 'notice' | 'student-dashboard' | 'company-offers' | 'company-study'
+  const [page, setPage] = useState('home'); // 'home' | 'login' | 'companies' | 'placements' | 'notice' | 'student-dashboard' | 'company-offers' | 'company-study' | 'interview-setup' | 'active-interview' | 'interview-report'
   const [user, setUser] = useState(null);
   const [selectedCompany, setSelectedCompany] = useState(null);
   const [targetPlacementCompany, setTargetPlacementCompany] = useState(null);
+  const [interviewResult, setInterviewResult] = useState(null);
+  const [interviewSession, setInterviewSession] = useState(null); // { sessionId, questions }
 
   if (page === 'login') {
     return (
@@ -58,6 +63,7 @@ export default function App() {
         onOpenNoticeBoard={() => setPage('notice')} 
         onOpenCompanyOffers={(comp) => { setSelectedCompany(comp); setPage('company-offers'); }} 
         onOpenCompanyStudy={(comp) => { setSelectedCompany(comp); setPage('company-study'); }}
+        onOpenAIInterview={(comp) => { setSelectedCompany(comp); setPage('interview-setup'); }}
         onOpenPlacementsForCompany={(compName) => { setTargetPlacementCompany(compName); setPage('placements'); }}
       />
     );
@@ -80,7 +86,47 @@ export default function App() {
         user={user}
         onOpenProfile={() => setPage('student-dashboard')}
         company={selectedCompany} 
-        onBack={() => setPage('companies')} 
+        onBack={() => setPage('companies')}
+        onOpenAIInterview={(comp) => { setSelectedCompany(comp); setPage('interview-setup'); }}
+      />
+    );
+  }
+
+  if (page === 'interview-setup') {
+    return (
+      <InterviewSetup 
+        company={selectedCompany}
+        onBack={() => setPage('company-study')}
+        onStartInterview={(sessionData) => {
+          setInterviewSession(sessionData);
+          setPage('active-interview');
+        }}
+      />
+    );
+  }
+
+  if (page === 'active-interview') {
+    return (
+      <ActiveInterview 
+        company={selectedCompany}
+        sessionId={interviewSession?.sessionId}
+        questions={interviewSession?.questions}
+        onEndInterview={(result) => {
+          setInterviewResult(result);
+          setPage('interview-report');
+        }}
+        onQuit={() => setPage('companies')}
+      />
+    );
+  }
+
+  if (page === 'interview-report') {
+    return (
+      <InterviewReport 
+        company={selectedCompany}
+        result={interviewResult}
+        onBack={() => setPage('companies')}
+        onOpenStudy={() => setPage('company-study')}
       />
     );
   }

@@ -1,8 +1,7 @@
-import json
-import re
+const fs = require('fs');
 
-text = """
-1. Reading Comprehension — 20 Questions
+const rawText = `
+1. Reading Comprehension — 40 Questions
 Passage 1
 
 Passage:
@@ -167,6 +166,171 @@ B) Types of sports
 C) Professional fitness
 D) Competitive games
 Answer: A
+
+Passage 6
+
+Passage:
+Remote work has become increasingly common in many organizations. It allows employees to work from locations outside the traditional office and can reduce commuting time. Employees may also experience greater flexibility in managing their schedules. However, remote work requires discipline and effective communication. Without proper planning, employees may become distracted or feel disconnected from their teams. Therefore, organizations need to provide appropriate tools and maintain regular communication with remote employees.
+
+Q21. What is one major benefit of remote work?
+A) More office meetings
+B) Reduced commuting time
+C) Increased travel
+D) Less flexibility
+Answer: B
+
+Q22. What does remote work require from employees?
+A) Discipline and communication
+B) More commuting
+C) Less planning
+D) Physical meetings every day
+Answer: A
+
+Q23. What problem may remote employees face?
+A) Too much office space
+B) Increased commuting
+C) Feeling disconnected from their teams
+D) Lack of flexibility
+Answer: C
+
+Q24. What should organizations provide to remote employees?
+A) More travel opportunities
+B) Appropriate tools and regular communication
+C) Fewer responsibilities
+D) Traditional offices only
+Answer: B
+
+Passage 7
+
+Passage:
+Environmental protection has become an important responsibility for individuals, businesses, and governments. Rapid industrialization and excessive consumption of natural resources have contributed to pollution and climate change. Simple actions such as reducing plastic use, saving electricity, using public transportation, and planting trees can help protect the environment. Although individual actions may seem small, collective efforts can create significant positive changes.
+
+Q25. Why has environmental protection become important?
+A) Because pollution and climate change are increasing
+B) Because people are travelling less
+C) Because industries are disappearing
+D) Because natural resources are unlimited
+Answer: A
+
+Q26. Which action can help protect the environment?
+A) Increasing plastic use
+B) Wasting electricity
+C) Planting trees
+D) Using more private vehicles
+Answer: C
+
+Q27. What does "collective efforts" mean?
+A) Actions taken by one person
+B) Actions taken together by many people
+C) Government actions only
+D) Industrial activities
+Answer: B
+
+Q28. What is the main message of the passage?
+A) Only governments can protect the environment
+B) Individual and collective actions can help protect the environment
+C) Industrialization should stop completely
+D) Environmental problems cannot be solved
+Answer: B
+
+Passage 8
+
+Passage:
+Failure is often considered a negative experience, but it can provide valuable lessons. When people fail, they can identify their weaknesses and understand what needs improvement. Successful individuals often experience failures before achieving their goals. Instead of giving up after failure, people should analyze what went wrong and make another attempt with a better strategy. In this way, failure can become an important part of personal and professional growth.
+
+Q29. What can failure help people identify?
+A) Their strengths only
+B) Their weaknesses
+C) Their friends
+D) Their salary
+Answer: B
+
+Q30. What should people do after failure?
+A) Give up immediately
+B) Ignore the problem
+C) Analyze what went wrong and try again
+D) Blame others
+Answer: C
+
+Q31. According to the passage, successful individuals:
+A) Never experience failure
+B) Often experience failure before achieving their goals
+C) Always avoid challenges
+D) Never change their strategies
+Answer: B
+
+Q32. What can failure become according to the passage?
+A) A reason to stop learning
+B) An important part of growth
+C) A permanent disadvantage
+D) A waste of time
+Answer: B
+
+Passage 9
+
+Passage:
+Online education has made learning accessible to people from different locations. Students can attend classes, watch recorded lectures, and access study materials through digital platforms. It also provides flexibility for learners who may have work or other responsibilities. However, online learning requires self-discipline because students may easily become distracted. Technical problems and limited interaction with teachers can also create challenges.
+
+Q33. What has online education made possible?
+A) Learning only in classrooms
+B) Learning from different locations
+C) Eliminating teachers
+D) Avoiding study materials
+Answer: B
+
+Q34. Which is an advantage of online education?
+A) Flexibility
+B) More commuting
+C) Less access to materials
+D) No learning resources
+Answer: A
+
+Q35. Why does online learning require self-discipline?
+A) Students may become distracted
+B) Teachers are always present
+C) Classes are always difficult
+D) Students cannot access lectures
+Answer: A
+
+Q36. Which is a challenge of online education?
+A) Too many classrooms
+B) Technical problems
+C) Excessive travelling
+D) Lack of flexibility
+Answer: B
+
+Passage 10
+
+Passage:
+A positive workplace environment can improve employee satisfaction and productivity. Employees are more likely to perform well when they feel respected and supported by their colleagues and managers. Clear communication, recognition of good work, and opportunities for professional development can contribute to a healthy workplace. On the other hand, poor communication and excessive stress may reduce motivation. Therefore, organizations should create an environment where employees can communicate openly and develop their skills.
+
+Q37. What can a positive workplace environment improve?
+A) Employee satisfaction and productivity
+B) Employee stress only
+C) Working hours
+D) Office expenses only
+Answer: A
+
+Q38. When are employees more likely to perform well?
+A) When they feel respected and supported
+B) When they receive no feedback
+C) When communication is poor
+D) When they experience excessive stress
+Answer: A
+
+Q39. Which can contribute to a healthy workplace?
+A) Poor communication
+B) Recognition of good work
+C) Excessive stress
+D) Lack of development opportunities
+Answer: B
+
+Q40. What should organizations encourage?
+A) Employees working without communication
+B) Open communication and skill development
+C) Excessive competition
+D) Avoiding professional development
+Answer: B
 
 2. Grammar — 20 Questions
 
@@ -874,7 +1038,7 @@ Q11.
 P. She booked a ticket.
 Q. She packed her luggage.
 R. She reached the station.
-S. She boarded the train.
+S. He boarded the train.
 
 A) PQRS
 B) QPRS
@@ -1362,35 +1526,35 @@ Passage
 
 Communication is essential for (11) ____ teamwork. Team members should listen to one another and (12) ____ their ideas clearly. Good communication can prevent (13) ____ and help teams work more (14) ____. Mutual respect is also (15) ____ for building a strong team.
 
-Q11.
+11.
 A) successful
 B) success
 C) successfully
 D) succeed
 Answer: A
 
-Q12.
+12.
 A) express
 B) expressed
 C) expressing
 D) expresses
 Answer: A
 
-Q13.
+13.
 A) misunderstandings
 B) understanding
 C) success
 D) cooperation
 Answer: A
 
-Q14.
+14.
 A) efficient
 B) efficiently
 C) efficiency
 D) inefficient
 Answer: B
 
-Q15.
+15.
 A) important
 B) importance
 C) importantly
@@ -1401,35 +1565,35 @@ Passage
 
 Reading is a useful habit that can improve (16) ____. It introduces readers to new words and ideas. Regular reading also improves (17) ____ and concentration. People who read regularly can often (18) ____ their thoughts more clearly. Therefore, everyone should try to make reading a part of their (19) ____ routine. Even a few pages every day can make a (20) ____ difference.
 
-Q16.
+16.
 A) vocabulary
 B) vocabularies
 C) vocal
 D) voice
 Answer: A
 
-Q17.
+17.
 A) memory
 B) memorized
 C) memorize
 D) memorable
 Answer: A
 
-Q18.
+18.
 A) express
 B) expression
 C) expressed
 D) expressing
 Answer: A
 
-Q19.
+19.
 A) daily
 B) day
 C) days
 D) daylight
 Answer: A
 
-Q20.
+20.
 A) significant
 B) significance
 C) significantly
@@ -1629,114 +1793,148 @@ B) Stop the project
 C) Remove all team members
 D) Avoid meetings completely
 Answer: A
-"""
+`;
 
-def parse_verbal(text):
-    topics_data = {}
-    
-    # Split text into topics
-    topic_blocks = re.split(r'\d+\.\s+([A-Za-z &,-/]+)\s+—\s+\d+\s+Questions', text)
-    
-    for i in range(1, len(topic_blocks), 2):
-        topic_name = topic_blocks[i].strip()
-        questions_text = topic_blocks[i+1]
-        
-        q_blocks = re.split(r'(Q\d+\..+?)(?=Q\d+\.|$)', questions_text, flags=re.DOTALL)
-        
-        questions_arr = []
-        q_id = 1
-        
-        current_passage = ""
-        
-        for p_match in re.finditer(r'Passage:?\s*(.*?)(?=Q\d+\.)', questions_text, re.DOTALL | re.IGNORECASE):
-            # We can track passages based on their position, but this might be complex.
-            pass
-            
-        # Better approach: split by lines, look for QX., Passage, options
-        lines = questions_text.split('\\n')
-        
-        current_passage = ""
-        current_q = None
-        
-        for line in lines:
-            line = line.strip()
-            if not line:
-                continue
-                
-            if line.lower().startswith("passage:") or line.lower().startswith("passage"):
-                # Usually followed by passage text
-                if "passage" in line.lower() and len(line) < 15:
-                    continue # like "Passage 1"
-                elif line.lower().startswith("passage:"):
-                    current_passage = line[8:].strip() + "\\n"
-                else:
-                    if current_passage and not current_q:
-                        current_passage += line + "\\n"
-            elif not current_q and not re.match(r'Q\d+\.', line) and not re.match(r'[A-D]\)', line) and not line.startswith("Answer:"):
-                current_passage += line + "\\n"
-                
-            elif re.match(r'Q\d+\.', line):
-                if current_q:
-                    questions_arr.append(current_q)
-                current_q = {
-                    'id': q_id,
-                    'text': (current_passage + "\\n\\n" + line).strip() if current_passage else line,
-                    'options': [],
-                    'answer': 0,
-                    'explanation': '',
-                    'difficulty': 'Easy' if q_id <= 7 else ('Medium' if q_id <= 14 else 'Hard')
-                }
-                q_id += 1
-            elif re.match(r'[A-D]\)', line):
-                if current_q:
-                    # sometimes P,Q,R,S are mixed in before A,B,C,D.
-                    current_q['options'].append(line[2:].strip())
-            elif line.startswith("Answer:"):
-                if current_q:
-                    ans_char = line.split("Answer:")[1].strip()
-                    if ans_char in ['A', 'B', 'C', 'D']:
-                        current_q['answer'] = ord(ans_char) - 65
-                    current_q['explanation'] = "Correct Answer is " + ans_char
-                    # Clear passage after a question unless it's shared? No, we shouldn't clear passage automatically, 
-                    # but maybe we should if there's a new passage indicator. Actually, let's keep the passage 
-                    # until a new one is found. But Para jumbles have PQRS.
-            elif re.match(r'[P-S]\.', line):
-                if current_q:
-                    current_q['text'] += "\\n" + line
-            elif "Statement:" in line or "Conclusion:" in line or "Assumption:" in line or "Problem:" in line or "What should be done?" in line or "Best action:" in line:
-                if current_q:
-                    current_q['text'] += "\\n" + line
-                else:
-                     current_passage += line + "\\n"
-        
-        if current_q:
-            questions_arr.append(current_q)
-            
-        topics_data[topic_name] = questions_arr
-        
-    return topics_data
+const lines = rawText.split('\n').map(l => l.trim());
 
-topics_data = parse_verbal(text)
+const filenames = {
+    '1': 'readingComprehensionQuestions',
+    '2': 'grammarQuestions',
+    '3': 'sentenceCorrectionQuestions',
+    '4': 'vocabularyQuestions',
+    '5': 'fillInTheBlanksQuestions',
+    '6': 'paraJumblesQuestions',
+    '7': 'errorDetectionQuestions',
+    '8': 'sentenceCompletionQuestions',
+    '9': 'clozeTestQuestions',
+    '10': 'verbalReasoningQuestions'
+};
 
-filenames = {
-    'Reading Comprehension': 'readingComprehensionQuestions',
-    'Grammar': 'grammarQuestions',
-    'Sentence Correction': 'sentenceCorrectionQuestions',
-    'Vocabulary': 'vocabularyQuestions',
-    'Fill in the Blanks': 'fillInTheBlanksQuestions',
-    'Sentence Arrangement / Para Jumbles': 'paraJumblesQuestions',
-    'Error Detection': 'errorDetectionQuestions',
-    'Sentence Completion': 'sentenceCompletionQuestions',
-    'Cloze Test': 'clozeTestQuestions',
-    'Verbal Reasoning': 'verbalReasoningQuestions'
+let currentSection = null;
+let currentPassage = [];
+let currentQuestion = null;
+let questions = [];
+let allSectionsData = {};
+let qCount = 0;
+
+function saveCurrentQuestion() {
+    if (currentQuestion) {
+        if (currentQuestion.options.length > 0) {
+            questions.push(currentQuestion);
+        }
+        currentQuestion = null;
+    }
 }
 
-for topic, q_arr in topics_data.items():
-    if topic in filenames:
-        var_name = filenames[topic]
-        file_path = f'{var_name}.js'
-        with open(file_path, 'w', encoding='utf-8') as f:
-            f.write(f'export const {var_name} = ')
-            json.dump(q_arr, f, indent=2, ensure_ascii=False)
-            f.write(';\n')
-        print(f'Created {file_path} with {len(q_arr)} questions.')
+for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (!line) continue;
+
+    // Check for new section
+    const sectionMatch = line.match(/^(\d+)\.\s+(.*?)\s+—\s+\d+\s+Questions/);
+    if (sectionMatch) {
+        saveCurrentQuestion();
+        if (currentSection) {
+            allSectionsData[currentSection] = questions;
+        }
+        currentSection = sectionMatch[1];
+        questions = [];
+        currentPassage = [];
+        qCount = 0;
+        continue;
+    }
+
+    // Check for question start Q1. or 11. (in cloze test it has 11.)
+    let isQStart = false;
+    let qText = '';
+
+    const qMatch = line.match(/^Q?(\d+)\.\s*(.*)/);
+
+    // A) B) C) D)
+    const optMatch = line.match(/^([A-D])\)\s*(.*)/);
+
+    // Answer:
+    const ansMatch = line.match(/^Answer:\s*([A-D])/);
+
+    if (qMatch && !optMatch && !ansMatch) {
+        // It's a question!
+        isQStart = true;
+        qText = qMatch[2];
+        qCount = parseInt(qMatch[1]);
+    }
+
+    if (isQStart) {
+        saveCurrentQuestion();
+        let diff = 'Easy';
+        if (qCount >= 15) diff = 'Hard';
+        else if (qCount >= 8) diff = 'Medium';
+
+        let fullText = currentPassage.join('\n\n');
+        if (fullText) fullText += '\n\n';
+        fullText += line;
+
+        currentQuestion = {
+            id: qCount,
+            text: fullText.trim(),
+            options: [],
+            answer: 0,
+            explanation: '',
+            difficulty: diff
+        };
+    } else if (optMatch) {
+        if (currentQuestion) {
+            currentQuestion.options.push(optMatch[2].trim());
+        }
+    } else if (ansMatch) {
+        if (currentQuestion) {
+            currentQuestion.answer = ansMatch[1].charCodeAt(0) - 65;
+            currentQuestion.explanation = "Correct Answer is " + ansMatch[1];
+        }
+    } else {
+        // Not a question, not an option, not an answer.
+        // It could be passage context, or continuation of question text, or P. Q. R. S.
+        if (line.startsWith("Passage 1") || line.startsWith("Passage 2") || line.startsWith("Passage 3") || line.startsWith("Passage 4") || line.startsWith("Passage 5") || line.startsWith("Passage") || line.startsWith("Statement:") || line.startsWith("Conclusion:") || line.startsWith("Assumption:") || line.startsWith("Cause & Effect") || line.startsWith("Problem:") || line.startsWith("What should be done?") || line.startsWith("Best action:") || line.startsWith("Synonyms") || line.startsWith("Antonyms") || line.startsWith("One-word Substitution") || line.startsWith("Idioms") || line.startsWith("Statement & Conclusion") || line.startsWith("Statement & Assumption") || line.startsWith("Course of Action") || line.startsWith("Choose the correct sentence.") || line.startsWith("Find the part containing the error.") || line.startsWith("Choose the correct word.") || line.startsWith("Arrange the sentences in the correct order.")) {
+
+            if (line.match(/^Passage \d+$/)) {
+                saveCurrentQuestion();
+            }
+
+            // New context, clear previous passage context if we just finished a question.
+            if (!currentQuestion) {
+                // If it's a completely new passage context
+                if (line.startsWith("Passage") && line.length < 15) {
+                    currentPassage = [];
+                }
+                currentPassage.push(line);
+            } else {
+                currentQuestion.text += '\n\n' + line;
+            }
+        } else if (line.match(/^[P-S]\.\s/)) {
+            // P. Q. R. S. para jumbles lines
+            if (currentQuestion) {
+                currentQuestion.text += '\n' + line;
+            }
+        } else {
+            // regular text
+            if (currentQuestion) {
+                currentQuestion.text += '\n' + line;
+            } else {
+                currentPassage.push(line);
+            }
+        }
+    }
+}
+saveCurrentQuestion();
+if (currentSection) {
+    allSectionsData[currentSection] = questions;
+}
+
+for (const [sec, qs] of Object.entries(allSectionsData)) {
+    const filename = filenames[sec];
+    if (filename) {
+        const outPath = filename + '.js';
+        const exportName = filename;
+        fs.writeFileSync(outPath, `export const ${exportName} = ${JSON.stringify(qs, null, 2)};\n`, 'utf8');
+        console.log(`Created ${outPath} with ${qs.length} questions.`);
+    }
+}

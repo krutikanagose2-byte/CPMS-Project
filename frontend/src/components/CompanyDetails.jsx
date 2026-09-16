@@ -10,7 +10,7 @@ const PLACED_STUDENTS = [
   { id: 6, name: 'Priya Dhole', branch: 'CSE', image: '/ind_female_3.png' }
 ];
 
-const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStudy, onViewAllPlacements }) => {
+const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStudy, onOpenAIInterview, onViewAllPlacements }) => {
   const [isMoreInfoVisible, setIsMoreInfoVisible] = useState(false);
   const [expandedSection, setExpandedSection] = useState('study');
   const [lightboxIndex, setLightboxIndex] = useState(null);
@@ -27,14 +27,14 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
 
   const openLightbox = (index) => setLightboxIndex(index);
   const closeLightbox = () => setLightboxIndex(null);
-  
+
   const nextImage = (e) => {
     e.stopPropagation();
     if (lightboxIndex < (company.officeImages?.length || 0) - 1) {
       setLightboxIndex(lightboxIndex + 1);
     }
   };
-  
+
   const prevImage = (e) => {
     e.stopPropagation();
     if (lightboxIndex > 0) {
@@ -67,7 +67,7 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
           </div>
           <div className="cd-header-info">
             <h1 className="cd-company-name">
-              {company.fullName || company.name} {company.name !== company.fullName ? `(${company.name})` : ''} 
+              {company.fullName || company.name} {company.name !== company.fullName ? `(${company.name})` : ''}
               <span className="cd-verified-badge" title="Verified">✓</span>
             </h1>
             <p className="cd-company-desc">
@@ -79,15 +79,15 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
               </span>
               {isMoreInfoVisible && (
                 <div className="cd-more-text">
-                   <p style={{ marginTop: 0, marginBottom: '12px', whiteSpace: 'pre-line' }}>
-                     {company.moreInfo || `Detailed information about ${company.name} including its historical milestones, global presence in over 50 countries, and deep expertise across multiple industry verticals.`}
-                   </p>
-                   <p style={{ margin: 0 }}>
-                     <strong>Website:</strong>{' '}
-                     <a href={company.website} target="_blank" rel="noopener noreferrer" className="cd-link">
-                       {company.website ? company.website.replace(/^https?:\/\//, '') : ''}
-                     </a>
-                   </p>
+                  <p style={{ marginTop: 0, marginBottom: '12px', whiteSpace: 'pre-line' }}>
+                    {company.moreInfo || `Detailed information about ${company.name} including its historical milestones, global presence in over 50 countries, and deep expertise across multiple industry verticals.`}
+                  </p>
+                  <p style={{ margin: 0 }}>
+                    <strong>Website:</strong>{' '}
+                    <a href={company.website} target="_blank" rel="noopener noreferrer" className="cd-link">
+                      {company.website ? company.website.replace(/^https?:\/\//, '') : ''}
+                    </a>
+                  </p>
                 </div>
               )}
             </div>
@@ -102,7 +102,7 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
                   marginWidth="0"
                 ></iframe>
               </div>
-              
+
               {company.officeImages && (
                 <div className="cd-gallery-col">
                   <div className="cd-gallery-grid">
@@ -150,7 +150,7 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
       </div>
 
       <div className="cd-accordion-container">
-        
+
         {/* Placed Students Section */}
         <div className="cd-card cd-students-section">
           <div className="cd-students-header">
@@ -220,7 +220,7 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
           </div>
           {expandedSection === 'hr' && (
             <div className="cd-acc-content">
-               <p style={{ padding: '16px', color: '#64748b' }}>For inquiries, visit the official careers portal of {company.fullName || company.name}.</p>
+              <p style={{ padding: '16px', color: '#64748b' }}>For inquiries, visit the official careers portal of {company.fullName || company.name}.</p>
             </div>
           )}
         </div>
@@ -229,18 +229,18 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
       {lightboxIndex !== null && (
         <div className="cd-lightbox-overlay" onClick={closeLightbox}>
           <div className="cd-lightbox-close" onClick={closeLightbox}>&times;</div>
-          
+
           {lightboxIndex > 0 && (
             <div className="cd-lightbox-arrow left" onClick={prevImage}>&#10094;</div>
           )}
-          
-          <img 
-            src={company.officeImages[lightboxIndex]} 
-            alt="Expanded view" 
-            className="cd-lightbox-img" 
-            onClick={(e) => e.stopPropagation()} 
+
+          <img
+            src={company.officeImages[lightboxIndex]}
+            alt="Expanded view"
+            className="cd-lightbox-img"
+            onClick={(e) => e.stopPropagation()}
           />
-          
+
           {lightboxIndex < company.officeImages.length - 1 && (
             <div className="cd-lightbox-arrow right" onClick={nextImage}>&#10095;</div>
           )}

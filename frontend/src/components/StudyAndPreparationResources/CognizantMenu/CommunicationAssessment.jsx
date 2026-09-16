@@ -1,12 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
+import QuizComponent from './QuizComponent';
+import { readingComprehensionQuestions } from '../../../data/readingComprehensionQuestions';
+import { speakingAndListeningQuestions } from '../../../data/speakingAndListeningQuestions';
+import { grammarAndComprehensionQuestions } from '../../../data/grammarAndComprehensionQuestions';
 
 const communicationTopics = [
-  { id: 1, title: 'Reading', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9' },
-  { id: 2, title: 'Grammar and Comprehension', questions: 20, color: '#fef3c7', iconColor: '#f59e0b' },
-  { id: 3, title: 'Speaking and Listening', questions: 20, color: '#f3e8ff', iconColor: '#a855f7' },
+  { id: 1, title: 'Reading', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', data: readingComprehensionQuestions },
+  { id: 2, title: 'Grammar and Comprehension', questions: 20, color: '#fef3c7', iconColor: '#f59e0b', data: grammarAndComprehensionQuestions },
+  { id: 3, title: 'Speaking and Listening', questions: 40, color: '#f3e8ff', iconColor: '#a855f7', data: speakingAndListeningQuestions },
 ];
 
 const CommunicationAssessment = ({ company }) => {
+  const [selectedTopic, setSelectedTopic] = useState(null);
+
+  const handleTopicClick = (topic) => {
+    if (topic.data) {
+      // slice the first 20 questions for the reading test since we only need 20
+      const dataToPass = topic.id === 1 ? topic.data.slice(0, 20) : topic.data;
+      setSelectedTopic({ ...topic, data: dataToPass });
+    } else {
+      alert(`Content for ${topic.title} will be added soon!`);
+    }
+  };
+
+  const handleBackToTopics = () => {
+    setSelectedTopic(null);
+  };
+
+  if (selectedTopic) {
+    return (
+      <QuizComponent 
+        topicTitle={selectedTopic.title} 
+        questions={selectedTopic.data} 
+        onBack={handleBackToTopics} 
+      />
+    );
+  }
+
   return (
     <div className="csr-content-body">
       <div className="csr-aptitude-header">
@@ -25,7 +55,12 @@ const CommunicationAssessment = ({ company }) => {
       
       <div className="csr-topics-grid">
         {communicationTopics.map((topic) => (
-          <div key={topic.id} className="csr-topic-card">
+          <div 
+            key={topic.id} 
+            className="csr-topic-card" 
+            onClick={() => handleTopicClick(topic)}
+            style={{ cursor: 'pointer' }}
+          >
             <div className="csr-topic-icon" style={{ backgroundColor: topic.color, color: topic.iconColor }}>
               <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />

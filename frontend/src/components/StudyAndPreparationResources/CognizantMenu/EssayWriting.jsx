@@ -1,312 +1,43 @@
+import { technologyQuestions } from '../../../data/technologyQuestions';
+import { aiQuestions } from '../../../data/aiQuestions';
+import { educationQuestions } from '../../../data/educationQuestions';
+import { socialMediaQuestions } from '../../../data/socialMediaQuestions';
+import { environmentQuestions } from '../../../data/environmentQuestions';
+import { digitalIndiaQuestions } from '../../../data/digitalIndiaQuestions';
+import { wfhQuestions } from '../../../data/wfhQuestions';
+import { womenEmpowermentQuestions } from '../../../data/womenEmpowermentQuestions';
+import { onlineEducationQuestions } from '../../../data/onlineEducationQuestions';
+import { cyberSecurityQuestions } from '../../../data/cyberSecurityQuestions';
+import { climateChangeQuestions } from '../../../data/climateChangeQuestions';
+import { startupQuestions } from '../../../data/startupQuestions';
+import { aiJobsQuestions } from '../../../data/aiJobsQuestions';
+import { dataPrivacyQuestions } from '../../../data/dataPrivacyQuestions';
+import { teamworkEssayQuestions } from '../../../data/teamworkEssayQuestions';
 import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
+
 
 const EssayWriting = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
 
   const topics = [
-  {
-    "id": 1,
-    "title": "Artificial Intelligence",
-    "questions": 1,
-    "color": "blue"
-  },
-  {
-    "id": 2,
-    "title": "Generative AI",
-    "questions": 1,
-    "color": "green"
-  },
-  {
-    "id": 3,
-    "title": "Impact of Technology on Education",
-    "questions": 1,
-    "color": "purple"
-  },
-  {
-    "id": 4,
-    "title": "Automation and Employment",
-    "questions": 1,
-    "color": "red"
-  },
-  {
-    "id": 5,
-    "title": "Cybersecurity",
-    "questions": 1,
-    "color": "orange"
-  },
-  {
-    "id": 6,
-    "title": "Social Media and Technology",
-    "questions": 1,
-    "color": "yellow"
-  },
-  {
-    "id": 7,
-    "title": "Digital Transformation",
-    "questions": 1,
-    "color": "blue"
-  },
-  {
-    "id": 8,
-    "title": "Future of Technology",
-    "questions": 1,
-    "color": "green"
-  },
-  {
-    "id": 9,
-    "title": "Online Education",
-    "questions": 1,
-    "color": "purple"
-  },
-  {
-    "id": 10,
-    "title": "Importance of Skill-Based Education",
-    "questions": 1,
-    "color": "red"
-  },
-  {
-    "id": 11,
-    "title": "Education vs Experience",
-    "questions": 1,
-    "color": "orange"
-  },
-  {
-    "id": 12,
-    "title": "Role of Teachers in Modern Education",
-    "questions": 1,
-    "color": "yellow"
-  },
-  {
-    "id": 13,
-    "title": "Examination System",
-    "questions": 1,
-    "color": "blue"
-  },
-  {
-    "id": 14,
-    "title": "Importance of Technical Education",
-    "questions": 1,
-    "color": "green"
-  },
-  {
-    "id": 15,
-    "title": "Social Media: Boon or Bane",
-    "questions": 1,
-    "color": "purple"
-  },
-  {
-    "id": 16,
-    "title": "Gender Equality",
-    "questions": 1,
-    "color": "red"
-  },
-  {
-    "id": 17,
-    "title": "Youth and Society",
-    "questions": 1,
-    "color": "orange"
-  },
-  {
-    "id": 18,
-    "title": "Work-Life Balance",
-    "questions": 1,
-    "color": "yellow"
-  },
-  {
-    "id": 19,
-    "title": "Mental Health Awareness",
-    "questions": 1,
-    "color": "blue"
-  },
-  {
-    "id": 20,
-    "title": "Importance of Communication",
-    "questions": 1,
-    "color": "green"
-  },
-  {
-    "id": 21,
-    "title": "Diversity and Inclusion",
-    "questions": 1,
-    "color": "purple"
-  },
-  {
-    "id": 22,
-    "title": "Changing Workplace Culture",
-    "questions": 1,
-    "color": "red"
-  },
-  {
-    "id": 23,
-    "title": "Climate Change",
-    "questions": 1,
-    "color": "orange"
-  },
-  {
-    "id": 24,
-    "title": "Global Warming",
-    "questions": 1,
-    "color": "yellow"
-  },
-  {
-    "id": 25,
-    "title": "Renewable Energy",
-    "questions": 1,
-    "color": "blue"
-  },
-  {
-    "id": 26,
-    "title": "Environmental Pollution",
-    "questions": 1,
-    "color": "green"
-  },
-  {
-    "id": 27,
-    "title": "Sustainable Development",
-    "questions": 1,
-    "color": "purple"
-  },
-  {
-    "id": 28,
-    "title": "Water Conservation",
-    "questions": 1,
-    "color": "red"
-  },
-  {
-    "id": 29,
-    "title": "Plastic Pollution",
-    "questions": 1,
-    "color": "orange"
-  },
-  {
-    "id": 30,
-    "title": "Electric Vehicles",
-    "questions": 1,
-    "color": "yellow"
-  },
-  {
-    "id": 31,
-    "title": "Startups in India",
-    "questions": 1,
-    "color": "blue"
-  },
-  {
-    "id": 32,
-    "title": "Digital Economy",
-    "questions": 1,
-    "color": "green"
-  },
-  {
-    "id": 33,
-    "title": "Cashless Economy",
-    "questions": 1,
-    "color": "purple"
-  },
-  {
-    "id": 34,
-    "title": "Entrepreneurship",
-    "questions": 1,
-    "color": "red"
-  },
-  {
-    "id": 35,
-    "title": "E-commerce",
-    "questions": 1,
-    "color": "orange"
-  },
-  {
-    "id": 36,
-    "title": "Future of Jobs",
-    "questions": 1,
-    "color": "yellow"
-  },
-  {
-    "id": 37,
-    "title": "Gig Economy",
-    "questions": 1,
-    "color": "blue"
-  },
-  {
-    "id": 38,
-    "title": "Make in India",
-    "questions": 1,
-    "color": "green"
-  },
-  {
-    "id": 39,
-    "title": "India as a Global Economy",
-    "questions": 1,
-    "color": "purple"
-  },
-  {
-    "id": 40,
-    "title": "Advantages and Disadvantages of AI",
-    "questions": 1,
-    "color": "red"
-  },
-  {
-    "id": 41,
-    "title": "Remote Work",
-    "questions": 1,
-    "color": "orange"
-  },
-  {
-    "id": 42,
-    "title": "Leadership",
-    "questions": 1,
-    "color": "yellow"
-  },
-  {
-    "id": 43,
-    "title": "Importance of Teamwork",
-    "questions": 1,
-    "color": "blue"
-  },
-  {
-    "id": 44,
-    "title": "Time Management",
-    "questions": 1,
-    "color": "green"
-  },
-  {
-    "id": 45,
-    "title": "Success and Failure",
-    "questions": 1,
-    "color": "purple"
-  },
-  {
-    "id": 46,
-    "title": "Hard Work vs Smart Work",
-    "questions": 1,
-    "color": "red"
-  },
-  {
-    "id": 47,
-    "title": "Ethics in the Workplace",
-    "questions": 1,
-    "color": "orange"
-  },
-  {
-    "id": 48,
-    "title": "Importance of Continuous Learning",
-    "questions": 1,
-    "color": "yellow"
-  },
-  {
-    "id": 49,
-    "title": "Is Technology Making Us More Productive?",
-    "questions": 1,
-    "color": "blue"
-  },
-  {
-    "id": 50,
-    "title": "Future of Human-AI Collaboration",
-    "questions": 1,
-    "color": "green"
-  }
-];
+    { id: 1, title: 'Technology', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', data: technologyQuestions },
+    { id: 2, title: 'Artificial Intelligence', questions: 20, color: '#fef3c7', iconColor: '#f59e0b', data: aiQuestions },
+    { id: 3, title: 'Education', questions: 20, color: '#f3e8ff', iconColor: '#a855f7', data: educationQuestions },
+    { id: 4, title: 'Social Media', questions: 20, color: '#e0e7ff', iconColor: '#6366f1', data: socialMediaQuestions },
+    { id: 5, title: 'Environment', questions: 20, color: '#dcfce7', iconColor: '#22c55e', data: environmentQuestions },
+    { id: 6, title: 'Digital India', questions: 20, color: '#ffedd5', iconColor: '#f97316', data: digitalIndiaQuestions },
+    { id: 7, title: 'Work From Home', questions: 20, color: '#fce7f3', iconColor: '#ec4899', data: wfhQuestions },
+    { id: 8, title: 'Women Empowerment', questions: 20, color: '#ccfbf1', iconColor: '#14b8a6', data: womenEmpowermentQuestions },
+    { id: 9, title: 'Online Education', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', data: onlineEducationQuestions },
+    { id: 10, title: 'Cyber Security', questions: 20, color: '#fef3c7', iconColor: '#f59e0b', data: cyberSecurityQuestions },
+    { id: 11, title: 'Climate Change', questions: 20, color: '#f3e8ff', iconColor: '#a855f7', data: climateChangeQuestions },
+    { id: 12, title: 'Startup & Entrepreneurship', questions: 20, color: '#e0e7ff', iconColor: '#6366f1', data: startupQuestions },
+    { id: 13, title: 'Impact of AI on Jobs', questions: 20, color: '#dcfce7', iconColor: '#22c55e', data: aiJobsQuestions },
+    { id: 14, title: 'Data Privacy', questions: 20, color: '#ffedd5', iconColor: '#f97316', data: dataPrivacyQuestions },
+    { id: 15, title: 'Importance of Teamwork', questions: 20, color: '#fce7f3', iconColor: '#ec4899', data: teamworkEssayQuestions },
+  ];
 
   const handleTopicClick = (t) => {
     if (t.data) {
@@ -326,6 +57,7 @@ const EssayWriting = () => {
         topicTitle={selectedTopic.title} 
         questions={selectedTopic.data} 
         onBack={handleBackToTopics} 
+        hideOptions={true}
       />
     );
   }

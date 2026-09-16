@@ -251,7 +251,7 @@ const increaseLittleLogos = ['TCS', 'Infosys', 'Cognizant', 'SAP', 'Accenture', 
 const increaseDoubleLogos = ['Byju\'s', 'Morgan Stanley', 'Tata Motors', 'Wipro'];
 const decreaseLittleLogos = [];
 
-export default function Companies({ user, onBack, onOpenPlacements, onOpenLogin, onOpenNoticeBoard, onOpenCompanyOffers, onOpenCompanyStudy, initialCompany, onOpenPlacementsForCompany, onOpenProfile }) {
+export default function Companies({ user, initialCompany, onOpenProfile, onBack, onOpenPlacements, onOpenLogin, onOpenNoticeBoard, onOpenCompanyOffers, onOpenCompanyStudy, onOpenAIInterview, onOpenPlacementsForCompany }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [search, setSearch] = useState('');
   const [sector, setSector] = useState('All Sectors');
@@ -309,6 +309,7 @@ export default function Companies({ user, onBack, onOpenPlacements, onOpenLogin,
           onBack={() => setSelectedCompany(null)} 
           onOpenCompanyOffers={() => onOpenCompanyOffers(activeCompany)} 
           onOpenCompanyStudy={() => onOpenCompanyStudy(activeCompany)} 
+          onOpenAIInterview={() => onOpenAIInterview(activeCompany)}
           onViewAllPlacements={() => onOpenPlacementsForCompany(activeCompany.name)}
         />
         ) : (

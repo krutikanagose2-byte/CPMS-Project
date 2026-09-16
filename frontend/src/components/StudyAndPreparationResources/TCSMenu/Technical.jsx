@@ -1,52 +1,80 @@
-import React from 'react';
-
-const technicalTopics = [
-  { id: 1, title: 'C', questions: 50, color: '#e0f2fe', iconColor: '#0ea5e9' },
-  { id: 2, title: 'C++', questions: 60, color: '#fef3c7', iconColor: '#f59e0b' },
-  { id: 3, title: 'Java', questions: 70, color: '#f3e8ff', iconColor: '#a855f7' },
-  { id: 4, title: 'Python', questions: 65, color: '#dcfce7', iconColor: '#22c55e' },
-  { id: 5, title: 'SQL', questions: 80, color: '#ffedd5', iconColor: '#f97316' },
-  { id: 6, title: 'Javascript', questions: 55, color: '#fee2e2', iconColor: '#ef4444' },
-];
+import React, { useState } from 'react';
+import TopicsGrid from './TopicsGrid';
+import QuizComponent from './QuizComponent';
+import {
+  cCodingQuestions, cppCodingQuestions, javaCodingQuestions,
+  pythonCodingQuestions, sqlCodingQuestions, javascriptCodingQuestions,
+  webDevCodingQuestions
+} from './TechnicalQuestions';
 
 const Technical = ({ company }) => {
-  return (
-    <div className="csr-content-body">
-      <div className="csr-aptitude-header">
-        <h1 className="csr-page-title">All Topics</h1>
-        <div className="csr-aptitude-actions">
-          <button className="csr-action-btn">
-            <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
-            Filter
-          </button>
-          <button className="csr-action-btn">
-            <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg>
-            Sort
-          </button>
-        </div>
-      </div>
-      
-      <div className="csr-topics-grid">
-        {technicalTopics.map((topic) => (
-          <div key={topic.id} className="csr-topic-card">
-            <div className="csr-topic-icon" style={{ backgroundColor: topic.color, color: topic.iconColor }}>
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
-              </svg>
-            </div>
-            <div className="csr-topic-info">
-              <h3 className="csr-topic-title">{topic.title}</h3>
-              <span className="csr-topic-questions">{topic.questions} Questions</span>
-            </div>
-            <div className="csr-topic-arrow">
-              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </div>
+  const [selectedTopic, setSelectedTopic] = useState(null);
+
+  const topics = [
+    { id: 1, title: 'C', questions: 15, color: '#e0f2fe', iconColor: '#0ea5e9', data: cCodingQuestions },
+    { id: 2, title: 'C++', questions: 15, color: '#fef3c7', iconColor: '#f59e0b', data: cppCodingQuestions },
+    { id: 3, title: 'Java', questions: 15, color: '#f3e8ff', iconColor: '#a855f7', data: javaCodingQuestions },
+    { id: 4, title: 'Python', questions: 15, color: '#dcfce7', iconColor: '#22c55e', data: pythonCodingQuestions },
+    { id: 5, title: 'SQL', questions: 15, color: '#ffedd5', iconColor: '#f97316', data: sqlCodingQuestions },
+    { id: 7, title: 'Web Development (HTML/CSS/JS)', questions: 11, color: '#e0f2fe', iconColor: '#0ea5e9', data: webDevCodingQuestions },
+  ];
+
+  const handleTopicClick = (t) => {
+    if (t.data) {
+      setSelectedTopic(t);
+    } else {
+      alert('Content for ' + t.title + ' will be added soon!');
+    }
+  };
+
+  const handleBackToTopics = () => {
+    setSelectedTopic(null);
+  };
+
+  if (selectedTopic) {
+    return (
+      <QuizComponent
+        topicTitle={selectedTopic.title}
+        questions={selectedTopic.data}
+        onBack={handleBackToTopics}
+        hideOptions={true}
+      />
+    );
+  }
+
+  const pyqHeaderContent = (
+    <div className="pyq-section">
+      <h2 className="csr-topics-title" style={{ marginBottom: '20px' }}>Previous Year Questions</h2>
+      <div className="pyq-grid">
+        <a href="/pyq/pyq1.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
+          <div className="pyq-image-container">
+            <img src="/pyq/custom_cover.png" alt="PYQ 1" className="pyq-image" />
           </div>
-        ))}
+          <div className="pyq-info">
+            <h4 className="pyq-name">Technical PYQ 1</h4>
+          </div>
+        </a>
+        <a href="/pyq/pyq2.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
+          <div className="pyq-image-container">
+            <img src="/pyq/custom_cover.png" alt="PYQ 2" className="pyq-image" />
+          </div>
+          <div className="pyq-info">
+            <h4 className="pyq-name">Technical PYQ 2</h4>
+          </div>
+        </a>
       </div>
     </div>
+  );
+
+  return (
+    <TopicsGrid
+      topics={topics}
+      bannerTitle="Ready to Test Your Technical Skills?"
+      bannerSubtitle="Take a full length test and analyze your performance."
+      bannerButtonText="Take an Online Technical Test Now!"
+      onTopicClick={handleTopicClick}
+      headerContent={pyqHeaderContent}
+    />
   );
 };
 

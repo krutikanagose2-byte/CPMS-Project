@@ -1,132 +1,33 @@
+import { letterDigitSubstitutionQuestions } from '../../../data/letterDigitSubstitutionQuestions';
+import { additionQuestions } from '../../../data/additionQuestions';
+import { subtractionQuestions } from '../../../data/subtractionQuestions';
+import { multiplicationQuestions } from '../../../data/multiplicationQuestions';
+import { divisionQuestions } from '../../../data/divisionQuestions';
+import { missingDigitsQuestions } from '../../../data/missingDigitsQuestions';
+import { carryBorrowQuestions } from '../../../data/carryBorrowQuestions';
+import { wordBasedArithmeticQuestions } from '../../../data/wordBasedArithmeticQuestions';
+import { equationBasedCryptarithmsQuestions } from '../../../data/equationBasedCryptarithmsQuestions';
+import { alphameticPuzzlesQuestions } from '../../../data/alphameticPuzzlesQuestions';
 import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
+
 
 const Cryptarithmetic = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
 
   const topics = [
-  {
-    "id": 1,
-    "title": "Alphabet-to-Number Coding",
-    "questions": 2,
-    "color": "blue"
-  },
-  {
-    "id": 2,
-    "title": "Number-to-Letter Coding",
-    "questions": 2,
-    "color": "green"
-  },
-  {
-    "id": 3,
-    "title": "Letter Value Problems",
-    "questions": 2,
-    "color": "purple"
-  },
-  {
-    "id": 4,
-    "title": "Simple Addition Cryptarithms",
-    "questions": 2,
-    "color": "red"
-  },
-  {
-    "id": 5,
-    "title": "Subtraction Cryptarithms",
-    "questions": 2,
-    "color": "orange"
-  },
-  {
-    "id": 6,
-    "title": "Multiplication Cryptarithms",
-    "questions": 2,
-    "color": "yellow"
-  },
-  {
-    "id": 7,
-    "title": "Division Cryptarithms",
-    "questions": 2,
-    "color": "blue"
-  },
-  {
-    "id": 8,
-    "title": "Carry-Based Problems",
-    "questions": 2,
-    "color": "green"
-  },
-  {
-    "id": 9,
-    "title": "Missing Digit Problems",
-    "questions": 2,
-    "color": "purple"
-  },
-  {
-    "id": 10,
-    "title": "Unique Digit Assignment",
-    "questions": 2,
-    "color": "red"
-  },
-  {
-    "id": 11,
-    "title": "Alphametic Puzzles",
-    "questions": 2,
-    "color": "orange"
-  },
-  {
-    "id": 12,
-    "title": "Word Addition",
-    "questions": 2,
-    "color": "yellow"
-  },
-  {
-    "id": 13,
-    "title": "Word Subtraction",
-    "questions": 2,
-    "color": "blue"
-  },
-  {
-    "id": 14,
-    "title": "Word Multiplication",
-    "questions": 2,
-    "color": "green"
-  },
-  {
-    "id": 15,
-    "title": "Word Division",
-    "questions": 2,
-    "color": "purple"
-  },
-  {
-    "id": 16,
-    "title": "Base-10 Cryptarithms",
-    "questions": 2,
-    "color": "red"
-  },
-  {
-    "id": 17,
-    "title": "Constraint-Based Cryptarithms",
-    "questions": 2,
-    "color": "orange"
-  },
-  {
-    "id": 18,
-    "title": "Repeated Letter Problems",
-    "questions": 2,
-    "color": "yellow"
-  },
-  {
-    "id": 19,
-    "title": "Leading-Digit Restrictions",
-    "questions": 2,
-    "color": "blue"
-  },
-  {
-    "id": 20,
-    "title": "Multi-Word Cryptarithms",
-    "questions": 2,
-    "color": "green"
-  }
-];
+    { id: 1, title: 'Letter–Digit Substitution', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', data: letterDigitSubstitutionQuestions },
+    { id: 2, title: 'Addition', questions: 20, color: '#fef3c7', iconColor: '#f59e0b', data: additionQuestions },
+    { id: 3, title: 'Subtraction', questions: 20, color: '#f3e8ff', iconColor: '#a855f7', data: subtractionQuestions },
+    { id: 4, title: 'Multiplication', questions: 20, color: '#e0e7ff', iconColor: '#6366f1', data: multiplicationQuestions },
+    { id: 5, title: 'Division', questions: 20, color: '#dcfce7', iconColor: '#22c55e', data: divisionQuestions },
+    { id: 6, title: 'Missing Digits', questions: 20, color: '#ffedd5', iconColor: '#f97316', data: missingDigitsQuestions },
+    { id: 7, title: 'Carry & Borrow', questions: 20, color: '#fce7f3', iconColor: '#ec4899', data: carryBorrowQuestions },
+    { id: 8, title: 'Word-Based Arithmetic', questions: 20, color: '#ccfbf1', iconColor: '#14b8a6', data: wordBasedArithmeticQuestions },
+    { id: 9, title: 'Equation-Based Cryptarithms', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', data: equationBasedCryptarithmsQuestions },
+    { id: 10, title: 'Alphametic Puzzles', questions: 20, color: '#fef3c7', iconColor: '#f59e0b', data: alphameticPuzzlesQuestions },
+  ];
 
   const handleTopicClick = (t) => {
     if (t.data) {
