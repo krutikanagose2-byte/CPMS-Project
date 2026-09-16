@@ -10,7 +10,7 @@ const PLACED_STUDENTS = [
   { id: 6, name: 'Priya Dhole', branch: 'CSE', image: '/ind_female_3.png' }
 ];
 
-const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStudy, onOpenAIInterview, onViewAllPlacements }) => {
+const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStudy, onOpenAIInterview, onViewAllPlacements, user, onDeleteCompany }) => {
   const [isMoreInfoVisible, setIsMoreInfoVisible] = useState(false);
   const [expandedSection, setExpandedSection] = useState('study');
   const [lightboxIndex, setLightboxIndex] = useState(null);

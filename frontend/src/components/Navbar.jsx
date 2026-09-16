@@ -63,12 +63,15 @@ export default function Navbar({
                   {user?.photoUrl ? (
                       <img src={user.photoUrl} alt="Avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   ) : (
-                      user?.name ? user.name.substring(0, 2).toUpperCase() : 'S'
+                      user?.name ? user.name.substring(0, 2).toUpperCase() : (user?.role === 'admin' ? 'AD' : 'S')
                   )}
               </div>
               <div className="navbar-user-info">
-                  <span className="navbar-user-name">{user?.name || 'Student Name'}</span>
-                  <span className="navbar-user-role">{user?.branch || 'Branch & Year'}</span>
+                  <div className="navbar-user-name-row">
+                    <span className="navbar-user-name">{user?.name || (user?.role === 'admin' ? 'Admin' : 'Student')}</span>
+                    {user?.role === 'admin' && <span className="admin-tag-pill">ADMIN</span>}
+                  </div>
+                  <span className="navbar-user-role">{user?.role === 'admin' ? (user?.branch || 'System Administrator') : (user?.branch || 'Branch & Year')}</span>
               </div>
           </div>
         ) : (
@@ -108,26 +111,29 @@ export default function Navbar({
           <a href="/Notice-Board" className={activePage === 'notice' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Notice-Board', onOpenNoticeBoard)}>Notice Board</a>
           <a href="/Contact" className={activePage === 'contact' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Contact', onOpenContact)}>Contact</a>
           {user ? (
-          <div 
-            className="navbar-user-profile mobile-profile" 
-            onClick={() => { if(onOpenProfile) onOpenProfile(); closeMenu(); }}
-            style={{ 
-              marginTop: '1rem',
-              display: hideLogin ? 'none' : 'flex' 
-            }}
-          >
-              <div className="navbar-user-avatar" style={{ overflow: 'hidden' }}>
-                  {user?.photoUrl ? (
-                      <img src={user.photoUrl} alt="Avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                  ) : (
-                      user?.name ? user.name.substring(0, 2).toUpperCase() : 'S'
-                  )}
-              </div>
-              <div className="navbar-user-info">
-                  <span className="navbar-user-name">{user?.name || 'Student Name'}</span>
-                  <span className="navbar-user-role">{user?.branch || 'Branch & Year'}</span>
-              </div>
-          </div>
+            <div 
+              className="navbar-user-profile mobile-profile" 
+              onClick={() => { if(onOpenProfile) onOpenProfile(); closeMenu(); }}
+              style={{ 
+                marginTop: '0.75rem',
+                display: hideLogin ? 'none' : 'flex' 
+              }}
+            >
+                <div className="navbar-user-avatar" style={{ overflow: 'hidden' }}>
+                    {user?.photoUrl ? (
+                        <img src={user.photoUrl} alt="Avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    ) : (
+                        user?.name ? user.name.substring(0, 2).toUpperCase() : (user?.role === 'admin' ? 'AD' : 'S')
+                    )}
+                </div>
+                <div className="navbar-user-info">
+                    <div className="navbar-user-name-row">
+                      <span className="navbar-user-name">{user?.name || (user?.role === 'admin' ? 'Admin' : 'Student')}</span>
+                      {user?.role === 'admin' && <span className="admin-tag-pill">ADMIN</span>}
+                    </div>
+                    <span className="navbar-user-role">{user?.role === 'admin' ? (user?.branch || 'System Administrator') : (user?.branch || 'Branch & Year')}</span>
+                </div>
+            </div>
           ) : (
           <button
             className="login-btn"

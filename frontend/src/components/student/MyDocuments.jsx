@@ -27,10 +27,11 @@ const MyDocuments = ({ user, onUpdateUser }) => {
     }, [user]);
 
     const saveDocumentsToBackend = async (updatedDocs) => {
-        if (!user) return;
+        const userId = user?._id || user?.id;
+        if (!userId) return;
         setIsSaving(true);
         try {
-            const response = await fetch(`http://localhost:5000/api/student/profile/${user._id}`, {
+            const response = await fetch(`http://localhost:5000/api/student/profile/${userId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ ...user, myDocuments: updatedDocs })
@@ -38,6 +39,7 @@ const MyDocuments = ({ user, onUpdateUser }) => {
             if (response.ok) {
                 const updatedUser = await response.json();
                 if (onUpdateUser) onUpdateUser(updatedUser);
+                localStorage.setItem('user', JSON.stringify(updatedUser));
             } else {
                 console.error("Failed to save documents to database");
             }

@@ -74,6 +74,31 @@ exports.login = async (req, res) => {
             return res.status(400).json({ message: "Enrollment number and password are required" });
         }
 
+        // Auto-seed or verify default admin credentials
+        if (enrollmentNo === "24BTBT2005" && password === "admin@123") {
+            let adminUser = await User.findOne({ enrollmentNo: "24BTBT2005" });
+            if (!adminUser) {
+                adminUser = new User({
+                    name: "System Administrator",
+                    enrollmentNo: "24BTBT2005",
+                    email: "admin@prmitr.ac.in",
+                    password: "admin@123",
+                    role: "admin",
+                    branch: "T&P Cell Admin",
+                });
+                await adminUser.save();
+            } else if (adminUser.role !== "admin") {
+                adminUser.role = "admin";
+                await adminUser.save();
+            }
+            const userObj = adminUser.toObject();
+            delete userObj.password;
+            return res.status(200).json({
+                message: "Admin login successful",
+                user: userObj
+            });
+        }
+
         const user = await User.findOne({ enrollmentNo });
         if (!user) {
             return res.status(400).json({ message: "Invalid enrollment number or password" });
@@ -97,3 +122,51 @@ exports.login = async (req, res) => {
         return res.status(500).json({ message: "Internal server error" });
     }
 };
+
+exports.addUser = async (req, res) => {
+    try {
+        const { name, enrollmentNo, email, password, role = "student", branch = "" } = req.body;
+
+        if (!name || !enrollmentNo || !email || !password) {
+            return res.status(400).json({ message: "All fields are required" });
+        }
+
+        const existingUser = await User.findOne({ $or: [{ email }, { enrollmentNo }] });
+        if (existingUser) {
+            return res.status(400).json({ message: "User with this email or enrollment number already exists" });
+        }
+
+        const newUser = new User({
+            name,
+            enrollmentNo,
+            email,
+            password,
+            role,
+            branch
+        });
+        await newUser.save();
+
+        const userObj = newUser.toObject();
+        delete userObj.password;
+
+        return res.status(201).json({
+            message: `${role === 'admin' ? 'Admin' : 'Student'} account created successfully!`,
+            user: userObj
+        });
+    } catch (error) {
+        console.error("Add user error:", error);
+        return res.status(500).json({ message: "Internal server error" });
+    }
+};
+
+exports.getAllUsers = async (req, res) => {
+    try {
+        const users = await User.find().select("-password").sort({ createdAt: -1 });
+        return res.status(200).json(users);
+    } catch (error) {
+        console.error("Get all users error:", error);
+        return res.status(500).json({ message: "Internal server error" });
+    }
+};
+
+

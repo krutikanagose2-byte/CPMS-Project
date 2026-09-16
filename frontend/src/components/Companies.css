@@ -30,11 +30,10 @@
 /* ── Header row ── */
 .co-header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
   margin-bottom: 1.25rem;
   gap: 1rem;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
 .co-title {
@@ -52,8 +51,18 @@
 
 .co-controls {
   display: flex;
-  gap: 0.75rem;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.co-filters-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
   flex-wrap: wrap;
 }
 
@@ -227,12 +236,14 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
+  text-align: center;
 }
 
 .co-view-btn:hover {
   background: #2563eb;
   color: #fff;
 }
+
 
 .co-empty {
   grid-column: 1 / -1;
@@ -315,6 +326,21 @@
 
   .co-header {
     flex-direction: column;
+  }
+
+  .co-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .co-filters-group {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .co-search {
+    flex: 1;
+    min-width: 0;
   }
 }
 
@@ -442,3 +468,133 @@
     transform: translateY(0) scale(1);
   }
 }
+
+/* ── Admin Add Company Button & Modal ── */
+.co-add-company-btn {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.co-add-company-btn:hover {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
+}
+
+.co-add-modal-card {
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.admin-form-textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #0f172a;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.admin-form-textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.co-admin-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.co-delete-company-btn {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.25);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.co-delete-company-btn:hover {
+  background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.35);
+  transform: translateY(-1px);
+}
+
+.co-delete-modal-card {
+  max-width: 520px;
+}
+
+.co-delete-preview {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+.co-delete-preview-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 6px;
+  padding: 4px;
+  border: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.co-delete-preview-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.co-delete-preview-info p {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.co-delete-warning-box {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #be123c;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  margin-top: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.45;
+}

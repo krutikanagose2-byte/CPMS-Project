@@ -20,6 +20,33 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    role: {
+        type: String,
+        enum: ["student", "admin"],
+        default: "student",
+    },
+    registrationStatus: {
+        type: String,
+        enum: ["Pending", "Accepted", "Rejected"],
+        default: "Pending",
+    },
+    verificationStatus: {
+        type: String,
+        enum: ["Pending", "Verified", "Rejected"],
+        default: "Pending",
+    },
+    verifiedBy: {
+        type: String,
+        default: "",
+    },
+    verifiedAt: {
+        type: Date,
+        default: null,
+    },
+    verificationRemark: {
+        type: String,
+        default: "",
+    },
     // New fields for Student Module
     branch: {
         type: String,
@@ -57,6 +84,15 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: "",
     },
+    resume: {
+        name: { type: String, default: "" },
+        date: { type: String, default: "" },
+        url: { type: String, default: "" }
+    },
+    phone: {
+        type: String,
+        default: "",
+    },
     dob: {
         type: String,
         default: "",
@@ -86,16 +122,7 @@ const userSchema = new mongoose.Schema({
         default: "",
     },
     academics: {
-        type: [
-            {
-                id: Number,
-                course: String,
-                institute: String,
-                board: String,
-                score: String,
-                year: String
-            }
-        ],
+        type: Array,
         default: [
             { id: 1, course: 'B.E/B.Tech', institute: '', board: '', score: '', year: '' },
             { id: 2, course: 'Diploma', institute: '', board: '', score: '', year: '' },
@@ -104,20 +131,10 @@ const userSchema = new mongoose.Schema({
         ]
     },
     myDocuments: {
-        type: [
-            {
-                id: Number,
-                name: String,
-                type: { type: String },
-                date: String,
-                icon: String,
-                uploaded: Boolean,
-                fileUrl: String
-            }
-        ],
+        type: Array,
         default: []
     }
-});
+}, { strict: false, timestamps: true });
 
 userSchema.pre("save", async function() {
     if (!this.isModified("password")) return;

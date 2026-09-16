@@ -251,7 +251,7 @@ const increaseLittleLogos = ['TCS', 'Infosys', 'Cognizant', 'SAP', 'Accenture', 
 const increaseDoubleLogos = ['Byju\'s', 'Morgan Stanley', 'Tata Motors', 'Wipro'];
 const decreaseLittleLogos = [];
 
-export default function Companies({ user, initialCompany, onOpenProfile, onBack, onOpenPlacements, onOpenLogin, onOpenNoticeBoard, onOpenCompanyOffers, onOpenCompanyStudy, onOpenAIInterview, onOpenPlacementsForCompany }) {
+export default function Companies({ user, initialCompany, onOpenProfile, onBack, onOpenPlacements, onOpenLogin, onOpenNoticeBoard, onOpenCompanyOffers, onOpenCompanyStudy, onOpenAIInterview, onOpenPlacementsForCompany, initialShowAddModal }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [search, setSearch] = useState('');
   const [sector, setSector] = useState('All Sectors');
@@ -259,8 +259,79 @@ export default function Companies({ user, initialCompany, onOpenProfile, onBack,
   const [showLoginPopup, setShowLoginPopup] = useState(false);
   const [selectedCompany, setSelectedCompany] = useState(initialCompany || null);
 
-  const activeCompany = selectedCompany ? COMPANIES.find(c => c.id === selectedCompany.id) : null;
+  const [allCompanies, setAllCompanies] = useState(() => {
+    try {
+      const deletedIds = JSON.parse(localStorage.getItem('cpms_deleted_companies') || '[]');
+      let list = [...COMPANIES];
+      const stored = localStorage.getItem('cpms_custom_companies');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          list = [...parsed, ...list];
+        }
+      }
+      return list.filter(c => !deletedIds.includes(c.id));
+    } catch (e) {
+      console.error(e);
+      return COMPANIES;
+    }
+  });
+
+  const handleDeleteCompany = (company, e) => {
+    if (e) e.stopPropagation();
+    const confirmed = window.confirm(`Are you sure you want to delete "${company.name}"?`);
+    if (!confirmed) return;
+
+    const updated = allCompanies.filter(c => c.id !== company.id);
+    setAllCompanies(updated);
+
+    try {
+      const custom = JSON.parse(localStorage.getItem('cpms_custom_companies') || '[]');
+      const filteredCustom = custom.filter(c => c.id !== company.id);
+      localStorage.setItem('cpms_custom_companies', JSON.stringify(filteredCustom));
+
+      const deleted = JSON.parse(localStorage.getItem('cpms_deleted_companies') || '[]');
+      if (!deleted.includes(company.id)) {
+        deleted.push(company.id);
+        localStorage.setItem('cpms_deleted_companies', JSON.stringify(deleted));
+      }
+    } catch (err) {
+      console.error(err);
+    }
+
+    if (selectedCompany?.id === company.id) {
+      setSelectedCompany(null);
+    }
+    alert(`Company "${company.name}" has been deleted.`);
+  };
+
+  const [showAddCompanyModal, setShowAddCompanyModal] = useState(Boolean(initialShowAddModal));
+  const [showDeleteCompanyModal, setShowDeleteCompanyModal] = useState(false);
+  const [companyToDeleteId, setCompanyToDeleteId] = useState('');
+  const [companyForm, setCompanyForm] = useState({
+    name: '',
+    fullName: '',
+    sector: 'IT & Software',
+    location: '',
+    website: '',
+    logo: '',
+    packageOffered: '',
+    startedFrom: '',
+    founder: '',
+    employees: '',
+    workCulture: '',
+    description: '',
+    moreInfo: ''
+  });
+
+  const activeCompany = selectedCompany ? allCompanies.find(c => c.id === selectedCompany.id) : null;
   const totalPages = 10;
+
+  useEffect(() => {
+    if (initialShowAddModal) {
+      setShowAddCompanyModal(true);
+    }
+  }, [initialShowAddModal]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -274,7 +345,61 @@ export default function Companies({ user, initialCompany, onOpenProfile, onBack,
     }
   };
 
-  const filtered = COMPANIES.filter(c => {
+  const handleAddCompanySubmit = (e) => {
+    e.preventDefault();
+    if (!companyForm.name) {
+      alert('Company Name is required');
+      return;
+    }
+
+    const newCo = {
+      id: Date.now(),
+      name: companyForm.name.trim(),
+      fullName: companyForm.fullName.trim() || companyForm.name.trim(),
+      category: companyForm.sector.toLowerCase().includes('it') ? 'it' : 'consulting',
+      sector: companyForm.sector,
+      location: companyForm.location.trim() || 'Pan India',
+      logo: companyForm.logo.trim() || `https://ui-avatars.com/api/?name=${encodeURIComponent(companyForm.name)}&background=1e40af&color=fff&size=128&bold=true`,
+      website: companyForm.website.trim() || 'https://www.google.com',
+      startedFrom: companyForm.startedFrom.trim() || '2010',
+      founder: companyForm.founder.trim() || 'Founding Leadership',
+      employees: companyForm.employees.trim() || '5,000+',
+      workCulture: companyForm.workCulture.trim() || 'Innovation, High Performance, Integrity',
+      studentsPlaced: companyForm.packageOffered.trim() ? `PKG: ${companyForm.packageOffered.trim()}` : '50+ (Selected)',
+      description: companyForm.description.trim() || `${companyForm.name} is a premier enterprise providing top-tier career opportunities in ${companyForm.sector}.`,
+      moreInfo: companyForm.moreInfo.trim() || `${companyForm.name} partners with educational institutions to recruit talented engineering graduates. It offers comprehensive training, world-class project exposure, and outstanding long-term career growth.`,
+      officeImages: officeImagesPlaceholder
+    };
+
+    const updated = [newCo, ...allCompanies];
+    setAllCompanies(updated);
+    try {
+      const existing = JSON.parse(localStorage.getItem('cpms_custom_companies') || '[]');
+      localStorage.setItem('cpms_custom_companies', JSON.stringify([newCo, ...existing]));
+    } catch (err) {
+      console.error(err);
+    }
+
+    setShowAddCompanyModal(false);
+    setCompanyForm({
+      name: '',
+      fullName: '',
+      sector: 'IT & Software',
+      location: '',
+      website: '',
+      logo: '',
+      packageOffered: '',
+      startedFrom: '',
+      founder: '',
+      employees: '',
+      workCulture: '',
+      description: '',
+      moreInfo: ''
+    });
+    alert(`Company "${newCo.name}" added successfully!`);
+  };
+
+  const filtered = allCompanies.filter(c => {
     const matchSearch = c.name.toLowerCase().includes(search.toLowerCase()) ||
       c.sector.toLowerCase().includes(search.toLowerCase());
     const matchSector = sector === 'All Sectors' || c.sector === sector;
@@ -305,13 +430,15 @@ export default function Companies({ user, initialCompany, onOpenProfile, onBack,
 
         {activeCompany ? (
           <CompanyDetails 
-          company={activeCompany} 
-          onBack={() => setSelectedCompany(null)} 
-          onOpenCompanyOffers={() => onOpenCompanyOffers(activeCompany)} 
-          onOpenCompanyStudy={() => onOpenCompanyStudy(activeCompany)} 
-          onOpenAIInterview={() => onOpenAIInterview(activeCompany)}
-          onViewAllPlacements={() => onOpenPlacementsForCompany(activeCompany.name)}
-        />
+            company={activeCompany} 
+            onBack={() => setSelectedCompany(null)} 
+            onOpenCompanyOffers={() => onOpenCompanyOffers(activeCompany)} 
+            onOpenCompanyStudy={() => onOpenCompanyStudy(activeCompany)} 
+            onOpenAIInterview={() => onOpenAIInterview(activeCompany)}
+            onViewAllPlacements={() => onOpenPlacementsForCompany(activeCompany.name)}
+            user={user}
+            onDeleteCompany={handleDeleteCompany}
+          />
         ) : (
           <main className="co-main">
 
@@ -322,22 +449,57 @@ export default function Companies({ user, initialCompany, onOpenProfile, onBack,
                 <p className="co-subtitle">Explore our top recruiting companies and discover opportunities that match your career goals.</p>
               </div>
               <div className="co-controls">
-                <div className="co-search">
-                  <span className="co-search-icon">🔍</span>
-                  <input
-                    type="text"
-                    placeholder="Search Company..."
-                    value={search}
-                    onChange={e => { setSearch(e.target.value); setPage(1); }}
-                  />
+                {user?.role === 'admin' && (
+                  <div className="co-admin-btn-group">
+                    <button 
+                      className="co-add-company-btn" 
+                      onClick={() => setShowAddCompanyModal(true)}
+                      type="button"
+                      title="Add new recruiting company"
+                    >
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                      <span>Add Company</span>
+                    </button>
+                    <button 
+                      className="co-delete-company-btn" 
+                      onClick={() => {
+                        setCompanyToDeleteId(allCompanies[0]?.id ? String(allCompanies[0].id) : '');
+                        setShowDeleteCompanyModal(true);
+                      }}
+                      type="button"
+                      title="Delete a recruiting company"
+                    >
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                      </svg>
+                      <span>Delete Company</span>
+                    </button>
+                  </div>
+                )}
+                <div className="co-filters-group">
+                  <div className="co-search">
+                    <span className="co-search-icon">🔍</span>
+                    <input
+                      type="text"
+                      placeholder="Search Company..."
+                      value={search}
+                      onChange={e => { setSearch(e.target.value); setPage(1); }}
+                    />
+                  </div>
+                  <select
+                    className="co-sector-select"
+                    value={sector}
+                    onChange={e => setSector(e.target.value)}
+                  >
+                    {SECTORS.map(s => <option key={s}>{s}</option>)}
+                  </select>
                 </div>
-                <select
-                  className="co-sector-select"
-                  value={sector}
-                  onChange={e => setSector(e.target.value)}
-                >
-                  {SECTORS.map(s => <option key={s}>{s}</option>)}
-                </select>
               </div>
             </div>
 
@@ -411,6 +573,239 @@ export default function Companies({ user, initialCompany, onOpenProfile, onBack,
               >
                 Go to Login
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── Add Company Modal ── */}
+      {showAddCompanyModal && (
+        <div className="admin-modal-overlay" onClick={() => setShowAddCompanyModal(false)}>
+          <div className="admin-modal-card co-add-modal-card" onClick={(e) => e.stopPropagation()}>
+            <div className="admin-modal-header">
+              <div className="admin-modal-title-wrap">
+                <span className="admin-modal-badge">ADMIN ACTION</span>
+                <h3>Add New Recruiting Company</h3>
+              </div>
+              <button 
+                className="admin-modal-close" 
+                onClick={() => setShowAddCompanyModal(false)}
+                type="button"
+              >
+                ✕
+              </button>
+            </div>
+
+            <form className="admin-modal-form" onSubmit={handleAddCompanySubmit}>
+              <div className="admin-form-row">
+                <div className="admin-form-group">
+                  <label>Company Short Name *</label>
+                  <input 
+                    type="text" 
+                    placeholder="e.g. Cisco" 
+                    value={companyForm.name} 
+                    onChange={(e) => setCompanyForm({ ...companyForm, name: e.target.value })}
+                    required
+                  />
+                </div>
+                <div className="admin-form-group">
+                  <label>Full Corporate Name</label>
+                  <input 
+                    type="text" 
+                    placeholder="e.g. Cisco Systems, Inc." 
+                    value={companyForm.fullName} 
+                    onChange={(e) => setCompanyForm({ ...companyForm, fullName: e.target.value })}
+                  />
+                </div>
+              </div>
+
+              <div className="admin-form-row">
+                <div className="admin-form-group">
+                  <label>Sector / Category *</label>
+                  <select 
+                    value={companyForm.sector} 
+                    onChange={(e) => setCompanyForm({ ...companyForm, sector: e.target.value })}
+                  >
+                    {SECTORS.filter(s => s !== 'All Sectors').map(s => (
+                      <option key={s} value={s}>{s}</option>
+                    ))}
+                  </select>
+                </div>
+                <div className="admin-form-group">
+                  <label>Location (City, State/Country)</label>
+                  <input 
+                    type="text" 
+                    placeholder="e.g. Bengaluru, Karnataka" 
+                    value={companyForm.location} 
+                    onChange={(e) => setCompanyForm({ ...companyForm, location: e.target.value })}
+                  />
+                </div>
+              </div>
+
+              <div className="admin-form-row">
+                <div className="admin-form-group">
+                  <label>Average / Highest Package (CTC)</label>
+                  <input 
+                    type="text" 
+                    placeholder="e.g. 12 - 18 LPA" 
+                    value={companyForm.packageOffered} 
+                    onChange={(e) => setCompanyForm({ ...companyForm, packageOffered: e.target.value })}
+                  />
+                </div>
+                <div className="admin-form-group">
+                  <label>Official Website URL</label>
+                  <input 
+                    type="url" 
+                    placeholder="https://www.example.com" 
+                    value={companyForm.website} 
+                    onChange={(e) => setCompanyForm({ ...companyForm, website: e.target.value })}
+                  />
+                </div>
+              </div>
+
+              <div className="admin-form-group">
+                <label>Company Logo URL (Optional)</label>
+                <input 
+                  type="text" 
+                  placeholder="https://logo.clearbit.com/company.com or leave blank for avatar" 
+                  value={companyForm.logo} 
+                  onChange={(e) => setCompanyForm({ ...companyForm, logo: e.target.value })}
+                />
+              </div>
+
+              <div className="admin-form-group">
+                <label>Brief Description</label>
+                <textarea 
+                  rows={2}
+                  className="admin-form-textarea"
+                  placeholder="Short 1-2 sentence overview of the organization..."
+                  value={companyForm.description}
+                  onChange={(e) => setCompanyForm({ ...companyForm, description: e.target.value })}
+                />
+              </div>
+
+              <div className="admin-form-group">
+                <label>Detailed Placement / Company Info</label>
+                <textarea 
+                  rows={3}
+                  className="admin-form-textarea"
+                  placeholder="Eligibility criteria, hiring roles, culture, recruitment workflow..."
+                  value={companyForm.moreInfo}
+                  onChange={(e) => setCompanyForm({ ...companyForm, moreInfo: e.target.value })}
+                />
+              </div>
+
+              <div className="admin-modal-actions">
+                <button 
+                  type="button" 
+                  className="admin-btn-secondary"
+                  onClick={() => setShowAddCompanyModal(false)}
+                >
+                  Cancel
+                </button>
+                <button 
+                  type="submit" 
+                  className="admin-btn-primary"
+                >
+                  + Add Company
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Admin Delete Company Modal */}
+      {showDeleteCompanyModal && (
+        <div className="admin-modal-overlay" onClick={() => setShowDeleteCompanyModal(false)}>
+          <div className="admin-modal-card co-delete-modal-card" onClick={(e) => e.stopPropagation()}>
+            <div className="admin-modal-header">
+              <div className="admin-modal-title-wrap">
+                <span className="admin-modal-badge admin-modal-badge-danger">ADMIN ACTION</span>
+                <h3>Delete Recruiting Company</h3>
+              </div>
+              <button 
+                className="admin-modal-close" 
+                onClick={() => setShowDeleteCompanyModal(false)}
+                type="button"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="admin-modal-form">
+              <div className="admin-form-group">
+                <label>Select Company to Remove *</label>
+                <select 
+                  value={companyToDeleteId} 
+                  onChange={(e) => setCompanyToDeleteId(e.target.value)}
+                >
+                  <option value="">-- Choose a company to delete --</option>
+                  {allCompanies.map(c => (
+                    <option key={c.id} value={c.id}>
+                      {c.name} ({c.sector}) — {c.location}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {(() => {
+                const targeted = allCompanies.find(c => String(c.id) === String(companyToDeleteId));
+                if (!targeted) return null;
+                return (
+                  <div className="co-delete-preview">
+                    {targeted.logo ? (
+                      <img src={targeted.logo} alt={targeted.name} className="co-delete-preview-logo" />
+                    ) : (
+                      <div className="co-delete-preview-logo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', color: '#1e40af' }}>
+                        {targeted.name.charAt(0)}
+                      </div>
+                    )}
+                    <div className="co-delete-preview-info">
+                      <h4>{targeted.fullName || targeted.name}</h4>
+                      <p>Sector: {targeted.sector} • Location: {targeted.location}</p>
+                    </div>
+                  </div>
+                );
+              })()}
+
+              <div className="co-delete-warning-box">
+                <span style={{ fontSize: '1.2rem', lineHeight: 1 }}>⚠️</span>
+                <span>
+                  <strong>Warning:</strong> Deleting this company will remove it from the recruiters catalog and all placement resources.
+                </span>
+              </div>
+
+              <div className="admin-modal-actions">
+                <button 
+                  type="button" 
+                  className="admin-btn-secondary"
+                  onClick={() => setShowDeleteCompanyModal(false)}
+                >
+                  Cancel
+                </button>
+                <button 
+                  type="button" 
+                  className="admin-btn-danger"
+                  disabled={!companyToDeleteId}
+                  onClick={() => {
+                    const targeted = allCompanies.find(c => String(c.id) === String(companyToDeleteId));
+                    if (targeted) {
+                      handleDeleteCompany(targeted);
+                      setShowDeleteCompanyModal(false);
+                      setCompanyToDeleteId('');
+                    }
+                  }}
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                  </svg>
+                  <span>Delete Company</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

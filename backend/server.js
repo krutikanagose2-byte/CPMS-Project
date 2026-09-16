@@ -6,7 +6,7 @@ const authRoutes = require("./routes/authRoutes");
 const studentRoutes = require("./routes/studentRoutes");
 const jobRoutes = require("./routes/jobRoutes");
 const interviewRoutes = require("./routes/interviewRoutes");
-
+const messageRoutes = require("./routes/messageRoutes");
 
 const app = express();
 
@@ -20,6 +20,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/student", studentRoutes);
 app.use("/api/jobs", jobRoutes);
 app.use("/api/interview", interviewRoutes);
+app.use("/api/messages", messageRoutes);
 
 
 const PORT = process.env.PORT || 5000;

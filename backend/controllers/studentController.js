@@ -18,12 +18,21 @@ exports.getProfile = async (req, res) => {
 
 exports.updateProfile = async (req, res) => {
     try {
-        const { branch, cgpa, tenthPercentage, twelfthPercentage, diplomaPercentage, backlogCount, graduationYear, skills, resumeUrl, dob, gender, address, linkedin, github, photoUrl, signatureUrl, academics, myDocuments } = req.body;
-        
+        const updateData = { ...req.body };
+        delete updateData.password;
+        delete updateData._id;
+
+        if (updateData.resume && updateData.resume.url && !updateData.resumeUrl) {
+            updateData.resumeUrl = updateData.resume.url;
+        } else if (updateData.resumeUrl && (!updateData.resume || !updateData.resume.url)) {
+            updateData.resume = updateData.resume || {};
+            updateData.resume.url = updateData.resumeUrl;
+        }
+
         const user = await User.findByIdAndUpdate(
             req.params.id,
-            { branch, cgpa, tenthPercentage, twelfthPercentage, diplomaPercentage, backlogCount, graduationYear, skills, resumeUrl, dob, gender, address, linkedin, github, photoUrl, signatureUrl, academics, myDocuments },
-            { new: true, runValidators: true }
+            { $set: updateData },
+            { new: true, runValidators: false }
         ).select("-password");
 
         if (!user) {
@@ -114,3 +123,57 @@ exports.applyForJob = async (req, res) => {
         res.status(500).json({ message: "Internal server error" });
     }
 };
+
+exports.verifyStudent = async (req, res) => {
+    try {
+        const { status, remark, verifiedBy } = req.body;
+        const user = await User.findByIdAndUpdate(
+            req.params.id,
+            {
+                $set: {
+                    verificationStatus: status || "Verified",
+                    verificationRemark: remark || "",
+                    verifiedBy: verifiedBy || "Administrator",
+                    verifiedAt: new Date()
+                }
+            },
+            { new: true }
+        ).select("-password");
+
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+        res.status(200).json({ message: `Student status updated to ${status}`, user });
+    } catch (error) {
+        console.error("Error verifying student:", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+};
+
+exports.updateRegistrationStatus = async (req, res) => {
+    try {
+        const { status, remark, verifiedBy } = req.body;
+        const user = await User.findByIdAndUpdate(
+            req.params.id,
+            {
+                $set: {
+                    registrationStatus: status || "Accepted",
+                    verificationStatus: status === "Accepted" ? "Verified" : "Rejected",
+                    verifiedBy: verifiedBy || "Placement Administrator",
+                    verifiedAt: new Date(),
+                    verificationRemark: remark || (status === "Accepted" ? "Registration verified and accepted by administrator" : "Registration rejected")
+                }
+            },
+            { new: true }
+        ).select("-password");
+
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+        res.status(200).json({ message: `Registration request ${status} successfully`, user });
+    } catch (error) {
+        console.error("Error updating registration status:", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+};
+

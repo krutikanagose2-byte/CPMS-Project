@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './StudentProfile.css';
 
 const StudentProfile = ({ user, onUpdateUser }) => {
@@ -24,6 +24,31 @@ const StudentProfile = ({ user, onUpdateUser }) => {
     });
 
     const [newSkill, setNewSkill] = useState('');
+
+    useEffect(() => {
+        if (user) {
+            setFormData({
+                dob: user?.dob || '',
+                gender: user?.gender || '',
+                address: user?.address || '',
+                email: user?.email || '',
+                branch: user?.branch || '',
+                linkedin: user?.linkedin || '',
+                github: user?.github || '',
+                academics: user?.academics || [
+                    { id: 1, course: 'B.E/B.Tech', institute: '', board: '', score: '', year: '' },
+                    { id: 2, course: 'Diploma', institute: '', board: '', score: '', year: '' },
+                    { id: 3, course: '12th (HSC)', institute: '', board: '', score: '', year: '' },
+                    { id: 4, course: '10th (SSC)', institute: '', board: '', score: '', year: '' },
+                ],
+                skills: user?.skills || [],
+                resume: user?.resume || { name: '', date: '', url: user?.resumeUrl || '#' },
+                resumeUrl: user?.resumeUrl || (user?.resume?.url && user?.resume?.url !== '#' ? user?.resume?.url : ''),
+                photoUrl: user?.photoUrl || '',
+                signatureUrl: user?.signatureUrl || ''
+            });
+        }
+    }, [user]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -53,15 +78,20 @@ const StudentProfile = ({ user, onUpdateUser }) => {
     const handleResumeUpload = (e) => {
         const file = e.target.files[0];
         if (file) {
-            const fileUrl = URL.createObjectURL(file);
-            setFormData(prev => ({
-                ...prev,
-                resume: {
-                    name: file.name,
-                    date: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
-                    url: fileUrl
-                }
-            }));
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                const base64 = reader.result;
+                setFormData(prev => ({
+                    ...prev,
+                    resumeUrl: base64,
+                    resume: {
+                        name: file.name,
+                        date: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
+                        url: base64
+                    }
+                }));
+            };
+            reader.readAsDataURL(file);
         }
     };
 
@@ -102,6 +132,7 @@ const StudentProfile = ({ user, onUpdateUser }) => {
                     if (onUpdateUser) {
                         onUpdateUser(updatedUser);
                     }
+                    localStorage.setItem('user', JSON.stringify(updatedUser));
                     setIsEditing(false);
                     alert("Profile updated successfully!");
                 } else {

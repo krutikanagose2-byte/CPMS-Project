@@ -11,10 +11,40 @@
   padding: 2rem;
 }
 
+.pl-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
 .pl-breadcrumb {
   font-size: 0.9rem;
   color: #666;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
+}
+
+.pl-add-student-btn {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.pl-add-student-btn:hover {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
 }
 
 .pl-company-section {
@@ -158,10 +188,18 @@
   color: #374151;
 }
 
-.pl-feedback-container {
-  position: relative;
+.pl-action-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   width: 100%;
   margin-top: auto;
+}
+
+.pl-feedback-container {
+  position: relative;
+  flex: 1;
+  width: 100%;
 }
 
 .pl-selected-btn {
@@ -169,9 +207,9 @@
   color: #9333ea;
   border: none;
   border-radius: 6px;
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 0.5rem;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,10 +217,35 @@
   width: 100%;
   cursor: pointer;
   transition: background-color 0.2s;
+  white-space: nowrap;
 }
 
 .pl-selected-btn:hover {
   background-color: #e9d5ff;
+}
+
+.pl-delete-student-btn {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.pl-delete-student-btn:hover {
+  background-color: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.25);
 }
 
 .pl-feedback-popup {
