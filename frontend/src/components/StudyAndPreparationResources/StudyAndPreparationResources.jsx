@@ -1,6 +1,7 @@
 import React from 'react';
 import CognizantMenu from './CognizantMenu/CognizantMenu';
 import GenericMenu from './GenericMenu/GenericMenu';
+import TCSMenu from './TCSMenu/TCSMenu';
 
 const StudyAndPreparationResources = ({ company, onBack, user, onOpenProfile, onOpenAIInterview }) => {
   if (!company) return null;
@@ -9,9 +10,14 @@ const StudyAndPreparationResources = ({ company, onBack, user, onOpenProfile, on
   if (company.name === 'Cognizant') {
     return <CognizantMenu company={company} onBack={onBack} user={user} onOpenProfile={onOpenProfile} onOpenAIInterview={onOpenAIInterview} />;
   }
+  
+  // Use the highly customized menu for TCS
+  if (company.name === 'TCS') {
+    return <TCSMenu company={company} onBack={onBack} user={user} onOpenProfile={onOpenProfile} />;
+  }
 
   // Use the generic menu for supported companies
-  const supportedCompanies = ['TCS', 'Infosys', 'Wipro', 'Capgemini'];
+  const supportedCompanies = ['Infosys', 'Wipro', 'Capgemini'];
   if (supportedCompanies.includes(company.name)) {
     return <GenericMenu company={company} onBack={onBack} onOpenAIInterview={onOpenAIInterview} />;
   }
