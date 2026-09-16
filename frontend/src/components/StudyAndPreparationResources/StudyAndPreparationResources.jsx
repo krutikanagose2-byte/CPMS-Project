@@ -1,5 +1,6 @@
 import React from 'react';
 import CognizantMenu from './CognizantMenu/CognizantMenu';
+import TCSMenu from './TCSMenu/TCSMenu';
 
 const StudyAndPreparationResources = ({ company, onBack, user, onOpenProfile }) => {
   if (!company) return null;
@@ -10,8 +11,8 @@ const StudyAndPreparationResources = ({ company, onBack, user, onOpenProfile }) 
       return <CognizantMenu company={company} onBack={onBack} user={user} onOpenProfile={onOpenProfile} />;
     
     // Add other companies here as you build their menus
-    // case 'TCS':
-    //   return <TCSMenu company={company} onBack={onBack} />;
+    case 'TCS':
+      return <TCSMenu company={company} onBack={onBack} user={user} onOpenProfile={onOpenProfile} />;
       
     default:
       // Fallback for companies that don't have a specific menu yet
