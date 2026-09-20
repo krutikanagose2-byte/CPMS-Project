@@ -122,6 +122,12 @@ export default function App() {
           window.history.pushState({}, '', '/Notice-Board');
           setPage('notice');
         }}
+        onOpenSpecificCompany={(companyName) => {
+          setSelectedCompany({ name: companyName });
+          setOpenAddModal(false);
+          window.history.pushState({}, '', '/Companies');
+          setPage('companies');
+        }}
       />
     );
   }

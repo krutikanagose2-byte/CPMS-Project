@@ -277,6 +277,15 @@ export default function Companies({ user, initialCompany, onOpenProfile, onBack,
     }
   });
 
+  useEffect(() => {
+    if (initialCompany && Object.keys(initialCompany).length === 1 && initialCompany.name) {
+      const fullCompany = allCompanies.find(c => c.name.toLowerCase() === initialCompany.name.toLowerCase());
+      if (fullCompany) {
+        setSelectedCompany(fullCompany);
+      }
+    }
+  }, [initialCompany, allCompanies]);
+
   const handleDeleteCompany = (company, e) => {
     if (e) e.stopPropagation();
     const confirmed = window.confirm(`Are you sure you want to delete "${company.name}"?`);

@@ -19,7 +19,8 @@ const StudentDashboard = ({
     onBack,
     onOpenCompanies,
     onOpenPlacements,
-    onOpenNoticeBoard
+    onOpenNoticeBoard,
+    onOpenSpecificCompany
 }) => {
     const isAdmin = user?.role === 'admin';
     const [activeTab, setActiveTab] = useState(isAdmin ? 'admin-control' : 'profile');
@@ -59,7 +60,7 @@ const StudentDashboard = ({
             );
             case 'overview': return <StudentOverview user={user} />;
             case 'profile': return <StudentProfile user={user} onUpdateUser={onUpdateUser} />;
-            case 'eligibility': return <EligibilityStatus user={user} />;
+            case 'eligibility': return <EligibilityStatus user={user} onOpenSpecificCompany={onOpenSpecificCompany} />;
             case 'applications': return <StudentApplications user={user} />;
             case 'materials': return <StudentStudyMaterials user={user} />;
             case 'documents': return <MyDocuments user={user} onUpdateUser={onUpdateUser} />;

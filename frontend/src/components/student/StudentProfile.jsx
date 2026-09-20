@@ -3,6 +3,7 @@ import './StudentProfile.css';
 
 const StudentProfile = ({ user, onUpdateUser }) => {
     const [isEditing, setIsEditing] = useState(false);
+    const [showResumeModal, setShowResumeModal] = useState(false);
     const [formData, setFormData] = useState({
         dob: user?.dob || '',
         gender: user?.gender || '',
@@ -75,21 +76,72 @@ const StudentProfile = ({ user, onUpdateUser }) => {
         setFormData(prev => ({ ...prev, skills: prev.skills.filter(s => s !== skillToRemove) }));
     };
 
+    const saveProfileData = async (dataToSave, showSuccessAlert = true) => {
+        try {
+            const userId = user?._id || user?.id;
+            if (userId) {
+                const response = await fetch(`http://localhost:5000/api/student/profile/${userId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(dataToSave)
+                });
+                
+                if (response.ok) {
+                    const updatedUser = await response.json();
+                    if (onUpdateUser) {
+                        onUpdateUser(updatedUser);
+                    }
+                    localStorage.setItem('user', JSON.stringify(updatedUser));
+                    setIsEditing(false);
+                    if (showSuccessAlert) alert("Profile updated successfully!");
+                    return true;
+                } else {
+                    const errData = await response.json();
+                    alert(`Failed to save profile: ${errData.message}`);
+                    return false;
+                }
+            } else {
+                // If user is not logged in / ID not found
+                setIsEditing(false);
+                if (onUpdateUser) onUpdateUser({ ...user, ...dataToSave });
+                return true;
+            }
+        } catch (error) {
+            console.error("Error saving profile:", error);
+            alert("Error connecting to server. Is it running?");
+            return false;
+        }
+    };
+
+    const handleSave = () => saveProfileData(formData, true);
+
     const handleResumeUpload = (e) => {
         const file = e.target.files[0];
         if (file) {
             const reader = new FileReader();
             reader.onloadend = () => {
                 const base64 = reader.result;
-                setFormData(prev => ({
-                    ...prev,
-                    resumeUrl: base64,
-                    resume: {
-                        name: file.name,
-                        date: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
-                        url: base64
+                const newResume = {
+                    name: file.name,
+                    date: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
+                    url: base64
+                };
+                
+                setFormData(prev => {
+                    const newData = {
+                        ...prev,
+                        resumeUrl: base64,
+                        resume: newResume
+                    };
+                    
+                    if (!isEditing) {
+                        saveProfileData(newData, false).then(success => {
+                            if(success) alert("Resume uploaded successfully!");
+                        });
                     }
-                }));
+                    
+                    return newData;
+                });
             };
             reader.readAsDataURL(file);
         }
@@ -114,39 +166,6 @@ const StudentProfile = ({ user, onUpdateUser }) => {
                 setFormData(prev => ({ ...prev, signatureUrl: reader.result }));
             };
             reader.readAsDataURL(file);
-        }
-    };
-
-    const handleSave = async () => {
-        try {
-            const userId = user?._id || user?.id;
-            if (userId) {
-                const response = await fetch(`http://localhost:5000/api/student/profile/${userId}`, {
-                    method: 'PUT',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
-                });
-                
-                if (response.ok) {
-                    const updatedUser = await response.json();
-                    if (onUpdateUser) {
-                        onUpdateUser(updatedUser);
-                    }
-                    localStorage.setItem('user', JSON.stringify(updatedUser));
-                    setIsEditing(false);
-                    alert("Profile updated successfully!");
-                } else {
-                    const errData = await response.json();
-                    alert(`Failed to save profile: ${errData.message}`);
-                }
-            } else {
-                // If user is not logged in / ID not found
-                setIsEditing(false);
-                if (onUpdateUser) onUpdateUser({ ...user, ...formData });
-            }
-        } catch (error) {
-            console.error("Error saving profile:", error);
-            alert("Error connecting to server. Is it running?");
         }
     };
 
@@ -403,25 +422,34 @@ const StudentProfile = ({ user, onUpdateUser }) => {
                             <i className="fas fa-file-pdf text-red"></i>
                         </div>
                         <div className="resume-info">
-                            <h4>{formData.resume.name}</h4>
-                            <p>Uploaded on {formData.resume.date}</p>
+                            <h4>{formData.resume?.name || 'No resume uploaded'}</h4>
+                            <p>{formData.resume?.date ? `Uploaded on ${formData.resume.date}` : ''}</p>
                         </div>
                         <div className="resume-actions ml-auto">
-                            {isEditing ? (
+                            {(!formData.resume?.url || formData.resume.url === '#' || formData.resume.url === '') ? (
                                 <div className="resume-upload-wrapper">
                                     <input type="file" id="resume-upload" className="resume-file-input" accept=".pdf,.doc,.docx" onChange={handleResumeUpload} />
-                                    <label htmlFor="resume-upload" className="t-action-btn upload-label">
-                                        <i className="fas fa-upload"></i> Upload New
+                                    <label htmlFor="resume-upload" className="t-action-btn upload-label" style={{ cursor: 'pointer' }}>
+                                        <i className="fas fa-upload"></i> Upload Resume
                                     </label>
                                 </div>
                             ) : (
                                 <>
-                                    <a href={formData.resume.url} target="_blank" rel="noopener noreferrer" className="t-action-btn view-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }} onClick={(e) => { if (formData.resume.url === '#') { e.preventDefault(); alert('Please upload a resume first.'); } }}>
+                                    <button 
+                                        className="t-action-btn view-btn" 
+                                        style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'transparent', border: '1px solid var(--primary)', color: 'var(--primary)', cursor: 'pointer', padding: '6px 12px', borderRadius: '4px' }} 
+                                        onClick={(e) => { 
+                                            e.preventDefault();
+                                            const url = formData.resume.url;
+                                            if (!url || url === '#') {
+                                                alert('Please upload a resume first.');
+                                                return;
+                                            }
+                                            setShowResumeModal(true);
+                                        }}
+                                    >
                                         <i className="fas fa-eye"></i> View
-                                    </a>
-                                    <a href={formData.resume.url} download={formData.resume.name} className="t-action-btn download-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }} onClick={(e) => { if (formData.resume.url === '#') { e.preventDefault(); alert('Please upload a resume first.'); } }}>
-                                        <i className="fas fa-download"></i> Download
-                                    </a>
+                                    </button>
                                 </>
                             )}
                         </div>
@@ -429,6 +457,56 @@ const StudentProfile = ({ user, onUpdateUser }) => {
                 </div>
 
             </div>
+
+            {/* Resume Modal */}
+            {showResumeModal && formData.resume?.url && (
+                <div style={{
+                    position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: 9999,
+                    display: 'flex', flexDirection: 'column',
+                    padding: '40px'
+                }}>
+                    <button 
+                        onClick={() => setShowResumeModal(false)}
+                        style={{
+                            position: 'absolute', top: '20px', right: '30px',
+                            background: 'transparent', border: 'none', color: 'white',
+                            fontSize: '30px', cursor: 'pointer'
+                        }}
+                    >&times;</button>
+                    
+                    <div style={{ flex: 1, backgroundColor: 'white', borderRadius: '8px', overflow: 'hidden', position: 'relative' }}>
+                        <iframe src={formData.resume.url} width="100%" height="100%" style={{ border: 'none' }} title="Resume"></iframe>
+                        
+                        <div style={{
+                            position: 'absolute', bottom: '20px', right: '20px',
+                            display: 'flex', gap: '10px'
+                        }}>
+                            <div className="resume-upload-wrapper" style={{ display: 'inline-block' }}>
+                                <input type="file" id="resume-upload-modal" className="resume-file-input" accept=".pdf,.doc,.docx" onChange={(e) => {
+                                    handleResumeUpload(e);
+                                    setShowResumeModal(false);
+                                }} />
+                                <label htmlFor="resume-upload-modal" className="t-action-btn" style={{ 
+                                    background: 'var(--primary)', color: 'white', padding: '10px 15px', borderRadius: '4px', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '6px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+                                }}>
+                                    <i className="fas fa-edit"></i> Edit
+                                </label>
+                            </div>
+                            <a 
+                                href={formData.resume.url} 
+                                download={formData.resume?.name || 'resume'} 
+                                className="t-action-btn"
+                                style={{ 
+                                    background: 'var(--primary)', color: 'white', padding: '10px 15px', borderRadius: '4px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+                                }}
+                            >
+                                <i className="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

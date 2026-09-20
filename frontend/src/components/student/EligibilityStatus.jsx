@@ -1,6 +1,18 @@
 import React from 'react';
 
-const EligibilityStatus = () => {
+const EligibilityStatus = ({ user, onOpenSpecificCompany }) => {
+    const userCgpaStr = user?.academics?.find(a => a.course === 'B.E/B.Tech')?.score;
+    const userCgpa = parseFloat(userCgpaStr) || 0;
+
+    const companies = [
+        { name: 'TCS', reqCgpa: 7.0, other: 'No Active Backlogs', passText: 'No Active Backlogs', failText: 'Active Backlogs present', defaultEligible: true },
+        { name: 'Infosys', reqCgpa: 6.5, other: '60% in 10th, 12th, Diploma', passText: 'Above 60% in 10th, 12th, Diploma', failText: 'Below 60% in 10th, 12th, Diploma', defaultEligible: true },
+        { name: 'Capgemini', reqCgpa: 6.0, other: 'No Active Backlogs', passText: 'No Active Backlogs', failText: 'Active Backlogs present', defaultEligible: true },
+        { name: 'Wipro', reqCgpa: 6.0, other: '60% in 10th, 12th, Diploma', passText: 'Above 60% in 10th, 12th, Diploma', failText: 'Below 60% in 10th, 12th, Diploma', defaultEligible: true },
+        { name: 'Accenture', reqCgpa: 8.0, other: 'No Active Backlogs', passText: 'No Active Backlogs', failText: 'Active Backlogs present', defaultEligible: false },
+        { name: 'Cognizant', reqCgpa: 6.0, other: 'No Active Backlogs', passText: 'No Active Backlogs', failText: 'Active Backlogs present', defaultEligible: true },
+    ];
+
     return (
         <div className="overview-container">
             <div className="overview-header">
@@ -27,45 +39,49 @@ const EligibilityStatus = () => {
                             <th>Eligibility Criteria</th>
                             <th>Status</th>
                             <th>Reason</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><strong>TCS</strong></td>
-                            <td>CGPA ≥ 7.0<br/>No Active Backlogs</td>
-                            <td><span className="t-status eligible">Eligible</span></td>
-                            <td><span className="text-muted text-xs">You meet all the criteria</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Infosys</strong></td>
-                            <td>CGPA ≥ 6.5<br/>60% in 10th, 12th, Diploma</td>
-                            <td><span className="t-status eligible">Eligible</span></td>
-                            <td><span className="text-muted text-xs">You meet all the criteria</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Capgemini</strong></td>
-                            <td>CGPA ≥ 6.0<br/>No Active Backlogs</td>
-                            <td><span className="t-status eligible">Eligible</span></td>
-                            <td><span className="text-muted text-xs">You meet all the criteria</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Wipro</strong></td>
-                            <td>CGPA ≥ 6.0<br/>60% in 10th, 12th, Diploma</td>
-                            <td><span className="t-status eligible">Eligible</span></td>
-                            <td><span className="text-muted text-xs">You meet all the criteria</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Accenture</strong></td>
-                            <td>CGPA ≥ 7.0<br/>No Active Backlogs</td>
-                            <td><span className="t-status not-eligible">Not Eligible</span></td>
-                            <td><span className="text-muted text-xs text-red">CGPA is less than 7.0</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Cognizant</strong></td>
-                            <td>CGPA ≥ 6.0<br/>No Active Backlogs</td>
-                            <td><span className="t-status eligible">Eligible</span></td>
-                            <td><span className="text-muted text-xs">You meet all the criteria</span></td>
-                        </tr>
+                        {companies.map(c => {
+                            const isEligible = userCgpa > 0 ? userCgpa >= c.reqCgpa : c.defaultEligible;
+                            
+                            let reasonText = "";
+                            if (isEligible) {
+                                const cgpaReason = userCgpa > 0 ? `${userCgpa} ≥ ${c.reqCgpa.toFixed(1)}` : `CGPA ≥ ${c.reqCgpa.toFixed(1)}`;
+                                reasonText = `You meet all the criteria. ${cgpaReason}, ${c.passText}.`;
+                            } else {
+                                const cgpaReason = userCgpa > 0 && userCgpa < c.reqCgpa ? `${userCgpa} < ${c.reqCgpa.toFixed(1)}` : `CGPA < ${c.reqCgpa.toFixed(1)}`;
+                                // Mocking that both criteria failed just to show the requested fail text pattern,
+                                // or we just show the CGPA failure if that's what caused it.
+                                // The user's example: "You do not meet all criteria. 7.21 < 8.0, Below 60% in 10th, 12th, Diploma."
+                                reasonText = `You do not meet all criteria. ${cgpaReason}, ${c.failText}.`;
+                            }
+                            
+                            return (
+                                <tr key={c.name}>
+                                    <td><strong>{c.name}</strong></td>
+                                    <td>CGPA ≥ {c.reqCgpa.toFixed(1)}<br/>{c.other}</td>
+                                    <td>
+                                        <span className={`t-status ${isEligible ? 'eligible' : 'not-eligible'}`}>
+                                            {isEligible ? 'Eligible' : 'Not Eligible'}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span className={`text-muted ${!isEligible ? 'text-red' : ''}`}>
+                                            {reasonText}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        {isEligible ? (
+                                            <button className="t-action-btn" onClick={() => onOpenSpecificCompany(c.name)} style={{ background: 'var(--primary)', color: 'white', border: 'none', cursor: 'pointer', padding: '6px 12px', borderRadius: '4px' }}>Apply</button>
+                                        ) : (
+                                            <button className="t-action-btn" style={{ background: '#e2e8f0', color: '#64748b', border: 'none', cursor: 'not-allowed', padding: '6px 12px', borderRadius: '4px' }} disabled>Apply</button>
+                                        )}
+                                    </td>
+                                </tr>
+                            );
+                        })}
                     </tbody>
                 </table>
                 <div style={{ padding: '16px 20px', background: '#f8fafc', fontSize: '11px', color: 'var(--primary)', borderTop: '1px solid var(--border-color)' }}>

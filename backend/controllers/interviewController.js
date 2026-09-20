@@ -15,7 +15,7 @@ const upload = multer({
 });
 
 // ── Groq client ────────────────────────────────────────────────────────
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+const groq = null; // Instantiated locally when needed
 
 
 // ── POST /api/interview/start ──────────────────────────────────────────
