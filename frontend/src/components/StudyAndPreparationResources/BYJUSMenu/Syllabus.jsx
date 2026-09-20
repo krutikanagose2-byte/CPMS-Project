@@ -4,11 +4,11 @@ const Syllabus = ({ company, currentYear }) => {
   return (
     <div className="csr-content-body">
       <h1 className="csr-page-title">
-        {company?.name || 'BYJU'S'} Detailed Syllabus {currentYear}
+        {company?.name || "BYJU'S"} Detailed Syllabus {currentYear}
       </h1>
 
       <div className="csr-content-card">
-        <h2 className="csr-section-title">Overview of {company?.name || 'BYJU'S'} Syllabus</h2>
+        <h2 className="csr-section-title">Overview of {company?.name || "BYJU'S"} Syllabus</h2>
         <p className="csr-paragraph">
           The recruitment process consists of the following key topics. You can find detailed resources and practice questions by expanding the Syllabus menu on the left.
         </p>

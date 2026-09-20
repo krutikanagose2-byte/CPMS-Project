@@ -4,7 +4,7 @@ const FinalSelection = ({ company }) => {
   return (
     <div className="csr-content-body">
       <div className="csr-content-card">
-        <h2 className="csr-section-title">{company?.name || 'BYJU'S'} - Final Selection</h2>
+        <h2 className="csr-section-title">{company?.name || "BYJU'S"} - Final Selection</h2>
         <p className="csr-paragraph">Final result</p>
 
       </div>

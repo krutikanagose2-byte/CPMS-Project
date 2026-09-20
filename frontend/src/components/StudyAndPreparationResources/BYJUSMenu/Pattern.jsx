@@ -6,19 +6,19 @@ const Pattern = ({ company, currentYear }) => {
   return (
     <div className="csr-content-body">
       <h1 className="csr-page-title">
-        {company?.name || 'BYJU'S'} Exam Pattern {currentYear}
+        {company?.name || "BYJU'S"} Exam Pattern {currentYear}
       </h1>
 
       <div className="csr-content-card">
         <h2 className="csr-section-title">
-          {company?.name || 'BYJU'S'} Recruitment Process
+          {company?.name || "BYJU'S"} Recruitment Process
         </h2>
         <p className="csr-paragraph">
-          Are you preparing for <strong>{company?.name || 'BYJU'S'} hiring {currentYear}</strong>? This article gives you a detailed breakdown of the hiring process, updated test structure, and pattern to help you succeed.
+          Are you preparing for <strong>{company?.name || "BYJU'S"} hiring {currentYear}</strong>? This article gives you a detailed breakdown of the hiring process, updated test structure, and pattern to help you succeed.
         </p>
 
         <h3 className="csr-subsection-title">
-          <u>Latest {company?.name || 'BYJU'S'} Exam Pattern {currentYear}:</u>
+          <u>Latest {company?.name || "BYJU'S"} Exam Pattern {currentYear}:</u>
         </h3>
 
         <div className="csr-table-responsive">
@@ -57,7 +57,7 @@ const Pattern = ({ company, currentYear }) => {
 
           {curriculumTab === 'Overview' && (
             <div className="csr-curr-content">
-              <h3 className="csr-curr-subtitle">{company?.name || 'BYJU'S'} Rounds Overview:</h3>
+              <h3 className="csr-curr-subtitle">{company?.name || "BYJU'S"} Rounds Overview:</h3>
               <ol className="csr-curr-list num-list">
                 <li><strong>Online Assessment:</strong> Aptitude + Technical MCQs (role-dependent)</li>
                 <li><strong>Technical/Personal Interview:</strong> Self-introduction + Projects + Technical basics</li>
