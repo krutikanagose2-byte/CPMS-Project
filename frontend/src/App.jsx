@@ -32,7 +32,7 @@ export default function App() {
 
   const [user, setUser] = useState(() => {
     try {
-      const saved = localStorage.getItem('user');
+      const saved = sessionStorage.getItem('user');
       return saved ? JSON.parse(saved) : null;
     } catch (e) {
       return null;
@@ -69,9 +69,9 @@ export default function App() {
   const handleUpdateUser = (updatedUser) => {
     setUser(updatedUser);
     if (updatedUser) {
-      localStorage.setItem('user', JSON.stringify(updatedUser));
+      sessionStorage.setItem('user', JSON.stringify(updatedUser));
     } else {
-      localStorage.removeItem('user');
+      sessionStorage.removeItem('user');
     }
   };
 
