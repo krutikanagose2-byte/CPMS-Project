@@ -13,7 +13,9 @@ export default function Navbar({
   onOpenProfile,
   user,
   useEmojiLogo,
-  hideLogin
+  hideLogin,
+  customLeft,
+  customCenter
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -32,26 +34,30 @@ export default function Navbar({
   return (
     <>
       <nav className="nav-bar">
-        <div className="brand">
-          {useEmojiLogo ? (
-            <div className="brand-icon" style={{fontSize: '1.8rem', marginRight: '4px'}}>🎓</div>
-          ) : (
-            <img src={prmitrLogo} alt="PRMIT&R Logo" className="brand-logo" />
-          )}
-          <div className="brand-text">
-            <div className="college">PRMIT&R, Badnera</div>
-            <div className="tag">College Placement Management System</div>
+        {customLeft ? customLeft : (
+          <div className="brand">
+            {useEmojiLogo ? (
+              <div className="brand-icon" style={{fontSize: '1.8rem', marginRight: '4px'}}>🎓</div>
+            ) : (
+              <img src={prmitrLogo} alt="PRMIT&R Logo" className="brand-logo" />
+            )}
+            <div className="brand-text">
+              <div className="college">PRMIT&R, Badnera</div>
+              <div className="tag">College Placement Management System</div>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Desktop nav links */}
-        <div className="nav-links">
-          <a href="/Home" className={activePage === 'home' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Home', onOpenHome)}>Home</a>
-          <a href="/Companies" className={activePage === 'companies' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Companies', onOpenCompanies)}>Companies</a>
-          <a href="/Placements" className={activePage === 'placements' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Placements', onOpenPlacements)}>Placements</a>
-          <a href="/Notice-Board" className={activePage === 'notice' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Notice-Board', onOpenNoticeBoard)}>Notice Board</a>
-          <a href="/Contact" className={activePage === 'contact' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Contact', onOpenContact)}>Contact</a>
-        </div>
+        {customCenter ? customCenter : (
+          <div className="nav-links">
+            <a href="/Home" className={activePage === 'home' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Home', onOpenHome)}>Home</a>
+            <a href="/Companies" className={activePage === 'companies' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Companies', onOpenCompanies)}>Companies</a>
+            <a href="/Placements" className={activePage === 'placements' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Placements', onOpenPlacements)}>Placements</a>
+            <a href="/Notice-Board" className={activePage === 'notice' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Notice-Board', onOpenNoticeBoard)}>Notice Board</a>
+            <a href="/Contact" className={activePage === 'contact' ? 'active' : ''} onClick={(e) => handleNavClick(e, '/Contact', onOpenContact)}>Contact</a>
+          </div>
+        )}
 
         {user ? (
           <div 

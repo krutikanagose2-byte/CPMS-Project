@@ -7,7 +7,7 @@ import FeatureHighlights from './components/FeatureHighlights';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import Login from './components/Login';
-import Companies from './components/Companies';
+import Companies, { COMPANIES } from './components/Companies';
 import Placements from './components/Placements';
 import CompanyOffers from './components/CompanyOffers';
 import NoticeBoard from './components/NoticeBoard';
@@ -21,6 +21,7 @@ export default function App() {
   const [page, setPage] = useState(() => {
     try {
       const path = window.location.pathname.toLowerCase();
+      if (path.includes('company-offers')) return 'company-offers';
       if (path.includes('companies')) return 'companies';
       if (path.includes('placements')) return 'placements';
       if (path.includes('notice')) return 'notice';
@@ -47,7 +48,9 @@ export default function App() {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname.toLowerCase();
-      if (path.includes('companies')) {
+      if (path.includes('company-offers')) {
+        setPage('company-offers');
+      } else if (path.includes('companies')) {
         setPage('companies');
       } else if (path.includes('placements')) {
         setPage('placements');
@@ -123,10 +126,11 @@ export default function App() {
           setPage('notice');
         }}
         onOpenSpecificCompany={(companyName) => {
-          setSelectedCompany({ name: companyName });
+          const fullCompany = COMPANIES.find(c => c.name === companyName) || { name: companyName };
+          setSelectedCompany(fullCompany);
           setOpenAddModal(false);
-          window.history.pushState({}, '', '/Companies');
-          setPage('companies');
+          window.history.pushState({}, '', '/Company-Offers');
+          setPage('company-offers');
         }}
       />
     );
@@ -179,8 +183,38 @@ export default function App() {
           window.history.pushState({}, '', '/Dashboard');
           setPage('student-dashboard');
         }}
+        onOpenLogin={() => {
+          window.history.pushState({}, '', '/Login');
+          setPage('login');
+        }}
+        onOpenHome={() => {
+          setSelectedCompany(null);
+          setOpenAddModal(false);
+          window.history.pushState({}, '', '/Home');
+          setPage('home');
+        }}
+        onOpenCompanies={() => {
+          setSelectedCompany(null);
+          setOpenAddModal(false);
+          window.history.pushState({}, '', '/Companies');
+          setPage('companies');
+        }}
+        onOpenPlacements={() => {
+          setTargetPlacementCompany(null);
+          setOpenAddModal(false);
+          window.history.pushState({}, '', '/Placements');
+          setPage('placements');
+        }}
+        onOpenNoticeBoard={() => {
+          setOpenAddModal(false);
+          window.history.pushState({}, '', '/Notice-Board');
+          setPage('notice');
+        }}
         company={selectedCompany} 
-        onBack={() => setPage('companies')} 
+        onBack={() => {
+          window.history.pushState({}, '', '/Companies');
+          setPage('companies');
+        }} 
       />
     );
   }

@@ -2,6 +2,7 @@
   background-color: #f8fafc;
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
+  padding-top: 74px;
 }
 
 .co-page-header {
@@ -232,6 +233,7 @@
 .co-jobs-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 .co-jobs-table th {

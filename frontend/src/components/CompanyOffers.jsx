@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from './Navbar';
 import './CompanyOffers.css';
 
-const CompanyOffers = ({ company, onBack }) => {
+const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenCompanies, onOpenPlacements, onOpenNoticeBoard, onOpenProfile }) => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedJob, setSelectedJob] = useState(null);
+  
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedRole, setSelectedRole] = useState('All Roles');
+  const [selectedLocation, setSelectedLocation] = useState('All Locations');
+  const [selectedStatus, setSelectedStatus] = useState('All Status');
   
   useEffect(() => {
     if (!company) return;
@@ -185,7 +191,34 @@ const CompanyOffers = ({ company, onBack }) => {
     }));
   };
 
-  const displayJobs = jobs.length > 0 ? jobs : getFallbackJobs(company);
+  const baseJobs = jobs.length > 0 ? jobs : getFallbackJobs(company);
+
+  const getJobLocation = (job) => (job.location || '').split('\n').join(' / ');
+  
+  const COMMON_ROLE_CATEGORIES = [
+    'Engineer', 'Developer', 'Analyst', 'Tester', 'Administrator',
+    'Manager', 'Consultant', 'Specialist', 'Architect', 'Researcher',
+    'Designer', 'Scientist', 'Trainee', 'Inspector'
+  ];
+
+  const uniqueRoles = COMMON_ROLE_CATEGORIES.filter(category => 
+    baseJobs.some(job => job.role && job.role.toLowerCase().includes(category.toLowerCase()))
+  );
+  
+  const uniqueLocations = [...new Set(baseJobs.map(getJobLocation))].filter(Boolean);
+
+  const displayJobs = baseJobs.filter(job => {
+    const roleMatch = selectedRole === 'All Roles' || (job.role && job.role.toLowerCase().includes(selectedRole.toLowerCase()));
+    const locMatch = selectedLocation === 'All Locations' || getJobLocation(job) === selectedLocation;
+    const jobStatus = job.status || 'Open';
+    const statusMatch = selectedStatus === 'All Status' || jobStatus === selectedStatus;
+    
+    const searchMatch = !searchQuery || 
+      (job.role && job.role.toLowerCase().includes(searchQuery.toLowerCase())) || 
+      (job.requiredSkills && job.requiredSkills.some(s => s.toLowerCase().includes(searchQuery.toLowerCase())));
+
+    return roleMatch && locMatch && statusMatch && searchMatch;
+  });
 
   const handleApply = () => {
     let careersUrl = company?.website ? `${company.website}/careers` : 'https://www.google.com/search?q=' + encodeURIComponent((company?.name || 'Company') + ' careers');
@@ -194,22 +227,48 @@ const CompanyOffers = ({ company, onBack }) => {
 
   return (
     <div className="company-offers-page">
-      {/* Top Navbar Header */}
-      <div className="co-page-header">
-        <button className="co-back-btn" onClick={onBack}>
-          ← Back to {company?.name || 'Companies'}
-        </button>
-        <div className="co-filters">
-          <div className="co-search-wrapper">
-            <span className="search-icon">🔍</span>
-            <input type="text" placeholder="Search by role, skill..." />
+      <Navbar
+        activePage="companies"
+        onOpenLogin={onOpenLogin}
+        onOpenHome={onOpenHome}
+        onOpenCompanies={onOpenCompanies}
+        onOpenPlacements={onOpenPlacements}
+        onOpenNoticeBoard={onOpenNoticeBoard}
+        onOpenProfile={onOpenProfile}
+        user={user}
+        useEmojiLogo={true}
+        customLeft={
+          <button className="co-back-btn" onClick={onBack}>
+            ← Back to {company?.name || 'Companies'}
+          </button>
+        }
+        customCenter={
+          <div className="co-filters">
+            <div className="co-search-wrapper">
+              <span className="search-icon">🔍</span>
+              <input 
+                type="text" 
+                placeholder="Search by role, skill..." 
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
+              />
+            </div>
+            <select className="co-select" value={selectedRole} onChange={e => setSelectedRole(e.target.value)}>
+              <option value="All Roles">All Roles</option>
+              {uniqueRoles.map(r => <option key={r} value={r}>{r}</option>)}
+            </select>
+            <select className="co-select" value={selectedLocation} onChange={e => setSelectedLocation(e.target.value)}>
+              <option value="All Locations">All Locations</option>
+              {uniqueLocations.map(l => <option key={l} value={l}>{l}</option>)}
+            </select>
+            <select className="co-select" value={selectedStatus} onChange={e => setSelectedStatus(e.target.value)}>
+              <option value="All Status">All Status</option>
+              <option value="Open">Open</option>
+              <option value="Closing Soon">Closing Soon</option>
+            </select>
           </div>
-          <select className="co-select"><option>All Roles</option></select>
-          <select className="co-select"><option>All Locations</option></select>
-          <select className="co-select"><option>All Status</option></select>
-          <button className="co-filter-btn">⚙ Filters</button>
-        </div>
-      </div>
+        }
+      />
 
       <div className="co-content-wrapper">
         {/* Stats Row */}
@@ -274,13 +333,13 @@ const CompanyOffers = ({ company, onBack }) => {
           <table className="co-jobs-table">
             <thead>
               <tr>
-                <th>Job Role</th>
-                <th>Package</th>
-                <th>Location</th>
-                <th>Eligibility</th>
-                <th>Deadline</th>
-                <th>Status</th>
-                <th>Actions</th>
+                <th style={{ width: '30%' }}>Job Role</th>
+                <th style={{ width: '12%' }}>Package</th>
+                <th style={{ width: '15%' }}>Location</th>
+                <th style={{ width: '15%' }}>Eligibility</th>
+                <th style={{ width: '10%' }}>Deadline</th>
+                <th style={{ width: '8%' }}>Status</th>
+                <th style={{ width: '10%' }}>Actions</th>
               </tr>
             </thead>
             <tbody>
