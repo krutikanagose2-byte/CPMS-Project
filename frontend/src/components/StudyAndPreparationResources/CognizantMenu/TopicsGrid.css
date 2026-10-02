@@ -215,10 +215,11 @@
 }
 
 .pyq-card {
+  position: relative;
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
   text-decoration: none;
   transition: transform 0.2s, box-shadow 0.2s;
   display: flex;

@@ -1,7 +1,83 @@
 import React, { useState, useEffect } from 'react';
 import './StudentProfile.css';
 
-const StudentProfile = ({ user, onUpdateUser }) => {
+const ProfileSavedCoursesPreview = ({ onNavigateTab }) => {
+    const [saved, setSaved] = useState([]);
+    const [ongoing, setOngoing] = useState([]);
+
+    const loadData = () => {
+        try {
+            const savedData = JSON.parse(localStorage.getItem('cpms_saved_study_materials') || '[]');
+            const ongoingData = JSON.parse(localStorage.getItem('cpms_ongoing_learning_courses') || '[]');
+            setSaved(savedData);
+            setOngoing(ongoingData);
+        } catch (e) {
+            console.error(e);
+        }
+    };
+
+    useEffect(() => {
+        loadData();
+        window.addEventListener('studyMaterialsUpdated', loadData);
+        return () => window.removeEventListener('studyMaterialsUpdated', loadData);
+    }, []);
+
+    if (saved.length === 0 && ongoing.length === 0) {
+        return (
+            <div style={{ textAlign: 'center', padding: '16px', color: '#64748b', fontSize: '13px' }}>
+                <p style={{ margin: 0 }}>No saved courses yet.</p>
+                <p style={{ margin: '4px 0 0 0', fontSize: '12px' }}>
+                    Click <b>⋮ (3 dots menu)</b> on any course card in Company Preparation to save for later.
+                </p>
+            </div>
+        );
+    }
+
+    return (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            {saved.slice(0, 3).map(item => (
+                <div key={item.id} style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '10px 14px',
+                    backgroundColor: '#f8fafc',
+                    borderRadius: '8px',
+                    border: '1px solid #e2e8f0'
+                }}>
+                    <div>
+                        <span style={{ fontSize: '11px', fontWeight: '600', color: item.badgeColor || '#2563eb' }}>
+                            🔖 {item.company ? `${item.company} • ` : ''}{item.category || item.type || 'Course'}
+                        </span>
+                        <h4 style={{ margin: '2px 0 0 0', fontSize: '13.5px', fontWeight: '600', color: '#1e293b' }}>
+                            {item.title}
+                        </h4>
+                    </div>
+                    <button
+                        onClick={() => {
+                            if (item.url) window.open(item.url, '_blank');
+                        }}
+                        style={{
+                            padding: '6px 12px',
+                            backgroundColor: 'var(--primary, #2563eb)',
+                            color: '#fff',
+                            border: 'none',
+                            borderRadius: '6px',
+                            fontSize: '12px',
+                            fontWeight: '600',
+                            cursor: 'pointer',
+                            whiteSpace: 'nowrap'
+                        }}
+                    >
+                        Study ↗
+                    </button>
+                </div>
+            ))}
+        </div>
+    );
+};
+
+const StudentProfile = ({ user, onUpdateUser, onNavigateTab }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [showResumeModal, setShowResumeModal] = useState(false);
     const [formData, setFormData] = useState({
@@ -456,6 +532,31 @@ const StudentProfile = ({ user, onUpdateUser }) => {
                     </div>
                 </div>
 
+                {/* Saved & Ongoing Courses Section */}
+                <div className="t-card">
+                    <div className="t-card-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <h3 className="t-card-title">My Saved Courses & Learning Progress</h3>
+                        {onNavigateTab && (
+                            <button
+                                onClick={() => onNavigateTab('materials')}
+                                style={{
+                                    background: 'transparent',
+                                    border: 'none',
+                                    color: 'var(--primary, #2563eb)',
+                                    fontSize: '13px',
+                                    fontWeight: '600',
+                                    cursor: 'pointer'
+                                }}
+                            >
+                                View All Materials ↗
+                            </button>
+                        )}
+                    </div>
+                    <div style={{ padding: '16px' }}>
+                        <ProfileSavedCoursesPreview onNavigateTab={onNavigateTab} />
+                    </div>
+                </div>
+
             </div>
 
             {/* Resume Modal */}
@@ -512,3 +613,4 @@ const StudentProfile = ({ user, onUpdateUser }) => {
 };
 
 export default StudentProfile;
+

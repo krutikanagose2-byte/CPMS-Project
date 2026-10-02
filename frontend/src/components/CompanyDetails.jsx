@@ -10,6 +10,61 @@ const PLACED_STUDENTS = [
   { id: 6, name: 'Priya Dhole', branch: 'CSE', image: '/ind_female_3.png' }
 ];
 
+const getCompanyContactUrl = (company) => {
+  if (!company) return '#';
+  if (company.contactUrl) return company.contactUrl;
+  if (company.careersUrl) return company.careersUrl;
+
+  const nameLower = (company.name || '').toLowerCase();
+  
+  const knownUrls = {
+    'cognizant': 'https://www.cognizant.com/us/en/about-cognizant/contact-us',
+    'tcs': 'https://www.tcs.com/contact-us',
+    'infosys': 'https://www.infosys.com/contact.html',
+    'capgemini': 'https://www.capgemini.com/contact-us/',
+    'wipro': 'https://www.wipro.com/contact-wipro/',
+    'accenture': 'https://www.accenture.com/in-en/about/company/contact-us',
+    'google': 'https://about.google/contact-google/',
+    'microsoft': 'https://support.microsoft.com/en-us/contactus',
+    'sap': 'https://www.sap.com/about/company/our-values/contact-us.html',
+    'deloitte': 'https://www.deloitte.com/global/en/services/contact-us.html',
+    'kpmg': 'https://home.kpmg/xx/en/home/about/contact.html',
+    'pwc': 'https://www.pwc.com/gx/en/about/contact-us.html',
+    'l&t': 'https://www.larsentoubro.com/corporate/contact-us/',
+    'tata motors': 'https://www.tatamotors.com/contact-us/',
+    'siemens': 'https://www.siemens.com/global/en/company/about/contact.html',
+    'bosch': 'https://www.bosch.in/contact/',
+    'hdfc bank': 'https://www.hdfcbank.com/personal/need-help/contact-us',
+    'icici bank': 'https://www.icicibank.com/customer-care',
+    'goldman sachs': 'https://www.goldmansachs.com/contact-us',
+    'morgan stanley': 'https://www.morganstanley.com/about-us/contact-us',
+    'mu sigma': 'https://www.mu-sigma.com/contact-us',
+    'fractal analytics': 'https://fractal.ai/contact-us/',
+    'latentview': 'https://www.latentview.com/contact-us/',
+    'jio': 'https://www.jio.com/en-in/help-support/contact-us',
+    'airtel': 'https://www.airtel.in/contact-us',
+    'jaro education': 'https://www.jaroeducation.com/contact-us/',
+    'byju\'s': 'https://byjus.com/contact-us/',
+    'byjus': 'https://byjus.com/contact-us/',
+    'amazon': 'https://www.amazon.jobs/en/contact_us',
+    'ibm': 'https://www.ibm.com/contact/us/en/',
+    'oracle': 'https://www.oracle.com/corporate/contact/'
+  };
+
+  for (const [key, url] of Object.entries(knownUrls)) {
+    if (nameLower.includes(key)) {
+      return url;
+    }
+  }
+
+  if (company.website) {
+    const cleanWeb = company.website.replace(/\/+$/, '');
+    return `${cleanWeb}/contact-us`;
+  }
+
+  return 'https://www.google.com/search?q=' + encodeURIComponent((company.name || '') + ' contact us official website');
+};
+
 const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStudy, onOpenAIInterview, onViewAllPlacements, user, onDeleteCompany }) => {
   const [isMoreInfoVisible, setIsMoreInfoVisible] = useState(false);
   const [expandedSection, setExpandedSection] = useState('study');
@@ -48,12 +103,6 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
         <button className="cd-back-btn" onClick={onBack}>
           ← Back to Companies
         </button>
-        <div className="cd-top-actions">
-          <button className="cd-save-btn">
-            <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-            Save Company
-          </button>
-        </div>
       </div>
 
       <div className="cd-card cd-header-card">
@@ -207,9 +256,16 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
           </div>
         </div>
 
-        {/* Accordion 4 */}
+        {/* HR Contact / Careers Link */}
         <div className="cd-card cd-accordion">
-          <div className="cd-acc-header" onClick={() => toggleSection('hr')}>
+          <div 
+            className="cd-acc-header" 
+            onClick={() => {
+              const url = getCompanyContactUrl(company);
+              if (url) window.open(url, '_blank', 'noopener,noreferrer');
+            }}
+            style={{ cursor: 'pointer' }}
+          >
             <div className="cd-acc-header-left">
               <div className="cd-acc-icon-box" style={{ background: '#e0f2fe', color: '#0ea5e9' }}>📞</div>
               <div>
@@ -218,11 +274,6 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
               </div>
             </div>
           </div>
-          {expandedSection === 'hr' && (
-            <div className="cd-acc-content">
-              <p style={{ padding: '16px', color: '#64748b' }}>For inquiries, visit the official careers portal of {company.fullName || company.name}.</p>
-            </div>
-          )}
         </div>
       </div>
 

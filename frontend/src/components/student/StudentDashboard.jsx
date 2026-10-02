@@ -59,7 +59,7 @@ const StudentDashboard = ({
                 />
             );
             case 'overview': return <StudentOverview user={user} />;
-            case 'profile': return <StudentProfile user={user} onUpdateUser={onUpdateUser} />;
+            case 'profile': return <StudentProfile user={user} onUpdateUser={onUpdateUser} onNavigateTab={setActiveTab} />;
             case 'eligibility': return <EligibilityStatus user={user} onOpenSpecificCompany={onOpenSpecificCompany} />;
             case 'applications': return <StudentApplications user={user} />;
             case 'materials': return <StudentStudyMaterials user={user} />;

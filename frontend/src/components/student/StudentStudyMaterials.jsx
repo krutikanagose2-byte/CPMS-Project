@@ -1,89 +1,202 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { getSavedMaterials, getOngoingCourses, removeSavedMaterial, markAsOngoing } from '../../utils/studyMaterialsStorage';
 
 const StudentStudyMaterials = () => {
-    const [selectedTab, setSelectedTab] = useState('All Topics');
+    const [selectedTab, setSelectedTab] = useState('Ongoing Courses');
+    const [savedList, setSavedList] = useState([]);
+    const [ongoingList, setOngoingList] = useState([]);
 
-    const materials = [
-        {
-            id: 1,
-            category: 'Aptitude',
-            topic: 'Quantitative Aptitude & Numerical Ability',
-            title: 'Complete 220+ Video Masterclass Series (Number System, Percentages, Time & Work, Speed & Distance)',
-            type: 'YouTube Video Playlist',
-            badgeColor: '#ef4444',
-            badgeBg: '#fee2e2',
-            url: 'https://youtube.com/playlist?list=PLMufDeLh5x2Aaig0ZieDTUsKSmvmz1RBN&si=PxI3O6thsdfQ_V7g',
-            actionText: 'Watch Playlist ↗'
-        },
-        {
-            id: 2,
-            category: 'Aptitude',
-            topic: 'Quantitative Aptitude PYQs',
-            title: 'Previous Year Question Papers with Step-by-Step Solutions',
-            type: 'PDF Material',
-            badgeColor: '#2563eb',
-            badgeBg: '#dbeafe',
-            url: '/pyq/pyq1.pdf',
-            actionText: 'Download PDF ↓'
-        },
-        {
-            id: 3,
-            category: 'DSA',
-            topic: 'Data Structures & Algorithms',
-            title: 'Blind 75 & Placement Coding Sheet with Explanations',
-            type: 'Interactive Roadmap',
-            badgeColor: '#7c3aed',
-            badgeBg: '#ede9fe',
-            url: 'https://leetcode.com',
-            actionText: 'View Problems ↗'
-        },
-        {
-            id: 4,
-            category: 'SQL',
-            topic: 'Database Management Systems & SQL',
-            title: 'Top 50 Most Asked SQL Query Questions in Technical Interviews',
-            type: 'Cheatsheet',
-            badgeColor: '#059669',
-            badgeBg: '#d1fae5',
-            url: 'https://www.w3schools.com/sql/',
-            actionText: 'Study Guide ↗'
-        },
-        {
-            id: 5,
-            category: 'Java',
-            topic: 'Core Java & OOP Concepts',
-            title: 'Complete Java Interview Prep - Collections, Concurrency & Streams',
-            type: 'Documentation',
-            badgeColor: '#ea580c',
-            badgeBg: '#ffedd5',
-            url: 'https://docs.oracle.com/en/java/',
-            actionText: 'Read Docs ↗'
-        },
-        {
-            id: 6,
-            category: 'System Design',
-            topic: 'Low Level & High Level System Design',
-            title: 'System Design Primer for Campus & Entry Level Engineering Roles',
-            type: 'Guide',
-            badgeColor: '#0891b2',
-            badgeBg: '#cffafe',
-            url: 'https://github.com/donnemartin/system-design-primer',
-            actionText: 'Explore Guide ↗'
+    const loadData = () => {
+        setSavedList(getSavedMaterials());
+        setOngoingList(getOngoingCourses());
+    };
+
+    useEffect(() => {
+        loadData();
+        const handleUpdate = () => loadData();
+        window.addEventListener('studyMaterialsUpdated', handleUpdate);
+        return () => window.removeEventListener('studyMaterialsUpdated', handleUpdate);
+    }, []);
+
+    const tabs = ['Ongoing Courses', 'Saved for Later'];
+
+    const handleActionClick = (item) => {
+        markAsOngoing(item);
+        if (item.url) {
+            window.open(item.url, '_blank');
         }
-    ];
+    };
 
-    const tabs = ['All Topics', 'Aptitude', 'DSA', 'SQL', 'Java', 'System Design'];
+    const handleRemoveSaved = (id, e) => {
+        e.stopPropagation();
+        removeSavedMaterial(id);
+    };
 
-    const filteredMaterials = selectedTab === 'All Topics'
-        ? materials
-        : materials.filter(m => m.category === selectedTab);
+    const renderFilteredMaterials = () => {
+        if (selectedTab === 'Saved for Later') {
+            return (
+                <div style={{ padding: '24px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
+                        <span style={{ fontSize: '22px' }}>📌</span>
+                        <h3 style={{ fontSize: '16.5px', fontWeight: '700', color: '#1e293b', margin: 0 }}>
+                            Saved for Later ({savedList.length})
+                        </h3>
+                    </div>
+                    {savedList.length > 0 ? (
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
+                            {savedList.map(item => (
+                                <div key={item.id} style={{
+                                    border: '1px solid #e2e8f0',
+                                    borderRadius: '12px',
+                                    padding: '18px',
+                                    backgroundColor: '#ffffff',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.03)',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justify: 'space-between',
+                                    position: 'relative'
+                                }}>
+                                    <div>
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px' }}>
+                                            <span style={{
+                                                padding: '4px 10px',
+                                                borderRadius: '6px',
+                                                fontSize: '11.5px',
+                                                fontWeight: '600',
+                                                backgroundColor: item.badgeBg || '#fee2e2',
+                                                color: item.badgeColor || '#ef4444'
+                                            }}>
+                                                {item.type || item.category || 'Saved Resource'}
+                                            </span>
+                                            <button
+                                                onClick={(e) => handleRemoveSaved(item.id, e)}
+                                                title="Remove from saved"
+                                                style={{ border: 'none', background: 'transparent', color: '#94a3b8', cursor: 'pointer', fontSize: '18px' }}
+                                            >
+                                                ✕
+                                            </button>
+                                        </div>
+                                        <h4 style={{ fontSize: '14.5px', fontWeight: '600', color: '#0f172a', margin: '0 0 6px 0', lineHeight: '1.4' }}>
+                                            {item.title}
+                                        </h4>
+                                        {item.company && (
+                                            <p style={{ fontSize: '12px', color: '#64748b', margin: '0 0 14px 0' }}>
+                                                🏢 {item.company} Prep
+                                            </p>
+                                        )}
+                                    </div>
+                                    <button
+                                        onClick={() => handleActionClick(item)}
+                                        style={{
+                                            marginTop: '12px',
+                                            padding: '9px 16px',
+                                            borderRadius: '8px',
+                                            backgroundColor: 'var(--primary, #2563eb)',
+                                            color: '#ffffff',
+                                            border: 'none',
+                                            fontSize: '13px',
+                                            fontWeight: '600',
+                                            cursor: 'pointer',
+                                            width: '100%',
+                                            textAlign: 'center'
+                                        }}
+                                    >
+                                        Start Studying ↗
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <div style={{ textAlign: 'center', padding: '48px 24px', backgroundColor: '#f8fafc', borderRadius: '12px', border: '1px dashed #cbd5e1' }}>
+                            <span style={{ fontSize: '36px', display: 'block', marginBottom: '12px' }}>📌</span>
+                            <h4 style={{ margin: '0 0 6px 0', color: '#334155', fontSize: '16px' }}>No Saved Courses Yet</h4>
+                            <p style={{ margin: 0, fontSize: '13.5px', color: '#64748b' }}>
+                                Click the 3-dots menu (<b>⋮</b>) &rarr; <b>Save for Later</b> on any course card in Company Preparation to view it here.
+                            </p>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        // Ongoing Courses Tab (Default)
+        return (
+            <div style={{ padding: '24px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
+                    <span style={{ fontSize: '22px' }}>⚡</span>
+                    <h3 style={{ fontSize: '16.5px', fontWeight: '700', color: '#1e293b', margin: 0 }}>
+                        Ongoing Learning Courses
+                    </h3>
+                </div>
+                {ongoingList.length > 0 ? (
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px' }}>
+                        {ongoingList.map(item => (
+                            <div key={item.id} style={{
+                                border: '1px solid #cbd5e1',
+                                borderRadius: '12px',
+                                padding: '20px',
+                                backgroundColor: '#ffffff',
+                                boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
+                            }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+                                    <span style={{ fontSize: '11px', fontWeight: '700', color: '#475569', textTransform: 'uppercase' }}>
+                                        {item.category}
+                                    </span>
+                                    <span style={{ fontSize: '12.5px', fontWeight: '600', color: '#2563eb' }}>
+                                        {item.progress || 35}% Completed
+                                    </span>
+                                </div>
+                                <h4 style={{ fontSize: '15px', fontWeight: '600', color: '#0f172a', margin: '0 0 12px 0', lineHeight: '1.4' }}>
+                                    {item.title}
+                                </h4>
+                                
+                                {/* Progress bar */}
+                                <div style={{ width: '100%', height: '7px', backgroundColor: '#e2e8f0', borderRadius: '4px', overflow: 'hidden', marginBottom: '18px' }}>
+                                    <div style={{ width: `${item.progress || 35}%`, height: '100%', backgroundColor: '#2563eb', borderRadius: '4px', transition: 'width 0.3s' }} />
+                                </div>
+
+                                <button
+                                    onClick={() => handleActionClick(item)}
+                                    style={{
+                                        padding: '9px 16px',
+                                        borderRadius: '8px',
+                                        backgroundColor: '#1e293b',
+                                        color: '#ffffff',
+                                        border: 'none',
+                                        fontSize: '13px',
+                                        fontWeight: '600',
+                                        cursor: 'pointer',
+                                        width: '100%',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        gap: '6px'
+                                    }}
+                                >
+                                    Continue Studying ↗
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <div style={{ padding: '48px 24px', backgroundColor: '#f8fafc', borderRadius: '12px', border: '1px dashed #cbd5e1', textAlign: 'center' }}>
+                        <span style={{ fontSize: '36px', display: 'block', marginBottom: '12px' }}>⚡</span>
+                        <h4 style={{ margin: '0 0 6px 0', color: '#334155', fontSize: '16px' }}>No Ongoing Courses</h4>
+                        <p style={{ margin: 0, fontSize: '13.5px', color: '#64748b' }}>
+                            Open any study course to track your progress here.
+                        </p>
+                    </div>
+                )}
+            </div>
+        );
+    };
 
     return (
         <div className="overview-container">
             <div className="overview-header">
                 <div>
-                    <h2>Study Materials</h2>
-                    <p>Access curated study resources, video playlists, and practice sheets to ace your placement exams.</p>
+                    <h2>Study Materials & Courses</h2>
+                    <p>Track your ongoing learning courses and access your saved materials directly.</p>
                 </div>
             </div>
 
@@ -95,93 +208,39 @@ const StudentStudyMaterials = () => {
                                 key={tab}
                                 onClick={() => setSelectedTab(tab)}
                                 style={{
-                                    padding: '16px 24px',
+                                    padding: '16px 28px',
                                     background: 'transparent',
                                     border: 'none',
-                                    borderBottom: selectedTab === tab ? '2px solid var(--primary)' : '2px solid transparent',
-                                    color: selectedTab === tab ? 'var(--primary)' : 'var(--text-muted)',
-                                    fontWeight: selectedTab === tab ? '600' : '500',
-                                    fontSize: '13px',
+                                    borderBottom: selectedTab === tab ? '2px solid var(--primary, #2563eb)' : '2px solid transparent',
+                                    color: selectedTab === tab ? 'var(--primary, #2563eb)' : 'var(--text-muted, #64748b)',
+                                    fontWeight: selectedTab === tab ? '700' : '500',
+                                    fontSize: '14px',
                                     cursor: 'pointer',
                                     whiteSpace: 'nowrap'
                                 }}
                             >
                                 {tab}
+                                {tab === 'Saved for Later' && savedList.length > 0 && (
+                                    <span style={{
+                                        marginLeft: '8px',
+                                        backgroundColor: '#2563eb',
+                                        color: '#fff',
+                                        borderRadius: '10px',
+                                        padding: '2px 8px',
+                                        fontSize: '11px'
+                                    }}>
+                                        {savedList.length}
+                                    </span>
+                                )}
                             </button>
                         ))}
                     </div>
                 </div>
 
-                <table className="t-table">
-                    <thead>
-                        <tr>
-                            <th>Topic</th>
-                            <th>Resource Title</th>
-                            <th>Type</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {filteredMaterials.length > 0 ? (
-                            filteredMaterials.map(item => (
-                                <tr key={item.id}>
-                                    <td style={{ fontWeight: '600', color: 'var(--text-main, #1e293b)' }}>
-                                        {item.topic}
-                                    </td>
-                                    <td>
-                                        <div style={{ fontSize: '13.5px', color: '#334155' }}>
-                                            {item.title}
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span style={{
-                                            display: 'inline-block',
-                                            padding: '4px 10px',
-                                            borderRadius: '9999px',
-                                            fontSize: '12px',
-                                            fontWeight: '600',
-                                            backgroundColor: item.badgeBg,
-                                            color: item.badgeColor
-                                        }}>
-                                            {item.type}
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <a
-                                            href={item.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            style={{
-                                                display: 'inline-flex',
-                                                alignItems: 'center',
-                                                gap: '6px',
-                                                padding: '6px 14px',
-                                                borderRadius: '6px',
-                                                backgroundColor: item.category === 'Aptitude' && item.type.includes('YouTube') ? '#ef4444' : 'var(--primary)',
-                                                color: '#ffffff',
-                                                textDecoration: 'none',
-                                                fontSize: '12.5px',
-                                                fontWeight: '600'
-                                            }}
-                                        >
-                                            {item.actionText}
-                                        </a>
-                                    </td>
-                                </tr>
-                            ))
-                        ) : (
-                            <tr>
-                                <td colSpan="4" style={{ textAlign: 'center', padding: '24px' }}>
-                                    No study materials available under {selectedTab} at the moment.
-                                </td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
+                {renderFilteredMaterials()}
             </div>
         </div>
     );
 };
 
 export default StudentStudyMaterials;
-

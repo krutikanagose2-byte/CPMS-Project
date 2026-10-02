@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
+import CardThreeDotsMenu from '../../common/CardThreeDotsMenu';
 
 import { readingComprehensionQuestions } from '../../../data/readingComprehensionQuestions';
 import { grammarQuestions } from '../../../data/grammarQuestions';
@@ -53,11 +54,23 @@ const VerbalAbility = () => {
 
   const pyqHeaderContent = (
     <>
-      {/* Video Lectures & Playlists Section - Same size as Previous Year Questions */}
+      {/* Video Lectures & Playlists Section */}
       <div className="pyq-section">
         <h2 className="csr-topics-title" style={{ marginBottom: '20px' }}>Video Lectures & Playlists</h2>
         <div className="pyq-grid">
-          <div className="pyq-card">
+          <div className="pyq-card" style={{ position: 'relative' }}>
+            <CardThreeDotsMenu
+              item={{
+                id: 'verbal-video-playlist',
+                title: 'Verbal Ability Complete Video Playlist',
+                type: 'YouTube Video Playlist',
+                category: 'Verbal Ability',
+                company: 'Cognizant',
+                url: 'https://youtube.com/playlist?list=PLMufDeLh5x2BWYJy0ldl6vgrQ4nZm1Qap',
+                badgeBg: '#fee2e2',
+                badgeColor: '#ef4444'
+              }}
+            />
             <div className="pyq-image-container">
               <iframe
                 src="https://www.youtube-nocookie.com/embed/videoseries?list=PLMufDeLh5x2BWYJy0ldl6vgrQ4nZm1Qap"
@@ -89,30 +102,74 @@ const VerbalAbility = () => {
       <div className="pyq-section">
         <h2 className="csr-topics-title" style={{ marginBottom: '20px' }}>Previous Year Questions</h2>
         <div className="pyq-grid">
-          <a href="/pyq/verbal_pyq1.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
-            <div className="pyq-image-container">
-              <img src="/pyq/verbal_pyq1_thumb.png" alt="PYQ 1" className="pyq-image" />
-            </div>
-            <div className="pyq-info">
-              <h4 className="pyq-name">Verbal PYQ 1</h4>
-            </div>
-          </a>
-          <a href="/pyq/verbal_pyq2.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
-            <div className="pyq-image-container">
-              <img src="/pyq/verbal_pyq2_thumb.png" alt="PYQ 2" className="pyq-image" />
-            </div>
-            <div className="pyq-info">
-              <h4 className="pyq-name">Verbal PYQ 2</h4>
-            </div>
-          </a>
-          <a href="/pyq/verbal_pyq3.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
-            <div className="pyq-image-container">
-              <img src="/pyq/verbal_pyq3_thumb.png" alt="PYQ 3" className="pyq-image" />
-            </div>
-            <div className="pyq-info">
-              <h4 className="pyq-name">Verbal PYQ 3</h4>
-            </div>
-          </a>
+          <div className="pyq-card" style={{ position: 'relative' }}>
+            <CardThreeDotsMenu
+              item={{
+                id: 'verbal-pyq-1',
+                title: 'Verbal PYQ Set 1',
+                type: 'PDF Material',
+                category: 'Verbal Ability',
+                company: 'Cognizant',
+                url: '/pyq/verbal_pyq1.pdf',
+                badgeBg: '#dbeafe',
+                badgeColor: '#2563eb'
+              }}
+            />
+            <a href="/pyq/verbal_pyq1.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <div className="pyq-image-container">
+                <img src="/pyq/verbal_pyq1_thumb.png" alt="PYQ 1" className="pyq-image" />
+              </div>
+              <div className="pyq-info">
+                <h4 className="pyq-name">Verbal PYQ 1</h4>
+              </div>
+            </a>
+          </div>
+
+          <div className="pyq-card" style={{ position: 'relative' }}>
+            <CardThreeDotsMenu
+              item={{
+                id: 'verbal-pyq-2',
+                title: 'Verbal PYQ Set 2',
+                type: 'PDF Material',
+                category: 'Verbal Ability',
+                company: 'Cognizant',
+                url: '/pyq/verbal_pyq2.pdf',
+                badgeBg: '#dbeafe',
+                badgeColor: '#2563eb'
+              }}
+            />
+            <a href="/pyq/verbal_pyq2.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <div className="pyq-image-container">
+                <img src="/pyq/verbal_pyq2_thumb.png" alt="PYQ 2" className="pyq-image" />
+              </div>
+              <div className="pyq-info">
+                <h4 className="pyq-name">Verbal PYQ 2</h4>
+              </div>
+            </a>
+          </div>
+
+          <div className="pyq-card" style={{ position: 'relative' }}>
+            <CardThreeDotsMenu
+              item={{
+                id: 'verbal-pyq-3',
+                title: 'Verbal PYQ Set 3',
+                type: 'PDF Material',
+                category: 'Verbal Ability',
+                company: 'Cognizant',
+                url: '/pyq/verbal_pyq3.pdf',
+                badgeBg: '#dbeafe',
+                badgeColor: '#2563eb'
+              }}
+            />
+            <a href="/pyq/verbal_pyq3.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <div className="pyq-image-container">
+                <img src="/pyq/verbal_pyq3_thumb.png" alt="PYQ 3" className="pyq-image" />
+              </div>
+              <div className="pyq-info">
+                <h4 className="pyq-name">Verbal PYQ 3</h4>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </>

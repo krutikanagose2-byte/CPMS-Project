@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
+import CardThreeDotsMenu from '../../common/CardThreeDotsMenu';
+
 import { numberSeriesQuestions } from '../../../data/numberSeriesQuestions';
 import { alphabetSeriesQuestions } from '../../../data/alphabetSeriesQuestions';
 import { codingDecodingQuestions } from '../../../data/codingDecodingQuestions';
@@ -61,7 +63,6 @@ const LogicalReasoning = () => {
     if (topic.data) {
       setSelectedTopic(topic);
     } else {
-      // You can add a placeholder or toast message here for topics without data yet
       alert(`Content for ${topic.title} will be added soon!`);
     }
   };
@@ -82,11 +83,23 @@ const LogicalReasoning = () => {
 
   const pyqHeaderContent = (
     <>
-      {/* Video Lectures & Playlists Section - Same size as Previous Year Questions */}
+      {/* Video Lectures & Playlists Section */}
       <div className="pyq-section">
         <h2 className="csr-topics-title" style={{ marginBottom: '20px' }}>Video Lectures & Playlists</h2>
         <div className="pyq-grid">
-          <div className="pyq-card">
+          <div className="pyq-card" style={{ position: 'relative' }}>
+            <CardThreeDotsMenu
+              item={{
+                id: 'logical-video-playlist',
+                title: 'Logical Reasoning Complete Video Playlist',
+                type: 'YouTube Video Playlist',
+                category: 'Logical Reasoning',
+                company: 'Cognizant',
+                url: 'https://youtube.com/playlist?list=PLMufDeLh5x2CK1wUwEFjdd1JHPOfDRsq3',
+                badgeBg: '#fee2e2',
+                badgeColor: '#ef4444'
+              }}
+            />
             <div className="pyq-image-container">
               <iframe
                 src="https://www.youtube-nocookie.com/embed/videoseries?list=PLMufDeLh5x2CK1wUwEFjdd1JHPOfDRsq3"
@@ -118,30 +131,74 @@ const LogicalReasoning = () => {
       <div className="pyq-section">
         <h2 className="csr-topics-title" style={{ marginBottom: '20px' }}>Previous Year Questions</h2>
         <div className="pyq-grid">
-          <a href="/pyq/pyq1.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
-            <div className="pyq-image-container">
-              <img src="/pyq/custom_cover.png" alt="PYQ 1" className="pyq-image" />
-            </div>
-            <div className="pyq-info">
-              <h4 className="pyq-name">Reasoning PYQ 1</h4>
-            </div>
-          </a>
-          <a href="/pyq/pyq2.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
-            <div className="pyq-image-container">
-              <img src="/pyq/custom_cover.png" alt="PYQ 2" className="pyq-image" />
-            </div>
-            <div className="pyq-info">
-              <h4 className="pyq-name">Reasoning PYQ 2</h4>
-            </div>
-          </a>
-          <a href="/pyq/pyq3.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
-            <div className="pyq-image-container">
-              <img src="/pyq/custom_cover.png" alt="PYQ 3" className="pyq-image" />
-            </div>
-            <div className="pyq-info">
-              <h4 className="pyq-name">Reasoning PYQ 3</h4>
-            </div>
-          </a>
+          <div className="pyq-card" style={{ position: 'relative' }}>
+            <CardThreeDotsMenu
+              item={{
+                id: 'logical-pyq-1',
+                title: 'Reasoning PYQ Set 1',
+                type: 'PDF Material',
+                category: 'Logical Reasoning',
+                company: 'Cognizant',
+                url: '/pyq/pyq1.pdf',
+                badgeBg: '#dbeafe',
+                badgeColor: '#2563eb'
+              }}
+            />
+            <a href="/pyq/pyq1.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <div className="pyq-image-container">
+                <img src="/pyq/custom_cover.png" alt="PYQ 1" className="pyq-image" />
+              </div>
+              <div className="pyq-info">
+                <h4 className="pyq-name">Reasoning PYQ 1</h4>
+              </div>
+            </a>
+          </div>
+
+          <div className="pyq-card" style={{ position: 'relative' }}>
+            <CardThreeDotsMenu
+              item={{
+                id: 'logical-pyq-2',
+                title: 'Reasoning PYQ Set 2',
+                type: 'PDF Material',
+                category: 'Logical Reasoning',
+                company: 'Cognizant',
+                url: '/pyq/pyq2.pdf',
+                badgeBg: '#dbeafe',
+                badgeColor: '#2563eb'
+              }}
+            />
+            <a href="/pyq/pyq2.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <div className="pyq-image-container">
+                <img src="/pyq/custom_cover.png" alt="PYQ 2" className="pyq-image" />
+              </div>
+              <div className="pyq-info">
+                <h4 className="pyq-name">Reasoning PYQ 2</h4>
+              </div>
+            </a>
+          </div>
+
+          <div className="pyq-card" style={{ position: 'relative' }}>
+            <CardThreeDotsMenu
+              item={{
+                id: 'logical-pyq-3',
+                title: 'Reasoning PYQ Set 3',
+                type: 'PDF Material',
+                category: 'Logical Reasoning',
+                company: 'Cognizant',
+                url: '/pyq/pyq3.pdf',
+                badgeBg: '#dbeafe',
+                badgeColor: '#2563eb'
+              }}
+            />
+            <a href="/pyq/pyq3.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <div className="pyq-image-container">
+                <img src="/pyq/custom_cover.png" alt="PYQ 3" className="pyq-image" />
+              </div>
+              <div className="pyq-info">
+                <h4 className="pyq-name">Reasoning PYQ 3</h4>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </>

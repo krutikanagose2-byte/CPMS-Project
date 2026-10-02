@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
 import QuizComponent from './QuizComponent';
+import CardThreeDotsMenu from '../../common/CardThreeDotsMenu';
 import {
   cCodingQuestions, cppCodingQuestions, javaCodingQuestions,
   pythonCodingQuestions, sqlCodingQuestions, javascriptCodingQuestions,
@@ -44,11 +45,23 @@ const Technical = ({ company }) => {
 
   const pyqHeaderContent = (
     <>
-      {/* Video Lectures & Playlists Section - Same size as Previous Year Questions */}
+      {/* Video Lectures & Playlists Section */}
       <div className="pyq-section">
         <h2 className="csr-topics-title" style={{ marginBottom: '20px' }}>Video Lectures &amp; Playlists</h2>
         <div className="pyq-grid">
-          <div className="pyq-card">
+          <div className="pyq-card" style={{ position: 'relative' }}>
+            <CardThreeDotsMenu
+              item={{
+                id: 'tech-video-playlist',
+                title: 'Technical Assessment Master Playlist',
+                type: 'YouTube Video Playlist',
+                category: 'Technical',
+                company: 'Cognizant',
+                url: 'https://youtube.com/playlist?list=PLUVqY59GNZQO7e312D4JBWSHHRfckPDG4',
+                badgeBg: '#fee2e2',
+                badgeColor: '#ef4444'
+              }}
+            />
             <div className="pyq-image-container">
               <iframe
                 src="https://www.youtube-nocookie.com/embed/videoseries?list=PLUVqY59GNZQO7e312D4JBWSHHRfckPDG4"
@@ -80,22 +93,51 @@ const Technical = ({ company }) => {
       <div className="pyq-section">
         <h2 className="csr-topics-title" style={{ marginBottom: '20px' }}>Previous Year Questions</h2>
         <div className="pyq-grid">
-          <a href="/pyq/pyq1.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
-            <div className="pyq-image-container">
-              <img src="/pyq/custom_cover.png" alt="PYQ 1" className="pyq-image" />
-            </div>
-            <div className="pyq-info">
-              <h4 className="pyq-name">Technical PYQ 1</h4>
-            </div>
-          </a>
-          <a href="/pyq/pyq2.pdf" target="_blank" rel="noopener noreferrer" className="pyq-card">
-            <div className="pyq-image-container">
-              <img src="/pyq/custom_cover.png" alt="PYQ 2" className="pyq-image" />
-            </div>
-            <div className="pyq-info">
-              <h4 className="pyq-name">Technical PYQ 2</h4>
-            </div>
-          </a>
+          <div className="pyq-card" style={{ position: 'relative' }}>
+            <CardThreeDotsMenu
+              item={{
+                id: 'tech-pyq-1',
+                title: 'Technical PYQ Set 1',
+                type: 'PDF Material',
+                category: 'Technical',
+                company: 'Cognizant',
+                url: '/pyq/pyq1.pdf',
+                badgeBg: '#dbeafe',
+                badgeColor: '#2563eb'
+              }}
+            />
+            <a href="/pyq/pyq1.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <div className="pyq-image-container">
+                <img src="/pyq/custom_cover.png" alt="PYQ 1" className="pyq-image" />
+              </div>
+              <div className="pyq-info">
+                <h4 className="pyq-name">Technical PYQ 1</h4>
+              </div>
+            </a>
+          </div>
+
+          <div className="pyq-card" style={{ position: 'relative' }}>
+            <CardThreeDotsMenu
+              item={{
+                id: 'tech-pyq-2',
+                title: 'Technical PYQ Set 2',
+                type: 'PDF Material',
+                category: 'Technical',
+                company: 'Cognizant',
+                url: '/pyq/pyq2.pdf',
+                badgeBg: '#dbeafe',
+                badgeColor: '#2563eb'
+              }}
+            />
+            <a href="/pyq/pyq2.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <div className="pyq-image-container">
+                <img src="/pyq/custom_cover.png" alt="PYQ 2" className="pyq-image" />
+              </div>
+              <div className="pyq-info">
+                <h4 className="pyq-name">Technical PYQ 2</h4>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </>
