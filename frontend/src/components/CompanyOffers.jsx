@@ -1411,6 +1411,60 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
             'Demonstrated leadership in client pitch defenses and deal execution'
           ],
           additionalInfo: 'Job ID: 1634. Job Type: Permanent, Full Time. Experience: 4.00 to 6.00 years.'
+        },
+        {
+          role: 'Senior - Data and App Modernization',
+          desc: 'Modernize legacy enterprise applications, architectures, and data pipelines. Drive cloud-native application transformation on AWS/Azure, microservices refactoring, and data engineering solutions.',
+          skills: ['Data Modernization', 'Application Modernization', 'Cloud Migration', 'Microservices', 'AWS / Azure'],
+          package: '₹12.0 - 18.0 LPA',
+          branch: 'BE/BTech - CS, IT, Data / MCA',
+          cgpa: 6.5,
+          openings: 10,
+          location: 'Pune, Maharashtra (Work From Office)',
+          applyUrl: 'https://kpmg.com/in/en/careers.html?q=4592',
+          whoCanApply: [
+            'Bachelor or Master degree in Computer Science, IT, Data Science, or related stream',
+            '4 to 7 years of hands-on experience in application modernization, cloud engineering, or data architectures',
+            'Expertise in containerization, microservices (Spring Boot / Node / .NET Core), and cloud platforms',
+            'Strong knowledge of database migration, distributed data pipelines, and CI/CD'
+          ],
+          additionalInfo: 'Job ID: 4592. Job Type: Permanent, Full Time. Experience: 4.00 to 7.00 years. Posted 10 Days ago.'
+        },
+        {
+          role: 'Executive - TPRM-Advisory Services',
+          desc: 'Execute Third-Party Risk Management (TPRM) assessments, vendor security due diligence, supplier governance reviews, and risk remediation monitoring for major enterprise clients.',
+          skills: ['TPRM', 'Third Party Risk Management', 'Vendor Risk Assessment', 'Information Security', 'Risk Governance'],
+          package: '₹7.0 - 10.5 LPA',
+          branch: 'BE/BTech / MBA / BCom / IT',
+          cgpa: 6.0,
+          openings: 12,
+          location: 'Mumbai, Maharashtra (Work From Office)',
+          applyUrl: 'https://kpmg.com/in/en/careers.html?q=3440',
+          whoCanApply: [
+            'Bachelor degree in Engineering, Information Systems, Business Administration, or Commerce',
+            '1 to 4 years of experience in TPRM, vendor risk assessment, or IT risk consulting',
+            'Familiarity with industry standards (ISO 27001, SOC 2, NIST, GDPR) and vendor questionnaires',
+            'Strong analytical, communication, and risk evaluation capabilities'
+          ],
+          additionalInfo: 'Job ID: 3440. Job Type: Permanent, Full Time. Experience: 1.00 to 4.00 years. Posted 11 Days ago.'
+        },
+        {
+          role: 'Executive - GRC Packaged Product (Archer...)',
+          desc: 'Implement, configure, and maintain RSA Archer eGRC platform solutions. Build custom applications, workflows, data feeds, dashboards, and role-based access for enterprise risk and compliance management.',
+          skills: ['RSA Archer', 'GRC Packaged Product', 'eGRC', 'Workflow Configuration', 'Risk & Compliance'],
+          package: '₹7.5 - 11.5 LPA',
+          branch: 'BE/BTech - CS, IT, ECE / MCA / BCA',
+          cgpa: 6.5,
+          openings: 8,
+          location: 'Pune, Maharashtra (Work From Office)',
+          applyUrl: 'https://kpmgindia.talentrecruit.com/career-page/apply/U2FsdGVkX1%252B795cQk4gr%252BfPcIWJVv8BaicBqzmxEzqw%253D',
+          whoCanApply: [
+            'BE/BTech in CS, IT, Electronics, or MCA/BCA with RSA Archer implementation experience',
+            '1 to 4 years of hands-on technical experience with RSA Archer eGRC suite',
+            'Proficiency in Archer core modules (Enterprise, Policy, Risk, Compliance, Vendor Management)',
+            'Strong database querying skills and knowledge of enterprise governance and compliance frameworks'
+          ],
+          additionalInfo: 'Job ID: 4500. Job Type: Permanent, Full Time. Experience: 1.00 to 4.00 years. Posted 11 Days ago.'
         }
       ];
 
@@ -1434,76 +1488,184 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
     if (company?.name && (company.name.toLowerCase().includes('pwc') || company.name.toLowerCase().includes('pricewaterhouse'))) {
       const officialPwCRoles = [
         {
-          role: 'Technology Consultant',
-          desc: 'Guide clients through complex technological transformations, ERP implementations, and cyber resilience strategies. Drive business outcomes through technology.',
-          skills: ['Technology Consulting', 'ERP', 'Cloud Strategy', 'Business Analysis'],
-          package: '₹8.5 - 14.0 LPA',
-          branch: 'BE/BTech / MBA - CS, IT',
-          cgpa: 6.5,
-          openings: 25,
-          location: 'Bengaluru / Kolkata / Mumbai, India',
-          applyUrl: 'https://www.pwc.in/careers.html',
-          whoCanApply: [
-            'Bachelor or Master degree in Engineering or Business Administration',
-            'Strong understanding of enterprise IT strategy, business processes, and ERP',
-            'Excellent client-facing consulting and stakeholder communication abilities',
-            'Analytical approach towards evaluating technology investments and risks'
-          ],
-          additionalInfo: 'PwC India Technology Transformation Practice.'
-        },
-        {
-          role: 'Software Developer',
-          desc: 'Develop secure and reliable enterprise applications. Work across backend architectures, database schemas, and microservices integrations for PwC digital platforms.',
-          skills: ['Java', 'Spring Boot', 'SQL', 'Microservices', 'Git'],
-          package: '₹7.5 - 12.0 LPA',
-          branch: 'BE/BTech - CS, IT, ECE',
-          cgpa: 6.5,
-          openings: 22,
-          location: 'Bengaluru / Hyderabad / Gurgaon, India',
-          applyUrl: 'https://www.pwc.in/careers.html',
-          whoCanApply: [
-            'Degree in Computer Science, Information Technology, or Electronics',
-            'Proficiency in Java or C# backend application development',
-            'Experience with REST API creation, authentication, and SQL databases',
-            'Good understanding of agile software engineering practices'
-          ],
-          additionalInfo: 'PwC Acceleration Center (AC).'
-        },
-        {
-          role: 'Data Engineer',
-          desc: 'Architect robust data lakes and big data pipelines. Transform raw client data into structured analytical repositories supporting business intelligence and AI models.',
-          skills: ['Python', 'SQL', 'ETL', 'Snowflake', 'Big Data'],
-          package: '₹8.0 - 13.5 LPA',
-          branch: 'BE/BTech - CS, IT, AI, Stats',
-          cgpa: 6.5,
-          openings: 18,
-          location: 'Kolkata / Bengaluru, India',
-          applyUrl: 'https://www.pwc.in/careers.html',
-          whoCanApply: [
-            'BE/BTech in CS, IT, Data Science, or related field',
-            'Strong skills in SQL data wrangling and Python data processing libraries',
-            'Experience working with cloud data warehouses (Snowflake/Redshift)',
-            'Knowledge of ETL tools, data quality checks, and pipeline scheduling'
-          ],
-          additionalInfo: 'PwC Data & Analytics Center of Excellence.'
-        },
-        {
-          role: 'Cloud Engineer',
-          desc: 'Implement enterprise cloud architectures and migration strategies on AWS and Azure. Optimize cloud costs, manage Kubernetes clusters, and automate security audits.',
-          skills: ['AWS', 'Azure', 'Kubernetes', 'Docker', 'DevOps'],
-          package: '₹8.5 - 14.0 LPA',
-          branch: 'BE/BTech - CS, IT, Cloud',
+          role: '1-10yrs Application for Cyber- Kolkata DN 57 - RDC',
+          desc: 'Deliver cybersecurity advisory services, application security evaluations, threat analysis, and risk remediation within the PwC Delivery Center (RDC). Assess vulnerabilities, conduct code reviews, and architect enterprise security controls.',
+          skills: ['Cybersecurity', 'Application Security', 'Threat & Vulnerability', 'Advisory', 'Information Security'],
+          package: '₹9.0 - 18.0 LPA',
+          branch: 'BE/BTech - CS, IT, Cyber Security / MCA / MTech',
           cgpa: 6.5,
           openings: 15,
-          location: 'Mumbai / Bengaluru / Hyderabad, India',
-          applyUrl: 'https://www.pwc.in/careers.html',
+          location: 'Kolkata, West Bengal (DN 57 - RDC)',
+          applyUrl: 'https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Kolkata/XMLNAME-1-10yrs-Application-for-Cyber--Kolkata-DN-57---RDC_288872WD/apply',
           whoCanApply: [
-            'Engineering degree in Computer Science, IT, or related specialization',
-            'Hands-on experience deploying and securing cloud environments on AWS or Azure',
-            'Familiarity with container management using Kubernetes and Docker',
-            'Understanding of automated CI/CD and cloud compliance standards'
+            'Bachelor or Master degree in Computer Science, IT, Cyber Security, or related technical field',
+            '1 to 10 years of hands-on experience in Cyber Security, AppSec, or vulnerability management',
+            'Solid understanding of OWASP Top 10, secure SDLC, penetration testing, and compliance frameworks',
+            'Industry certifications such as CEH, CISSP, or CISA are highly valued'
           ],
-          additionalInfo: 'PwC Cloud & Digital Architecture Group.'
+          additionalInfo: 'Job ID: 288872WD. Line of Service: Advisory. Location: Kolkata DN 57 - RDC.'
+        },
+        {
+          role: '1-10yrs Application for Cyber- Kolkata DN 57 - RDC',
+          desc: 'Provide comprehensive cyber defense advisory and security incident response services. Implement modern cyber security architectures, monitor threat landscapes, and support client security operations and compliance audits.',
+          skills: ['Cyber Defense', 'Incident Response', 'SOC Operations', 'Advisory', 'Network Security'],
+          package: '₹9.5 - 19.0 LPA',
+          branch: 'BE/BTech - CS, IT, Cyber Security / MCA',
+          cgpa: 6.5,
+          openings: 12,
+          location: 'Kolkata, West Bengal (DN 57 - RDC)',
+          applyUrl: 'https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Kolkata/XMLNAME-1-10yrs-Application-for-Cyber--Kolkata-DN-57---RDC_335325WD-1/apply',
+          whoCanApply: [
+            'Degree in Engineering or Computer Applications with focus on Cyber Security or Networking',
+            '1 to 10 years of professional experience in Cybersecurity defense, SIEM, or SOC operations',
+            'Familiarity with cloud security controls (AWS/Azure/GCP) and endpoint security solutions',
+            'Strong problem-solving and incident triage capabilities'
+          ],
+          additionalInfo: 'Job ID: 335325WD. Line of Service: Advisory. Location: Kolkata DN 57 - RDC.'
+        },
+        {
+          role: 'Associate - Advisory (Gurugram Novus Tower)',
+          desc: 'Execute client advisory engagements at Gurugram Novus Tower. Conduct business process benchmarking, strategic research, financial modeling, and risk evaluations for industry-leading clients.',
+          skills: ['Management Consulting', 'Business Advisory', 'Data Analysis', 'Process Optimization', 'Client Advisory'],
+          package: '₹7.5 - 12.0 LPA',
+          branch: 'BE/BTech / MBA / CA / BCom / Economics',
+          cgpa: 6.5,
+          openings: 10,
+          location: 'Gurugram Novus Tower, Haryana',
+          applyUrl: 'https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Gurugram-Novus-Tower/Associate_280138WD/apply',
+          whoCanApply: [
+            'Bachelor or Master degree in Engineering, Business Administration, Commerce, or Economics',
+            'Proficiency in quantitative analysis, business presentation drafting, and client communications',
+            'Knowledge of operational efficiency frameworks, business strategy, or financial advisory',
+            'Excellent problem-solving and stakeholder coordination skills'
+          ],
+          additionalInfo: 'Job ID: 280138WD. Line of Service: Advisory. Location: Gurugram Novus Tower.'
+        },
+        {
+          role: 'Associate - Advisory (Gurugram 10 C)',
+          desc: 'Participate in multidisciplinary advisory projects, supporting commercial due diligence, digital strategy, market studies, and operations restructuring at Gurugram 10 C.',
+          skills: ['Strategic Advisory', 'Financial Analysis', 'Risk Consulting', 'Business Transformation'],
+          package: '₹7.5 - 12.5 LPA',
+          branch: 'BE/BTech / MBA Finance / CA / MCom',
+          cgpa: 6.5,
+          openings: 8,
+          location: 'Gurugram 10 C, Haryana',
+          applyUrl: 'https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Gurugram-10-C/Associate_397094WD-4/apply',
+          whoCanApply: [
+            'Degree in Engineering, Finance, Business Management, or equivalent professional qualification',
+            'Strong analytical acumen and expertise in data synthesis and scenario modeling',
+            'Familiarity with corporate transformation methodologies and advisory consulting standards',
+            'Ability to collaborate effectively across cross-functional engagement teams'
+          ],
+          additionalInfo: 'Job ID: 397094WD. Line of Service: Advisory. Location: Gurugram 10 C.'
+        },
+        {
+          role: 'Associate - Advisory (Kolkata DN 57)',
+          desc: 'Work on technology and operations advisory engagements at Kolkata DN 57. Deliver quality deliverables across enterprise business solutioning, process optimization, and client analytics.',
+          skills: ['Technology Advisory', 'ERP Consulting', 'Business Analytics', 'Digital Transformation'],
+          package: '₹7.0 - 11.5 LPA',
+          branch: 'BE/BTech - All Branches / MBA / MCA',
+          cgpa: 6.0,
+          openings: 14,
+          location: 'Kolkata DN 57, West Bengal',
+          applyUrl: 'https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Kolkata-DN-57/Associate_408577WD-2/apply',
+          whoCanApply: [
+            'Bachelor or Master degree in Engineering, Technology, or Management',
+            'Understanding of enterprise systems, business workflows, and digital tools',
+            'Solid analytical thinking with capability to present data-driven consulting findings',
+            'Good interpersonal and verbal communication skills'
+          ],
+          additionalInfo: 'Job ID: 408577WD. Line of Service: Advisory. Location: Kolkata DN 57.'
+        },
+        {
+          role: 'Associate - Advisory (Kolkata DN 57 - Governance)',
+          desc: 'Assist in enterprise internal controls reviews, governance advisory, compliance monitoring, and standard operational audits for multinational clients at Kolkata DN 57.',
+          skills: ['Internal Controls', 'SOX Testing', 'Governance & Risk', 'Audit Advisory'],
+          package: '₹7.0 - 11.5 LPA',
+          branch: 'BE/BTech / CA / MBA / BCom',
+          cgpa: 6.0,
+          openings: 10,
+          location: 'Kolkata DN 57, West Bengal',
+          applyUrl: 'https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Kolkata-DN-57/Associate_429680WD-3/apply',
+          whoCanApply: [
+            'Degree in Commerce, Engineering, or Finance with an interest in risk and governance',
+            'Comprehension of risk control matrices (RCM), process documentation, and control testing',
+            'Ability to draft well-structured audit memorandums and recommendations',
+            'Attention to detail and sound documentation standards'
+          ],
+          additionalInfo: 'Job ID: 429680WD. Line of Service: Advisory. Location: Kolkata DN 57.'
+        },
+        {
+          role: 'Associate - Advisory (Kolkata Y-14)',
+          desc: 'Engage with client stakeholders to identify operational bottlenecks and provide structured advisory recommendations and analytical reports from Kolkata Y-14 office.',
+          skills: ['Business Consulting', 'Process Mapping', 'Analytics', 'Advisory Solutions'],
+          package: '₹7.2 - 11.8 LPA',
+          branch: 'BE/BTech / MBA / Stats / Economics',
+          cgpa: 6.5,
+          openings: 12,
+          location: 'Kolkata Y-14, West Bengal',
+          applyUrl: 'https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Kolkata-Y-14/Associate_432108WD/apply',
+          whoCanApply: [
+            'Bachelor or Master degree in any discipline with strong business problem-solving mindset',
+            'Hands-on expertise in Microsoft Excel, PowerPoint, and business process modeling tools',
+            'Aptitude for qualitative and quantitative analysis of corporate processes',
+            'Eagerness to contribute in high-performing advisory environments'
+          ],
+          additionalInfo: 'Job ID: 432108WD. Line of Service: Advisory. Location: Kolkata Y-14.'
+        },
+        {
+          role: 'Associate - Advisory (Mumbai Shivaji Park)',
+          desc: 'Perform transaction advisory, corporate finance support, deal due diligence, and strategic advisory for premier corporations at PwC Mumbai Shivaji Park.',
+          skills: ['Financial Advisory', 'Valuations', 'Deal Advisory', 'Corporate Strategy'],
+          package: '₹8.0 - 13.0 LPA',
+          branch: 'CA / CFA / MBA Finance / BE/BTech',
+          cgpa: 6.5,
+          openings: 10,
+          location: 'Mumbai Shivaji Park, Maharashtra',
+          applyUrl: 'https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Mumbai-Shivaji-Park/Associate_433252WD-2/apply',
+          whoCanApply: [
+            'CA, CFA level cleared, or MBA in Finance from an accredited institution',
+            'Solid comprehension of corporate financial statements, valuation metrics, and deal structures',
+            'Experience in financial analysis, market research, or corporate accounting',
+            'High level of professional integrity and client-first communication'
+          ],
+          additionalInfo: 'Job ID: 433252WD. Line of Service: Advisory. Location: Mumbai Shivaji Park.'
+        },
+        {
+          role: 'Associate - Advisory (Mumbai Shivaji Park - Tech & Risk)',
+          desc: 'Provide IT and cyber risk advisory, evaluate cloud architectures, test controls, and assist clients in regulatory compliance at Mumbai Shivaji Park.',
+          skills: ['IT Risk Advisory', 'Cyber Risk', 'Cloud Governance', 'Enterprise Risk'],
+          package: '₹8.0 - 13.0 LPA',
+          branch: 'BE/BTech - CS, IT / MCA / MBA Tech',
+          cgpa: 6.5,
+          openings: 8,
+          location: 'Mumbai Shivaji Park, Maharashtra',
+          applyUrl: 'https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Mumbai-Shivaji-Park/Associate_437311WD-2/apply',
+          whoCanApply: [
+            'Degree in Computer Science, Information Systems, or Engineering with tech-risk interest',
+            'Knowledge of IT general controls (ITGC), cloud security posture, and compliance audits',
+            'Familiarity with industry frameworks like NIST, ISO 27001, and SOC standards',
+            'Strong interpersonal abilities and technical report writing skills'
+          ],
+          additionalInfo: 'Job ID: 437311WD. Line of Service: Advisory. Location: Mumbai Shivaji Park.'
+        },
+        {
+          role: 'Associate - Advisory (Kolkata DN 57 - Digital Analytics)',
+          desc: 'Build enterprise dashboards, data models, and analytical tools supporting decision intelligence and client advisory outcomes at Kolkata DN 57.',
+          skills: ['Digital Analytics', 'Power BI / Tableau', 'SQL', 'Data Advisory', 'Business Intelligence'],
+          package: '₹7.5 - 12.0 LPA',
+          branch: 'BE/BTech - CS, IT, Data / MCA / Stats',
+          cgpa: 6.5,
+          openings: 12,
+          location: 'Kolkata DN 57, West Bengal',
+          applyUrl: 'https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Kolkata-DN-57/Associate_439388WcD-2/apply',
+          whoCanApply: [
+            'Engineering or Post Graduate degree in Computer Science, Data, Analytics, or Statistics',
+            'Proficiency in SQL, Power BI, Tableau, or Python data visualization packages',
+            'Proven ability to translate business requirements into intuitive data dashboards',
+            'Strong analytical thinking and teamwork spirit'
+          ],
+          additionalInfo: 'Job ID: 439388WD. Line of Service: Advisory. Location: Kolkata DN 57.'
         }
       ];
 
@@ -1514,7 +1676,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
         location: r.location,
         criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
         deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
-        status: index < 2 ? 'Open' : (index > 2 ? 'Closing Soon' : 'Open'),
+        status: index < 4 ? 'Open' : (index > 7 ? 'Closing Soon' : 'Open'),
         description: r.desc,
         requiredSkills: r.skills,
         openings: r.openings,
@@ -1535,14 +1697,14 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 35,
           location: 'Mumbai / Chennai / Bengaluru, India',
-          applyUrl: 'https://www.larsentoubro.com/corporate/careers/',
+          applyUrl: 'https://larsentoubrocareers.peoplestrong.com/job/detail/LNT_SDG_1878543',
           whoCanApply: [
             'BE/BTech in Computer Science, Information Technology, or Electronics',
             'Strong foundation in Object-Oriented Programming (Java/C++) and SQL databases',
             'Understanding of software engineering lifecycle and system integration',
             'Good analytical and problem-solving abilities'
           ],
-          additionalInfo: 'L&T Corporate Technology & Digital Transformation.'
+          additionalInfo: 'L&T Corporate Technology & Digital Transformation. Job ID: LNT_SDG_1878543.'
         },
         {
           role: 'Graduate Engineer Trainee – IT',
@@ -1553,14 +1715,14 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 50,
           location: 'Mumbai / Vadodara / Pune, India',
-          applyUrl: 'https://www.larsentoubro.com/corporate/careers/',
+          applyUrl: 'https://larsentoubrocareers.peoplestrong.com/job/detail/LNT_SDG_1878543',
           whoCanApply: [
             'Fresh engineering graduate in CS, IT, Electronics, or Electrical Engineering',
             'Consistent academic record with 60% or 6.5+ CGPA throughout graduation',
             'Strong verbal and written communication skills with leadership aptitude',
             'Willingness to work across diverse corporate locations and industrial projects'
           ],
-          additionalInfo: 'L&T Premier Graduate Engineer Trainee (GET) Program.'
+          additionalInfo: 'L&T Premier Graduate Engineer Trainee (GET) Program. Job ID: LNT_SDG_1878543.'
         },
         {
           role: 'Software Developer',
@@ -1571,14 +1733,14 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 25,
           location: 'Chennai / Mumbai, India',
-          applyUrl: 'https://www.larsentoubro.com/corporate/careers/',
+          applyUrl: 'https://larsentoubrocareers.peoplestrong.com/job/detail/LNT_SDG_1878543',
           whoCanApply: [
             'Degree in Computer Science or Information Technology',
             'Experience in Java Spring Boot backend development and React web interfaces',
             'Knowledge of relational database queries and performance optimization',
             'Familiarity with Agile ceremonies and version control'
           ],
-          additionalInfo: 'L&T Digital Systems & Web Engineering Practice.'
+          additionalInfo: 'L&T Digital Systems & Web Engineering Practice. Job ID: LNT_SDG_1878543.'
         },
         {
           role: 'Embedded Software Engineer',
@@ -1589,14 +1751,14 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 20,
           location: 'Mysuru / Bengaluru / Mumbai, India',
-          applyUrl: 'https://www.larsentoubro.com/corporate/careers/',
+          applyUrl: 'https://larsentoubrocareers.peoplestrong.com/job/detail/LNT_SDG_1878543',
           whoCanApply: [
             'Degree in Electronics & Communication, Electrical, or Instrumentation Engineering',
             'Proficiency in Embedded C/C++ programming for ARM Cortex/microcontrollers',
             'Hands-on experience with RTOS, communication protocols (CAN, SPI, UART, I2C)',
             'Familiarity with hardware oscilloscopes, logic analyzers, and circuit schematics'
           ],
-          additionalInfo: 'L&T Heavy Engineering, Defense & Embedded Systems Division.'
+          additionalInfo: 'L&T Heavy Engineering, Defense & Embedded Systems Division. Job ID: LNT_SDG_1878543.'
         },
         {
           role: 'Cloud / DevOps Engineer',
@@ -1607,14 +1769,122 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 20,
           location: 'Mumbai / Chennai, India',
-          applyUrl: 'https://www.larsentoubro.com/corporate/careers/',
+          applyUrl: 'https://larsentoubrocareers.peoplestrong.com/job/detail/LNT_SDG_1878543',
           whoCanApply: [
             'BE/BTech in Computer Science, IT, or related engineering branch',
             'Experience with Linux system administration, Docker containerization, and Kubernetes',
             'Knowledge of CI/CD pipeline automation with Jenkins or GitLab',
             'Understanding of cloud infrastructure management on AWS or Azure'
           ],
-          additionalInfo: 'L&T Cloud Infrastructure & Digital Operations.'
+          additionalInfo: 'L&T Cloud Infrastructure & Digital Operations. Job ID: LNT_SDG_1878543.'
+        },
+        {
+          role: 'Web AI Software Engineer',
+          desc: 'Research, develop, and integrate cutting-edge Web AI solutions, machine learning models, and intelligent browser-based architectures. Drive innovative AI applications for industrial and engineering automation.',
+          skills: ['Web AI', 'Machine Learning', 'Full Stack AI', 'Python', 'JavaScript/TypeScript', 'Research & Development'],
+          package: '₹14.0 - 24.0 LPA',
+          branch: 'BE/BTech - CS, AI, Data Science / MTech / MS',
+          cgpa: 7.0,
+          openings: 6,
+          location: 'Troy, Michigan, United States of America',
+          applyUrl: 'https://larsentoubrocareers.peoplestrong.com/job/detail/LNT_SDG_1878543',
+          whoCanApply: [
+            'Bachelor or Master degree in Computer Science, Artificial Intelligence, or related technical discipline',
+            'Experience designing and deploying Web-based AI and deep learning applications',
+            'Proficiency in modern JavaScript/TypeScript, Python, WebGL/WebGPU, or ML frameworks (TensorFlow.js/ONNX)',
+            'Strong analytical and algorithmic problem-solving capabilities'
+          ],
+          additionalInfo: 'Job ID: 520400 / LNT_SDG_1878543. Department: Research & Development.'
+        },
+        {
+          role: 'R&D Employee Vision & Web-Technologies (f/m/d)',
+          desc: 'Develop state-of-the-art computer vision systems and interactive web technologies for industrial inspection, digital twins, and smart manufacturing research.',
+          skills: ['Computer Vision', 'Web Technologies', 'Image Processing', 'R&D', 'C++', 'JavaScript'],
+          package: '₹12.0 - 20.0 LPA',
+          branch: 'BE/BTech - CS, IT, Electronics / MTech / MS',
+          cgpa: 6.5,
+          openings: 8,
+          location: 'Multiple Locations (Global / Hybrid)',
+          applyUrl: 'https://larsentoubrocareers.peoplestrong.com/job/detail/LNT_SDG_1878543',
+          whoCanApply: [
+            'Degree in Computer Science, Electrical Engineering, or Applied Mathematics with Computer Vision focus',
+            'Hands-on expertise in image processing algorithms, OpenCV, and modern web application frameworks',
+            'Solid programming proficiency in C++ and JavaScript/TypeScript',
+            'Passion for exploratory research and rapid prototyping of industrial tech solutions'
+          ],
+          additionalInfo: 'Job ID: 522229 / LNT_SDG_1878543. Department: Research & Development.'
+        },
+        {
+          role: 'R&D Group Leader for Vision & Web-Technologies (f/m/d)',
+          desc: 'Lead a multidisciplinary research and development engineering group specializing in industrial computer vision, smart sensing, and next-generation web technologies.',
+          skills: ['R&D Leadership', 'Computer Vision', 'Web Architecture', 'Engineering Management', 'Innovation'],
+          package: '₹18.0 - 28.0 LPA',
+          branch: 'BE/BTech / MTech / PhD - CS, Electronics, AI',
+          cgpa: 7.0,
+          openings: 4,
+          location: 'Multiple Locations (Global / Hybrid)',
+          applyUrl: 'https://larsentoubrocareers.peoplestrong.com/job/detail/LNT_SDG_1878543',
+          whoCanApply: [
+            'Master or PhD in Computer Science, AI, or Engineering with proven R&D leadership background',
+            'Demonstrated track record of delivering complex vision and web technology research projects',
+            'Strong team leadership, research grant management, and cross-functional collaboration abilities',
+            'Visionary thinking in industrial digitalization and technological advancement'
+          ],
+          additionalInfo: 'Job ID: 522461 / LNT_SDG_1878543. Department: Research & Development.'
+        },
+        {
+          role: 'Senior Backend Engineer (Research & Development) (m/f/d)',
+          desc: 'Architect and build resilient, distributed backend services, high-throughput data processing pipelines, and scalable APIs for advanced industrial IoT platforms.',
+          skills: ['Backend Engineering', 'Microservices', 'Distributed Systems', 'Cloud APIs', 'Python / Java / Go'],
+          package: '₹13.0 - 22.0 LPA',
+          branch: 'BE/BTech - CS, IT / MCA / MTech',
+          cgpa: 6.5,
+          openings: 10,
+          location: 'Amadora, Lisboa, Portugal',
+          applyUrl: 'https://larsentoubrocareers.peoplestrong.com/job/detail/LNT_SDG_1878543',
+          whoCanApply: [
+            'Bachelor or Master degree in Computer Science, Software Engineering, or related field',
+            'Extensive backend development experience with Python, Go, or Java/Spring Boot',
+            'Strong background in distributed architecture, message brokers (Kafka/RabbitMQ), and database optimization',
+            'Experience designing secure cloud-native REST/gRPC microservices'
+          ],
+          additionalInfo: 'Job ID: 516613 / LNT_SDG_1878543. Department: Research & Development.'
+        },
+        {
+          role: 'Software Developer for NLP Solutions - Product Localization',
+          desc: 'Develop and deploy Natural Language Processing (NLP) models, automated translation pipelines, and localization frameworks to adapt global enterprise products for international markets.',
+          skills: ['Natural Language Processing (NLP)', 'Product Localization', 'Machine Learning', 'Python', 'LLM Integration'],
+          package: '₹11.0 - 18.0 LPA',
+          branch: 'BE/BTech - CS, Computational Linguistics, AI / MCA',
+          cgpa: 6.5,
+          openings: 8,
+          location: 'Multiple Locations (Global / Hybrid)',
+          applyUrl: 'https://larsentoubrocareers.peoplestrong.com/job/detail/LNT_SDG_1878543',
+          whoCanApply: [
+            'Degree in Computer Science, Computational Linguistics, AI, or related technical domain',
+            'Experience building NLP pipelines with Python, Hugging Face, spaCy, or Transformer models',
+            'Familiarity with localization workflows, multilingual tokenization, and LLM prompting',
+            'Strong understanding of software engineering and continuous localization deployment'
+          ],
+          additionalInfo: 'Job ID: 519745 / LNT_SDG_1878543. Department: Research & Development.'
+        },
+        {
+          role: 'Embedded C/C++ developer (m/f/d)',
+          desc: 'Design and implement reliable embedded firmware, real-time control algorithms, and device drivers using C and C++ for mission-critical industrial hardware devices.',
+          skills: ['Embedded C/C++', 'RTOS', 'Microcontrollers', 'Device Drivers', 'Hardware Debugging', 'R&D'],
+          package: '₹10.5 - 17.5 LPA',
+          branch: 'BE/BTech - ECE, EnTC, EE, CS / MTech',
+          cgpa: 6.5,
+          openings: 12,
+          location: 'Brno, Jihomoravský kraj, Czech Republic',
+          applyUrl: 'https://larsentoubrocareers.peoplestrong.com/job/detail/LNT_SDG_1878543',
+          whoCanApply: [
+            'Degree in Electrical Engineering, Electronics, Computer Engineering, or related technical stream',
+            'Hands-on experience in Embedded C and modern C++ development on microcontrollers or RTOS',
+            'Understanding of hardware interfaces (SPI, I2C, UART, CAN, Ethernet) and low-level debugging',
+            'Familiarity with Git, automated testing of embedded targets, and CI/CD pipelines'
+          ],
+          additionalInfo: 'Job ID: 514185 / LNT_SDG_1878543. Department: Research & Development.'
         }
       ];
 
@@ -1625,7 +1895,136 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
         location: r.location,
         criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
         deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
-        status: index < 3 ? 'Open' : (index > 3 ? 'Closing Soon' : 'Open'),
+        status: index < 5 ? 'Open' : (index > 8 ? 'Closing Soon' : 'Open'),
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('siemens')) {
+      const officialSiemensRoles = [
+        {
+          role: 'Web AI Software Engineer',
+          desc: 'Research, develop, and integrate cutting-edge Web AI solutions, machine learning models, and intelligent browser-based architectures. Drive innovative AI applications for industrial and engineering automation.',
+          skills: ['Web AI', 'Machine Learning', 'Full Stack AI', 'Python', 'JavaScript/TypeScript', 'Research & Development'],
+          package: '₹14.0 - 24.0 LPA',
+          branch: 'BE/BTech - CS, AI, Data Science / MTech / MS',
+          cgpa: 7.0,
+          openings: 6,
+          location: 'Troy, Michigan, United States of America',
+          applyUrl: 'https://jobs.siemens.com/en_US/externaljobs/JobDetail/520400',
+          whoCanApply: [
+            'Bachelor or Master degree in Computer Science, Artificial Intelligence, or related technical discipline',
+            'Experience designing and deploying Web-based AI and deep learning applications',
+            'Proficiency in modern JavaScript/TypeScript, Python, WebGL/WebGPU, or ML frameworks (TensorFlow.js/ONNX)',
+            'Strong analytical and algorithmic problem-solving capabilities'
+          ],
+          additionalInfo: 'Job ID: 520400. Department: Research & Development. Location: Troy, Michigan, USA.'
+        },
+        {
+          role: 'R&D Employee Vision & Web-Technologies (f/m/d)',
+          desc: 'Develop state-of-the-art computer vision systems and interactive web technologies for industrial inspection, digital twins, and smart manufacturing research.',
+          skills: ['Computer Vision', 'Web Technologies', 'Image Processing', 'R&D', 'C++', 'JavaScript'],
+          package: '₹12.0 - 20.0 LPA',
+          branch: 'BE/BTech - CS, IT, Electronics / MTech / MS',
+          cgpa: 6.5,
+          openings: 8,
+          location: 'Multiple Locations (Global / Hybrid)',
+          applyUrl: 'https://jobs.siemens.com/en_US/externaljobs/JobDetail/522229',
+          whoCanApply: [
+            'Degree in Computer Science, Electrical Engineering, or Applied Mathematics with Computer Vision focus',
+            'Hands-on expertise in image processing algorithms, OpenCV, and modern web application frameworks',
+            'Solid programming proficiency in C++ and JavaScript/TypeScript',
+            'Passion for exploratory research and rapid prototyping of industrial tech solutions'
+          ],
+          additionalInfo: 'Job ID: 522229. Department: Research & Development. Location: Multiple Locations.'
+        },
+        {
+          role: 'R&D Group Leader for Vision & Web-Technologies (f/m/d)',
+          desc: 'Lead a multidisciplinary research and development engineering group specializing in industrial computer vision, smart sensing, and next-generation web technologies.',
+          skills: ['R&D Leadership', 'Computer Vision', 'Web Architecture', 'Engineering Management', 'Innovation'],
+          package: '₹18.0 - 28.0 LPA',
+          branch: 'BE/BTech / MTech / PhD - CS, Electronics, AI',
+          cgpa: 7.0,
+          openings: 4,
+          location: 'Multiple Locations (Global / Hybrid)',
+          applyUrl: 'https://jobs.siemens.com/en_US/externaljobs/JobDetail/522461',
+          whoCanApply: [
+            'Master or PhD in Computer Science, AI, or Engineering with proven R&D leadership background',
+            'Demonstrated track record of delivering complex vision and web technology research projects',
+            'Strong team leadership, research grant management, and cross-functional collaboration abilities',
+            'Visionary thinking in industrial digitalization and technological advancement'
+          ],
+          additionalInfo: 'Job ID: 522461. Department: Research & Development. Location: Multiple Locations.'
+        },
+        {
+          role: 'Senior Backend Engineer (Research & Development) (m/f/d)',
+          desc: 'Architect and build resilient, distributed backend services, high-throughput data processing pipelines, and scalable APIs for advanced industrial IoT platforms.',
+          skills: ['Backend Engineering', 'Microservices', 'Distributed Systems', 'Cloud APIs', 'Python / Java / Go'],
+          package: '₹13.0 - 22.0 LPA',
+          branch: 'BE/BTech - CS, IT / MCA / MTech',
+          cgpa: 6.5,
+          openings: 10,
+          location: 'Amadora, Lisboa, Portugal',
+          applyUrl: 'https://jobs.siemens.com/en_US/externaljobs/JobDetail/516613',
+          whoCanApply: [
+            'Bachelor or Master degree in Computer Science, Software Engineering, or related field',
+            'Extensive backend development experience with Python, Go, or Java/Spring Boot',
+            'Strong background in distributed architecture, message brokers (Kafka/RabbitMQ), and database optimization',
+            'Experience designing secure cloud-native REST/gRPC microservices'
+          ],
+          additionalInfo: 'Job ID: 516613. Department: Research & Development. Location: Amadora, Lisboa, Portugal.'
+        },
+        {
+          role: 'Software Developer for NLP Solutions - Product Localization',
+          desc: 'Develop and deploy Natural Language Processing (NLP) models, automated translation pipelines, and localization frameworks to adapt global enterprise products for international markets.',
+          skills: ['Natural Language Processing (NLP)', 'Product Localization', 'Machine Learning', 'Python', 'LLM Integration'],
+          package: '₹11.0 - 18.0 LPA',
+          branch: 'BE/BTech - CS, Computational Linguistics, AI / MCA',
+          cgpa: 6.5,
+          openings: 8,
+          location: 'Multiple Locations (Global / Hybrid)',
+          applyUrl: 'https://jobs.siemens.com/en_US/externaljobs/JobDetail/519745',
+          whoCanApply: [
+            'Degree in Computer Science, Computational Linguistics, AI, or related technical domain',
+            'Experience building NLP pipelines with Python, Hugging Face, spaCy, or Transformer models',
+            'Familiarity with localization workflows, multilingual tokenization, and LLM prompting',
+            'Strong understanding of software engineering and continuous localization deployment'
+          ],
+          additionalInfo: 'Job ID: 519745. Department: Research & Development. Location: Multiple Locations.'
+        },
+        {
+          role: 'Embedded C/C++ developer (m/f/d)',
+          desc: 'Design and implement reliable embedded firmware, real-time control algorithms, and device drivers using C and C++ for mission-critical industrial hardware devices.',
+          skills: ['Embedded C/C++', 'RTOS', 'Microcontrollers', 'Device Drivers', 'Hardware Debugging', 'R&D'],
+          package: '₹10.5 - 17.5 LPA',
+          branch: 'BE/BTech - ECE, EnTC, EE, CS / MTech',
+          cgpa: 6.5,
+          openings: 12,
+          location: 'Brno, Jihomoravský kraj, Czech Republic',
+          applyUrl: 'https://jobs.siemens.com/en_US/externaljobs/JobDetail/514185',
+          whoCanApply: [
+            'Degree in Electrical Engineering, Electronics, Computer Engineering, or related technical stream',
+            'Hands-on experience in Embedded C and modern C++ development on microcontrollers or RTOS',
+            'Understanding of hardware interfaces (SPI, I2C, UART, CAN, Ethernet) and low-level debugging',
+            'Familiarity with Git, automated testing of embedded targets, and CI/CD pipelines'
+          ],
+          additionalInfo: 'Job ID: 514185. Department: Research & Development. Location: Brno, Czech Republic.'
+        }
+      ];
+
+      return officialSiemensRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 3 ? 'Open' : (index > 4 ? 'Closing Soon' : 'Open'),
         description: r.desc,
         requiredSkills: r.skills,
         openings: r.openings,
@@ -1824,7 +2223,14 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
 
   const handleApply = (job) => {
     const targetJob = job || selectedJob;
-    let careersUrl = targetJob?.applyUrl || (company?.website ? `${company.website}/careers` : 'https://careers.cognizant.com/uki-en/jobs/');
+    let careersUrl = targetJob?.applyUrl;
+    if (!careersUrl) {
+      if (company?.name && (company.name.toLowerCase().includes('l&t') || company.name.toLowerCase().includes('larsen'))) {
+        careersUrl = 'https://larsentoubrocareers.peoplestrong.com/job/detail/LNT_SDG_1878543';
+      } else {
+        careersUrl = company?.website ? `${company.website}/careers` : 'https://careers.cognizant.com/uki-en/jobs/';
+      }
+    }
     window.open(careersUrl, '_blank');
   };
 
