@@ -34,9 +34,9 @@ const FractalAnalyticsMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'Technical Interview':
         return <TechnicalInterview company={company} />;
       case 'Case Study/Business Round':
-        return <CaseStudy company={company} />;
+        return <CaseStudy company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'HR/Final':
-        return <HRFinal company={company} />;
+        return <HRFinal company={company} onOpenAIInterview={onOpenAIInterview} />;
       default:
         return (
           <div className="csr-content-body">

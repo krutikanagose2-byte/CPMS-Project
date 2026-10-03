@@ -1,13 +1,13 @@
 import React from 'react';
 import Interview from '../CognizantMenu/Interview';
 
-const HRFinalInterview = ({ company }) => {
+const HRFinalInterview = ({ company, onOpenAIInterview }) => {
   return (
     <div className="csr-content-body">
       <div className="csr-content-card">
         <h2 className="csr-section-title">{company?.name || "BYJU'S"} - HR/Final Interview</h2>
         <p className="csr-paragraph">HR + Communication</p>
-        <Interview />
+        <Interview company={company} onOpenAIInterview={onOpenAIInterview} />
 
       </div>
     </div>

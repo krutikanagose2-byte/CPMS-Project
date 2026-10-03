@@ -29,9 +29,9 @@ const PwCMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'Online Assessment':
         return <OnlineAssessment company={company} />;
       case 'Technical/Business Interview':
-        return <TechnicalBusinessInterview company={company} />;
+        return <TechnicalBusinessInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'HR/Behavioural Interview':
-        return <HRBehaviouralInterview company={company} />;
+        return <HRBehaviouralInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Final Selection':
         return <FinalSelection company={company} />;
       default:

@@ -10,16 +10,6 @@ const TopicsGrid = ({ topics, bannerTitle, bannerSubtitle, bannerButtonText, onT
 
         <div className="csr-topics-header">
           <h2 className="csr-topics-title">All Topics</h2>
-          <div className="csr-topics-controls">
-            <button className="csr-topics-btn">
-              <span>Y Filter </span>
-              <span style={{ fontSize: '12px' }}>v</span>
-            </button>
-            <button className="csr-topics-btn">
-              <span>↑↓ Sort</span>
-              <span style={{ fontSize: '12px' }}>v</span>
-            </button>
-          </div>
         </div>
 
         <div className="csr-topics-grid">

@@ -29,9 +29,9 @@ const HDFCBankMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'Online/Aptitude Test':
         return <OnlineAptitudeTest company={company} />;
       case 'Interview':
-        return <InterviewRound company={company} />;
+        return <InterviewRound company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'HR/Final':
-        return <HRFinal company={company} />;
+        return <HRFinal company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Final Selection':
         return <FinalSelection company={company} />;
       default:

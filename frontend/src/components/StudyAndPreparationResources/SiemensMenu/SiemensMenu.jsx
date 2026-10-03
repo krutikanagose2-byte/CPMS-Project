@@ -28,9 +28,9 @@ const SiemensMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'Online Assessment':
         return <OnlineAssessment company={company} />;
       case 'Technical Interview':
-        return <TechnicalInterview company={company} />;
+        return <TechnicalInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'HR Interview':
-        return <HRInterview company={company} />;
+        return <HRInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       default:
         return (
           <div className="csr-content-body">

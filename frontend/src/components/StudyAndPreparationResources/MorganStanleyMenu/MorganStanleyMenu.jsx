@@ -34,7 +34,7 @@ const MorganStanleyMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'Technical Interview 2':
         return <TechnicalInterview2 company={company} />;
       case 'HR/Behavioral':
-        return <HRBehavioral company={company} />;
+        return <HRBehavioral company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Final Selection':
         return <FinalSelection company={company} />;
       default:

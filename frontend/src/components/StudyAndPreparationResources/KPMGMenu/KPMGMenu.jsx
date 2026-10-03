@@ -31,9 +31,9 @@ const KPMGMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'GD / Case Study':
         return <GDCaseStudy company={company} />;
       case 'Technical Interview':
-        return <TechnicalInterview company={company} />;
+        return <TechnicalInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'HR/Recruiter Interview':
-        return <HRInterview company={company} />;
+        return <HRInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       default:
         return (
           <div className="csr-content-body">

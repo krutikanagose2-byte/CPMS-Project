@@ -29,9 +29,9 @@ const TataMotorsMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'Online/Written Test':
         return <OnlineWrittenTest company={company} />;
       case 'Technical Interview':
-        return <TechnicalInterview company={company} />;
+        return <TechnicalInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'HR Interview':
-        return <HRInterview company={company} />;
+        return <HRInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Medical/Background Check':
         return <BackgroundCheck company={company} />;
       default:

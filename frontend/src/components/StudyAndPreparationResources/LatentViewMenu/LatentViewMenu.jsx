@@ -33,7 +33,7 @@ const LatentViewMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'Technical Interview 2':
         return <TechnicalInterview2 company={company} />;
       case 'HR/Behavioral':
-        return <HRBehavioral company={company} />;
+        return <HRBehavioral company={company} onOpenAIInterview={onOpenAIInterview} />;
       default:
         return (
           <div className="csr-content-body">

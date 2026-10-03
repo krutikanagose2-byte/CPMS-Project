@@ -32,9 +32,9 @@ const BoschMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'GD/Presentation':
         return <GDPresentation company={company} />;
       case 'Technical Interview':
-        return <TechnicalInterview company={company} />;
+        return <TechnicalInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'HR/Personal Interview':
-        return <HRInterview company={company} />;
+        return <HRInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Final Selection':
         return <FinalSelection company={company} />;
       default:

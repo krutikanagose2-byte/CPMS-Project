@@ -34,7 +34,7 @@ const IBMMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'English Assessment':
         return <EnglishAssessment company={company} />;
       case 'Technical/Interview Round':
-        return <TechnicalInterview company={company} />;
+        return <TechnicalInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'HR/Final Selection':
         return <HRFinalSelection company={company} />;
       default:

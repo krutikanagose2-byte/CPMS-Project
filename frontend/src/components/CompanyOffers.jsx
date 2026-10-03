@@ -271,38 +271,6 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
       />
 
       <div className="co-content-wrapper">
-        {/* Stats Row */}
-        <div className="co-stats-grid">
-          <div className="co-stat-card">
-            <div className="stat-icon-wrapper blue">📋</div>
-            <div className="stat-info">
-              <h3>Active Offers</h3>
-              <p className="stat-value">{displayJobs.length}</p>
-            </div>
-          </div>
-          <div className="co-stat-card">
-            <div className="stat-icon-wrapper orange">📤</div>
-            <div className="stat-info">
-              <h3>Applied</h3>
-              <p className="stat-value">0</p>
-            </div>
-          </div>
-          <div className="co-stat-card">
-            <div className="stat-icon-wrapper purple">⭐</div>
-            <div className="stat-info">
-              <h3>Shortlisted</h3>
-              <p className="stat-value">0</p>
-            </div>
-          </div>
-          <div className="co-stat-card">
-            <div className="stat-icon-wrapper green">🏆</div>
-            <div className="stat-info">
-              <h3>Offers Received</h3>
-              <p className="stat-value">0</p>
-            </div>
-          </div>
-        </div>
-
         {/* Company Header Detail Card */}
         <div className="co-detail-header-card">
           <div className="co-detail-logo-wrapper">
@@ -313,6 +281,10 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
             <p className="co-detail-location">📍 {company?.location}</p>
           </div>
           <div className="co-detail-meta">
+            <div className="meta-item">
+              <span className="meta-label">Active Offers</span>
+              <span className="meta-value">{displayJobs.length}</span>
+            </div>
             <div className="meta-item">
               <span className="meta-label">Overall Package</span>
               <span className="meta-value">₹5.0 - 8.0 LPA</span>
