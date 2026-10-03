@@ -37,73 +37,173 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
       const cognizantRoles = [
         { 
           role: 'Programmer Analyst Trainee (GenC)', 
-          desc: 'Entry-level software engineering role focusing on full-stack application development, software testing, and core IT solutions.', 
+          desc: 'Cognizant GenC onboarding role designed for engineering freshers. Focuses on foundational software development, database querying, full-stack application lifecycle, maintenance, and automated testing across enterprise projects.', 
           skills: ['Java', 'Python', 'SQL', 'Data Structures'],
           package: '₹4.0 - 5.5 LPA',
-          branch: 'BE/BTech - CS, IT, EnTC, ECE'
+          branch: 'BE/BTech - CS, IT, EnTC, ECE, EEE',
+          cgpa: 6.0,
+          openings: 45,
+          location: 'Chennai / Pune / Bengaluru',
+          whoCanApply: [
+            'Are freshers or entry-level graduates from BE/BTech (CS, IT, EnTC, ECE, EEE)',
+            'Possess strong foundational skills in Java or Python programming and SQL database querying',
+            'Maintain a minimum of 60% or 6.0 CGPA throughout 10th, 12th, and graduation without active backlogs',
+            'Are willing to relocate to any Cognizant India facility (Chennai, Pune, Bengaluru, Hyderabad, Coimbatore)'
+          ],
+          additionalInfo: 'Includes 3-month comprehensive Cognizant Academy training, global certification vouchers (AWS/Azure/Java), health insurance coverage, and night shift allowance where applicable.'
         },
         { 
           role: 'Programmer Analyst (GenC Next)', 
-          desc: 'Advanced software development role building cloud-native microservices, scalable web apps, and modern digital platforms.', 
+          desc: 'Advanced digital engineering track at Cognizant targeting high-performing developers. Work on cloud-native microservices architecture, modern web development, React/Node.js stacks, and distributed systems.', 
           skills: ['React', 'Node.js', 'Spring Boot', 'Microservices'],
           package: '₹6.7 - 8.5 LPA',
-          branch: 'BE/BTech - CS, IT, EnTC'
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 6.5,
+          openings: 25,
+          location: 'Bengaluru / Hybrid',
+          whoCanApply: [
+            'Have strong algorithmic problem-solving skills and hands-on expertise in React, Node.js, Spring Boot, or Python',
+            'Graduated with BE/BTech (CS/IT/Circuit branches) with 65% or 6.5 CGPA and above',
+            'Demonstrate experience with Git version control, RESTful API design, and modern web frameworks',
+            'Are available for full-time deployment in Cognizant Digital Engineering business units'
+          ],
+          additionalInfo: 'Fast-track career growth model, higher entry package, specialized mentorship under Lead Architects, and certification incentive programs.'
         },
         { 
           role: 'Full Stack Software Engineer', 
-          desc: 'End-to-end engineering role designing, building, and maintaining enterprise software frontend and backend architectures.', 
+          desc: 'Drive end-to-end software delivery across modern web and enterprise platforms. Build responsive frontend applications using Angular/React and scalable backend microservices powered by Java & Node.js.', 
           skills: ['Java', 'Angular', 'Node.js', 'REST APIs'],
           package: '₹7.5 - 10.0 LPA',
-          branch: 'BE/BTech - CS, IT'
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 30,
+          location: 'Pune / Remote',
+          whoCanApply: [
+            'Proficient in frontend frameworks (Angular/React) and backend technologies (Java Spring Boot or Node.js)',
+            'BE/BTech degree in Computer Science, Information Technology, or Software Engineering',
+            'Understand SQL/NoSQL databases, state management, security protocols, and CI/CD integrations',
+            'Capable of working in Agile Scrum teams delivering sprint iterations'
+          ],
+          additionalInfo: 'Hybrid working options, quarterly innovation hackathons, comprehensive medical coverage for family, and performance-linked annual bonuses.'
         },
         { 
           role: 'Quality Engineering & Assurance Specialist (QE&A)', 
-          desc: 'Specialized engineering role creating automated test frameworks, continuous testing pipelines, and API quality validation.', 
+          desc: 'Join Cognizant QE&A practice to design automated testing frameworks, execute continuous integration testing, API test automation, performance validation, and security compliance checking.', 
           skills: ['Selenium', 'Automation Testing', 'Java', 'CI/CD'],
           package: '₹5.5 - 7.5 LPA',
-          branch: 'BE/BTech - CS, IT, ECE'
+          branch: 'BE/BTech - CS, IT, ECE',
+          cgpa: 6.0,
+          openings: 20,
+          location: 'Chennai / Hybrid',
+          whoCanApply: [
+            'Hands-on experience or coursework in Selenium WebDriver, Java/Python scripting, TestNG, and Postman',
+            'BE/BTech degree in CS, IT, ECE, or related engineering discipline',
+            'Understanding of Agile testing methodologies, defect tracking (Jira), and test-driven development (TDD)',
+            'Strong analytical mindset with attention to detail and quality compliance standards'
+          ],
+          additionalInfo: 'Specialized ISTQB certification funding, client-facing QA projects across US/UK banking clients, and continuous skill upgrades.'
         },
         { 
           role: 'Cloud & Infrastructure Engineer', 
-          desc: 'Technology engineering role designing, deploying, and operating multi-cloud infrastructure and DevOps delivery pipelines.', 
+          desc: 'Design, deploy, and manage enterprise multi-cloud environments across AWS and Azure. Automate infrastructure provisioning with Terraform, manage Kubernetes clusters, and optimize CI/CD pipelines.', 
           skills: ['AWS', 'Azure', 'DevOps', 'Kubernetes'],
           package: '₹8.0 - 11.0 LPA',
-          branch: 'BE/BTech - CS, IT, EnTC'
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 6.5,
+          openings: 18,
+          location: 'Bengaluru / Remote',
+          whoCanApply: [
+            'Hands-on knowledge of AWS or Azure cloud architectures, Docker containerization, and Linux administration',
+            'BE/BTech in CS, IT, Electronics & Telecommunication, or Electrical Engineering',
+            'Familiarity with Shell/Python scripting, Ansible, and DevOps deployment tools (Jenkins, GitHub Actions)',
+            'Certifications such as AWS Certified Solutions Architect or Azure Administrator (preferred)'
+          ],
+          additionalInfo: 'Direct cloud lab access, 100% reimbursement for Cloud associate/professional certification exams, and flexible remote work options.'
         },
         { 
           role: 'Data Engineering & Analytics Specialist', 
-          desc: 'Engineering role building scalable data pipelines, data warehouses, and ETL workflows for real-time analytics.', 
+          desc: 'Build enterprise data pipelines, real-time data streaming architectures, and data warehouses using PySpark, SQL, Azure Data Factory, and Snowflake for AI/ML and business intelligence applications.', 
           skills: ['PySpark', 'SQL', 'Azure Data Factory', 'Snowflake'],
           package: '₹7.0 - 9.5 LPA',
-          branch: 'BE/BTech - CS, IT, Data Science'
+          branch: 'BE/BTech - CS, IT, Data Science',
+          cgpa: 6.5,
+          openings: 15,
+          location: 'Hyderabad / Hybrid',
+          whoCanApply: [
+            'Strong proficiency in SQL query optimization, Python data processing (Pandas/PySpark), and database management',
+            'BE/BTech in CS, IT, Data Science, AI, or Mathematics/Statistics background',
+            'Knowledge of ETL/ELT pipelines, data warehousing concepts (Snowflake/Redshift), and cloud data services',
+            'Strong quantitative reasoning and data visualization skills (PowerBI/Tableau)'
+          ],
+          additionalInfo: 'Exposure to enterprise GenAI data engineering projects, client analytics consulting, and competitive performance incentives.'
         },
         { 
           role: 'Digital Marketing Specialist', 
-          desc: 'Marketing role focused on digital campaign strategy, search engine optimization (SEO), performance marketing, and web analytics.', 
+          desc: 'Develop and execute digital marketing campaigns, performance marketing, search engine optimization (SEO), social media marketing, and data-driven customer acquisition strategies for global brands.', 
           skills: ['SEO', 'SEM', 'Google Analytics', 'Digital Campaigns'],
           package: '₹5.0 - 7.0 LPA',
-          branch: 'MBA / BBA / Graduate (Any)'
+          branch: 'MBA / BBA / Graduate (Any)',
+          cgpa: 6.0,
+          openings: 12,
+          location: 'Kolkata / Hybrid',
+          whoCanApply: [
+            'Degree in MBA Marketing, BBA, Mass Communication, or relevant business disciplines',
+            'Proficiency with Google Analytics, Google Ads, SEO tools (Semrush/Ahrefs), and social media ad managers',
+            'Strong written and verbal communication skills with creative copywriting abilities',
+            'Ability to analyze campaign metrics (CTR, CPA, ROAS) and optimize ROI'
+          ],
+          additionalInfo: 'Google/HubSpot certification sponsorships, creative agency environment, and performance bonuses based on campaign targets.'
         },
         { 
           role: 'Services Marketing Manager', 
-          desc: 'Marketing leadership role driving service offerings positioning, brand strategy, demand generation, and multi-channel campaigns.', 
+          desc: 'Lead strategic positioning, content strategy, brand storytelling, and demand generation for Cognizant business units. Partner with sales and technical leadership to produce high-impact marketing collateral.', 
           skills: ['Content Strategy', 'Brand Positioning', 'Demand Generation'],
           package: '₹9.0 - 13.0 LPA',
-          branch: 'MBA - Marketing / Communications'
+          branch: 'MBA - Marketing / Communications',
+          cgpa: 6.5,
+          openings: 8,
+          location: 'Gurugram / On-site',
+          whoCanApply: [
+            'MBA in Marketing, Strategic Communications, or Brand Management from a recognized institute',
+            'Proven track record in B2B marketing, tech services positioning, whitepaper strategy, and lead funnels',
+            'Excellent executive presentation skills and stakeholder management capabilities',
+            'Understanding of global enterprise technology trends (AI, Cloud, Digital Transformation)'
+          ],
+          additionalInfo: 'Global client marketing exposure, leadership development programs, flexible hybrid work model, and executive bonuses.'
         },
         { 
           role: 'Client Relationship & Sales Associate', 
-          desc: 'Sales and marketing role managing strategic client accounts, business development, and enterprise technology solution sales.', 
+          desc: 'Manage strategic enterprise client accounts, drive business development, coordinate solution pitch presentations, and expand consulting partnerships across technology and business accounts.', 
           skills: ['Account Management', 'Client Partnering', 'Solution Sales'],
           package: '₹6.5 - 9.0 LPA',
-          branch: 'MBA / Graduate (Any)'
+          branch: 'MBA / Graduate (Any)',
+          cgpa: 6.0,
+          openings: 10,
+          location: 'Mumbai / Hybrid',
+          whoCanApply: [
+            'MBA or Post Graduate Degree in Business Management, Sales, or International Business',
+            'Exceptional negotiation, interpersonal, relationship building, and consultative selling skills',
+            'Ability to understand complex IT services offerings and map them to enterprise client business goals',
+            'Willingness to travel for client meetings and account reviews as required'
+          ],
+          additionalInfo: 'Uncapped commission structure, global mobility opportunities, direct mentorship under Client Partners, and executive perks.'
         },
         { 
           role: 'Senior Product Engineering Manager', 
-          desc: 'Cross-functional engineering and product role leveraging AI/ML product innovation and technical delivery management.', 
+          desc: 'Cross-functional leadership role bridging product strategy, engineering delivery, and customer enablement. Drive product roadmap execution leveraging GenAI, machine learning, and cloud architecture.', 
           skills: ['Product Engineering', 'AI/ML', 'Agile Architecture'],
           package: '₹12.0 - 16.0 LPA',
-          branch: 'BE/BTech / MTech - CS, IT'
+          branch: 'BE/BTech / MTech - CS, IT',
+          cgpa: 7.0,
+          openings: 6,
+          location: 'Bengaluru / On-site',
+          whoCanApply: [
+            'BE/BTech or MTech in CS/IT combined with product management or tech leadership experience',
+            'Deep understanding of Agile product engineering, system design, microservices, and AI integration',
+            'Proven ability to lead multi-disciplinary engineering teams and align technical outcomes with business goals',
+            'Strong strategic thinking, roadmap prioritization, and senior leadership communication'
+          ],
+          additionalInfo: 'Senior leadership band benefits, stock option grant eligibility, executive health program, and global tech conference sponsorships.'
         }
       ];
 
@@ -111,20 +211,15 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
         _id: (index + 1).toString(),
         role: r.role,
         package: r.package,
-        location: index % 3 === 0 ? 'Chennai / Remote' : (index % 2 === 0 ? 'Pune / Hybrid' : 'Bengaluru / On-site'),
-        criteria: { minCgpa: index < 5 ? 6.5 : 6.0, allowedBranches: [r.branch] },
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
         deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
         status: index < 4 ? 'Open' : (index > 7 ? 'Closing Soon' : 'Open'),
         description: r.desc,
         requiredSkills: r.skills,
-        openings: ((index + companyScore) % 15) + 10,
-        whoCanApply: [
-          'are available for a full-time role at Cognizant',
-          'can join immediately or within 30 days',
-          'have strong communication and problem-solving skills',
-          'meet the minimum CGPA requirement'
-        ],
-        additionalInfo: 'Health insurance, continuous learning & certification sponsorships, and performance bonuses included.'
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo
       }));
     }
 
