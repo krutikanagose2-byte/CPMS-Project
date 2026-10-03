@@ -514,18 +514,22 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
                   
                   return (
                     <tr key={job._id}>
-                      <td className="job-role-cell">
-                        <div className="job-role-icon">💻</div>
-                        <div className="job-role-text">
-                          <strong>{job.role}</strong>
-                          <span>{job.requiredSkills ? job.requiredSkills.slice(0,2).join(', ') : 'Tech'}</span>
+                      <td>
+                        <div className="job-role-cell">
+                          <div className="job-role-icon">💻</div>
+                          <div className="job-role-text">
+                            <strong>{job.role}</strong>
+                            <span>{job.requiredSkills ? job.requiredSkills.slice(0,2).join(', ') : 'Tech'}</span>
+                          </div>
                         </div>
                       </td>
                       <td className="font-medium">{job.package}</td>
                       <td className="location-cell">{job.location?.split('\n').join(' / ')}</td>
-                      <td className="eligibility-cell">
-                        <span className="req-badge">{job.criteria?.minCgpa} CGPA</span>
-                        <span className="req-badge">{job.criteria?.allowedBranches?.[0]}</span>
+                      <td>
+                        <div className="eligibility-cell">
+                          <span className="req-badge">{job.criteria?.minCgpa} CGPA</span>
+                          <span className="req-badge">{job.criteria?.allowedBranches?.[0]}</span>
+                        </div>
                       </td>
                       <td className={isClosing ? "deadline-closing" : ""}>
                         {new Date(job.deadline).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}

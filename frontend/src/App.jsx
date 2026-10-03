@@ -39,11 +39,39 @@ export default function App() {
       return null;
     }
   });
-  const [selectedCompany, setSelectedCompany] = useState(null);
+  const [selectedCompany, setSelectedCompanyState] = useState(() => {
+    try {
+      const saved = sessionStorage.getItem('cpms_app_selected_company');
+      return saved ? JSON.parse(saved) : null;
+    } catch (e) {
+      return null;
+    }
+  });
+
+  const setSelectedCompany = (comp) => {
+    setSelectedCompanyState(comp);
+    if (comp) {
+      sessionStorage.setItem('cpms_app_selected_company', JSON.stringify(comp));
+    } else {
+      sessionStorage.removeItem('cpms_app_selected_company');
+    }
+  };
   const [targetPlacementCompany, setTargetPlacementCompany] = useState(null);
   const [interviewResult, setInterviewResult] = useState(null);
   const [interviewSession, setInterviewSession] = useState(null); // { sessionId, questions }
   const [openAddModal, setOpenAddModal] = useState(false);
+  const [dashboardTab, setDashboardTab] = useState(null);
+
+  const handleOpenContact = () => {
+    if (user) {
+      setDashboardTab('messages');
+      window.history.pushState({}, '', '/Dashboard');
+      setPage('student-dashboard');
+    } else {
+      window.history.pushState({}, '', '/Login');
+      setPage('login');
+    }
+  };
 
   useEffect(() => {
     const handlePopState = () => {
@@ -132,6 +160,7 @@ export default function App() {
           window.history.pushState({}, '', '/Company-Offers');
           setPage('company-offers');
         }}
+        initialTab={dashboardTab}
       />
     );
   }
@@ -162,6 +191,7 @@ export default function App() {
           window.history.pushState({}, '', '/Login');
           setPage('login');
         }} 
+        onOpenContact={handleOpenContact}
         onOpenNoticeBoard={() => { 
           setOpenAddModal(false); 
           window.history.pushState({}, '', '/Notice-Board');
@@ -187,6 +217,7 @@ export default function App() {
           window.history.pushState({}, '', '/Login');
           setPage('login');
         }}
+        onOpenContact={handleOpenContact}
         onOpenHome={() => {
           setSelectedCompany(null);
           setOpenAddModal(false);
@@ -298,6 +329,7 @@ export default function App() {
           window.history.pushState({}, '', '/Login');
           setPage('login');
         }} 
+        onOpenContact={handleOpenContact}
         onOpenNoticeBoard={() => { 
           setOpenAddModal(false); 
           window.history.pushState({}, '', '/Notice-Board');
@@ -336,6 +368,7 @@ export default function App() {
           window.history.pushState({}, '', '/Login');
           setPage('login');
         }} 
+        onOpenContact={handleOpenContact}
       />
     );
   }
@@ -368,6 +401,7 @@ export default function App() {
           window.history.pushState({}, '', '/Notice-Board');
           setPage('notice'); 
         }}
+        onOpenContact={handleOpenContact}
       />
       <main className="container">
         <Stats onOpenCompanies={() => { 
@@ -408,7 +442,7 @@ export default function App() {
           window.history.pushState({}, '', '/Notice-Board');
           setPage('notice'); 
         }}
-        onOpenContact={() => {}} 
+        onOpenContact={handleOpenContact} 
       />
     </div>
   );
