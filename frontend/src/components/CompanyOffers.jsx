@@ -44,6 +44,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.0,
           openings: 45,
           location: 'Chennai / Pune / Bengaluru',
+          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403651/programmer-analyst-trainee-genc/',
           whoCanApply: [
             'Are freshers or entry-level graduates from BE/BTech (CS, IT, EnTC, ECE, EEE)',
             'Possess strong foundational skills in Java or Python programming and SQL database querying',
@@ -61,6 +62,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 25,
           location: 'Bengaluru / Hybrid',
+          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403652/programmer-analyst-genc-next/',
           whoCanApply: [
             'Have strong algorithmic problem-solving skills and hands-on expertise in React, Node.js, Spring Boot, or Python',
             'Graduated with BE/BTech (CS/IT/Circuit branches) with 65% or 6.5 CGPA and above',
@@ -78,6 +80,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 30,
           location: 'Pune / Remote',
+          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403651/software-engineer/?utm_source=chatgpt.com',
           whoCanApply: [
             'Proficient in frontend frameworks (Angular/React) and backend technologies (Java Spring Boot or Node.js)',
             'BE/BTech degree in Computer Science, Information Technology, or Software Engineering',
@@ -95,6 +98,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.0,
           openings: 20,
           location: 'Chennai / Hybrid',
+          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403654/quality-engineering-assurance-specialist/',
           whoCanApply: [
             'Hands-on experience or coursework in Selenium WebDriver, Java/Python scripting, TestNG, and Postman',
             'BE/BTech degree in CS, IT, ECE, or related engineering discipline',
@@ -112,6 +116,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 18,
           location: 'Bengaluru / Remote',
+          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403655/cloud-infrastructure-engineer/',
           whoCanApply: [
             'Hands-on knowledge of AWS or Azure cloud architectures, Docker containerization, and Linux administration',
             'BE/BTech in CS, IT, Electronics & Telecommunication, or Electrical Engineering',
@@ -129,6 +134,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 15,
           location: 'Hyderabad / Hybrid',
+          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403656/data-engineering-analytics-specialist/',
           whoCanApply: [
             'Strong proficiency in SQL query optimization, Python data processing (Pandas/PySpark), and database management',
             'BE/BTech in CS, IT, Data Science, AI, or Mathematics/Statistics background',
@@ -146,6 +152,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.0,
           openings: 12,
           location: 'Kolkata / Hybrid',
+          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403657/digital-marketing-specialist/',
           whoCanApply: [
             'Degree in MBA Marketing, BBA, Mass Communication, or relevant business disciplines',
             'Proficiency with Google Analytics, Google Ads, SEO tools (Semrush/Ahrefs), and social media ad managers',
@@ -163,6 +170,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 8,
           location: 'Gurugram / On-site',
+          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403658/services-marketing-manager/',
           whoCanApply: [
             'MBA in Marketing, Strategic Communications, or Brand Management from a recognized institute',
             'Proven track record in B2B marketing, tech services positioning, whitepaper strategy, and lead funnels',
@@ -180,6 +188,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.0,
           openings: 10,
           location: 'Mumbai / Hybrid',
+          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403659/client-relationship-sales-associate/',
           whoCanApply: [
             'MBA or Post Graduate Degree in Business Management, Sales, or International Business',
             'Exceptional negotiation, interpersonal, relationship building, and consultative selling skills',
@@ -197,6 +206,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 7.0,
           openings: 6,
           location: 'Bengaluru / On-site',
+          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403660/senior-product-engineering-manager/',
           whoCanApply: [
             'BE/BTech or MTech in CS/IT combined with product management or tech leadership experience',
             'Deep understanding of Agile product engineering, system design, microservices, and AI integration',
@@ -219,7 +229,8 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
         requiredSkills: r.skills,
         openings: r.openings,
         whoCanApply: r.whoCanApply,
-        additionalInfo: r.additionalInfo
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
       }));
     }
 
@@ -410,8 +421,9 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
     return roleMatch && locMatch && statusMatch && searchMatch;
   });
 
-  const handleApply = () => {
-    let careersUrl = company?.website ? `${company.website}/careers` : 'https://www.google.com/search?q=' + encodeURIComponent((company?.name || 'Company') + ' careers');
+  const handleApply = (job) => {
+    const targetJob = job || selectedJob;
+    let careersUrl = targetJob?.applyUrl || (company?.website ? `${company.website}/careers` : 'https://www.google.com/search?q=' + encodeURIComponent((company?.name || 'Company') + ' careers'));
     window.open(careersUrl, '_blank');
   };
 
@@ -613,7 +625,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
             </div>
 
             <div className="co-modal-footer">
-              <button className="co-modal-apply-btn" onClick={handleApply}>
+              <button className="co-modal-apply-btn" onClick={() => handleApply(selectedJob)}>
                 Apply Now ↗
               </button>
             </div>
