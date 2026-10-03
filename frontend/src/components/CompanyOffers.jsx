@@ -34,190 +34,190 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
     const companyScore = company?.name ? company.name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) : 0;
     
     if (company?.name && company.name.toLowerCase().includes('cognizant')) {
-      const cognizantRoles = [
-        { 
-          role: 'Programmer Analyst Trainee (GenC)', 
-          desc: 'Cognizant GenC onboarding role designed for engineering freshers. Focuses on foundational software development, database querying, full-stack application lifecycle, maintenance, and automated testing across enterprise projects.', 
-          skills: ['Java', 'Python', 'SQL', 'Data Structures'],
-          package: '₹4.0 - 5.5 LPA',
-          branch: 'BE/BTech - CS, IT, EnTC, ECE, EEE',
-          cgpa: 6.0,
-          openings: 45,
-          location: 'Chennai / Pune / Bengaluru',
-          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403651/programmer-analyst-trainee-genc/',
-          whoCanApply: [
-            'Are freshers or entry-level graduates from BE/BTech (CS, IT, EnTC, ECE, EEE)',
-            'Possess strong foundational skills in Java or Python programming and SQL database querying',
-            'Maintain a minimum of 60% or 6.0 CGPA throughout 10th, 12th, and graduation without active backlogs',
-            'Are willing to relocate to any Cognizant India facility (Chennai, Pune, Bengaluru, Hyderabad, Coimbatore)'
-          ],
-          additionalInfo: 'Includes 3-month comprehensive Cognizant Academy training, global certification vouchers (AWS/Azure/Java), health insurance coverage, and night shift allowance where applicable.'
-        },
-        { 
-          role: 'Programmer Analyst (GenC Next)', 
-          desc: 'Advanced digital engineering track at Cognizant targeting high-performing developers. Work on cloud-native microservices architecture, modern web development, React/Node.js stacks, and distributed systems.', 
-          skills: ['React', 'Node.js', 'Spring Boot', 'Microservices'],
-          package: '₹6.7 - 8.5 LPA',
-          branch: 'BE/BTech - CS, IT, EnTC',
-          cgpa: 6.5,
-          openings: 25,
-          location: 'Bengaluru / Hybrid',
-          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403652/programmer-analyst-genc-next/',
-          whoCanApply: [
-            'Have strong algorithmic problem-solving skills and hands-on expertise in React, Node.js, Spring Boot, or Python',
-            'Graduated with BE/BTech (CS/IT/Circuit branches) with 65% or 6.5 CGPA and above',
-            'Demonstrate experience with Git version control, RESTful API design, and modern web frameworks',
-            'Are available for full-time deployment in Cognizant Digital Engineering business units'
-          ],
-          additionalInfo: 'Fast-track career growth model, higher entry package, specialized mentorship under Lead Architects, and certification incentive programs.'
-        },
-        { 
-          role: 'Full Stack Software Engineer', 
-          desc: 'Drive end-to-end software delivery across modern web and enterprise platforms. Build responsive frontend applications using Angular/React and scalable backend microservices powered by Java & Node.js.', 
-          skills: ['Java', 'Angular', 'Node.js', 'REST APIs'],
-          package: '₹7.5 - 10.0 LPA',
-          branch: 'BE/BTech - CS, IT',
-          cgpa: 6.5,
-          openings: 30,
-          location: 'Pune / Remote',
-          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403651/software-engineer/?utm_source=chatgpt.com',
-          whoCanApply: [
-            'Proficient in frontend frameworks (Angular/React) and backend technologies (Java Spring Boot or Node.js)',
-            'BE/BTech degree in Computer Science, Information Technology, or Software Engineering',
-            'Understand SQL/NoSQL databases, state management, security protocols, and CI/CD integrations',
-            'Capable of working in Agile Scrum teams delivering sprint iterations'
-          ],
-          additionalInfo: 'Hybrid working options, quarterly innovation hackathons, comprehensive medical coverage for family, and performance-linked annual bonuses.'
-        },
-        { 
-          role: 'Quality Engineering & Assurance Specialist (QE&A)', 
-          desc: 'Join Cognizant QE&A practice to design automated testing frameworks, execute continuous integration testing, API test automation, performance validation, and security compliance checking.', 
-          skills: ['Selenium', 'Automation Testing', 'Java', 'CI/CD'],
-          package: '₹5.5 - 7.5 LPA',
-          branch: 'BE/BTech - CS, IT, ECE',
-          cgpa: 6.0,
-          openings: 20,
-          location: 'Chennai / Hybrid',
-          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403654/quality-engineering-assurance-specialist/',
-          whoCanApply: [
-            'Hands-on experience or coursework in Selenium WebDriver, Java/Python scripting, TestNG, and Postman',
-            'BE/BTech degree in CS, IT, ECE, or related engineering discipline',
-            'Understanding of Agile testing methodologies, defect tracking (Jira), and test-driven development (TDD)',
-            'Strong analytical mindset with attention to detail and quality compliance standards'
-          ],
-          additionalInfo: 'Specialized ISTQB certification funding, client-facing QA projects across US/UK banking clients, and continuous skill upgrades.'
-        },
-        { 
-          role: 'Cloud & Infrastructure Engineer', 
-          desc: 'Design, deploy, and manage enterprise multi-cloud environments across AWS and Azure. Automate infrastructure provisioning with Terraform, manage Kubernetes clusters, and optimize CI/CD pipelines.', 
-          skills: ['AWS', 'Azure', 'DevOps', 'Kubernetes'],
-          package: '₹8.0 - 11.0 LPA',
-          branch: 'BE/BTech - CS, IT, EnTC',
-          cgpa: 6.5,
-          openings: 18,
-          location: 'Bengaluru / Remote',
-          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403655/cloud-infrastructure-engineer/',
-          whoCanApply: [
-            'Hands-on knowledge of AWS or Azure cloud architectures, Docker containerization, and Linux administration',
-            'BE/BTech in CS, IT, Electronics & Telecommunication, or Electrical Engineering',
-            'Familiarity with Shell/Python scripting, Ansible, and DevOps deployment tools (Jenkins, GitHub Actions)',
-            'Certifications such as AWS Certified Solutions Architect or Azure Administrator (preferred)'
-          ],
-          additionalInfo: 'Direct cloud lab access, 100% reimbursement for Cloud associate/professional certification exams, and flexible remote work options.'
-        },
-        { 
-          role: 'Data Engineering & Analytics Specialist', 
-          desc: 'Build enterprise data pipelines, real-time data streaming architectures, and data warehouses using PySpark, SQL, Azure Data Factory, and Snowflake for AI/ML and business intelligence applications.', 
-          skills: ['PySpark', 'SQL', 'Azure Data Factory', 'Snowflake'],
-          package: '₹7.0 - 9.5 LPA',
-          branch: 'BE/BTech - CS, IT, Data Science',
+      const officialCognizantRoles = [
+        {
+          role: 'ADAS AUTOSAR Software Engineer- DaVinci Configurator.',
+          desc: 'Supporting Driver Assist Technologies (DAT) through embedded software development using AUTOSAR. Configure Vector DaVinci RTE components, integrate Classic AUTOSAR SWCs, validate inter-connections, and collaborate with SIL/HIL testing teams.',
+          skills: ['AUTOSAR', 'DaVinci Configurator', 'C/C++', 'Embedded Systems'],
+          package: '₹8.5 - 12.0 LPA',
+          branch: 'BE/BTech - CS, EE, ECE, Auto',
           cgpa: 6.5,
           openings: 15,
-          location: 'Hyderabad / Hybrid',
-          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403656/data-engineering-analytics-specialist/',
+          location: 'Dearborn, Michigan, United States',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=ADAS+AUTOSAR+Software+Engineer',
           whoCanApply: [
-            'Strong proficiency in SQL query optimization, Python data processing (Pandas/PySpark), and database management',
-            'BE/BTech in CS, IT, Data Science, AI, or Mathematics/Statistics background',
-            'Knowledge of ETL/ELT pipelines, data warehousing concepts (Snowflake/Redshift), and cloud data services',
-            'Strong quantitative reasoning and data visualization skills (PowerBI/Tableau)'
+            'Bachelor degree in Computer Science, Electrical Engineering, or Computer Engineering',
+            'Experience with Vector DaVinci tools, RTE generation, and Classic AUTOSAR components',
+            'Strong background in C/C++ embedded software development and MISRA standards',
+            'Familiarity with HIL/SIL testing, Git, Jira, and Agile methodologies'
           ],
-          additionalInfo: 'Exposure to enterprise GenAI data engineering projects, client analytics consulting, and competitive performance incentives.'
+          additionalInfo: 'Focuses on next-generation Driver Assist Technologies (DAT) and vehicle safety systems.'
         },
-        { 
-          role: 'Digital Marketing Specialist', 
-          desc: 'Develop and execute digital marketing campaigns, performance marketing, search engine optimization (SEO), social media marketing, and data-driven customer acquisition strategies for global brands.', 
-          skills: ['SEO', 'SEM', 'Google Analytics', 'Digital Campaigns'],
-          package: '₹5.0 - 7.0 LPA',
-          branch: 'MBA / BBA / Graduate (Any)',
+        {
+          role: 'Devops',
+          desc: 'Design, implement, and automate cloud-native continuous integration and deployment (CI/CD) pipelines. Manage Docker containerization, Kubernetes orchestration, and network security compliance.',
+          skills: ['DevOps', 'Docker', 'Kubernetes', 'CI/CD'],
+          package: '₹7.5 - 11.0 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC',
           cgpa: 6.0,
-          openings: 12,
-          location: 'Kolkata / Hybrid',
-          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403657/digital-marketing-specialist/',
+          openings: 25,
+          location: 'Singapore, SG, Singapore',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Devops',
           whoCanApply: [
-            'Degree in MBA Marketing, BBA, Mass Communication, or relevant business disciplines',
-            'Proficiency with Google Analytics, Google Ads, SEO tools (Semrush/Ahrefs), and social media ad managers',
-            'Strong written and verbal communication skills with creative copywriting abilities',
-            'Ability to analyze campaign metrics (CTR, CPA, ROAS) and optimize ROI'
+            'Graduate degree in Computer Science, IT, or related engineering discipline',
+            'Hands-on expertise with Jenkins, GitLab CI, Docker, Kubernetes, and Terraform',
+            'Experience with Linux system administration, shell scripting, and cloud platforms',
+            'Understanding of site reliability engineering (SRE) and infrastructure as code'
           ],
-          additionalInfo: 'Google/HubSpot certification sponsorships, creative agency environment, and performance bonuses based on campaign targets.'
+          additionalInfo: 'Singapore digital engineering center placement with global enterprise project exposure.'
         },
-        { 
-          role: 'Services Marketing Manager', 
-          desc: 'Lead strategic positioning, content strategy, brand storytelling, and demand generation for Cognizant business units. Partner with sales and technical leadership to produce high-impact marketing collateral.', 
-          skills: ['Content Strategy', 'Brand Positioning', 'Demand Generation'],
+        {
+          role: 'Programmable Logic Design Engineer (merge of FPGA and MBSE)',
+          desc: 'Architect digital programmable logic systems merging FPGA development with Model-Based Systems Engineering (MBSE). Perform RTL coding in VHDL/Verilog, FPGA synthesis, and hardware verification.',
+          skills: ['FPGA', 'MBSE', 'VHDL/Verilog', 'Digital Design'],
           package: '₹9.0 - 13.0 LPA',
-          branch: 'MBA - Marketing / Communications',
+          branch: 'BE/BTech - ECE, EnTC, EE',
           cgpa: 6.5,
-          openings: 8,
-          location: 'Gurugram / On-site',
-          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403658/services-marketing-manager/',
-          whoCanApply: [
-            'MBA in Marketing, Strategic Communications, or Brand Management from a recognized institute',
-            'Proven track record in B2B marketing, tech services positioning, whitepaper strategy, and lead funnels',
-            'Excellent executive presentation skills and stakeholder management capabilities',
-            'Understanding of global enterprise technology trends (AI, Cloud, Digital Transformation)'
-          ],
-          additionalInfo: 'Global client marketing exposure, leadership development programs, flexible hybrid work model, and executive bonuses.'
-        },
-        { 
-          role: 'Client Relationship & Sales Associate', 
-          desc: 'Manage strategic enterprise client accounts, drive business development, coordinate solution pitch presentations, and expand consulting partnerships across technology and business accounts.', 
-          skills: ['Account Management', 'Client Partnering', 'Solution Sales'],
-          package: '₹6.5 - 9.0 LPA',
-          branch: 'MBA / Graduate (Any)',
-          cgpa: 6.0,
           openings: 10,
-          location: 'Mumbai / Hybrid',
-          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403659/client-relationship-sales-associate/',
+          location: 'W Palm Beach, FL, United States',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Programmable+Logic+Design+Engineer',
           whoCanApply: [
-            'MBA or Post Graduate Degree in Business Management, Sales, or International Business',
-            'Exceptional negotiation, interpersonal, relationship building, and consultative selling skills',
-            'Ability to understand complex IT services offerings and map them to enterprise client business goals',
-            'Willingness to travel for client meetings and account reviews as required'
+            'Degree in Electrical Engineering, Electronics & Communication, or Computer Engineering',
+            'Proficiency in FPGA design flow (Xilinx Vivado/Intel Quartus) and Model-Based Systems Engineering',
+            'Experience with SystemVerilog, VHDL, logic simulation, and timing closure',
+            'Solid understanding of hardware-software co-design and hardware testbench validation'
           ],
-          additionalInfo: 'Uncapped commission structure, global mobility opportunities, direct mentorship under Client Partners, and executive perks.'
+          additionalInfo: 'Advanced Digital hardware engineering unit working on cutting-edge aerospace and medical devices.'
         },
-        { 
-          role: 'Senior Product Engineering Manager', 
-          desc: 'Cross-functional leadership role bridging product strategy, engineering delivery, and customer enablement. Drive product roadmap execution leveraging GenAI, machine learning, and cloud architecture.', 
-          skills: ['Product Engineering', 'AI/ML', 'Agile Architecture'],
-          package: '₹12.0 - 16.0 LPA',
-          branch: 'BE/BTech / MTech - CS, IT',
-          cgpa: 7.0,
-          openings: 6,
-          location: 'Bengaluru / On-site',
-          applyUrl: 'https://careers.cognizant.com/global-en/jobs/00070403660/senior-product-engineering-manager/',
+        {
+          role: 'Programmable Logic Design Engineer (merge of FPGA and MBSE)',
+          desc: 'Lead digital hardware design, FPGA IP integration, and MBSE modeling for industrial digital projects. Validate system architecture and conduct high-speed board-level testing.',
+          skills: ['FPGA', 'SystemVerilog', 'MBSE', 'Digital Systems'],
+          package: '₹9.5 - 14.0 LPA',
+          branch: 'BE/BTech - ECE, EnTC, CS',
+          cgpa: 6.5,
+          openings: 12,
+          location: 'Bridgewater, New Jersey, United States',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Programmable+Logic+Design+Engineer',
           whoCanApply: [
-            'BE/BTech or MTech in CS/IT combined with product management or tech leadership experience',
-            'Deep understanding of Agile product engineering, system design, microservices, and AI integration',
-            'Proven ability to lead multi-disciplinary engineering teams and align technical outcomes with business goals',
-            'Strong strategic thinking, roadmap prioritization, and senior leadership communication'
+            'Degree in Electronics, Computer Engineering, or Electrical Engineering',
+            'In-depth knowledge of MBSE tools (Cameo/Enterprise Architect) and FPGA prototyping',
+            'Hands-on experience with high-speed digital design and embedded signal processing',
+            'Strong problem-solving skills and hardware verification methodology'
           ],
-          additionalInfo: 'Senior leadership band benefits, stock option grant eligibility, executive health program, and global tech conference sponsorships.'
+          additionalInfo: 'New Jersey innovation hub engagement with high-performance embedded systems.'
+        },
+        {
+          role: 'ADAS Systems Engineer',
+          desc: 'Define system architecture and functional safety requirements (ISO 26262) for Advanced Driver Assistance Systems (ADAS). Perform sensor fusion integration (Radar, Camera, LiDAR) and ECU validation.',
+          skills: ['ADAS', 'ISO 26262', 'System Engineering', 'CAN/LIN'],
+          package: '₹8.0 - 12.5 LPA',
+          branch: 'BE/BTech - Auto, EE, ECE, CS',
+          cgpa: 6.0,
+          openings: 18,
+          location: 'Dearborn, Michigan, United States',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=ADAS+Systems+Engineer',
+          whoCanApply: [
+            'Bachelor or Master degree in Automotive, Electrical, or Computer Engineering',
+            'Knowledge of ADAS systems, CAN/CAN-FD/Ethernet communication protocols, and ISO 26262',
+            'Experience writing system specifications, use cases, and hazard analysis (HARA)',
+            'Familiarity with Vector CANoe, MATLAB/Simulink, and automotive diagnostic tools'
+          ],
+          additionalInfo: 'Automotive COE unit driving next-gen autonomous driving assistance solutions.'
+        },
+        {
+          role: 'Senior Consulting Manager - AI Architecture & Engineering',
+          desc: 'Lead strategic AI consulting engagements, architect enterprise Generative AI and LLM solutions, and advise executive stakeholders on artificial intelligence adoption and governance.',
+          skills: ['AI Architecture', 'Generative AI', 'LLM', 'Consulting Strategy'],
+          package: '₹14.0 - 18.0 LPA',
+          branch: 'BE/BTech / MBA - CS, AI, Data Science',
+          cgpa: 7.0,
+          openings: 8,
+          location: 'Atlanta, GA, United States',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Senior+Consulting+Manager+AI+Architecture',
+          whoCanApply: [
+            'BE/BTech or MBA with deep expertise in Artificial Intelligence and Enterprise Architecture',
+            'Proven track record designing scalable GenAI, RAG, and machine learning infrastructure',
+            'Strong client consulting, proposal development, and executive communication capabilities',
+            'Ability to lead cross-functional data science and software engineering teams'
+          ],
+          additionalInfo: 'Executive advisory role within Cognizant AI & Analytics global practice.'
+        },
+        {
+          role: 'Consulting Principal - AI Architecture and Engineering Lead',
+          desc: 'Serve as Principal AI Architect for Fortune 500 digital transformation programs. Define AI solution patterns, cloud MLOps pipelines, ethical AI guidelines, and enterprise data platforms.',
+          skills: ['AI/ML Lead', 'Enterprise Architecture', 'Cloud AI', 'Strategic Leadership'],
+          package: '₹15.0 - 20.0 LPA',
+          branch: 'BE/BTech / MTech / MBA',
+          cgpa: 7.0,
+          openings: 5,
+          location: 'Atlanta, Georgia, United States',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Consulting+Principal+AI+Architecture',
+          whoCanApply: [
+            'Senior technical background with expertise in MLOps, PyTorch/TensorFlow, and Cloud AI (AWS/Azure/GCP)',
+            'Demonstrated experience leading multi-million dollar AI engineering delivery',
+            'Mastery of microservices, vector databases, and enterprise AI system design',
+            'Outstanding thought leadership and strategic business development skills'
+          ],
+          additionalInfo: 'High-visibility leadership position with global travel and executive bonuses.'
+        },
+        {
+          role: 'Sr. Embedded/C++ Computer Vision Engineer - Hybrid',
+          desc: 'Develop high-performance C++ computer vision algorithms and deep learning inferencing models for embedded edge devices. Optimize OpenCV, TensorRT, and real-time video processing pipelines.',
+          skills: ['C++', 'OpenCV', 'Embedded Systems', 'Computer Vision'],
+          package: '₹10.0 - 15.0 LPA',
+          branch: 'BE/BTech / MTech - CS, ECE, AI',
+          cgpa: 6.5,
+          openings: 14,
+          location: 'Irving, Texas, United States',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Embedded+Computer+Vision+Engineer',
+          whoCanApply: [
+            'Degree in Computer Science, Electrical Engineering, or Computer Vision specialization',
+            'Expertise in Modern C++ (C++14/17/20), OpenCV, CUDA, and embedded Linux platforms',
+            'Experience optimizing deep learning models for edge accelerators (NVIDIA Jetson / ARM)',
+            'Familiarity with multi-threading, memory optimization, and camera sensor integration'
+          ],
+          additionalInfo: 'Hybrid work model based out of Irving, Texas Cognizant Digital Lab.'
+        },
+        {
+          role: 'Mainframe Infrastructure Solution Architect',
+          desc: 'Provide technical leadership and strategic architecture during presales and solution delivery for mainframe modernization, z/OS infrastructure framework, and mainframe-to-cloud integrations.',
+          skills: ['Mainframe', 'z/OS', 'Cloud Migration', 'Solution Architecture'],
+          package: '₹12.0 - 16.0 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 6.5,
+          openings: 20,
+          location: 'Chennai, Tamil Nadu, India',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Mainframe+Infrastructure+Solution+Architect',
+          whoCanApply: [
+            'BE/BTech degree in Computer Science, IT, or related engineering discipline',
+            'Hands-on expertise with IBM Z Mainframe infrastructure, z/OS, JCL, CICS, and DB2',
+            'Experience with mainframe modernization patterns (rehosting, refactoring, microservices API integration)',
+            'Familiarity with cloud platforms (AWS/Azure) and hybrid cloud integration tools (Zowe, Wazi)'
+          ],
+          additionalInfo: 'Presales technical leadership role supporting global banking and financial services clients.'
+        },
+        {
+          role: 'Mainframe Infrastructure Solution Architect',
+          desc: 'Lead enterprise mainframe solution architecture, proposal development, and technical risk assessments. Architect modern z/OS infrastructure frameworks and hybrid cloud integrations.',
+          skills: ['Mainframe Modernization', 'Presales Architecture', 'JCL/COBOL', 'IBM Z'],
+          package: '₹12.5 - 17.0 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 6.5,
+          openings: 15,
+          location: 'Chennai, Tamil Nadu, India',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Mainframe+Infrastructure+Solution+Architect',
+          whoCanApply: [
+            'BE/BTech degree with deep technical knowledge of IBM Mainframe systems and z/OS',
+            'Track record in presales architecture, client bid defense, and enterprise IT estimation',
+            'Strong understanding of DevOps for Mainframe, automated deployment, and security controls',
+            'Exceptional written and oral communication skills for C-level client presentations'
+          ],
+          additionalInfo: 'Based in Cognizant Chennai campus with hybrid work flexibility and certifications.'
         }
       ];
 
-      return cognizantRoles.map((r, index) => ({
+      return officialCognizantRoles.map((r, index) => ({
         _id: (index + 1).toString(),
         role: r.role,
         package: r.package,
@@ -233,7 +233,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
         applyUrl: r.applyUrl
       }));
     }
-
+    
     let roles = [];
     let branchText = 'BE/BTech - CS, IT';
 
@@ -423,7 +423,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
 
   const handleApply = (job) => {
     const targetJob = job || selectedJob;
-    let careersUrl = targetJob?.applyUrl || (company?.website ? `${company.website}/careers` : 'https://www.google.com/search?q=' + encodeURIComponent((company?.name || 'Company') + ' careers'));
+    let careersUrl = targetJob?.applyUrl || (company?.website ? `${company.website}/careers` : 'https://careers.cognizant.com/uki-en/jobs/');
     window.open(careersUrl, '_blank');
   };
 
@@ -526,22 +526,18 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
                   
                   return (
                     <tr key={job._id}>
-                      <td>
-                        <div className="job-role-cell">
-                          <div className="job-role-icon">💻</div>
-                          <div className="job-role-text">
-                            <strong>{job.role}</strong>
-                            <span>{job.requiredSkills ? job.requiredSkills.slice(0,2).join(', ') : 'Tech'}</span>
-                          </div>
+                      <td className="job-role-cell">
+                        <div className="job-role-icon">💻</div>
+                        <div className="job-role-text">
+                          <strong>{job.role}</strong>
+                          <span>{job.requiredSkills ? job.requiredSkills.slice(0,2).join(', ') : 'Tech'}</span>
                         </div>
                       </td>
                       <td className="font-medium">{job.package}</td>
                       <td className="location-cell">{job.location?.split('\n').join(' / ')}</td>
-                      <td>
-                        <div className="eligibility-cell">
-                          <span className="req-badge">{job.criteria?.minCgpa} CGPA</span>
-                          <span className="req-badge">{job.criteria?.allowedBranches?.[0]}</span>
-                        </div>
+                      <td className="eligibility-cell">
+                        <span className="req-badge">{job.criteria?.minCgpa} CGPA</span>
+                        <span className="req-badge">{job.criteria?.allowedBranches?.[0]}</span>
                       </td>
                       <td className={isClosing ? "deadline-closing" : ""}>
                         {new Date(job.deadline).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
