@@ -34,7 +34,7 @@ const OracleMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'Technical Interview 2':
         return <TechnicalInterview2 company={company} />;
       case 'Behavioral/HR':
-        return <BehavioralHR company={company} />;
+        return <BehavioralHR company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Final Selection':
         return <FinalSelection company={company} />;
       default:

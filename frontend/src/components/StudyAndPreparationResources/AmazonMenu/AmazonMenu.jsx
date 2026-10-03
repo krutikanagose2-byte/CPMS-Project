@@ -29,9 +29,9 @@ const AmazonMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'Online Assessment (OA)':
         return <OnlineAssessment company={company} />;
       case 'Technical Interview 1':
-        return <TechnicalInterview1 company={company} />;
+        return <TechnicalInterview1 company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Final Interview Loop':
-        return <FinalInterviewLoop company={company} />;
+        return <FinalInterviewLoop company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Offer/Final Selection':
         return <FinalSelection company={company} />;
       default:

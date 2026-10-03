@@ -33,7 +33,7 @@ const AirtelMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'Technical Interview 2':
         return <TechnicalInterview2 company={company} />;
       case 'HR/Managerial':
-        return <HRManagerial company={company} />;
+        return <HRManagerial company={company} onOpenAIInterview={onOpenAIInterview} />;
       default:
         return (
           <div className="csr-content-body">

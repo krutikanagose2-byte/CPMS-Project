@@ -525,7 +525,16 @@ Return format:
       const jsonStr = raw.replace(/```json?\n?/gi, '').replace(/```/g, '').trim();
       const parsed = JSON.parse(jsonStr);
       if (Array.isArray(parsed) && parsed.length === answers.length) {
-        evaluations = parsed;
+        evaluations = parsed.map((evalItem, idx) => {
+          const text = (answers[idx]?.transcript || '').trim();
+          if (!text || text === '(No answer given)' || text === '(No answer recorded)') {
+            return {
+              score: 0,
+              feedback: '⚠️ Mistake: No response recorded. Be sure to speak your answer clearly before proceeding.'
+            };
+          }
+          return evalItem;
+        });
       }
     } catch (geminiErr) {
       console.warn('Gemini evaluation fallback active:', geminiErr.message);
@@ -540,10 +549,10 @@ Return format:
         const tLower = text.toLowerCase();
 
         // No answer at all
-        if (wordCount === 0) {
+        if (wordCount === 0 || text === '(No answer given)' || text === '(No answer recorded)') {
           return {
             score: 0,
-            feedback: `⚠️ No response recorded for: "${question.slice(0, 60)}". Please speak clearly into the microphone — even a brief answer is better than silence.`
+            feedback: `⚠️ Mistake: No response recorded. Be sure to speak your answer clearly before proceeding.`
           };
         }
 

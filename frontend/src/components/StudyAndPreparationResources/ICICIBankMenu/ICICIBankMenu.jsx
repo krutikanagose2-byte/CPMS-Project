@@ -29,9 +29,9 @@ const ICICIBankMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'Online Aptitude Test':
         return <OnlineAptitudeTest company={company} />;
       case 'Interview 1':
-        return <Interview1 company={company} />;
+        return <Interview1 company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Interview 2':
-        return <Interview2 company={company} />;
+        return <Interview2 company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Final selection':
         return <FinalSelection company={company} />;
       default:

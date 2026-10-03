@@ -29,9 +29,9 @@ const BYJUSMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'Online Assessment':
         return <OnlineAssessment company={company} />;
       case 'Technical/Personal Interview':
-        return <TechnicalPersonalInterview company={company} />;
+        return <TechnicalPersonalInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'HR/Final Interview':
-        return <HRFinalInterview company={company} />;
+        return <HRFinalInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Final Selection':
         return <FinalSelection company={company} />;
       default:

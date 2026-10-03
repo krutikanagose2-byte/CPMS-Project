@@ -29,9 +29,9 @@ const GoldmanSachsMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'Online/Written Test':
         return <OnlineWrittenTest company={company} />;
       case 'Video/First Interview':
-        return <FirstInterview company={company} />;
+        return <FirstInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Final/Superday':
-        return <FinalSuperday company={company} />;
+        return <FinalSuperday company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Final Selection':
         return <FinalSelection company={company} />;
       default:

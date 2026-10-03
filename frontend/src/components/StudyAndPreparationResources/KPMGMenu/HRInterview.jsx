@@ -1,7 +1,7 @@
 import React from 'react';
 import Interview from '../CognizantMenu/Interview';
 
-const HRInterview = ({ company }) => {
+const HRInterview = ({ company, onOpenAIInterview }) => {
   return (
     <div className="csr-content-body">
       <div className="csr-content-card">
@@ -9,7 +9,7 @@ const HRInterview = ({ company }) => {
         <p className="csr-paragraph">
           The HR/Recruiter Interview round at {company?.name || 'KPMG'} is mainly about Behavioral questions and Cultural Fitment.
         </p>
-        <Interview />
+        <Interview company={company} onOpenAIInterview={onOpenAIInterview} />
       </div>
     </div>
   );

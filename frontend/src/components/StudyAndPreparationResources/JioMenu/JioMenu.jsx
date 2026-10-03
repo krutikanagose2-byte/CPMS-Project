@@ -32,9 +32,9 @@ const JioMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'Technical/Functional Test':
         return <TechnicalTest company={company} />;
       case 'Interview 1':
-        return <Interview1 company={company} />;
+        return <Interview1 company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Interview 2':
-        return <Interview2 company={company} />;
+        return <Interview2 company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Final Selection':
         return <FinalSelection company={company} />;
       default:

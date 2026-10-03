@@ -32,9 +32,9 @@ const JaroEducationMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'GD/JAM':
         return <GDJAM company={company} />;
       case 'Personal Interview':
-        return <PersonalInterview company={company} />;
+        return <PersonalInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'HR Interview':
-        return <HRInterview company={company} />;
+        return <HRInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Final Selection':
         return <FinalSelection company={company} />;
       default:

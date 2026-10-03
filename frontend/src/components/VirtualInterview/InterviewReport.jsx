@@ -18,6 +18,23 @@ const InterviewReport = ({ company, result, onBack, onOpenStudy }) => {
           });
           if (res.ok) {
             const data = await res.json();
+            if (data?.answers) {
+              data.answers = data.answers.map(ans => {
+                const t = (ans.transcript || '').trim();
+                if (!t || t === '(No answer recorded)' || t === '(No answer given)') {
+                  return {
+                    ...ans,
+                    score: 0,
+                    transcript: '(No answer recorded)',
+                    feedback: '⚠️ Mistake: No response recorded. Be sure to speak your answer clearly before proceeding.'
+                  };
+                }
+                return ans;
+              });
+              data.overallScore = data.answers.length > 0
+                ? Math.round(data.answers.reduce((sum, item) => sum + item.score, 0) / data.answers.length)
+                : 0;
+            }
             setReport(data);
             setLoading(false);
             return;
@@ -41,8 +58,8 @@ const InterviewReport = ({ company, result, onBack, onOpenStudy }) => {
       let score = 50;
       let feedback = '';
 
-      if (wordCount === 0) {
-        score = 30;
+      if (wordCount === 0 || text === '(No answer recorded)' || text === '(No answer given)') {
+        score = 0;
         feedback = '⚠️ Mistake: No response recorded. Be sure to speak your answer clearly before proceeding.';
       } else if (wordCount < 8) {
         score = 45;
@@ -65,7 +82,7 @@ const InterviewReport = ({ company, result, onBack, onOpenStudy }) => {
 
     const overallScore = scoredAnswers.length > 0
       ? Math.round(scoredAnswers.reduce((sum, item) => sum + item.score, 0) / scoredAnswers.length)
-      : 75;
+      : 0;
 
     return { overallScore, answers: scoredAnswers };
   };

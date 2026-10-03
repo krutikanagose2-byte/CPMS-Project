@@ -1,8 +1,7 @@
 import React from 'react';
 
 const interviewTopics = [
-  { id: 1, title: 'Technical Interview', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', isAI: true },
-  { id: 2, title: 'HR / Managerial Interview', questions: 15, color: '#f3e8ff', iconColor: '#a855f7', isAI: true },
+  { id: 1, title: 'Interview', questions: 20, color: '#e0f2fe', iconColor: '#0ea5e9', isAI: true },
 ];
 
 const Interview = ({ company, onOpenAIInterview }) => {

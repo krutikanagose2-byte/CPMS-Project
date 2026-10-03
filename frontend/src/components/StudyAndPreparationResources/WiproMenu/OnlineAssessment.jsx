@@ -108,16 +108,6 @@ const OnlineAssessment = ({ company }) => {
     <div className="csr-content-body">
       <div className="csr-aptitude-header">
         <h1 className="csr-page-title">All Topics</h1>
-        <div className="csr-aptitude-actions">
-          <button className="csr-action-btn">
-            <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
-            Filter
-          </button>
-          <button className="csr-action-btn">
-            <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg>
-            Sort
-          </button>
-        </div>
       </div>
       
       <div className="csr-topics-grid">

@@ -31,9 +31,9 @@ const MuSigmaMenu = ({ company, onBack, onOpenAIInterview }) => {
       case 'AI-Bot Interview':
         return <AIBotInterview company={company} />;
       case 'Case Study / Problem Solving':
-        return <CaseStudy company={company} />;
+        return <CaseStudy company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Final Interview':
-        return <FinalInterview company={company} />;
+        return <FinalInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       default:
         return (
           <div className="csr-content-body">
