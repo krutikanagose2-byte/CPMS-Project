@@ -233,6 +233,1407 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
         applyUrl: r.applyUrl
       }));
     }
+
+    if (company?.name && company.name.toLowerCase().includes('infosys')) {
+      const officialInfosysRoles = [
+        {
+          role: 'Jr. IT PMS Developer — Systems Engineer',
+          desc: 'Develop, maintain and test IT Portfolio Management System (PMS) applications. Configure system modules, optimize database queries, and support enterprise IT operations.',
+          skills: ['IT PMS', 'Java', 'SQL', 'Systems Engineering'],
+          package: '₹4.5 - 7.5 LPA',
+          branch: 'BE/BTech - CS, IT, ECE',
+          cgpa: 6.0,
+          openings: 30,
+          location: 'Bengaluru / Pune / Hyderabad, India',
+          applyUrl: 'https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/152200BR',
+          whoCanApply: [
+            'Bachelor degree in Computer Science, IT, or Electronics Engineering',
+            'Strong foundation in Object Oriented Programming (Java/C++) and SQL databases',
+            'Familiarity with IT service management (ITSM) concepts and SDLC practices',
+            'Good analytical and problem-solving capabilities'
+          ],
+          additionalInfo: 'Job Req ID: 152200BR. Part of Infosys Global Digital Careers Program.'
+        },
+        {
+          role: 'Cloud / AI Developer — Java, GCP',
+          desc: 'Architect cloud-native microservices and AI solutions using Java and Google Cloud Platform (GCP). Integrate AI APIs, manage BigQuery pipelines, and deploy Kubernetes clusters.',
+          skills: ['Java', 'GCP', 'Cloud AI', 'Microservices'],
+          package: '₹8.0 - 13.0 LPA',
+          branch: 'BE/BTech - CS, IT, AI, Data Science',
+          cgpa: 6.5,
+          openings: 20,
+          location: 'Bengaluru / Remote, India',
+          applyUrl: 'https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/152575BR',
+          whoCanApply: [
+            'BE/BTech in CS, IT, Artificial Intelligence, or Data Science',
+            'Hands-on expertise in Java microservices, GCP Cloud Functions, BigQuery, and Docker',
+            'Experience integrating machine learning APIs and vector databases',
+            'Knowledge of DevOps CI/CD pipelines on GCP'
+          ],
+          additionalInfo: 'Job Req ID: 152575BR. High-impact enterprise Cloud & AI engineering unit.'
+        },
+        {
+          role: 'Java Full Stack Developer',
+          desc: 'Build end-to-end web applications with Java Spring Boot backend and Angular/React frontend. Implement RESTful APIs, unit test coverage, and database persistence layers.',
+          skills: ['Java', 'Spring Boot', 'React/Angular', 'REST APIs'],
+          package: '₹6.5 - 11.0 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 6.0,
+          openings: 35,
+          location: 'Pune / Hyderabad / Mysuru, India',
+          applyUrl: 'https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153514BR',
+          whoCanApply: [
+            'Graduate degree in Computer Science, IT, or related engineering branch',
+            'Proficiency in Java 11/17, Spring Boot, Hibernate, and Angular/React',
+            'Hands-on experience with SQL databases and Git version control',
+            'Strong understanding of web application security and REST principles'
+          ],
+          additionalInfo: 'Job Req ID: 153514BR. Infosys Digital Experience Practice.'
+        },
+        {
+          role: 'Java Full Stack Developer',
+          desc: 'Deliver high-volume enterprise web applications. Focus on reactive Java backend architectures, microservices security, and responsive UI components.',
+          skills: ['Java 17', 'Spring Boot', 'Microservices', 'JavaScript'],
+          package: '₹7.0 - 11.5 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 6.0,
+          openings: 25,
+          location: 'Bengaluru / Chennai, India',
+          applyUrl: 'https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/154241BR',
+          whoCanApply: [
+            'BE/BTech degree in Computer Science or Information Technology',
+            'Experience building microservices architecture with Spring Cloud and Kafka',
+            'Proficiency in frontend development (ReactJS / TypeScript / HTML5 / CSS3)',
+            'Knowledge of Docker, Kubernetes, and automated testing frameworks'
+          ],
+          additionalInfo: 'Job Req ID: 154241BR. Hybrid engagement across top tier financial projects.'
+        },
+        {
+          role: 'ReactJS Developer',
+          desc: 'Develop interactive user interface components using ReactJS, Redux Toolkit, and modern CSS frameworks. Ensure web accessibility, cross-browser compatibility, and fast rendering.',
+          skills: ['ReactJS', 'Redux', 'JavaScript ES6+', 'HTML5/CSS3'],
+          package: '₹6.0 - 10.0 LPA',
+          branch: 'BE/BTech - CS, IT, MCA',
+          cgpa: 6.0,
+          openings: 20,
+          location: 'Pune / Trivandrum, India',
+          applyUrl: 'https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/149672BR',
+          whoCanApply: [
+            'Degree in Computer Science, IT, or MCA',
+            'Solid grasp of JavaScript (ES6+), React state management (Redux/Zustand), and Hooks',
+            'Experience consuming REST/GraphQL APIs and optimizing web performance',
+            'Familiarity with Jest/RTL unit testing and Webpack build tools'
+          ],
+          additionalInfo: 'Job Req ID: 149672BR. Core Frontend Engineering Team.'
+        },
+        {
+          role: 'Java Kotlin Developer',
+          desc: 'Design cross-platform backend services and mobile applications leveraging Java and Kotlin. Implement asynchronous coroutines, RESTful web services, and automated CI/CD builds.',
+          skills: ['Kotlin', 'Java', 'Android SDK', 'Spring Framework'],
+          package: '₹7.5 - 12.0 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 6.5,
+          openings: 15,
+          location: 'Bengaluru / Chandigarh, India',
+          applyUrl: 'https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/150920BR',
+          whoCanApply: [
+            'Engineering degree in CS, IT, or Electronics',
+            'Deep expertise in Kotlin language features, Java interoperability, and Android SDK',
+            'Experience with Kotlin Coroutines, Jetpack Compose, and Spring Boot',
+            'Understanding of mobile design patterns (MVVM/MVI) and SQLite/Room DB'
+          ],
+          additionalInfo: 'Job Req ID: 150920BR. Mobile & Modern Application Development practice.'
+        }
+      ];
+
+      return officialInfosysRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 3 ? 'Open' : (index > 4 ? 'Closing Soon' : 'Open'),
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('capgemini')) {
+      const officialCapgeminiRoles = [
+        {
+          role: 'Software Engineer — Mumbai',
+          desc: 'Design, write clean code, and execute unit tests for enterprise banking and digital commerce projects. Collaborate with global Agile teams to deliver software modules.',
+          skills: ['C++', 'Java', 'SQL', 'Software Engineering'],
+          package: '₹5.5 - 8.5 LPA',
+          branch: 'BE/BTech - CS, IT, ECE',
+          cgpa: 6.0,
+          openings: 25,
+          location: 'Mumbai, Maharashtra, India',
+          applyUrl: 'https://careers.capgemini.com/job/Mumbai-Software-Engineer/1204734401/',
+          whoCanApply: [
+            'Bachelor degree in Computer Science, IT, or Electronics Engineering',
+            'Knowledge of core C++/Java programming and relational database concepts',
+            'Understanding of Agile software development practices',
+            'Good problem solving and debugging skills'
+          ],
+          additionalInfo: 'Ref. Code: 142559. Capgemini Financial Services business unit.'
+        },
+        {
+          role: 'Software Engineer — Mumbai',
+          desc: 'Develop scalable backend web services, optimize SQL database queries, and integrate third-party RESTful APIs for financial technology clients.',
+          skills: ['Java', 'Spring Boot', 'MySQL', 'REST APIs'],
+          package: '₹6.0 - 9.0 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 6.0,
+          openings: 20,
+          location: 'Mumbai (Airoli / Vikhroli), India',
+          applyUrl: 'https://careers.capgemini.com/job/Mumbai-%28ex-Bombay%29-Software-Engineer/1423804433/',
+          whoCanApply: [
+            'BE/BTech in CS, IT, or related engineering discipline',
+            'Experience with Java 8+, Spring Boot, Hibernate, and REST API development',
+            'Proficiency writing SQL queries and stored procedures',
+            'Familiarity with Maven, Git, and automated testing'
+          ],
+          additionalInfo: 'Ref. Code: 516851. Capgemini Mumbai Technology Center.'
+        },
+        {
+          role: 'Software Engineer — Bangalore',
+          desc: 'Implement frontend and backend software components for cloud enterprise applications. Maintain CI/CD pipelines, containerized deployments, and code quality benchmarks.',
+          skills: ['JavaScript', 'Node.js', 'React', 'Docker'],
+          package: '₹6.5 - 9.5 LPA',
+          branch: 'BE/BTech - CS, IT, MCA',
+          cgpa: 6.0,
+          openings: 30,
+          location: 'Bangalore, Karnataka, India',
+          applyUrl: 'https://careers.capgemini.com/job/Bangalore-Software-Engineer/1371383133/',
+          whoCanApply: [
+            'Degree in Computer Science, IT, or MCA',
+            'Hands-on expertise in Node.js, Express, ReactJS, and asynchronous programming',
+            'Experience with Docker, microservices deployment, and CI/CD pipelines',
+            'Strong communication and collaborative development skills'
+          ],
+          additionalInfo: 'Ref. Code: 432179. Capgemini Digital Engineering COE.'
+        },
+        {
+          role: 'Software Engineer — Hyderabad',
+          desc: 'Contribute to cloud migration and software development for telecommunication and retail platforms. Optimize database schemas and automate testing routines.',
+          skills: ['Java', 'Python', 'AWS', 'SQL'],
+          package: '₹6.0 - 9.0 LPA',
+          branch: 'BE/BTech - CS, IT, ECE',
+          cgpa: 6.0,
+          openings: 22,
+          location: 'Hyderabad, Telangana, India',
+          applyUrl: 'https://careers.capgemini.com/job/Hyderabad-Software-Engineer/1433224233/',
+          whoCanApply: [
+            'Engineering graduate in CS, IT, or Electronics',
+            'Proficiency in Java or Python development and AWS core services (EC2, S3, RDS)',
+            'Knowledge of database normalization and query tuning',
+            'Familiarity with Agile tools (Jira, Confluence)'
+          ],
+          additionalInfo: 'Ref. Code: 543335. Capgemini GDC Hyderabad Campus.'
+        },
+        {
+          role: 'Senior Software Engineer — Noida',
+          desc: 'Lead technical implementation of microservices architecture, conduct peer code reviews, and optimize system performance for automotive and industrial IoT clients.',
+          skills: ['Java 11+', 'Spring Boot', 'Microservices', 'Kafka'],
+          package: '₹9.0 - 13.5 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 6.5,
+          openings: 15,
+          location: 'Noida, Uttar Pradesh, India',
+          applyUrl: 'https://careers.capgemini.com/job/Noida-Senior-Software-Engineer/1431405833/',
+          whoCanApply: [
+            'BE/BTech in CS or IT with hands-on software development experience',
+            'Deep expertise in Java, Spring Boot microservices, Kafka event streaming, and Docker',
+            'Demonstrated capability in system design, unit testing, and code optimization',
+            'Strong team leadership and client engagement skills'
+          ],
+          additionalInfo: 'Ref. Code: 306339. Industrial & Automotive Practice Unit.'
+        },
+        {
+          role: 'Lead Software Engineer — Mumbai',
+          desc: 'Lead software engineering delivery, architect scalable multi-tenant web platforms, and mentor junior developers in agile development methodologies.',
+          skills: ['Software Architecture', 'Full Stack Java', 'Cloud', 'Team Leadership'],
+          package: '₹12.0 - 16.5 LPA',
+          branch: 'BE/BTech / MTech - CS, IT',
+          cgpa: 6.5,
+          openings: 10,
+          location: 'Mumbai, Maharashtra, India',
+          applyUrl: 'https://careers.capgemini.com/job/Mumbai-Lead-Software-Engineer/1211275501/',
+          whoCanApply: [
+            'Senior technical background with expertise in Enterprise Software Architecture',
+            'Proven track record leading multi-disciplinary engineering teams',
+            'Mastery of cloud-native patterns, DevOps, and microservices security',
+            'Excellent client communication and technical leadership skills'
+          ],
+          additionalInfo: 'Req ID: 1211275501. High-visibility engineering leadership role.'
+        }
+      ];
+
+      return officialCapgeminiRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 3 ? 'Open' : (index > 4 ? 'Closing Soon' : 'Open'),
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('wipro')) {
+      const officialWiproRoles = [
+        {
+          role: 'Java Backend + AIML',
+          desc: 'Develop robust Java Spring Boot backend microservices integrated with Artificial Intelligence and Machine Learning models. Build automated data ingestion pipelines and ML APIs.',
+          skills: ['Java', 'Spring Boot', 'Python', 'AI/ML'],
+          package: '₹7.5 - 12.0 LPA',
+          branch: 'BE/BTech - CS, IT, AI',
+          cgpa: 6.5,
+          openings: 25,
+          location: 'Bengaluru / Hyderabad, India',
+          applyUrl: 'https://careers.wipro.com/job/Java-Backend-%2B-AIML/191451-en_US/',
+          whoCanApply: [
+            'BE/BTech in CS, IT, or Artificial Intelligence',
+            'Experience developing Java Spring Boot microservices and RESTful endpoints',
+            'Familiarity with Python AI/ML libraries (scikit-learn, TensorFlow, PyTorch)',
+            'Knowledge of SQL, NoSQL databases, and cloud deployment'
+          ],
+          additionalInfo: 'Job ID: 191451. Wipro AI & Data Practice.'
+        },
+        {
+          role: 'Spring Boot — Java + BPM',
+          desc: 'Design business process management (BPM) workflows and integrate Java Spring Boot microservices. Optimize enterprise process automation for healthcare and insurance domains.',
+          skills: ['Java', 'Spring Boot', 'Camunda BPM', 'REST APIs'],
+          package: '₹7.0 - 11.0 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 6.0,
+          openings: 20,
+          location: 'Pune, Maharashtra, India',
+          applyUrl: 'https://careers.wipro.com/job/Pune-Spring-Boot-%28-Java-%20-BPM%29-IND-411005/200710-en_US/',
+          whoCanApply: [
+            'Bachelor degree in Computer Science, IT, or Electronics',
+            'Strong knowledge of Java 8+, Spring Boot, Hibernate, and BPM engines (Camunda/jBPM)',
+            'Experience creating BPMN process diagrams and automated task workflows',
+            'Good understanding of relational databases and microservices integration'
+          ],
+          additionalInfo: 'Job ID: 200710. Wipro Digital Business Process Practice.'
+        },
+        {
+          role: 'Application Architect L1',
+          desc: 'Define technical vision and solution architecture for cloud enterprise applications. Lead non-functional requirement assessments, design patterns, and security frameworks.',
+          skills: ['Application Architecture', 'Cloud Solutions', 'Java/C#', 'Microservices'],
+          package: '₹13.0 - 18.0 LPA',
+          branch: 'BE/BTech / MTech - CS, IT',
+          cgpa: 7.0,
+          openings: 8,
+          location: 'Pune, Maharashtra, India',
+          applyUrl: 'https://careers.wipro.com/job/Pune-APPLICATION-ARCHITECT-L1-IND-411005/198967-en_US/',
+          whoCanApply: [
+            'BE/BTech or MTech in Computer Science or IT',
+            'Proven experience in Enterprise Solution Architecture and Cloud (AWS/Azure)',
+            'Mastery of microservices, design patterns, security standards, and scalability',
+            'Strong leadership, proposal defense, and client consulting capabilities'
+          ],
+          additionalInfo: 'Job ID: 198967. Executive Architecture & Solution Delivery.'
+        },
+        {
+          role: 'Lead Administrator L1 — Java Application Support',
+          desc: 'Oversee production support, JVM performance tuning, log diagnostics, and environment administration for mission-critical Java enterprise applications.',
+          skills: ['Java App Support', 'Linux Administration', 'JVM Tuning', 'Shell Scripting'],
+          package: '₹8.0 - 12.0 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 6.0,
+          openings: 15,
+          location: 'Pune, Maharashtra, India',
+          applyUrl: 'https://careers.wipro.com/job/Pune-LEAD-ADMINISTRATOR-L1-IND-411005/196578-en_US/',
+          whoCanApply: [
+            'BE/BTech in CS, IT, or related engineering discipline',
+            'Expertise in Linux/Unix system administration, WebLogic/Tomcat server management',
+            'Hands-on experience diagnosing JVM heap dumps, thread contention, and GC logs',
+            'Knowledge of ITIL incident management processes and monitoring tools (AppDynamics/Splunk)'
+          ],
+          additionalInfo: 'Job ID: 196578. Wipro Enterprise Application Management Services.'
+        },
+        {
+          role: 'Java Developer',
+          desc: 'Build enterprise-grade software applications in Java. Implement clean object-oriented code, write unit test cases, and participate in Agile sprints.',
+          skills: ['Java', 'Spring Boot', 'SQL', 'Hibernate'],
+          package: '₹5.5 - 9.0 LPA',
+          branch: 'BE/BTech - CS, IT, ECE',
+          cgpa: 6.0,
+          openings: 30,
+          location: 'Chennai / Bengaluru, India',
+          applyUrl: 'https://careers.wipro.com/search-jobs/',
+          whoCanApply: [
+            'Degree in Computer Science, IT, or Electronics Engineering',
+            'Strong foundation in Core Java, collections, multi-threading, and object-oriented design',
+            'Hands-on experience with Spring Boot, SQL databases, and Maven/Gradle',
+            'Good verbal and written communication skills'
+          ],
+          additionalInfo: 'Wipro Global Software Engineering Unit.'
+        },
+        {
+          role: 'Software Engineer',
+          desc: 'Participate in the full software development lifecycle (SDLC), including requirements analysis, coding, bug fixing, and automated deployment.',
+          skills: ['Software Engineering', 'Java/C++', 'Web Technologies', 'Git'],
+          package: '₹5.0 - 8.0 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 6.0,
+          openings: 40,
+          location: 'Hyderabad / Gurgaon, India',
+          applyUrl: 'https://careers.wipro.com/search-jobs/',
+          whoCanApply: [
+            'Graduate degree in Computer Science, IT, or related field',
+            'Proficiency in programming languages such as Java, C++, or JavaScript',
+            'Understanding of software design principles, algorithms, and data structures',
+            'Ability to work effectively in cross-functional agile teams'
+          ],
+          additionalInfo: 'Wipro Talent Transformation & Global Delivery Center.'
+        }
+      ];
+
+      return officialWiproRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 3 ? 'Open' : (index > 4 ? 'Closing Soon' : 'Open'),
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('google')) {
+      const officialGoogleRoles = [
+        {
+          role: 'Software Engineer',
+          desc: 'Design, develop, test, deploy, maintain, and enhance large-scale software solutions. Solve complex algorithmic challenges across distributed systems, search, and cloud computing.',
+          skills: ['Data Structures', 'Algorithms', 'C++', 'Java/Python', 'Distributed Systems'],
+          package: '₹28.0 - 45.0 LPA',
+          branch: 'BE/BTech / MTech - CS, IT, ECE',
+          cgpa: 7.5,
+          openings: 15,
+          location: 'Bengaluru / Hyderabad, India',
+          applyUrl: 'https://www.google.com/about/careers/applications/jobs/results/?q=Software+Engineer&location=India',
+          whoCanApply: [
+            'Bachelor or Master degree in Computer Science, related technical field, or equivalent practical experience',
+            'Strong proficiency in C++, Java, Python, or Go',
+            'Solid foundation in data structures, algorithms, and software design',
+            'Experience with distributed systems and scalable architecture'
+          ],
+          additionalInfo: 'Official Google India Engineering Requisition.'
+        },
+        {
+          role: 'Software Engineer, University Graduate',
+          desc: 'Join Google as a university graduate software engineer. Contribute to core products used by billions, working on systems design, machine learning, and high-performance computing.',
+          skills: ['C++', 'Python', 'Algorithms', 'System Design'],
+          package: '₹22.0 - 35.0 LPA',
+          branch: 'BE/BTech - CS, IT, AI',
+          cgpa: 7.5,
+          openings: 20,
+          location: 'Bengaluru / Hyderabad / Pune, India',
+          applyUrl: 'https://www.google.com/about/careers/applications/jobs/results/?q=Software+Engineer&location=India',
+          whoCanApply: [
+            'Graduating with a degree in Computer Science or related engineering discipline',
+            'Experience in software development in one or more general purpose programming languages',
+            'Competitive programming or open-source contribution track record preferred',
+            'Passionate about solving real-world challenges at massive global scale'
+          ],
+          additionalInfo: 'Campus & Early Career University Graduate Opening.'
+        },
+        {
+          role: 'Software Engineer, Cloud',
+          desc: 'Build next-generation Google Cloud Platform (GCP) services, enterprise cloud storage, Kubernetes engines, and zero-trust infrastructure.',
+          skills: ['GCP', 'Kubernetes', 'Go', 'Java', 'Cloud Computing'],
+          package: '₹26.0 - 42.0 LPA',
+          branch: 'BE/BTech / MTech - CS, IT, Cloud Computing',
+          cgpa: 7.0,
+          openings: 12,
+          location: 'Bengaluru / Hyderabad, India',
+          applyUrl: 'https://www.google.com/about/careers/applications/jobs/results/?q=Cloud+Software+Engineer&location=India',
+          whoCanApply: [
+            'Degree in Computer Science or equivalent practical experience',
+            'Experience with cloud platforms, virtualization, and distributed storage systems',
+            'Knowledge of Linux networking, containerization, and site reliability engineering',
+            'Proficiency in systems languages such as Go, C++, or Java'
+          ],
+          additionalInfo: 'Google Cloud Platform (GCP) Infrastructure Practice.'
+        },
+        {
+          role: 'Software Engineer, Full Stack',
+          desc: 'Engineer responsive web platforms and robust backend APIs for Google products. Optimize frontend performance and develop scalable web service architectures.',
+          skills: ['TypeScript', 'Angular/React', 'Java', 'gRPC', 'Web Performance'],
+          package: '₹25.0 - 40.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 10,
+          location: 'Hyderabad / Bengaluru, India',
+          applyUrl: 'https://www.google.com/about/careers/applications/jobs/results/?q=Full+Stack&location=India',
+          whoCanApply: [
+            'Degree in Computer Science or Information Technology',
+            'Experience designing web UIs and client-server distributed architectures',
+            'Expertise in TypeScript, modern JavaScript frameworks, and high-throughput backend APIs',
+            'Demonstrated understanding of web security, latency optimization, and accessibility'
+          ],
+          additionalInfo: 'High-visibility user-facing product engineering.'
+        }
+      ];
+
+      return officialGoogleRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 2 ? 'Open' : (index > 2 ? 'Closing Soon' : 'Open'),
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('microsoft')) {
+      const officialMicrosoftRoles = [
+        {
+          role: 'Software Engineer',
+          desc: 'Build innovative software features and experiences across Microsoft core platforms. Write production-grade code, participate in design reviews, and optimize system efficiency.',
+          skills: ['C#', 'C++', 'Data Structures', 'Algorithms', 'System Design'],
+          package: '₹24.0 - 40.0 LPA',
+          branch: 'BE/BTech / MTech - CS, IT, ECE',
+          cgpa: 7.0,
+          openings: 25,
+          location: 'Hyderabad / Bengaluru / Noida, India',
+          applyUrl: 'https://jobs.careers.microsoft.com/global/en/search?q=Software+Engineer&lc=India',
+          whoCanApply: [
+            'Bachelor or Master degree in Computer Science, Engineering, or related field',
+            'Demonstrated coding proficiency in C#, C++, Java, or Python',
+            'Strong foundation in data structures, algorithms, and object-oriented design',
+            'Ability to troubleshoot complex system behaviors and collaborate across teams'
+          ],
+          additionalInfo: 'Microsoft India Development Center (IDC).'
+        },
+        {
+          role: 'Software Engineer – Azure',
+          desc: 'Design and operate hyper-scale distributed services powering Microsoft Azure. Implement fault-tolerant microservices, cloud monitoring, and automated resilience mechanisms.',
+          skills: ['Azure', 'C#', '.NET Core', 'Microservices', 'Distributed Systems'],
+          package: '₹25.0 - 42.0 LPA',
+          branch: 'BE/BTech - CS, IT, Cloud',
+          cgpa: 7.0,
+          openings: 20,
+          location: 'Hyderabad / Bengaluru, India',
+          applyUrl: 'https://jobs.careers.microsoft.com/global/en/search?q=Azure+Software+Engineer&lc=India',
+          whoCanApply: [
+            'Degree in Computer Science, IT, or related engineering discipline',
+            'Hands-on experience in cloud microservices and distributed storage architectures',
+            'Expertise in C#, .NET, Docker, and telemetry monitoring frameworks',
+            'Understanding of high-availability, scalability, and disaster recovery patterns'
+          ],
+          additionalInfo: 'Microsoft Azure Cloud Infrastructure Team.'
+        },
+        {
+          role: 'Software Engineer – Cloud',
+          desc: 'Architect enterprise cloud infrastructure and security for hybrid environments. Automate provisioning, implement CI/CD, and scale cloud networking.',
+          skills: ['Cloud Computing', 'Azure', 'Kubernetes', 'PowerShell/Bash', 'Terraform'],
+          package: '₹22.0 - 38.0 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 7.0,
+          openings: 18,
+          location: 'Bengaluru / Noida, India',
+          applyUrl: 'https://jobs.careers.microsoft.com/global/en/search?q=Cloud+Engineer&lc=India',
+          whoCanApply: [
+            'Degree in Computer Science or Electrical/Electronics Engineering',
+            'Experience with Linux and Windows systems administration and cloud networking',
+            'Proficiency in Infrastructure as Code (IaC) using Terraform or ARM templates',
+            'Strong understanding of cloud identity, zero-trust security, and CI/CD'
+          ],
+          additionalInfo: 'Core Enterprise Cloud Engineering Unit.'
+        },
+        {
+          role: 'Software Engineer – AI',
+          desc: 'Integrate OpenAI models and Microsoft Copilot features into enterprise applications. Build fine-tuning pipelines, RAG frameworks, and high-throughput inferencing services.',
+          skills: ['Python', 'Azure AI', 'Generative AI', 'PyTorch', 'LLMs'],
+          package: '₹28.0 - 46.0 LPA',
+          branch: 'BE/BTech / MTech - CS, AI, Data Science',
+          cgpa: 7.5,
+          openings: 15,
+          location: 'Hyderabad / Bengaluru, India',
+          applyUrl: 'https://jobs.careers.microsoft.com/global/en/search?q=AI+Software+Engineer&lc=India',
+          whoCanApply: [
+            'BE/BTech or MTech in Computer Science, AI, or Machine Learning',
+            'Deep expertise in modern Generative AI, transformer models, and prompt engineering',
+            'Experience optimizing large language model inference using Python, PyTorch, and ONNX',
+            'Familiarity with vector databases, embeddings, and cognitive search architectures'
+          ],
+          additionalInfo: 'Microsoft Copilot & Strategic AI Innovation Group.'
+        }
+      ];
+
+      return officialMicrosoftRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 2 ? 'Open' : (index > 2 ? 'Closing Soon' : 'Open'),
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('sap')) {
+      const officialSAPRoles = [
+        {
+          role: 'HR Project Associate (f/m/d) - 6 months limited contract',
+          desc: 'Coordinate and execute HR digital transformation initiatives and project management workstreams. Support internal HR process optimization and cross-functional HR communications.',
+          skills: ['HR Project Management', 'Accounting/Auditing', 'Process Optimization', 'HR Operations'],
+          package: '€48,000 - 62,000 / year',
+          branch: 'MBA / BBA / Any Graduate',
+          cgpa: 6.5,
+          openings: 5,
+          location: 'Walldorf, Germany (Hybrid)',
+          applyUrl: 'https://jobs.sap.com/en/jobs/744000153324379/hr-project-associate-fmd-6-months-limited-contract/',
+          whoCanApply: [
+            'Degree in Human Resources, Business Administration, or related field',
+            'Strong organizational, project coordination, and communication skills',
+            'Proficiency in MS Office Suite and enterprise HR management tools',
+            'Fluency in English; German language proficiency is an advantage'
+          ],
+          additionalInfo: 'Teams: Accounting/Auditing. Contract Type: Full-time (6 months limited).'
+        },
+        {
+          role: 'SAP iXp Intern - Solution Adoption Campaign Coordinator',
+          desc: 'Drive customer solution adoption campaigns, coordinate digital marketing deliverables, and track customer engagement metrics across SAP cloud portfolios.',
+          skills: ['Solution Adoption', 'Digital Marketing', 'Campaign Management', 'Data Analytics'],
+          package: '$30 - 38 / hr (Stipend)',
+          branch: 'BE/BTech / BBA / MBA (Any)',
+          cgpa: 6.5,
+          openings: 8,
+          location: 'Vancouver, Canada (Hybrid)',
+          applyUrl: 'https://jobs.sap.com/en/jobs/744000153279309/sap-ixp-intern-solution-adoption-campaign-coordinator/',
+          whoCanApply: [
+            'Currently enrolled in an undergraduate or master degree program',
+            'Passion for enterprise cloud software adoption and digital campaign execution',
+            'Strong interpersonal communication, data tracking, and multitasking skills',
+            'Self-motivated learner with proactive team-working mindset'
+          ],
+          additionalInfo: 'SAP Innovation Experience (iXp) Internship. Contract Type: Full-time.'
+        },
+        {
+          role: 'SAP iXp Intern - Solution Adoption Campaign Coordinator',
+          desc: 'Coordinate enterprise customer enablement programs, execute communication campaigns, and measure product adoption for SAP North America accounts.',
+          skills: ['Campaign Strategy', 'Customer Enablement', 'SAP Cloud', 'Communication'],
+          package: '$30 - 38 / hr (Stipend)',
+          branch: 'BE/BTech / BBA / MBA (Any)',
+          cgpa: 6.5,
+          openings: 8,
+          location: 'Toronto, Canada (Hybrid)',
+          applyUrl: 'https://jobs.sap.com/en/jobs/744000153279239/sap-ixp-intern-solution-adoption-campaign-coordinator/',
+          whoCanApply: [
+            'Active university student in Business, Engineering, or Marketing discipline',
+            'Experience creating presentations, project roadmaps, and campaign collateral',
+            'Interest in customer success metrics and software lifecycle adoption',
+            'Excellent verbal and written English communication skills'
+          ],
+          additionalInfo: 'SAP Innovation Experience (iXp) Internship. Contract Type: Full-time.'
+        },
+        {
+          role: 'SAP iXp Intern - Marketing and Communications Coordinator',
+          desc: 'Create compelling internal and external corporate communications, manage social media campaigns, and organize global employee engagement events.',
+          skills: ['Marketing Strategy', 'Content Writing', 'Corporate Communications', 'Social Media'],
+          package: '$32 - 40 / hr (Stipend)',
+          branch: 'Mass Media / Communications / BBA / Any Graduate',
+          cgpa: 6.5,
+          openings: 6,
+          location: 'New York, United States (Hybrid)',
+          applyUrl: 'https://jobs.sap.com/en/jobs/744000153269589/sap-ixp-intern-marketing-and-communications-coordinator/',
+          whoCanApply: [
+            'Enrolled in University degree in Marketing, Public Relations, or Communications',
+            'Strong copywriting, storytelling, and digital content creation abilities',
+            'Familiarity with digital media analytics and social publishing platforms',
+            'Ability to operate in high-energy global corporate environments'
+          ],
+          additionalInfo: 'SAP iXp Intern Program. Location: Hudson Yards, New York. Contract: Full-time.'
+        },
+        {
+          role: 'SAP iXp Intern - Marketing and Communications Coordinator',
+          desc: 'Support marketing strategy execution, content authoring, and brand communication across SAP executive briefing centers and product divisions.',
+          skills: ['Marketing Operations', 'Brand Communications', 'Event Management', 'Public Relations'],
+          package: '$30 - 38 / hr (Stipend)',
+          branch: 'Communications / BBA / BE / Any Graduate',
+          cgpa: 6.5,
+          openings: 6,
+          location: 'Newtown Square, United States (Hybrid)',
+          applyUrl: 'https://jobs.sap.com/en/jobs/744000153268167/sap-ixp-intern-marketing-and-communications-coordinator/',
+          whoCanApply: [
+            'University student in Communications, Journalism, or Business Administration',
+            'Demonstrated ability in executive event coordination and stakeholder alignment',
+            'Proficiency in graphic design tools (Canva/Adobe) and office productivity suites',
+            'Eagerness to contribute to world-class brand campaigns'
+          ],
+          additionalInfo: 'SAP North America HQ (Newtown Square). Contract Type: Full-time.'
+        },
+        {
+          role: 'SAP iXp Intern – Experience Center | SAP Labs Latin America',
+          desc: 'Facilitate technology demos, assist client visits at SAP Labs Latin America Experience Center, and explore emerging SAP enterprise prototypes.',
+          skills: ['Technology Demos', 'Customer Experience', 'SAP Ecosystem', 'Innovation Labs'],
+          package: 'Regional Stipend + Benefits',
+          branch: 'BE/BTech - CS, IT, ECE / Business',
+          cgpa: 6.0,
+          openings: 5,
+          location: 'São Leopoldo, Brazil (Hybrid)',
+          applyUrl: 'https://jobs.sap.com/en/jobs/744000153248139/sap-ixp-intern-experience-center-sap-labs-latin-america/',
+          whoCanApply: [
+            'Student in Computer Science, Information Systems, or Engineering',
+            'Interest in showcasing enterprise technology and innovative customer demos',
+            'Good communication skills in Portuguese and English',
+            'Proactive personality with interest in hands-on innovation labs'
+          ],
+          additionalInfo: 'SAP Labs Latin America. Contract Type: Part-time.'
+        },
+        {
+          role: 'Working Student - SAP Business AI Adoption & Activation',
+          desc: 'Support adoption of generative AI and machine learning features across SAP product portfolios. Create enablement assets, conduct AI use-case analysis, and engage pilot users.',
+          skills: ['Business AI', 'Generative AI', 'Product Activation', 'Python / Analytics'],
+          package: '€18 - 24 / hr (Stipend)',
+          branch: 'BE/BTech / Master in CS, AI, Data Science, Business',
+          cgpa: 7.0,
+          openings: 10,
+          location: 'Walldorf, Germany (Hybrid)',
+          applyUrl: 'https://jobs.sap.com/en/jobs/744000153240558/working-student-sap-business-ai-adoption-activation/',
+          whoCanApply: [
+            'Enrolled Master or Bachelor student in AI, Computer Science, or Business Informatics',
+            'Strong interest in LLMs, Generative AI, and enterprise automation trends',
+            'Analytical thinking with ability to translate complex AI features into business value',
+            'Fluent in English; German language capability is a plus'
+          ],
+          additionalInfo: 'SAP Business AI Unit. Contract Type: Part-time (Working Student).'
+        },
+        {
+          role: '(Junior) Data Engineer - Integration & AI',
+          desc: 'Build enterprise data integration pipelines, train AI/ML models, and develop automated data transformation services across cloud platforms.',
+          skills: ['Python', 'SQL', 'Data Engineering', 'Machine Learning', 'Cloud Integration'],
+          package: '₹14.0 - 20.0 LPA equivalent',
+          branch: 'BE/BTech - CS, IT, Data Science, AI',
+          cgpa: 6.5,
+          openings: 12,
+          location: 'Prague, Czechia (Hybrid)',
+          applyUrl: 'https://jobs.sap.com/en/jobs/744000153237348/junior-data-engineer-integration-ai/',
+          whoCanApply: [
+            'Graduate degree in Computer Science, Data Science, or Software Engineering',
+            'Hands-on experience with Python, SQL, and data transformation libraries',
+            'Familiarity with cloud data pipelines and machine learning algorithms',
+            'Collaborative mindset with passion for data-driven architectures'
+          ],
+          additionalInfo: 'Integration & AI Global Team. Contract Type: Full-time.'
+        },
+        {
+          role: 'Platform Engineer',
+          desc: 'Design, build, and maintain cloud infrastructure platforms, automated CI/CD pipelines, and Kubernetes container clusters supporting SAP cloud solutions.',
+          skills: ['Kubernetes', 'Docker', 'AWS/GCP/Azure', 'Terraform', 'CI/CD'],
+          package: '$130,000 - 165,000 / year',
+          branch: 'BE/BTech / MTech - CS, IT, Cloud',
+          cgpa: 7.0,
+          openings: 8,
+          location: 'Newport Beach, United States (Hybrid)',
+          applyUrl: 'https://jobs.sap.com/en/jobs/744000153220909/platform-engineer/',
+          whoCanApply: [
+            'Bachelor or Master degree in Computer Science, Cloud Computing, or related field',
+            'Experience administering Kubernetes, Docker containers, and cloud infrastructure (AWS/Azure/GCP)',
+            'Proficiency in Infrastructure as Code (Terraform) and automated CI/CD tools',
+            'Deep understanding of platform reliability, monitoring, and high availability'
+          ],
+          additionalInfo: 'Teams: Consulting & Platform Infrastructure. Contract Type: Full-time.'
+        },
+        {
+          role: 'Director of Government Affairs - UKI',
+          desc: 'Lead government relations, public policy advocacy, and digital economy engagement with UK and Ireland public sector officials and industry bodies.',
+          skills: ['Government Affairs', 'Public Policy', 'Digital Strategy', 'Stakeholder Management'],
+          package: '£120,000 - 150,000 / year',
+          branch: 'Master / LLB / MBA / Any Graduate',
+          cgpa: 7.0,
+          openings: 2,
+          location: 'London / Feltham, United Kingdom (Hybrid)',
+          applyUrl: 'https://jobs.sap.com/en/jobs/744000153212904/director-of-government-affairs-uki/',
+          whoCanApply: [
+            'Extensive experience in government relations, public affairs, or regulatory policy',
+            'Proven track record influencing technology and digital economy policies in the UK and Ireland',
+            'Outstanding executive communication, negotiation, and strategic advisory skills',
+            'Deep understanding of public sector technology procurement and enterprise software'
+          ],
+          additionalInfo: 'Executive Government Relations Leadership. Contract Type: Full-time.'
+        }
+      ];
+
+      return officialSAPRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 4 ? 'Open' : (index > 7 ? 'Closing Soon' : 'Open'),
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('accenture')) {
+      const officialAccentureRoles = [
+        {
+          role: 'Custom Software Engineer – Python',
+          desc: 'Build scalable Python backend services, automate data pipelines, and develop RESTful APIs for global enterprise transformation initiatives.',
+          skills: ['Python', 'Django/Flask', 'SQL', 'REST APIs', 'Git'],
+          package: '₹6.5 - 11.0 LPA',
+          branch: 'BE/BTech - CS, IT, ECE',
+          cgpa: 6.0,
+          openings: 30,
+          location: 'Bengaluru / Hyderabad / Pune, India',
+          applyUrl: 'https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5383591-S1962526_en',
+          whoCanApply: [
+            'BE/BTech in Computer Science, Information Technology, or Electronics',
+            'Solid programming skills in Python with knowledge of web frameworks (Django/Flask)',
+            'Experience writing relational SQL queries and database schemas',
+            'Understanding of version control (Git) and Agile methodologies'
+          ],
+          additionalInfo: 'Job No.: ATCI-5383591-S1962526. Advanced Technology Centers in India (ATCI).'
+        },
+        {
+          role: 'Custom Software Engineer – SAP ABAP Cloud',
+          desc: 'Develop modern SAP ABAP Cloud extensions, CDS views, and RESTful Application Programming (RAP) models on SAP S/4HANA.',
+          skills: ['SAP ABAP', 'ABAP Cloud', 'CDS Views', 'RAP', 'SAP S/4HANA'],
+          package: '₹7.0 - 12.0 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 6.0,
+          openings: 25,
+          location: 'Bengaluru / Mumbai / Kolkata, India',
+          applyUrl: 'https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5393398-S1961816_en',
+          whoCanApply: [
+            'Bachelor degree in Computer Science, IT, or related engineering discipline',
+            'Knowledge of ABAP development, object-oriented ABAP, and modern SAP extension patterns',
+            'Familiarity with SAP BTP and S/4HANA cloud architecture',
+            'Good analytical and client consulting skills'
+          ],
+          additionalInfo: 'Job No.: ATCI-5393398-S1961816. SAP Enterprise Solutions Practice.'
+        },
+        {
+          role: 'Custom Software Engineer – Python / Node.js / AWS',
+          desc: 'Develop serverless applications and cloud microservices on AWS using Python and Node.js. Build event-driven architectures with AWS Lambda, DynamoDB, and API Gateway.',
+          skills: ['Python', 'Node.js', 'AWS Lambda', 'DynamoDB', 'Serverless'],
+          package: '₹8.0 - 13.5 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 20,
+          location: 'Hyderabad / Chennai / Pune, India',
+          applyUrl: 'https://www.accenture.com/in-en/careers/jobdetails?id=14768816_en',
+          whoCanApply: [
+            'Degree in Computer Science or Information Technology',
+            'Demonstrated ability in Python or Node.js backend development',
+            'Hands-on experience deploying AWS serverless resources (Lambda, S3, API Gateway)',
+            'Knowledge of NoSQL databases and asynchronous architecture'
+          ],
+          additionalInfo: 'Job No.: 14768816. Cloud First Innovations Group.'
+        },
+        {
+          role: 'Custom Software Engineer – Java Full Stack',
+          desc: 'Develop end-to-end web applications utilizing Java Spring Boot microservices and Angular/React user interfaces. Ensure code quality, security, and continuous delivery.',
+          skills: ['Java', 'Spring Boot', 'Angular/React', 'Microservices', 'Docker'],
+          package: '₹7.5 - 12.5 LPA',
+          branch: 'BE/BTech - CS, IT, MCA',
+          cgpa: 6.0,
+          openings: 35,
+          location: 'Bengaluru / Pune / Gurgaon, India',
+          applyUrl: 'https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5396363-S1961717_en',
+          whoCanApply: [
+            'Graduation in Computer Science, IT, or Computer Applications (MCA)',
+            'Proficiency in Java (8/11/17), Spring Boot, and modern frontend frameworks',
+            'Understanding of RESTful services, database transactions, and Docker containerization',
+            'Strong problem-solving attitude and verbal communication'
+          ],
+          additionalInfo: 'Job No.: ATCI-5396363-S1961717. Digital Engineering & Quality Services.'
+        },
+        {
+          role: 'Custom Software Engineer – Spring Boot',
+          desc: 'Design and implement robust enterprise backend microservices using Java and Spring Boot. Optimize high-concurrency database transactions and Kafka message queues.',
+          skills: ['Spring Boot', 'Java 17', 'Kafka', 'Hibernate', 'PostgreSQL'],
+          package: '₹7.0 - 11.5 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 6.0,
+          openings: 25,
+          location: 'Mumbai / Bengaluru / Hyderabad, India',
+          applyUrl: 'https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5416193-S1985276_en',
+          whoCanApply: [
+            'BE/BTech degree in Computer Science or Information Technology',
+            'Deep expertise in Spring Boot, Spring Security, and JPA/Hibernate',
+            'Experience with event streaming platforms like Apache Kafka or RabbitMQ',
+            'Knowledge of unit testing with JUnit and Mockito'
+          ],
+          additionalInfo: 'Job No.: ATCI-5416193-S1985276. Enterprise Architecture & Integration.'
+        },
+        {
+          role: 'Custom Software Engineer – Python',
+          desc: 'Engineer advanced Python automation workflows, web scraping frameworks, and data integration services. Support client cloud infrastructure and API integrations.',
+          skills: ['Python', 'FastAPI', 'Pandas', 'Docker', 'CI/CD'],
+          package: '₹6.5 - 10.5 LPA',
+          branch: 'BE/BTech - CS, IT, ECE',
+          cgpa: 6.0,
+          openings: 20,
+          location: 'Chennai / Pune / Bengaluru, India',
+          applyUrl: 'https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5146641-S1900016_en',
+          whoCanApply: [
+            'Bachelor in Computer Science, IT, or related engineering branch',
+            'Experience in Python scripting, API development using FastAPI/Flask',
+            'Understanding of data manipulation using Pandas and automated testing',
+            'Ability to work in fast-paced collaborative agile squads'
+          ],
+          additionalInfo: 'Job No.: ATCI-5146641-S1900016. Technology Delivery Center.'
+        }
+      ];
+
+      return officialAccentureRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 3 ? 'Open' : (index > 4 ? 'Closing Soon' : 'Open'),
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('deloitte')) {
+      const officialDeloitteRoles = [
+        {
+          role: 'Software Engineer',
+          desc: 'Develop enterprise software systems and cloud-enabled digital solutions. Collaborate with consulting teams to solve critical client business challenges.',
+          skills: ['Java/C#', 'SQL', 'Object Oriented Programming', 'Agile'],
+          package: '₹8.0 - 13.0 LPA',
+          branch: 'BE/BTech - CS, IT, ECE',
+          cgpa: 6.5,
+          openings: 30,
+          location: 'Hyderabad / Bengaluru / Mumbai, India',
+          applyUrl: 'https://apply.deloitte.com/careers/SearchJobs/',
+          whoCanApply: [
+            'Degree in Computer Science, IT, or related engineering discipline',
+            'Strong foundation in core programming (Java, C#, or Python) and relational databases',
+            'Understanding of software design principles and development methodologies',
+            'Excellent client advisory and problem-solving skills'
+          ],
+          additionalInfo: 'Deloitte Consulting & Systems Engineering Practice.'
+        },
+        {
+          role: 'Technology Analyst',
+          desc: 'Analyze enterprise IT architectures, assess digital transformation requirements, and design technology roadmaps for global Fortune 500 clients.',
+          skills: ['Business Analysis', 'IT Strategy', 'SQL', 'Tableau/PowerBI', 'SDLC'],
+          package: '₹7.5 - 11.5 LPA',
+          branch: 'BE/BTech / MBA - CS, IT, Any',
+          cgpa: 6.5,
+          openings: 25,
+          location: 'Gurgaon / Bengaluru / Hyderabad, India',
+          applyUrl: 'https://apply.deloitte.com/careers/SearchJobs/',
+          whoCanApply: [
+            'Bachelor or Master degree in Engineering or Business Administration',
+            'Strong business comprehension and data visualization capabilities',
+            'Familiarity with requirements gathering, process mapping, and user stories',
+            'Outstanding presentation and stakeholder management abilities'
+          ],
+          additionalInfo: 'Deloitte Advisory & Technology Transformation.'
+        },
+        {
+          role: 'Full Stack Developer',
+          desc: 'Build comprehensive web platforms using modern frontend frameworks and scalable microservices backends. Implement automated testing and CI/CD pipelines.',
+          skills: ['React/Angular', 'Node.js', 'Spring Boot', 'REST APIs', 'Git'],
+          package: '₹8.5 - 14.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 20,
+          location: 'Hyderabad / Pune / Bengaluru, India',
+          applyUrl: 'https://apply.deloitte.com/careers/SearchJobs/',
+          whoCanApply: [
+            'BE/BTech in Computer Science or Information Technology',
+            'Hands-on expertise across frontend (React/Angular) and backend (Node.js/Java)',
+            'Experience building and consuming RESTful microservices',
+            'Knowledge of continuous integration and continuous deployment tools'
+          ],
+          additionalInfo: 'Deloitte Digital Innovation Hub.'
+        },
+        {
+          role: 'Cloud Engineer',
+          desc: 'Architect and deploy enterprise workloads across AWS, Azure, and GCP. Implement infrastructure as code, containerization, and cloud security governance.',
+          skills: ['AWS/Azure', 'Terraform', 'Docker', 'Kubernetes', 'DevOps'],
+          package: '₹9.0 - 15.0 LPA',
+          branch: 'BE/BTech - CS, IT, Cloud',
+          cgpa: 6.5,
+          openings: 18,
+          location: 'Bengaluru / Hyderabad, India',
+          applyUrl: 'https://apply.deloitte.com/careers/SearchJobs/',
+          whoCanApply: [
+            'Degree in Computer Science, IT, or Cloud Computing specialization',
+            'Certifications or hands-on proficiency in AWS or Microsoft Azure',
+            'Experience with Terraform, Docker containers, and CI/CD pipelines',
+            'Understanding of cloud security benchmarks and networking'
+          ],
+          additionalInfo: 'Deloitte Cloud & DevOps Practice.'
+        }
+      ];
+
+      return officialDeloitteRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 2 ? 'Open' : (index > 2 ? 'Closing Soon' : 'Open'),
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('kpmg')) {
+      const officialKPMGRoles = [
+        {
+          role: 'Manager - Tax Tech & Transformation',
+          desc: 'Lead digital tax transformation engagements, implementing automation and enterprise tax technology solutions. Oversee Direct and Indirect Tax technology architecture and compliance workflows.',
+          skills: ['Tax Technology', 'Direct Tax', 'Indirect Tax', 'Digital Transformation', 'ERP Tax Integration'],
+          package: '₹18.0 - 26.0 LPA',
+          branch: 'CA / MBA / BE/BTech (CS/IT/Finance)',
+          cgpa: 6.5,
+          openings: 6,
+          location: 'Gurgaon, Haryana (Work From Office)',
+          applyUrl: 'https://kpmg.com/in/en/careers.html?q=1917',
+          whoCanApply: [
+            'CA, MBA in Finance, or Bachelor degree in Computer Science/IT/Finance',
+            '6 to 13 years of relevant experience in Tax Technology, Direct Tax, or Indirect Tax',
+            'Strong expertise in ERP tax modules (SAP/Oracle) and tax automation tools',
+            'Proven project management and client engagement capabilities'
+          ],
+          additionalInfo: 'Job ID: 1917. Job Type: Permanent, Full Time. Experience: 6.00 to 13.00 years.'
+        },
+        {
+          role: 'Senior - Operations',
+          desc: 'Oversee corporate operations, business process excellence, and service delivery workflows. Implement operational metrics, quality controls, and productivity tracking.',
+          skills: ['Operations Management', 'Process Excellence', 'Quality Control', 'Data Reporting'],
+          package: '₹10.0 - 15.0 LPA',
+          branch: 'Any Graduate / BE/BTech / MBA',
+          cgpa: 6.0,
+          openings: 10,
+          location: 'Bangalore, Karnataka (Work From Office)',
+          applyUrl: 'https://kpmg.com/in/en/careers.html?q=3464',
+          whoCanApply: [
+            'Graduate or Post Graduate in any discipline with strong operations background',
+            '4 to 7 years of experience in enterprise business operations or shared services',
+            'Proficiency in MIS reporting, process optimization, and stakeholder management',
+            'Excellent problem-solving and organizational abilities'
+          ],
+          additionalInfo: 'Job ID: 3464. Job Type: Permanent, Full Time. Experience: 4.00 to 7.00 years.'
+        },
+        {
+          role: 'Executive - Operations',
+          desc: 'Execute day-to-day business operations, administrative workflows, and client engagement operations. Maintain databases, operational dashboards, and process documentation.',
+          skills: ['Business Operations', 'MIS Reporting', 'Process Documentation', 'MS Excel'],
+          package: '₹6.5 - 9.5 LPA',
+          branch: 'Any Graduate / BCom / BBA / BE',
+          cgpa: 6.0,
+          openings: 15,
+          location: 'Bangalore, Karnataka (Work From Office)',
+          applyUrl: 'https://kpmg.com/in/en/careers.html?q=3454',
+          whoCanApply: [
+            'Bachelor degree in Business, Commerce, Engineering, or related stream',
+            '2 to 4 years of operational workflow or service operations experience',
+            'Strong expertise in Advanced Excel, data reporting, and operational coordination',
+            'Good interpersonal and written communication skills'
+          ],
+          additionalInfo: 'Job ID: 3454. Job Type: Permanent, Full Time. Experience: 2.00 to 4.00 years.'
+        },
+        {
+          role: 'Senior - Taxation',
+          desc: 'Provide strategic direct tax advisory, tax planning, and corporate compliance services. Support mergers & acquisitions tax structuring, tax due diligence, and regulatory assessments.',
+          skills: ['Tax Advisory', 'Mergers & Acquisitions', 'Direct Tax', 'Tax Due Diligence'],
+          package: '₹9.0 - 14.0 LPA',
+          branch: 'CA / LLB / MBA Finance / BCom',
+          cgpa: 6.5,
+          openings: 12,
+          location: 'Mumbai, Maharashtra (Work From Office)',
+          applyUrl: 'https://kpmg.com/in/en/careers.html?q=1623',
+          whoCanApply: [
+            'Chartered Accountant (CA) or Bachelor/Master in Law/Commerce/Finance',
+            '0 to 2 years of experience in Direct Tax or M&A Tax Advisory (Freshers eligible)',
+            'Sound knowledge of the Indian Income Tax Act and international tax conventions',
+            'Strong analytical mindset and research capabilities'
+          ],
+          additionalInfo: 'Job ID: 1623. Job Type: Permanent, Full Time. Experience: 0.00 to 2.00 years.'
+        },
+        {
+          role: 'Senior - Internal Audit',
+          desc: 'Lead risk-based internal audits, Sarbanes-Oxley (SOX) compliance reviews, and operational control testing for enterprise clients across diverse industry sectors.',
+          skills: ['Internal Audit', 'Risk Assessment', 'SOX Compliance', 'Internal Financial Controls'],
+          package: '₹11.0 - 16.0 LPA',
+          branch: 'CA / CIA / MBA Finance / BE',
+          cgpa: 6.5,
+          openings: 8,
+          location: 'Mumbai, Maharashtra (Work From Office)',
+          applyUrl: 'https://kpmg.com/in/en/careers.html?q=3406',
+          whoCanApply: [
+            'Qualified CA, CIA, or MBA in Finance with audit background',
+            '4 to 7 years of experience in internal audit, enterprise risk assessment, or SOX testing',
+            'Strong knowledge of internal controls and standard auditing methodologies',
+            'Ability to draft comprehensive audit reports and present to audit committees'
+          ],
+          additionalInfo: 'Job ID: 3406. Job Type: Permanent, Full Time. Experience: 4.00 to 7.00 years.'
+        },
+        {
+          role: 'Assistant Manager - Internal Audit',
+          desc: 'Manage enterprise internal audit engagements, define audit scoping, and oversee engagement team deliverables. Provide strategic governance and risk mitigation insights to C-suite clients.',
+          skills: ['Internal Audit Leadership', 'Risk Governance', 'SOX 404', 'Process Audits'],
+          package: '₹14.0 - 20.0 LPA',
+          branch: 'CA / CIA / MBA Finance',
+          cgpa: 6.5,
+          openings: 6,
+          location: 'Chennai, Tamil Nadu (Work From Office)',
+          applyUrl: 'https://kpmg.com/in/en/careers.html?q=4309',
+          whoCanApply: [
+            'Chartered Accountant (CA) or Certified Internal Auditor (CIA) qualification',
+            '7 to 9 years of extensive internal audit and risk consulting experience',
+            'Proven track record leading audit teams and managing client relationships',
+            'Exceptional executive presentation and verbal negotiation skills'
+          ],
+          additionalInfo: 'Job ID: 4309. Job Type: Permanent, Full Time. Experience: 7.00 to 9.00 years.'
+        },
+        {
+          role: 'Senior - Internal Audit',
+          desc: 'Conduct comprehensive internal audit reviews, evaluate control deficiencies, and test key operational processes to strengthen internal financial controls and risk management.',
+          skills: ['Internal Audit', 'Enterprise Risk', 'SOX Testing', 'Compliance Review'],
+          package: '₹10.5 - 15.5 LPA',
+          branch: 'CA / MBA Finance / BE/BTech',
+          cgpa: 6.5,
+          openings: 10,
+          location: 'Gurgaon, Haryana (Work From Office)',
+          applyUrl: 'https://kpmg.com/in/en/careers.html?q=4526',
+          whoCanApply: [
+            'Qualified CA, CIA, or Post Graduate in Finance/Engineering',
+            '4 to 7 years of internal audit, risk advisory, or compliance testing experience',
+            'Familiarity with process walk-throughs, risk control matrices (RCM), and audit testing',
+            'Strong written communication and analytical documentation skills'
+          ],
+          additionalInfo: 'Job ID: 4526. Job Type: Permanent, Full Time. Experience: 4.00 to 7.00 years.'
+        },
+        {
+          role: 'Executive - Finance Advisory',
+          desc: 'Support corporate finance advisory, financial modeling, accounting restructuring, and commercial valuation projects for high-growth and multinational enterprises.',
+          skills: ['Financial Advisory', 'Corporate Finance', 'Accounting Advisory', 'Financial Modeling'],
+          package: '₹7.0 - 11.0 LPA',
+          branch: 'CA Inter / MBA Finance / CFA / BCom',
+          cgpa: 6.5,
+          openings: 12,
+          location: 'Gurgaon, Haryana (Work From Office)',
+          applyUrl: 'https://kpmg.com/in/en/careers.html?q=4398',
+          whoCanApply: [
+            'MBA in Finance, CA Inter, CFA Level 1/2, or Bachelor in Finance/Commerce',
+            '2 to 4 years of experience in corporate finance, advisory, or valuation services',
+            'Strong financial modeling skills in Microsoft Excel and presentation crafting',
+            'Deep comprehension of Indian GAAP / Ind AS / IFRS accounting standards'
+          ],
+          additionalInfo: 'Job ID: 4398. Job Type: Permanent, Full Time. Experience: 2.00 to 4.00 years.'
+        },
+        {
+          role: 'Executive - IT Audit',
+          desc: 'Execute IT General Controls (ITGC) testing, IT application controls reviews, and cybersecurity compliance assessments across complex enterprise IT architectures.',
+          skills: ['IT Audit', 'IT General Controls (ITGC)', 'Cybersecurity', 'Risk Compliance', 'COBIT'],
+          package: '₹7.5 - 11.5 LPA',
+          branch: 'BE/BTech - CS, IT, ECE / BCA / MCA',
+          cgpa: 6.5,
+          openings: 14,
+          location: 'Bangalore, Karnataka (Work From Office)',
+          applyUrl: 'https://kpmg.com/in/en/careers.html?q=4355',
+          whoCanApply: [
+            'BE/BTech in CS, IT, Electronics, or BCA/MCA/CISA aspirer',
+            '2 to 4 years of experience in ITGC audits, access management, and change management testing',
+            'Familiarity with ISO 27001, COBIT, SOX IT controls, and cloud security frameworks',
+            'Strong logical analysis and technical audit reporting skills'
+          ],
+          additionalInfo: 'Job ID: 4355. Job Type: Permanent, Full Time. Experience: 2.00 to 4.00 years.'
+        },
+        {
+          role: 'Manager - Tax M&A',
+          desc: 'Lead mergers and acquisitions (M&A) tax advisory, deal tax structuring, vendor/buy-side due diligence, and post-merger corporate reorganization projects.',
+          skills: ['Tax M&A', 'Due Diligence', 'Corporate Restructuring', 'Deal Structuring'],
+          package: '₹16.0 - 24.0 LPA',
+          branch: 'CA / LLB / MBA Finance',
+          cgpa: 6.5,
+          openings: 5,
+          location: 'Mumbai, Maharashtra (Work From Office)',
+          applyUrl: 'https://kpmg.com/in/en/careers.html?q=1634',
+          whoCanApply: [
+            'Qualified Chartered Accountant (CA) or Master in Law/Finance',
+            '4 to 6 years of specialized experience in M&A Tax and deal advisory',
+            'Deep knowledge of corporate reorganizations, stamp duty, and cross-border tax implications',
+            'Demonstrated leadership in client pitch defenses and deal execution'
+          ],
+          additionalInfo: 'Job ID: 1634. Job Type: Permanent, Full Time. Experience: 4.00 to 6.00 years.'
+        }
+      ];
+
+      return officialKPMGRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 4 ? 'Open' : (index > 7 ? 'Closing Soon' : 'Open'),
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && (company.name.toLowerCase().includes('pwc') || company.name.toLowerCase().includes('pricewaterhouse'))) {
+      const officialPwCRoles = [
+        {
+          role: 'Technology Consultant',
+          desc: 'Guide clients through complex technological transformations, ERP implementations, and cyber resilience strategies. Drive business outcomes through technology.',
+          skills: ['Technology Consulting', 'ERP', 'Cloud Strategy', 'Business Analysis'],
+          package: '₹8.5 - 14.0 LPA',
+          branch: 'BE/BTech / MBA - CS, IT',
+          cgpa: 6.5,
+          openings: 25,
+          location: 'Bengaluru / Kolkata / Mumbai, India',
+          applyUrl: 'https://www.pwc.in/careers.html',
+          whoCanApply: [
+            'Bachelor or Master degree in Engineering or Business Administration',
+            'Strong understanding of enterprise IT strategy, business processes, and ERP',
+            'Excellent client-facing consulting and stakeholder communication abilities',
+            'Analytical approach towards evaluating technology investments and risks'
+          ],
+          additionalInfo: 'PwC India Technology Transformation Practice.'
+        },
+        {
+          role: 'Software Developer',
+          desc: 'Develop secure and reliable enterprise applications. Work across backend architectures, database schemas, and microservices integrations for PwC digital platforms.',
+          skills: ['Java', 'Spring Boot', 'SQL', 'Microservices', 'Git'],
+          package: '₹7.5 - 12.0 LPA',
+          branch: 'BE/BTech - CS, IT, ECE',
+          cgpa: 6.5,
+          openings: 22,
+          location: 'Bengaluru / Hyderabad / Gurgaon, India',
+          applyUrl: 'https://www.pwc.in/careers.html',
+          whoCanApply: [
+            'Degree in Computer Science, Information Technology, or Electronics',
+            'Proficiency in Java or C# backend application development',
+            'Experience with REST API creation, authentication, and SQL databases',
+            'Good understanding of agile software engineering practices'
+          ],
+          additionalInfo: 'PwC Acceleration Center (AC).'
+        },
+        {
+          role: 'Data Engineer',
+          desc: 'Architect robust data lakes and big data pipelines. Transform raw client data into structured analytical repositories supporting business intelligence and AI models.',
+          skills: ['Python', 'SQL', 'ETL', 'Snowflake', 'Big Data'],
+          package: '₹8.0 - 13.5 LPA',
+          branch: 'BE/BTech - CS, IT, AI, Stats',
+          cgpa: 6.5,
+          openings: 18,
+          location: 'Kolkata / Bengaluru, India',
+          applyUrl: 'https://www.pwc.in/careers.html',
+          whoCanApply: [
+            'BE/BTech in CS, IT, Data Science, or related field',
+            'Strong skills in SQL data wrangling and Python data processing libraries',
+            'Experience working with cloud data warehouses (Snowflake/Redshift)',
+            'Knowledge of ETL tools, data quality checks, and pipeline scheduling'
+          ],
+          additionalInfo: 'PwC Data & Analytics Center of Excellence.'
+        },
+        {
+          role: 'Cloud Engineer',
+          desc: 'Implement enterprise cloud architectures and migration strategies on AWS and Azure. Optimize cloud costs, manage Kubernetes clusters, and automate security audits.',
+          skills: ['AWS', 'Azure', 'Kubernetes', 'Docker', 'DevOps'],
+          package: '₹8.5 - 14.0 LPA',
+          branch: 'BE/BTech - CS, IT, Cloud',
+          cgpa: 6.5,
+          openings: 15,
+          location: 'Mumbai / Bengaluru / Hyderabad, India',
+          applyUrl: 'https://www.pwc.in/careers.html',
+          whoCanApply: [
+            'Engineering degree in Computer Science, IT, or related specialization',
+            'Hands-on experience deploying and securing cloud environments on AWS or Azure',
+            'Familiarity with container management using Kubernetes and Docker',
+            'Understanding of automated CI/CD and cloud compliance standards'
+          ],
+          additionalInfo: 'PwC Cloud & Digital Architecture Group.'
+        }
+      ];
+
+      return officialPwCRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 2 ? 'Open' : (index > 2 ? 'Closing Soon' : 'Open'),
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && (company.name.toLowerCase().includes('l&t') || company.name.toLowerCase().includes('larsen'))) {
+      const officialLTRoles = [
+        {
+          role: 'Software Engineer',
+          desc: 'Develop enterprise digital solutions and industrial software applications supporting heavy engineering, infrastructure, and smart manufacturing systems.',
+          skills: ['C++', 'Java', 'SQL', 'Software Engineering', 'System Integration'],
+          package: '₹6.5 - 10.0 LPA',
+          branch: 'BE/BTech - CS, IT, ECE',
+          cgpa: 6.5,
+          openings: 35,
+          location: 'Mumbai / Chennai / Bengaluru, India',
+          applyUrl: 'https://www.larsentoubro.com/corporate/careers/',
+          whoCanApply: [
+            'BE/BTech in Computer Science, Information Technology, or Electronics',
+            'Strong foundation in Object-Oriented Programming (Java/C++) and SQL databases',
+            'Understanding of software engineering lifecycle and system integration',
+            'Good analytical and problem-solving abilities'
+          ],
+          additionalInfo: 'L&T Corporate Technology & Digital Transformation.'
+        },
+        {
+          role: 'Graduate Engineer Trainee – IT',
+          desc: 'Comprehensive technical training and real-world deployment across L&T corporate IT, smart city solutions, IoT systems, and enterprise data operations.',
+          skills: ['Data Structures', 'Python/Java', 'Database Concepts', 'Analytical Skills'],
+          package: '₹6.0 - 9.0 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC, EE',
+          cgpa: 6.5,
+          openings: 50,
+          location: 'Mumbai / Vadodara / Pune, India',
+          applyUrl: 'https://www.larsentoubro.com/corporate/careers/',
+          whoCanApply: [
+            'Fresh engineering graduate in CS, IT, Electronics, or Electrical Engineering',
+            'Consistent academic record with 60% or 6.5+ CGPA throughout graduation',
+            'Strong verbal and written communication skills with leadership aptitude',
+            'Willingness to work across diverse corporate locations and industrial projects'
+          ],
+          additionalInfo: 'L&T Premier Graduate Engineer Trainee (GET) Program.'
+        },
+        {
+          role: 'Software Developer',
+          desc: 'Design and build responsive web applications and backend services for engineering project tracking, supply chain, and asset management platforms.',
+          skills: ['Java', 'Spring Boot', 'React', 'REST APIs', 'PostgreSQL'],
+          package: '₹7.0 - 11.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 25,
+          location: 'Chennai / Mumbai, India',
+          applyUrl: 'https://www.larsentoubro.com/corporate/careers/',
+          whoCanApply: [
+            'Degree in Computer Science or Information Technology',
+            'Experience in Java Spring Boot backend development and React web interfaces',
+            'Knowledge of relational database queries and performance optimization',
+            'Familiarity with Agile ceremonies and version control'
+          ],
+          additionalInfo: 'L&T Digital Systems & Web Engineering Practice.'
+        },
+        {
+          role: 'Embedded Software Engineer',
+          desc: 'Develop firmware, device drivers, and real-time embedded software for industrial automation, smart meters, defense electronics, and IoT sensor nodes.',
+          skills: ['Embedded C/C++', 'RTOS', 'Microcontrollers', 'CAN/SPI/I2C', 'Hardware Debugging'],
+          package: '₹7.5 - 12.0 LPA',
+          branch: 'BE/BTech - ECE, EnTC, EE, Instrumentation',
+          cgpa: 6.5,
+          openings: 20,
+          location: 'Mysuru / Bengaluru / Mumbai, India',
+          applyUrl: 'https://www.larsentoubro.com/corporate/careers/',
+          whoCanApply: [
+            'Degree in Electronics & Communication, Electrical, or Instrumentation Engineering',
+            'Proficiency in Embedded C/C++ programming for ARM Cortex/microcontrollers',
+            'Hands-on experience with RTOS, communication protocols (CAN, SPI, UART, I2C)',
+            'Familiarity with hardware oscilloscopes, logic analyzers, and circuit schematics'
+          ],
+          additionalInfo: 'L&T Heavy Engineering, Defense & Embedded Systems Division.'
+        },
+        {
+          role: 'Cloud / DevOps Engineer',
+          desc: 'Build automated CI/CD pipelines, containerized microservices deployments, and manage hybrid cloud infrastructure for industrial engineering applications.',
+          skills: ['Docker', 'Kubernetes', 'Jenkins', 'Linux', 'AWS/Azure'],
+          package: '₹7.5 - 12.5 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC',
+          cgpa: 6.5,
+          openings: 20,
+          location: 'Mumbai / Chennai, India',
+          applyUrl: 'https://www.larsentoubro.com/corporate/careers/',
+          whoCanApply: [
+            'BE/BTech in Computer Science, IT, or related engineering branch',
+            'Experience with Linux system administration, Docker containerization, and Kubernetes',
+            'Knowledge of CI/CD pipeline automation with Jenkins or GitLab',
+            'Understanding of cloud infrastructure management on AWS or Azure'
+          ],
+          additionalInfo: 'L&T Cloud Infrastructure & Digital Operations.'
+        }
+      ];
+
+      return officialLTRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 3 ? 'Open' : (index > 3 ? 'Closing Soon' : 'Open'),
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
     
     let roles = [];
     let branchText = 'BE/BTech - CS, IT';
