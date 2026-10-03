@@ -44,7 +44,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 15,
           location: 'Dearborn, Michigan, United States',
-          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=ADAS+AUTOSAR+Software+Engineer',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/00070761971/adas-autosar-software-engineer-davinci-configurator/',
           whoCanApply: [
             'Bachelor degree in Computer Science, Electrical Engineering, or Computer Engineering',
             'Experience with Vector DaVinci tools, RTE generation, and Classic AUTOSAR components',
