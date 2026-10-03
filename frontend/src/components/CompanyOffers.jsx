@@ -6,15 +6,15 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedJob, setSelectedJob] = useState(null);
-  
+
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRole, setSelectedRole] = useState('All Roles');
   const [selectedLocation, setSelectedLocation] = useState('All Locations');
   const [selectedStatus, setSelectedStatus] = useState('All Status');
-  
+
   useEffect(() => {
     if (!company) return;
-    
+
     // Fetch real-time data from backend
     fetch(`http://localhost:5000/api/jobs/company/${company.name}`)
       .then(res => res.json())
@@ -32,7 +32,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
   const getFallbackJobs = (company) => {
     const category = company?.category || 'it';
     const companyScore = company?.name ? company.name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) : 0;
-    
+
     if (company?.name && company.name.toLowerCase().includes('cognizant')) {
       const officialCognizantRoles = [
         {
@@ -1241,7 +1241,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 6,
           location: 'Gurgaon, Haryana (Work From Office)',
-          applyUrl: 'https://kpmg.com/in/en/careers.html?q=1917',
+          applyUrl: 'https://kpmgindia.talentrecruit.com/career-page/apply/U2FsdGVkX1%252FfJ49qj4r9SUTZBk5VtSojAJbdbnuq26Q%253D?viewJD=true',
           whoCanApply: [
             'CA, MBA in Finance, or Bachelor degree in Computer Science/IT/Finance',
             '6 to 13 years of relevant experience in Tax Technology, Direct Tax, or Indirect Tax',
@@ -1634,11 +1634,11 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
         applyUrl: r.applyUrl
       }));
     }
-    
+
     let roles = [];
     let branchText = 'BE/BTech - CS, IT';
 
-    switch(category) {
+    switch (category) {
       case 'core':
         branchText = 'BE/BTech - Mech, Civil, Auto, EE';
         roles = [
@@ -1796,17 +1796,17 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
   const baseJobs = jobs.length > 0 ? jobs : getFallbackJobs(company);
 
   const getJobLocation = (job) => (job.location || '').split('\n').join(' / ');
-  
+
   const COMMON_ROLE_CATEGORIES = [
     'Engineer', 'Developer', 'Analyst', 'Tester', 'Administrator',
     'Manager', 'Consultant', 'Specialist', 'Architect', 'Researcher',
     'Designer', 'Scientist', 'Trainee', 'Inspector'
   ];
 
-  const uniqueRoles = COMMON_ROLE_CATEGORIES.filter(category => 
+  const uniqueRoles = COMMON_ROLE_CATEGORIES.filter(category =>
     baseJobs.some(job => job.role && job.role.toLowerCase().includes(category.toLowerCase()))
   );
-  
+
   const uniqueLocations = [...new Set(baseJobs.map(getJobLocation))].filter(Boolean);
 
   const displayJobs = baseJobs.filter(job => {
@@ -1814,9 +1814,9 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
     const locMatch = selectedLocation === 'All Locations' || getJobLocation(job) === selectedLocation;
     const jobStatus = job.status || 'Open';
     const statusMatch = selectedStatus === 'All Status' || jobStatus === selectedStatus;
-    
-    const searchMatch = !searchQuery || 
-      (job.role && job.role.toLowerCase().includes(searchQuery.toLowerCase())) || 
+
+    const searchMatch = !searchQuery ||
+      (job.role && job.role.toLowerCase().includes(searchQuery.toLowerCase())) ||
       (job.requiredSkills && job.requiredSkills.some(s => s.toLowerCase().includes(searchQuery.toLowerCase())));
 
     return roleMatch && locMatch && statusMatch && searchMatch;
@@ -1849,9 +1849,9 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           <div className="co-filters">
             <div className="co-search-wrapper">
               <span className="search-icon">🔍</span>
-              <input 
-                type="text" 
-                placeholder="Search by role, skill..." 
+              <input
+                type="text"
+                placeholder="Search by role, skill..."
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
               />
@@ -1919,19 +1919,19 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
             </thead>
             <tbody>
               {loading ? (
-                <tr><td colSpan="7" style={{textAlign: 'center', padding: '40px'}}>Loading offers...</td></tr>
+                <tr><td colSpan="7" style={{ textAlign: 'center', padding: '40px' }}>Loading offers...</td></tr>
               ) : (
                 displayJobs.map(job => {
                   const jobStatus = job.status || 'Open';
                   const isClosing = jobStatus === 'Closing Soon';
-                  
+
                   return (
                     <tr key={job._id}>
                       <td className="job-role-cell">
                         <div className="job-role-icon">💻</div>
                         <div className="job-role-text">
                           <strong>{job.role}</strong>
-                          <span>{job.requiredSkills ? job.requiredSkills.slice(0,2).join(', ') : 'Tech'}</span>
+                          <span>{job.requiredSkills ? job.requiredSkills.slice(0, 2).join(', ') : 'Tech'}</span>
                         </div>
                       </td>
                       <td className="font-medium">{job.package}</td>
@@ -1969,7 +1969,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
               <h2>{selectedJob.role}</h2>
               <span className="co-modal-company">{company?.name}</span>
             </div>
-            
+
             <div className="co-modal-body">
               <div className="co-modal-section">
                 <h3>About the Role</h3>
@@ -2006,7 +2006,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
                   <h3>Number of Openings</h3>
                   <p>{selectedJob.openings || 'Not specified'}</p>
                 </div>
-                
+
                 <div className="co-modal-section">
                   <h3>Package / Stipend</h3>
                   <p>{selectedJob.package}</p>
