@@ -278,11 +278,17 @@ export default function Companies({ user, initialCompany, onOpenProfile, onBack,
   });
 
   useEffect(() => {
-    if (initialCompany && Object.keys(initialCompany).length === 1 && initialCompany.name) {
-      const fullCompany = allCompanies.find(c => c.name.toLowerCase() === initialCompany.name.toLowerCase());
-      if (fullCompany) {
-        setSelectedCompany(fullCompany);
+    if (initialCompany) {
+      if (Object.keys(initialCompany).length === 1 && initialCompany.name) {
+        const fullCompany = allCompanies.find(c => c.name.toLowerCase() === initialCompany.name.toLowerCase());
+        if (fullCompany) {
+          setSelectedCompany(fullCompany);
+        }
+      } else {
+        setSelectedCompany(initialCompany);
       }
+    } else {
+      setSelectedCompany(null);
     }
   }, [initialCompany, allCompanies]);
 
@@ -351,6 +357,7 @@ export default function Companies({ user, initialCompany, onOpenProfile, onBack,
       setShowLoginPopup(true);
     } else {
       setSelectedCompany(company);
+      sessionStorage.setItem('cpms_app_selected_company', JSON.stringify(company));
     }
   };
 
@@ -440,7 +447,10 @@ export default function Companies({ user, initialCompany, onOpenProfile, onBack,
         {activeCompany ? (
           <CompanyDetails 
             company={activeCompany} 
-            onBack={() => setSelectedCompany(null)} 
+            onBack={() => {
+              setSelectedCompany(null);
+              sessionStorage.removeItem('cpms_app_selected_company');
+            }} 
             onOpenCompanyOffers={() => onOpenCompanyOffers(activeCompany)} 
             onOpenCompanyStudy={() => onOpenCompanyStudy(activeCompany)} 
             onOpenAIInterview={() => onOpenAIInterview(activeCompany)}

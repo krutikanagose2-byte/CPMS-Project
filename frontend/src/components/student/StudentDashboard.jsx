@@ -20,10 +20,11 @@ const StudentDashboard = ({
     onOpenCompanies,
     onOpenPlacements,
     onOpenNoticeBoard,
-    onOpenSpecificCompany
+    onOpenSpecificCompany,
+    initialTab
 }) => {
     const isAdmin = user?.role === 'admin';
-    const [activeTab, setActiveTab] = useState(isAdmin ? 'admin-control' : 'profile');
+    const [activeTab, setActiveTab] = useState(initialTab || (isAdmin ? 'admin-control' : 'profile'));
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
     const studentNavItems = [
@@ -138,10 +139,7 @@ const StudentDashboard = ({
                         <i className="fas fa-arrow-left"></i>
                         {isSidebarOpen && <span>Back to Home Page</span>}
                     </button>
-                    <button className="new-nav-item" title="Help & Support" onClick={() => setActiveTab('messages')}>
-                        <i className="fas fa-question-circle"></i>
-                        {isSidebarOpen && <span>Help & Support</span>}
-                    </button>
+
                     <button className="new-nav-item logout-btn" onClick={onLogout} title="Logout">
                         <i className="fas fa-power-off"></i> 
                         {isSidebarOpen && <span>Logout</span>}

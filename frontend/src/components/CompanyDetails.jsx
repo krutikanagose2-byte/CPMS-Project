@@ -23,30 +23,30 @@ const getCompanyContactUrl = (company) => {
     'infosys': 'https://www.infosys.com/contact.html',
     'capgemini': 'https://www.capgemini.com/contact-us/',
     'wipro': 'https://www.wipro.com/contact-wipro/',
-    'accenture': 'https://www.accenture.com/in-en/about/company/contact-us',
+    'accenture': 'https://www.accenture.com/us-en/contact-us',
     'google': 'https://about.google/contact-google/',
     'microsoft': 'https://support.microsoft.com/en-us/contactus',
     'sap': 'https://www.sap.com/about/company/our-values/contact-us.html',
-    'deloitte': 'https://www.deloitte.com/global/en/services/contact-us.html',
+    'deloitte': 'https://www2.deloitte.com/global/en/contact-us.html',
     'kpmg': 'https://home.kpmg/xx/en/home/about/contact.html',
-    'pwc': 'https://www.pwc.com/gx/en/about/contact-us.html',
+    'pwc': 'https://www.pwc.in/careers.html',
     'l&t': 'https://www.larsentoubro.com/corporate/contact-us/',
     'tata motors': 'https://www.tatamotors.com/contact-us/',
-    'siemens': 'https://www.siemens.com/global/en/company/about/contact.html',
+    'siemens': 'https://www.siemens.com/global/en/general/contact.html',
     'bosch': 'https://www.bosch.in/contact/',
     'hdfc bank': 'https://www.hdfcbank.com/personal/need-help/contact-us',
     'icici bank': 'https://www.icicibank.com/customer-care',
     'goldman sachs': 'https://www.goldmansachs.com/contact-us',
-    'morgan stanley': 'https://www.morganstanley.com/about-us/contact-us',
+    'morgan stanley': 'https://www.morganstanley.com/contact-us',
     'mu sigma': 'https://www.mu-sigma.com/contact-us',
     'fractal analytics': 'https://fractal.ai/contact-us/',
     'latentview': 'https://www.latentview.com/contact-us/',
-    'jio': 'https://www.jio.com/en-in/help-support/contact-us',
+    'jio': 'https://www.jio.com/',
     'airtel': 'https://www.airtel.in/contact-us',
     'jaro education': 'https://www.jaroeducation.com/contact-us/',
     'byju\'s': 'https://byjus.com/contact-us/',
     'byjus': 'https://byjus.com/contact-us/',
-    'amazon': 'https://www.amazon.jobs/en/contact_us',
+    'amazon': 'https://www.amazon.in/contactus',
     'ibm': 'https://www.ibm.com/contact/us/en/',
     'oracle': 'https://www.oracle.com/corporate/contact/'
   };
@@ -262,7 +262,7 @@ const CompanyDetails = ({ company, onBack, onOpenCompanyOffers, onOpenCompanyStu
             className="cd-acc-header" 
             onClick={() => {
               const url = getCompanyContactUrl(company);
-              if (url) window.open(url, '_blank', 'noopener,noreferrer');
+              if (url) window.location.href = url;
             }}
             style={{ cursor: 'pointer' }}
           >
