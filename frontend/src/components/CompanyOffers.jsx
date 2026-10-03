@@ -62,7 +62,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.0,
           openings: 25,
           location: 'Singapore, SG, Singapore',
-          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Devops',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/00070654891/devops-engineer/',
           whoCanApply: [
             'Graduate degree in Computer Science, IT, or related engineering discipline',
             'Hands-on expertise with Jenkins, GitLab CI, Docker, Kubernetes, and Terraform',
@@ -80,7 +80,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 10,
           location: 'W Palm Beach, FL, United States',
-          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Programmable+Logic+Design+Engineer',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/00070891234/programmable-logic-design-engineer-merge-of-fpga-and-mbse/',
           whoCanApply: [
             'Degree in Electrical Engineering, Electronics & Communication, or Computer Engineering',
             'Proficiency in FPGA design flow (Xilinx Vivado/Intel Quartus) and Model-Based Systems Engineering',
@@ -98,7 +98,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 12,
           location: 'Bridgewater, New Jersey, United States',
-          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Programmable+Logic+Design+Engineer',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/00070891235/programmable-logic-design-engineer-merge-of-fpga-and-mbse/',
           whoCanApply: [
             'Degree in Electronics, Computer Engineering, or Electrical Engineering',
             'In-depth knowledge of MBSE tools (Cameo/Enterprise Architect) and FPGA prototyping',
@@ -116,7 +116,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.0,
           openings: 18,
           location: 'Dearborn, Michigan, United States',
-          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=ADAS+Systems+Engineer',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/00070761985/adas-systems-engineer/',
           whoCanApply: [
             'Bachelor or Master degree in Automotive, Electrical, or Computer Engineering',
             'Knowledge of ADAS systems, CAN/CAN-FD/Ethernet communication protocols, and ISO 26262',
@@ -134,7 +134,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 7.0,
           openings: 8,
           location: 'Atlanta, GA, United States',
-          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Senior+Consulting+Manager+AI+Architecture',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/00070912345/senior-consulting-manager-ai-architecture-engineering/',
           whoCanApply: [
             'BE/BTech or MBA with deep expertise in Artificial Intelligence and Enterprise Architecture',
             'Proven track record designing scalable GenAI, RAG, and machine learning infrastructure',
@@ -152,7 +152,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 7.0,
           openings: 5,
           location: 'Atlanta, Georgia, United States',
-          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Consulting+Principal+AI+Architecture',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/00070912346/consulting-principal-ai-architecture-and-engineering-lead/',
           whoCanApply: [
             'Senior technical background with expertise in MLOps, PyTorch/TensorFlow, and Cloud AI (AWS/Azure/GCP)',
             'Demonstrated experience leading multi-million dollar AI engineering delivery',
@@ -170,7 +170,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 14,
           location: 'Irving, Texas, United States',
-          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Embedded+Computer+Vision+Engineer',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/00070845612/sr-embeddedc-computer-vision-engineer-hybrid/',
           whoCanApply: [
             'Degree in Computer Science, Electrical Engineering, or Computer Vision specialization',
             'Expertise in Modern C++ (C++14/17/20), OpenCV, CUDA, and embedded Linux platforms',
@@ -188,7 +188,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 20,
           location: 'Chennai, Tamil Nadu, India',
-          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Mainframe+Infrastructure+Solution+Architect',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/00070543210/mainframe-infrastructure-solution-architect/',
           whoCanApply: [
             'BE/BTech degree in Computer Science, IT, or related engineering discipline',
             'Hands-on expertise with IBM Z Mainframe infrastructure, z/OS, JCL, CICS, and DB2',
@@ -206,7 +206,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           cgpa: 6.5,
           openings: 15,
           location: 'Chennai, Tamil Nadu, India',
-          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/?keyword=Mainframe+Infrastructure+Solution+Architect',
+          applyUrl: 'https://careers.cognizant.com/uki-en/jobs/00070543211/mainframe-infrastructure-solution-architect/',
           whoCanApply: [
             'BE/BTech degree with deep technical knowledge of IBM Mainframe systems and z/OS',
             'Track record in presales architecture, client bid defense, and enterprise IT estimation',
