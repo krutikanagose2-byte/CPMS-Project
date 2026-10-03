@@ -33,6 +33,101 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
     const category = company?.category || 'it';
     const companyScore = company?.name ? company.name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) : 0;
     
+    if (company?.name && company.name.toLowerCase().includes('cognizant')) {
+      const cognizantRoles = [
+        { 
+          role: 'Programmer Analyst Trainee (GenC)', 
+          desc: 'Entry-level software engineering role focusing on full-stack application development, software testing, and core IT solutions.', 
+          skills: ['Java', 'Python', 'SQL', 'Data Structures'],
+          package: '₹4.0 - 5.5 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC, ECE'
+        },
+        { 
+          role: 'Programmer Analyst (GenC Next)', 
+          desc: 'Advanced software development role building cloud-native microservices, scalable web apps, and modern digital platforms.', 
+          skills: ['React', 'Node.js', 'Spring Boot', 'Microservices'],
+          package: '₹6.7 - 8.5 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC'
+        },
+        { 
+          role: 'Full Stack Software Engineer', 
+          desc: 'End-to-end engineering role designing, building, and maintaining enterprise software frontend and backend architectures.', 
+          skills: ['Java', 'Angular', 'Node.js', 'REST APIs'],
+          package: '₹7.5 - 10.0 LPA',
+          branch: 'BE/BTech - CS, IT'
+        },
+        { 
+          role: 'Quality Engineering & Assurance Specialist (QE&A)', 
+          desc: 'Specialized engineering role creating automated test frameworks, continuous testing pipelines, and API quality validation.', 
+          skills: ['Selenium', 'Automation Testing', 'Java', 'CI/CD'],
+          package: '₹5.5 - 7.5 LPA',
+          branch: 'BE/BTech - CS, IT, ECE'
+        },
+        { 
+          role: 'Cloud & Infrastructure Engineer', 
+          desc: 'Technology engineering role designing, deploying, and operating multi-cloud infrastructure and DevOps delivery pipelines.', 
+          skills: ['AWS', 'Azure', 'DevOps', 'Kubernetes'],
+          package: '₹8.0 - 11.0 LPA',
+          branch: 'BE/BTech - CS, IT, EnTC'
+        },
+        { 
+          role: 'Data Engineering & Analytics Specialist', 
+          desc: 'Engineering role building scalable data pipelines, data warehouses, and ETL workflows for real-time analytics.', 
+          skills: ['PySpark', 'SQL', 'Azure Data Factory', 'Snowflake'],
+          package: '₹7.0 - 9.5 LPA',
+          branch: 'BE/BTech - CS, IT, Data Science'
+        },
+        { 
+          role: 'Digital Marketing Specialist', 
+          desc: 'Marketing role focused on digital campaign strategy, search engine optimization (SEO), performance marketing, and web analytics.', 
+          skills: ['SEO', 'SEM', 'Google Analytics', 'Digital Campaigns'],
+          package: '₹5.0 - 7.0 LPA',
+          branch: 'MBA / BBA / Graduate (Any)'
+        },
+        { 
+          role: 'Services Marketing Manager', 
+          desc: 'Marketing leadership role driving service offerings positioning, brand strategy, demand generation, and multi-channel campaigns.', 
+          skills: ['Content Strategy', 'Brand Positioning', 'Demand Generation'],
+          package: '₹9.0 - 13.0 LPA',
+          branch: 'MBA - Marketing / Communications'
+        },
+        { 
+          role: 'Client Relationship & Sales Associate', 
+          desc: 'Sales and marketing role managing strategic client accounts, business development, and enterprise technology solution sales.', 
+          skills: ['Account Management', 'Client Partnering', 'Solution Sales'],
+          package: '₹6.5 - 9.0 LPA',
+          branch: 'MBA / Graduate (Any)'
+        },
+        { 
+          role: 'Senior Product Engineering Manager', 
+          desc: 'Cross-functional engineering and product role leveraging AI/ML product innovation and technical delivery management.', 
+          skills: ['Product Engineering', 'AI/ML', 'Agile Architecture'],
+          package: '₹12.0 - 16.0 LPA',
+          branch: 'BE/BTech / MTech - CS, IT'
+        }
+      ];
+
+      return cognizantRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: index % 3 === 0 ? 'Chennai / Remote' : (index % 2 === 0 ? 'Pune / Hybrid' : 'Bengaluru / On-site'),
+        criteria: { minCgpa: index < 5 ? 6.5 : 6.0, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 4 ? 'Open' : (index > 7 ? 'Closing Soon' : 'Open'),
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: ((index + companyScore) % 15) + 10,
+        whoCanApply: [
+          'are available for a full-time role at Cognizant',
+          'can join immediately or within 30 days',
+          'have strong communication and problem-solving skills',
+          'meet the minimum CGPA requirement'
+        ],
+        additionalInfo: 'Health insurance, continuous learning & certification sponsorships, and performance bonuses included.'
+      }));
+    }
+
     let roles = [];
     let branchText = 'BE/BTech - CS, IT';
 
