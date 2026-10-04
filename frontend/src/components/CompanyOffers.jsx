@@ -335,6 +335,157 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
       }));
     }
 
+    if (company?.name && company.name.toLowerCase().includes('oracle')) {
+      const officialOracleRoles = [
+        {
+          role: 'Support Engineer 1',
+          desc: 'Provide technical support and troubleshoot issues for Oracle enterprise customers.',
+          skills: ['Technical Support', 'Database', 'Linux', 'Troubleshooting'],
+          package: '₹8.0 - 12.0 LPA',
+          branch: 'BE/BTech - CS, IT, ECE',
+          cgpa: 6.5,
+          openings: 10,
+          location: 'Bengaluru / Remote',
+          applyUrl: 'https://careers.oracle.com/en/sites/jobsearch/jobs/preview/345533',
+          whoCanApply: ['Graduates with 0-2 years of support experience'],
+          additionalInfo: 'Job ID: 345533'
+        },
+        {
+          role: 'Senior Manager, Security Engineering',
+          desc: 'Lead a team of security engineers to design and implement robust security architecture.',
+          skills: ['Security Engineering', 'Leadership', 'Cloud Security', 'Architecture'],
+          package: '₹45.0 - 65.0 LPA',
+          branch: 'BE/BTech / ME/MTech',
+          cgpa: 7.0,
+          openings: 1,
+          location: 'Hyderabad / Bengaluru',
+          applyUrl: 'https://careers.oracle.com/en/sites/jobsearch/jobs/preview/346674',
+          whoCanApply: ['Senior professionals with team management and security expertise'],
+          additionalInfo: 'Job ID: 346674'
+        },
+        {
+          role: 'Senior Principal Software Engineer',
+          desc: 'Architect and develop highly scalable distributed systems and cloud infrastructure.',
+          skills: ['Distributed Systems', 'Java/C++', 'Cloud Infrastructure', 'Architecture'],
+          package: '₹50.0 - 80.0 LPA',
+          branch: 'BE/BTech / ME/MTech - CS, IT',
+          cgpa: 7.5,
+          openings: 2,
+          location: 'Bengaluru',
+          applyUrl: 'https://careers.oracle.com/en/sites/jobsearch/jobs/preview/336717',
+          whoCanApply: ['Senior engineers with 10+ years of distributed systems experience'],
+          additionalInfo: 'Job ID: 336717'
+        },
+        {
+          role: 'Continuous Improvement Project Manager',
+          desc: 'Drive continuous improvement projects across engineering operations to optimize delivery.',
+          skills: ['Project Management', 'Agile', 'Continuous Improvement', 'Six Sigma'],
+          package: '₹25.0 - 35.0 LPA',
+          branch: 'MBA / Engineering',
+          cgpa: 7.0,
+          openings: 3,
+          location: 'Hyderabad',
+          applyUrl: 'https://careers.oracle.com/en/sites/jobsearch/jobs/preview/339152',
+          whoCanApply: ['Project managers with CI and Agile expertise'],
+          additionalInfo: 'Job ID: 339152'
+        },
+        {
+          role: 'Configuration Test Analyst - Oracle Health',
+          desc: 'Ensure quality and perform configuration testing for Oracle Health software solutions.',
+          skills: ['Testing', 'Configuration', 'Quality Assurance', 'Healthcare Tech'],
+          package: '₹10.0 - 18.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 5,
+          location: 'Bengaluru',
+          applyUrl: 'https://careers.oracle.com/en/sites/jobsearch/jobs/preview/345143',
+          whoCanApply: ['QA professionals with 2-5 years experience'],
+          additionalInfo: 'Job ID: 345143'
+        },
+        {
+          role: 'Lead Principal Application Solution Developer',
+          desc: 'Lead the development of comprehensive enterprise application solutions for global clients.',
+          skills: ['Solution Architecture', 'Java', 'Oracle Cloud', 'Enterprise Applications'],
+          package: '₹45.0 - 70.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 2,
+          location: 'Hyderabad / Bengaluru',
+          applyUrl: 'https://careers.oracle.com/en/sites/jobsearch/jobs/preview/346670',
+          whoCanApply: ['Senior developers and solution architects'],
+          additionalInfo: 'Job ID: 346670'
+        },
+        {
+          role: 'Oracle Health Consulting Technical Project Manager',
+          desc: 'Manage technical consulting projects for Oracle Health clients, ensuring successful deployment.',
+          skills: ['Technical Consulting', 'Project Management', 'Healthcare IT'],
+          package: '₹20.0 - 30.0 LPA',
+          branch: 'BE/BTech / MBA',
+          cgpa: 7.0,
+          openings: 4,
+          location: 'Bengaluru',
+          applyUrl: 'https://careers.oracle.com/en/sites/jobsearch/jobs/preview/333428',
+          whoCanApply: ['Project managers with healthcare consulting experience'],
+          additionalInfo: 'Job ID: 333428'
+        },
+        {
+          role: 'Senior Principal Software Developer',
+          desc: 'Develop core services for Oracle Cloud Infrastructure (OCI).',
+          skills: ['Cloud Computing', 'Java/Go', 'Backend Systems', 'OCI'],
+          package: '₹50.0 - 80.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.5,
+          openings: 3,
+          location: 'Bengaluru',
+          applyUrl: 'https://careers.oracle.com/en/sites/jobsearch/jobs/preview/334432',
+          whoCanApply: ['Top tier engineers with deep backend experience'],
+          additionalInfo: 'Job ID: 334432'
+        },
+        {
+          role: 'Principal Software Engineer, Core Infrastructure',
+          desc: 'Design and optimize core infrastructure systems powering Oracle Cloud.',
+          skills: ['Infrastructure', 'C/C++', 'Systems Programming', 'Cloud'],
+          package: '₹40.0 - 60.0 LPA',
+          branch: 'BE/BTech / ME/MTech',
+          cgpa: 7.0,
+          openings: 5,
+          location: 'Hyderabad',
+          applyUrl: 'https://careers.oracle.com/en/sites/jobsearch/jobs/preview/334805',
+          whoCanApply: ['Experienced systems engineers'],
+          additionalInfo: 'Job ID: 334805'
+        },
+        {
+          role: 'Principal Data Center Designer',
+          desc: 'Design physical and logical layouts for next-generation Oracle Data Centers.',
+          skills: ['Data Center Design', 'Infrastructure', 'Networking', 'AutoCAD'],
+          package: '₹35.0 - 55.0 LPA',
+          branch: 'BE/BTech - Electrical, Mechanical, IT',
+          cgpa: 6.5,
+          openings: 2,
+          location: 'Remote / Bengaluru',
+          applyUrl: 'https://careers.oracle.com/en/sites/jobsearch/jobs/preview/335020',
+          whoCanApply: ['Professionals with data center design and engineering experience'],
+          additionalInfo: 'Job ID: 335020'
+        }
+      ];
+
+      return officialOracleRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (26 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: 'Open',
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
     if (company?.name && company.name.toLowerCase().includes('airtel')) {
       const officialAirtelRoles = [
         {
