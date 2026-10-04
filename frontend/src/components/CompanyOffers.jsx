@@ -184,6 +184,308 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
       }));
     }
 
+    if (company?.name && company.name.toLowerCase().includes('jio')) {
+      const officialJioRoles = [
+        {
+          role: 'Associate Product Manager',
+          desc: 'Collaborate with cross-functional teams to design, develop, and launch digital products.',
+          skills: ['Product Management', 'Agile', 'Market Research', 'Data Analysis'],
+          package: '₹12.0 - 18.0 LPA',
+          branch: 'MBA / BE / BTech',
+          cgpa: 7.0,
+          openings: 4,
+          location: 'Mumbai',
+          applyUrl: 'https://careers.jio.com/frmjobdescription.aspx?JBTITLE=s769D9p94tDfZ6TtrzFEog==&funcCode=aYDQGbQGkVbO8SxVL0ar2yzLBPLYhJhQ&jbID=dCGszPc2DFkG5yK9LDjxdw==&utm_source=chatgpt.com',
+          whoCanApply: ['Graduates with Product Management experience'],
+          additionalInfo: 'Job ID: 87104330'
+        },
+        {
+          role: 'Product Manager',
+          desc: 'Drive the product lifecycle from vision to execution for Jio digital platforms.',
+          skills: ['Product Strategy', 'Roadmapping', 'UX/UI', 'Analytics'],
+          package: '₹18.0 - 25.0 LPA',
+          branch: 'MBA / Post Grad',
+          cgpa: 7.0,
+          openings: 2,
+          location: 'Mumbai',
+          applyUrl: 'https://careers.jio.com/',
+          whoCanApply: ['Experienced product managers'],
+          additionalInfo: 'Job ID: 87106791'
+        },
+        {
+          role: 'Manager Platform Design',
+          desc: 'Lead the design and architecture of highly scalable digital platforms.',
+          skills: ['Platform Design', 'System Architecture', 'Cloud Services', 'API'],
+          package: '₹20.0 - 30.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 1,
+          location: 'Mumbai',
+          applyUrl: 'https://careers.jio.com/',
+          whoCanApply: ['Senior engineers and architects'],
+          additionalInfo: 'Job ID: 87111996'
+        },
+        {
+          role: 'CMP Security Lead',
+          desc: 'Lead the security initiatives for Cloud Management Platforms, ensuring robust data protection.',
+          skills: ['Cybersecurity', 'Cloud Security', 'VAPT', 'Compliance'],
+          package: '₹15.0 - 22.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 1,
+          location: 'Patiala',
+          applyUrl: 'https://careers.jio.com/',
+          whoCanApply: ['Cybersecurity professionals'],
+          additionalInfo: 'Job ID: 87051839'
+        },
+        {
+          role: 'Enterprise Sales Officer T1',
+          desc: 'Manage enterprise accounts and drive B2B sales for Jio enterprise solutions.',
+          skills: ['B2B Sales', 'Enterprise Solutions', 'Client Management'],
+          package: '₹6.0 - 9.0 LPA',
+          branch: 'Any Graduate / MBA',
+          cgpa: 6.0,
+          openings: 10,
+          location: 'Noida',
+          applyUrl: 'https://careers.jio.com/',
+          whoCanApply: ['Candidates with B2B sales experience'],
+          additionalInfo: 'Job ID: 87052235'
+        },
+        {
+          role: 'Customer Care Executive – Non Voice',
+          desc: 'Handle customer queries via chat and email for Jio digital services.',
+          skills: ['Customer Service', 'Communication', 'Problem Solving'],
+          package: '₹3.0 - 5.0 LPA',
+          branch: 'Any Graduate',
+          cgpa: 5.5,
+          openings: 50,
+          location: 'Nagpur',
+          applyUrl: 'https://careers.jio.com/',
+          whoCanApply: ['Freshers and graduates'],
+          additionalInfo: 'Job ID: 87045157'
+        },
+        {
+          role: 'Apprentice Engineer',
+          desc: 'Apprenticeship program offering training and hands-on experience in telecom engineering.',
+          skills: ['Telecom Basics', 'Networking', 'Field Support'],
+          package: '₹3.5 - 5.5 LPA',
+          branch: 'Diploma / BE/BTech',
+          cgpa: 6.0,
+          openings: 20,
+          location: 'Mumbai',
+          applyUrl: 'https://careers.jio.com/',
+          whoCanApply: ['Fresh engineering graduates and diploma holders'],
+          additionalInfo: 'Job ID: 87009524'
+        },
+        {
+          role: 'JC Field Engineer_DET',
+          desc: 'Field engineering role for deployment and maintenance of Jio network infrastructure.',
+          skills: ['Field Engineering', 'Telecom Network', 'Fiber Optics'],
+          package: '₹4.0 - 6.0 LPA',
+          branch: 'Diploma / BE/BTech',
+          cgpa: 6.0,
+          openings: 15,
+          location: 'Mumbai KLDV 2 – Kalyan',
+          applyUrl: 'https://careers.jio.com/',
+          whoCanApply: ['Field engineers with relevant technical background'],
+          additionalInfo: 'Job ID: 87065797'
+        },
+        {
+          role: 'Apprentice Engineer',
+          desc: 'Apprenticeship program offering training and hands-on experience in telecom engineering.',
+          skills: ['Telecom Basics', 'Networking', 'Field Support'],
+          package: '₹3.5 - 5.5 LPA',
+          branch: 'Diploma / BE/BTech',
+          cgpa: 6.0,
+          openings: 20,
+          location: 'Mumbai',
+          applyUrl: 'https://careers.jio.com/',
+          whoCanApply: ['Fresh engineering graduates and diploma holders'],
+          additionalInfo: 'Job ID: 87009629'
+        },
+        {
+          role: 'JC Field Engineer_DET',
+          desc: 'Field engineering role for deployment and maintenance of Jio network infrastructure.',
+          skills: ['Field Engineering', 'Telecom Network', 'Fiber Optics'],
+          package: '₹4.0 - 6.0 LPA',
+          branch: 'Diploma / BE/BTech',
+          cgpa: 6.0,
+          openings: 10,
+          location: 'Bargarh',
+          applyUrl: 'https://careers.jio.com/',
+          whoCanApply: ['Field engineers with relevant technical background'],
+          additionalInfo: 'Job ID: 87025997'
+        }
+      ];
+
+      return officialJioRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (21 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: 'Open',
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('latentview') || company?.name?.toLowerCase().includes('latent view')) {
+      const officialLatentViewRoles = [
+        {
+          role: 'Assistant Manager - Data Engineering',
+          desc: 'Lead data engineering teams to build scalable pipelines and data warehouses.',
+          skills: ['Data Engineering', 'Big Data', 'ETL', 'Cloud'],
+          package: '₹18.0 - 26.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 2,
+          location: 'Chennai',
+          applyUrl: 'https://latentview.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a6ab2a5d887d9d?utm_source=chatgpt.com',
+          whoCanApply: ['Engineers with 6-9 years of experience'],
+          additionalInfo: 'Job ID: a6ab2a5d887d9d'
+        },
+        {
+          role: 'Assistant Manager',
+          desc: 'Managerial role overseeing analytics and consulting projects for key clients.',
+          skills: ['Analytics', 'Project Management', 'Client Engagement'],
+          package: '₹20.0 - 30.0 LPA',
+          branch: 'MBA / Post Grad',
+          cgpa: 7.0,
+          openings: 3,
+          location: 'Chennai',
+          applyUrl: 'https://latentview.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a6a9eff51e0710?utm_source=chatgpt.com',
+          whoCanApply: ['Professionals with 7-12 years experience'],
+          additionalInfo: 'Job ID: a6a9eff51e0710'
+        },
+        {
+          role: 'Assistant Manager',
+          desc: 'Manage and deliver data-driven business solutions for diverse industry verticals.',
+          skills: ['Business Analysis', 'Data Strategy', 'Consulting'],
+          package: '₹15.0 - 25.0 LPA',
+          branch: 'MBA / Engineering',
+          cgpa: 6.5,
+          openings: 2,
+          location: 'Bengaluru',
+          applyUrl: 'https://latentview.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a6a86a6817af45?utm_source=chatgpt.com',
+          whoCanApply: ['Consulting professionals with analytics expertise'],
+          additionalInfo: 'Job ID: a6a86a6817af45'
+        },
+        {
+          role: 'Assistant Manager',
+          desc: 'Lead delivery of analytics solutions and provide actionable business insights.',
+          skills: ['Data Analytics', 'Team Management', 'Insights'],
+          package: '₹15.0 - 22.0 LPA',
+          branch: 'MBA / Analytics',
+          cgpa: 6.5,
+          openings: 3,
+          location: 'Chennai',
+          applyUrl: 'https://latentview.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a6a8594fc56d84?utm_source=chatgpt.com',
+          whoCanApply: ['Professionals with 5-7 years experience'],
+          additionalInfo: 'Job ID: a6a8594fc56d84'
+        },
+        {
+          role: 'Senior Analyst - Data Science',
+          desc: 'Develop predictive models and machine learning algorithms for business optimization.',
+          skills: ['Data Science', 'Machine Learning', 'Python', 'Statistics'],
+          package: '₹12.0 - 18.0 LPA',
+          branch: 'BE/BTech / Statistics',
+          cgpa: 7.0,
+          openings: 5,
+          location: 'Chennai + 1',
+          applyUrl: 'https://latentview.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a6a17cf7f1b83a?utm_source=chatgpt.com',
+          whoCanApply: ['Data Scientists with 4-7 years of experience'],
+          additionalInfo: 'Job ID: a6a17cf7f1b83a'
+        },
+        {
+          role: 'Assistant Manager - Data Science',
+          desc: 'Lead a team of data scientists to deliver advanced AI/ML solutions.',
+          skills: ['Data Science', 'AI/ML', 'Leadership', 'Python'],
+          package: '₹18.0 - 26.0 LPA',
+          branch: 'MS / BE/BTech - CS, Stats',
+          cgpa: 7.0,
+          openings: 2,
+          location: 'Bengaluru',
+          applyUrl: 'https://latentview.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a6a17c508724a4?utm_source=chatgpt.com',
+          whoCanApply: ['Data Science leads with 6-9 years experience'],
+          additionalInfo: 'Job ID: a6a17c508724a4'
+        },
+        {
+          role: 'Senior Analyst - Data Engineering',
+          desc: 'Design and optimize data architecture and ETL pipelines for analytics products.',
+          skills: ['Data Engineering', 'SQL', 'ETL', 'Cloud Platforms'],
+          package: '₹10.0 - 16.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 4,
+          location: 'Remote-TN',
+          applyUrl: 'https://latentview.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a69cb91cddc31b?utm_source=chatgpt.com',
+          whoCanApply: ['Engineers with 4-6 years of experience'],
+          additionalInfo: 'Job ID: a69cb91cddc31b'
+        },
+        {
+          role: 'Risk Analyst',
+          desc: 'Analyze risk factors and develop mitigation strategies using data analytics.',
+          skills: ['Risk Analytics', 'Financial Modeling', 'SQL', 'Python'],
+          package: '₹70.0 - 95.0 LPA',
+          branch: 'MBA / Economics / Finance',
+          cgpa: 7.5,
+          openings: 1,
+          location: 'Mountain View, California',
+          applyUrl: 'https://latentview.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a6a721fdea4e12?utm_source=chatgpt.com',
+          whoCanApply: ['Risk analysts with 3-7 years experience'],
+          additionalInfo: 'Job ID: a6a721fdea4e12'
+        },
+        {
+          role: 'Senior Databricks Engineer',
+          desc: 'Build scalable data processing applications using Databricks and Apache Spark.',
+          skills: ['Databricks', 'Spark', 'Data Engineering', 'Python/Scala'],
+          package: '₹20.0 - 28.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 2,
+          location: 'Bengaluru',
+          applyUrl: 'https://latentview.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a6ab930ea9b75a?utm_source=chatgpt.com',
+          whoCanApply: ['Engineers with 6-9 years of experience'],
+          additionalInfo: 'Job ID: a6ab930ea9b75a'
+        },
+        {
+          role: 'Senior Analyst - Data Engineering',
+          desc: 'Develop robust data infrastructure to support advanced analytics use cases.',
+          skills: ['Data Infrastructure', 'SQL', 'Cloud', 'Python'],
+          package: '₹12.0 - 18.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 4,
+          location: 'Bengaluru',
+          applyUrl: 'https://latentview.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a6ab92ef45ef26?utm_source=chatgpt.com',
+          whoCanApply: ['Engineers with 5-6 years of experience'],
+          additionalInfo: 'Job ID: a6ab92ef45ef26'
+        }
+      ];
+
+      return officialLatentViewRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (26 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: 'Open',
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
     if (company?.name && company.name.toLowerCase().includes('fractal')) {
       const officialFractalRoles = [
         {
