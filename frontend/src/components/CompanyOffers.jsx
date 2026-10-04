@@ -335,6 +335,308 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
       }));
     }
 
+    if (company?.name && company.name.toLowerCase().includes('airtel')) {
+      const officialAirtelRoles = [
+        {
+          role: 'Territory Manager – HDO',
+          desc: 'Manage direct sales and territory operations for Home Digital Services.',
+          skills: ['Territory Management', 'Sales', 'B2C Sales'],
+          package: '₹6.0 - 10.0 LPA',
+          branch: 'Any Graduate / MBA',
+          cgpa: 6.0,
+          openings: 5,
+          location: 'Trichy, Tamil Nadu',
+          applyUrl: 'https://airtel.darwinbox.in/ms/candidatev2/main/careers/jobDetails/65e61ad0768b5?utm_source=chatgpt.com',
+          whoCanApply: ['Candidates with direct sales experience'],
+          additionalInfo: 'Job ID: 65e61ad0768b5'
+        },
+        {
+          role: 'Catchment Manager',
+          desc: 'Drive revenue growth and manage distribution channels in the designated catchment area.',
+          skills: ['Channel Management', 'Distribution', 'Sales'],
+          package: '₹8.0 - 12.0 LPA',
+          branch: 'MBA / Post Grad',
+          cgpa: 6.5,
+          openings: 2,
+          location: 'Hisar, Haryana + other locations',
+          applyUrl: 'https://airtel.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a65e9bd6f30f8a?utm_source=chatgpt.com',
+          whoCanApply: ['Professionals with 3–5 years experience'],
+          additionalInfo: 'Job ID: a65e9bd6f30f8a'
+        },
+        {
+          role: 'Lead – OSP',
+          desc: 'Lead the Outside Plant operations for fiber network deployment and maintenance.',
+          skills: ['OSP', 'Fiber Optics', 'Network Maintenance', 'Telecom'],
+          package: '₹12.0 - 18.0 LPA',
+          branch: 'BE/BTech - ECE, EEE',
+          cgpa: 6.5,
+          openings: 1,
+          location: 'Kolkata, West Bengal',
+          applyUrl: 'https://airtel.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a69831b9b592e4?utm_source=chatgpt.com',
+          whoCanApply: ['Telecom engineers with 8–10 years experience'],
+          additionalInfo: 'Job ID: a69831b9b592e4'
+        },
+        {
+          role: 'Territory Manager – OWN',
+          desc: 'Manage Airtel owned stores and ensure high quality customer experience and sales.',
+          skills: ['Retail Management', 'Store Operations', 'Sales'],
+          package: '₹5.0 - 8.0 LPA',
+          branch: 'Any Graduate / MBA',
+          cgpa: 6.0,
+          openings: 3,
+          location: 'Amritsar, Punjab + other locations',
+          applyUrl: 'https://airtel.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a6a547d2221caa?utm_source=chatgpt.com',
+          whoCanApply: ['Candidates with 1–2 years retail experience'],
+          additionalInfo: 'Job ID: a6a547d2221caa'
+        },
+        {
+          role: 'Territory Manager – HDO',
+          desc: 'Oversee Home Broadband operations and sales in the assigned territory.',
+          skills: ['Broadband Sales', 'Territory Management', 'Direct Sales'],
+          package: '₹6.0 - 10.0 LPA',
+          branch: 'Any Graduate / MBA',
+          cgpa: 6.0,
+          openings: 4,
+          location: 'Mandi, Himachal Pradesh + other locations',
+          applyUrl: 'https://airtel.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a65fc335ddbc8d?utm_source=chatgpt.com',
+          whoCanApply: ['Sales professionals with territory management skills'],
+          additionalInfo: 'Job ID: a65fc335ddbc8d'
+        },
+        {
+          role: 'Key Account Manager – Gurgaon',
+          desc: 'Manage enterprise key accounts for Airtel Business solutions.',
+          skills: ['Key Account Management', 'B2B Sales', 'Enterprise Solutions'],
+          package: '₹10.0 - 15.0 LPA',
+          branch: 'MBA / Engineering',
+          cgpa: 7.0,
+          openings: 2,
+          location: 'Gurgaon, Haryana',
+          applyUrl: 'https://airtel.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a668ccafd11a65?utm_source=chatgpt.com',
+          whoCanApply: ['Professionals with 4–8 years enterprise sales experience'],
+          additionalInfo: 'Job ID: a668ccafd11a65'
+        },
+        {
+          role: 'Store Manager – Airtel Core',
+          desc: 'Lead store operations, ensure customer satisfaction and drive store profitability.',
+          skills: ['Store Management', 'Customer Service', 'Retail Operations'],
+          package: '₹4.0 - 7.0 LPA',
+          branch: 'Any Graduate',
+          cgpa: 6.0,
+          openings: 3,
+          location: 'Gorakhpur, Uttar Pradesh + other locations',
+          applyUrl: 'https://airtel.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a6a2959467e7d4?utm_source=chatgpt.com',
+          whoCanApply: ['Retail managers with 2–5 years experience'],
+          additionalInfo: 'Job ID: a6a2959467e7d4'
+        },
+        {
+          role: 'Territory Manager – HDO',
+          desc: 'Drive direct sales for Airtel Home services in Bhatinda.',
+          skills: ['Sales', 'Field Operations', 'B2C'],
+          package: '₹6.0 - 10.0 LPA',
+          branch: 'Any Graduate / MBA',
+          cgpa: 6.0,
+          openings: 2,
+          location: 'Bhatinda, Punjab + other locations',
+          applyUrl: 'https://airtel.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a6a68d063e35e8?utm_source=chatgpt.com',
+          whoCanApply: ['Field sales professionals'],
+          additionalInfo: 'Job ID: a6a68d063e35e8'
+        },
+        {
+          role: 'SDE-2',
+          desc: 'Software Development Engineer II role for building scalable telecom software platforms.',
+          skills: ['Java', 'Spring Boot', 'Microservices', 'System Design'],
+          package: '₹15.0 - 25.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 3,
+          location: 'Gurgaon, Haryana',
+          applyUrl: 'https://airtel.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a6abcb0c147728?utm_source=chatgpt.com',
+          whoCanApply: ['Software engineers with solid backend experience'],
+          additionalInfo: 'Job ID: a6abcb0c147728'
+        },
+        {
+          role: 'Territory Sales Manager – Rural Mass Retail',
+          desc: 'Manage rural mass retail distribution and sales for prepaid products.',
+          skills: ['Rural Sales', 'Distribution', 'FMCG/Telecom Sales'],
+          package: '₹6.0 - 10.0 LPA',
+          branch: 'Any Graduate / MBA',
+          cgpa: 6.0,
+          openings: 5,
+          location: 'Hyderabad + other locations',
+          applyUrl: 'https://airtel.darwinbox.in/ms/candidatev2/main/careers/jobDetails/65e1ed88db540?utm_source=chatgpt.com',
+          whoCanApply: ['Sales professionals with 2–7 years experience in rural markets'],
+          additionalInfo: 'Job ID: 65e1ed88db540'
+        }
+      ];
+
+      return officialAirtelRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (29 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: 'Open',
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('amazon')) {
+      const officialAmazonRoles = [
+        {
+          role: 'Software Development Engineer II – Alexa Endpoint Experiences',
+          desc: 'Design, develop, and deploy software for Alexa endpoint devices and smart home integration.',
+          skills: ['Java/C++', 'Object-Oriented Design', 'Alexa', 'Backend'],
+          package: '₹35.0 - 55.0 LPA',
+          branch: 'BE/BTech / ME/MTech - CS, IT',
+          cgpa: 7.0,
+          openings: 5,
+          location: 'Pune',
+          applyUrl: 'https://www.amazon.jobs/en/jobs/10565737/software-development-engineer-ii-alexa-endpoint-experiences',
+          whoCanApply: ['Engineers with 3+ years of experience'],
+          additionalInfo: 'Job ID: 10565737'
+        },
+        {
+          role: 'Software Development Engineer – Amazon',
+          desc: 'Core software engineering role focusing on large-scale distributed systems.',
+          skills: ['Data Structures', 'Algorithms', 'Distributed Systems'],
+          package: '₹25.0 - 45.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.5,
+          openings: 10,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.amazon.jobs/en/jobs/10546640/software-development-engineer-amazon?utm_source=chatgpt.com',
+          whoCanApply: ['Engineers with 3+ years of experience'],
+          additionalInfo: 'Job ID: 10546640'
+        },
+        {
+          role: 'Software Development Engineer – AFT-PES',
+          desc: 'Build systems for Amazon Fulfillment Technologies (AFT) focusing on supply chain efficiency.',
+          skills: ['Java', 'AWS', 'Supply Chain Tech', 'System Design'],
+          package: '₹25.0 - 45.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 6,
+          location: 'India',
+          applyUrl: 'https://www.amazon.jobs/en/jobs/10529944/software-development-engineer-aft-pes?utm_source=chatgpt.com',
+          whoCanApply: ['Software engineers with strong backend skills'],
+          additionalInfo: 'Job ID: 10529944'
+        },
+        {
+          role: 'SDE II – Amazon Business Operations',
+          desc: 'Develop software solutions for B2B e-commerce (Amazon Business).',
+          skills: ['Java', 'Microservices', 'AWS', 'B2B E-commerce'],
+          package: '₹35.0 - 55.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 4,
+          location: 'Hyderabad',
+          applyUrl: 'https://www.amazon.jobs/en/jobs/10556331/sde-ii-amazon-business-operations?utm_source=chatgpt.com',
+          whoCanApply: ['Engineers with 3+ years of experience'],
+          additionalInfo: 'Job ID: 10556331'
+        },
+        {
+          role: 'Software Development Engineer II – Timehub Pay Extract',
+          desc: 'Develop secure, highly available services for payroll data extraction systems.',
+          skills: ['Java', 'AWS', 'Scalability', 'Security'],
+          package: '₹35.0 - 55.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 3,
+          location: 'Hyderabad',
+          applyUrl: 'https://www.amazon.jobs/en/jobs/10562899/software-development-engineer-ii-timehub-pay-extract?utm_source=chatgpt.com',
+          whoCanApply: ['Experienced software developers'],
+          additionalInfo: 'Job ID: 10562899'
+        },
+        {
+          role: 'Software Development Engineer II – Timehub Pay Extract',
+          desc: 'Build architecture for next-gen payroll capabilities globally.',
+          skills: ['System Architecture', 'Java', 'Data Processing'],
+          package: '₹35.0 - 55.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 2,
+          location: 'Hyderabad',
+          applyUrl: 'https://www.amazon.jobs/en/jobs/10562897/',
+          whoCanApply: ['Experienced software developers'],
+          additionalInfo: 'Job ID: 10562897'
+        },
+        {
+          role: 'Software Development Engineer – Amazon Flex',
+          desc: 'Develop features and mobile backend systems for the Amazon Flex driver app ecosystem.',
+          skills: ['Backend Development', 'Mobile Systems', 'AWS'],
+          package: '₹25.0 - 45.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 5,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.amazon.jobs/en/jobs/10561991/software-development-engineer-amazon-flex?utm_source=chatgpt.com',
+          whoCanApply: ['Software engineers'],
+          additionalInfo: 'Job ID: 10561991'
+        },
+        {
+          role: 'Software Dev Engineer II – Selection Management',
+          desc: 'Design large-scale systems to manage Amazon\'s massive product selection catalogue.',
+          skills: ['Distributed Systems', 'Big Data', 'Java/C++'],
+          package: '₹35.0 - 55.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.5,
+          openings: 3,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.amazon.jobs/en/jobs/10561987/',
+          whoCanApply: ['Senior engineers with distributed systems background'],
+          additionalInfo: 'Job ID: 10561987'
+        },
+        {
+          role: 'Software Engineer – Selection Monitoring',
+          desc: 'Build intelligent monitoring systems to ensure selection quality and health metrics.',
+          skills: ['Software Engineering', 'Monitoring Systems', 'Data Pipelines'],
+          package: '₹25.0 - 45.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 4,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.amazon.jobs/en/jobs/10561925/software-engineer-selection-monitoring-selection-monitoring?utm_source=chatgpt.com',
+          whoCanApply: ['Software engineers'],
+          additionalInfo: 'Job ID: 10561925'
+        },
+        {
+          role: 'Software Dev Engineer II – Paragon',
+          desc: 'Develop high-performance customer service technology platforms (Paragon).',
+          skills: ['Full Stack', 'Java', 'React', 'AWS'],
+          package: '₹35.0 - 55.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 6,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.amazon.jobs/en/jobs/10528516/software-dev-engineer-ii-paragon?utm_source=chatgpt.com',
+          whoCanApply: ['Engineers with 3+ years experience'],
+          additionalInfo: 'Job ID: 10528516'
+        }
+      ];
+
+      return officialAmazonRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (22 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: 'Open',
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
     if (company?.name && company.name.toLowerCase().includes('latentview') || company?.name?.toLowerCase().includes('latent view')) {
       const officialLatentViewRoles = [
         {
