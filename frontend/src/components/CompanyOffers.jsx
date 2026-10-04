@@ -33,6 +33,1121 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
     const category = company?.category || 'it';
     const companyScore = company?.name ? company.name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) : 0;
 
+    if (company?.name && company.name.toLowerCase().includes('morgan stanley')) {
+      const officialMsRoles = [
+        {
+          role: 'Java Software Engineer – Vice President – Parametric',
+          desc: 'Lead the design and development of trading systems for the Parametric division.',
+          skills: ['Java', 'Spring Boot', 'Microservices', 'Trading Systems'],
+          package: '₹40.0 - 65.0 LPA',
+          branch: 'BE/BTech / ME/MTech',
+          cgpa: 7.0,
+          openings: 1,
+          location: 'Mumbai',
+          applyUrl: 'https://ms.wd5.myworkdayjobs.com/External/job/Mumbai-India/Java-Software-Engineer--Vice-President---Parametric_PT-JR042853-1?utm_source=chatgpt.com',
+          whoCanApply: ['Senior candidates with 8+ years experience in software engineering'],
+          additionalInfo: 'Job ID: PT-JR042853'
+        },
+        {
+          role: 'Senior Software Engineer – Parametric',
+          desc: 'Develop low-latency software solutions and support core trading infrastructure.',
+          skills: ['Software Engineering', 'Algorithms', 'Backend Systems'],
+          package: '₹25.0 - 38.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 3,
+          location: 'Mumbai',
+          applyUrl: 'https://ms.wd5.myworkdayjobs.com/en-US/External/job/Senior-Software-Engineer---Parametric_PT-JR038722-1?utm_source=chatgpt.com',
+          whoCanApply: ['Experienced software engineers'],
+          additionalInfo: 'Job ID: PT-JR038722'
+        },
+        {
+          role: 'Client Account Servicing, Associate – Investment Management',
+          desc: 'Client-facing operations role managing account servicing in the Investment Management division.',
+          skills: ['Client Account Servicing', 'Finance', 'Investment Management'],
+          package: '₹14.0 - 20.0 LPA',
+          branch: 'MBA / BCom / Finance',
+          cgpa: 6.5,
+          openings: 4,
+          location: 'Mumbai',
+          applyUrl: 'https://ms.wd5.myworkdayjobs.com/en-US/External/job/Client-Account-Servicing--Associate--Investment-Management_JR042228?utm_source=chatgpt.com',
+          whoCanApply: ['Finance graduates with relevant experience'],
+          additionalInfo: 'Job ID: JR042228'
+        },
+        {
+          role: 'BDS Content Management Specialist, Senior Associate – Investment Management',
+          desc: 'Manage global content strategies for the Business Development Services group.',
+          skills: ['Content Management', 'BDS', 'Communications', 'Finance'],
+          package: '₹18.0 - 25.0 LPA',
+          branch: 'MBA / Post Grad',
+          cgpa: 6.5,
+          openings: 2,
+          location: 'Mumbai',
+          applyUrl: 'https://ms.wd5.myworkdayjobs.com/en-US/External/job/BDS-Content-Management-Specialist--Senior-Associate--Investment-Management_JR041072?utm_source=chatgpt.com',
+          whoCanApply: ['Candidates with content management & strategy experience'],
+          additionalInfo: 'Job ID: JR041072'
+        },
+        {
+          role: 'Investment Analyst – Parametric',
+          desc: 'Analyze portfolios, generate investment insights, and support portfolio managers.',
+          skills: ['Investment Analysis', 'Financial Modeling', 'Excel', 'Data Analytics'],
+          package: '₹12.0 - 18.0 LPA',
+          branch: 'MBA / Finance / Economics',
+          cgpa: 7.0,
+          openings: 5,
+          location: 'Mumbai',
+          applyUrl: 'https://ms.wd5.myworkdayjobs.com/en-US/External/job/Investment-Analyst---Parametric_PT-JR038224-1?utm_source=chatgpt.com',
+          whoCanApply: ['Finance professionals with analytical skills'],
+          additionalInfo: 'Job ID: PT-JR038224'
+        },
+        {
+          role: 'Structured Equity Solutions, Senior Analyst – Global Capital Market',
+          desc: 'Provide support for structured equity trading, pricing, and capital market research.',
+          skills: ['Equities', 'Derivatives', 'Capital Markets', 'Quantitative Analysis'],
+          package: '₹18.0 - 26.0 LPA',
+          branch: 'Engineering / Finance',
+          cgpa: 7.5,
+          openings: 3,
+          location: 'Mumbai',
+          applyUrl: 'https://ms.wd5.myworkdayjobs.com/private/job/Structured-Equity-Solutions--Senior-Analyst--Global-Capital-Market_JR037412?utm_source=chatgpt.com',
+          whoCanApply: ['Candidates with strong quantitative and capital markets knowledge'],
+          additionalInfo: 'Job ID: JR037412'
+        },
+        {
+          role: 'Fixed Income Division – Senior Associate, Structuring Desk Support',
+          desc: 'Support the Fixed Income structuring desk with pricing tools and trade lifecycle management.',
+          skills: ['Fixed Income', 'Structuring', 'VBA/Python', 'Trade Support'],
+          package: '₹20.0 - 30.0 LPA',
+          branch: 'Engineering / Finance',
+          cgpa: 7.0,
+          openings: 2,
+          location: 'Mumbai',
+          applyUrl: 'https://ms.wd5.myworkdayjobs.com/External/job/Mumbai-India/',
+          whoCanApply: ['Professionals with Fixed Income product knowledge'],
+          additionalInfo: 'Job ID: JR043926'
+        },
+        {
+          role: 'Java Developer – Vice President – Software Engineering',
+          desc: 'VP level engineering role overseeing Java backend architecture for global platforms.',
+          skills: ['Java', 'Architecture', 'Leadership', 'Backend Engineering'],
+          package: '₹45.0 - 70.0 LPA',
+          branch: 'BE/BTech / ME/MTech',
+          cgpa: 7.0,
+          openings: 1,
+          location: 'Mumbai',
+          applyUrl: 'https://ms.wd5.myworkdayjobs.com/External/job/Mumbai-India/',
+          whoCanApply: ['Senior engineers with leadership experience'],
+          additionalInfo: 'Job ID: PT-JR042516'
+        },
+        {
+          role: 'Cash Management Product Owner, Platforms – Director, Wealth Management',
+          desc: 'Director level role driving product strategy for Wealth Management Cash Platforms.',
+          skills: ['Product Management', 'Wealth Management', 'Agile', 'Cash Management'],
+          package: '₹50.0 - 80.0 LPA',
+          branch: 'MBA / Post Grad',
+          cgpa: 7.0,
+          openings: 1,
+          location: 'Mumbai',
+          applyUrl: 'https://ms.wd5.myworkdayjobs.com/External/job/Mumbai-India/',
+          whoCanApply: ['Senior product managers with Wealth Management domain expertise'],
+          additionalInfo: 'Job ID: PT-JR043872'
+        },
+        {
+          role: 'Business Analyst, VRS Insights – ISG & Cross Coverage ORD Support, Director, LCD Data and Analytics',
+          desc: 'Lead data and analytics insights for Legal and Compliance Division.',
+          skills: ['Business Analysis', 'Data Analytics', 'Compliance/LCD', 'Insights'],
+          package: '₹40.0 - 65.0 LPA',
+          branch: 'MBA / Engineering',
+          cgpa: 7.0,
+          openings: 1,
+          location: 'Mumbai',
+          applyUrl: 'https://ms.wd5.myworkdayjobs.com/External/job/Mumbai-India/',
+          whoCanApply: ['Experienced professionals in business analytics and compliance'],
+          additionalInfo: 'Job ID: PT-JR040464'
+        }
+      ];
+
+      return officialMsRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (25 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: 'Open',
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('fractal')) {
+      const officialFractalRoles = [
+        {
+          role: 'Sr. Data Scientist – GenAI & Agentic Systems',
+          desc: 'Build advanced generative AI models and autonomous agentic systems for enterprise clients.',
+          skills: ['Generative AI', 'Agentic Systems', 'Python', 'LLMs'],
+          package: '₹25.0 - 40.0 LPA',
+          branch: 'BE/BTech - CS, AI, Data Science',
+          cgpa: 7.5,
+          openings: 3,
+          location: 'Bengaluru',
+          applyUrl: 'https://fractal.wd1.myworkdayjobs.com/en-US/Careers/job/Sr-Data-Scientist---GenAI---Agentic-Systems_SR-42058?utm_source=chatgpt.com',
+          whoCanApply: ['Senior data scientists with GenAI expertise'],
+          additionalInfo: 'Job ID: SR-42058'
+        },
+        {
+          role: 'Senior AI Engineer – MLOps – 5 to 10 yrs',
+          desc: 'Deploy and scale machine learning models using modern MLOps pipelines and cloud infrastructure.',
+          skills: ['MLOps', 'AWS/Azure/GCP', 'Docker', 'Kubernetes'],
+          package: '₹22.0 - 35.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 5,
+          location: 'Bengaluru / India',
+          applyUrl: 'https://fractal.wd1.myworkdayjobs.com/en-US/Careers/job/Bengaluru/Senior-Engineer--MLOPs--5-to-10yrs_SR-31317-1?utm_source=chatgpt.com',
+          whoCanApply: ['Engineers with 5-10 years experience in MLOps'],
+          additionalInfo: 'Job ID: SR-31317'
+        },
+        {
+          role: 'Lead AI Engineer',
+          desc: 'Lead the architecture and development of AI-driven platforms and applications.',
+          skills: ['AI Engineering', 'System Architecture', 'Python', 'Deep Learning'],
+          package: '₹30.0 - 45.0 LPA',
+          branch: 'BE/BTech / ME/MTech',
+          cgpa: 7.5,
+          openings: 2,
+          location: 'Mumbai',
+          applyUrl: 'https://fractal.wd1.myworkdayjobs.com/en-US/Careers/job/Lead-AI-Engineer_SR-41368-1?utm_source=chatgpt.com',
+          whoCanApply: ['Experienced tech leads in AI domain'],
+          additionalInfo: 'Job ID: SR-41368'
+        },
+        {
+          role: 'Senior Data Scientist – Generative AI',
+          desc: 'Research and apply Generative AI techniques to solve complex business problems.',
+          skills: ['Generative AI', 'NLP', 'PyTorch/TensorFlow', 'LLMs'],
+          package: '₹25.0 - 40.0 LPA',
+          branch: 'BE/BTech / MS / PhD',
+          cgpa: 7.5,
+          openings: 4,
+          location: 'Bengaluru / India',
+          applyUrl: 'https://fractal.wd1.myworkdayjobs.com/Careers/job/Bengaluru/Senior-Data-Scientist---Generative-AI_SR-32627?utm_source=chatgpt.com',
+          whoCanApply: ['Data Scientists with hands-on GenAI experience'],
+          additionalInfo: 'Job ID: SR-32627'
+        },
+        {
+          role: 'Senior Data Scientist – AI & Healthcare Analytics',
+          desc: 'Apply machine learning models and analytics to the healthcare sector to improve patient outcomes.',
+          skills: ['Healthcare Analytics', 'Machine Learning', 'Python', 'SQL'],
+          package: '₹20.0 - 32.0 LPA',
+          branch: 'BE/BTech / Data Science',
+          cgpa: 7.0,
+          openings: 3,
+          location: 'Mumbai / Bengaluru / Pune',
+          applyUrl: 'https://fractal.wd1.myworkdayjobs.com/Careers/job/Mumbai/Senior-Data-Scientist----AI---Healthcare-analytics-_SR-39068-1?utm_source=chatgpt.com',
+          whoCanApply: ['Candidates with Data Science experience in Healthcare'],
+          additionalInfo: 'Job ID: SR-39068'
+        },
+        {
+          role: 'LLMOps Engineer',
+          desc: 'Focus on deploying, monitoring, and optimizing Large Language Models in production.',
+          skills: ['LLMOps', 'Model Serving', 'Monitoring', 'Python'],
+          package: '₹22.0 - 35.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 2,
+          location: 'Mumbai',
+          applyUrl: 'https://fractal.wd1.myworkdayjobs.com/en-US/Careers/job/LLmops_SR-39417-1?utm_source=chatgpt.com',
+          whoCanApply: ['Engineers with experience scaling LLMs'],
+          additionalInfo: 'Job ID: SR-39417'
+        },
+        {
+          role: 'Senior Data Scientist – Market Mix Modelling',
+          desc: 'Build predictive models to measure marketing ROI and optimize advertising budgets.',
+          skills: ['Market Mix Modelling', 'Statistics', 'R/Python', 'Econometrics'],
+          package: '₹18.0 - 30.0 LPA',
+          branch: 'Stats / Math / Engineering',
+          cgpa: 7.0,
+          openings: 3,
+          location: 'Bengaluru / India',
+          applyUrl: 'https://fractal.wd1.myworkdayjobs.com/en-US/Careers/job/Bengaluru/Senior-Data-Scientist--Market-Mix-Modelling-_SR-42338?utm_source=chatgpt.com',
+          whoCanApply: ['Data scientists with MMM expertise'],
+          additionalInfo: 'Job ID: SR-42338'
+        },
+        {
+          role: 'Senior Analytics Consultant – CPG',
+          desc: 'Consulting role leveraging analytics to drive strategy for Consumer Packaged Goods clients.',
+          skills: ['CPG Analytics', 'Consulting', 'Data Strategy', 'SQL/Python'],
+          package: '₹18.0 - 28.0 LPA',
+          branch: 'MBA / Engineering',
+          cgpa: 7.0,
+          openings: 4,
+          location: 'Bengaluru / India',
+          applyUrl: 'https://fractal.wd1.myworkdayjobs.com/Careers/job/Bengaluru/Senior-Analytics-Consultant---CPG_SR-41346?utm_source=chatgpt.com',
+          whoCanApply: ['Consultants with CPG domain experience'],
+          additionalInfo: 'Job ID: SR-41346'
+        },
+        {
+          role: 'Engagement Manager – Route to Market',
+          desc: 'Manage analytics engagements focusing on Route to Market strategies and sales optimization.',
+          skills: ['Engagement Management', 'Route to Market', 'Analytics Consulting'],
+          package: '₹25.0 - 38.0 LPA',
+          branch: 'MBA / Post Grad',
+          cgpa: 7.0,
+          openings: 2,
+          location: 'Bengaluru / Pune / Mumbai / Gurgaon / Noida',
+          applyUrl: 'https://fractal.wd1.myworkdayjobs.com/careers/job/Bengaluru/Engagement-Manager---Route-to-Market_SR-40598?utm_source=chatgpt.com',
+          whoCanApply: ['Engagement managers with analytics background'],
+          additionalInfo: 'Job ID: SR-40598'
+        },
+        {
+          role: 'Data Engineer – Data Engineering',
+          desc: 'Design, develop, and maintain robust data pipelines and cloud data warehouses.',
+          skills: ['Data Engineering', 'ETL', 'SQL', 'Cloud (AWS/GCP/Azure)'],
+          package: '₹12.0 - 22.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 6,
+          location: 'Mumbai',
+          applyUrl: 'https://fractal.wd1.myworkdayjobs.com/en-US/Careers/job/Data-Engineer-Data-Engineering-Engineer-Engineer-8_SR-40962-1?utm_source=chatgpt.com',
+          whoCanApply: ['Engineers with solid data pipeline experience'],
+          additionalInfo: 'Job ID: SR-40962'
+        }
+      ];
+
+      return officialFractalRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (28 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: 'Open',
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('goldman sachs')) {
+      const officialGsRoles = [
+        {
+          role: 'Internal Audit – Technology Audit – Vice President',
+          desc: 'Lead technology audits across various divisions to ensure robust IT risk management and compliance.',
+          skills: ['Technology Audit', 'IT Risk', 'Cybersecurity', 'Compliance'],
+          package: '₹40.0 - 65.0 LPA',
+          branch: 'BE/BTech / ME/MTech - CS, IT',
+          cgpa: 7.0,
+          openings: 1,
+          location: 'Bengaluru',
+          applyUrl: 'https://higher.gs.com/roles/183411?utm_source=chatgpt.com',
+          whoCanApply: ['Senior candidates with 8+ years experience in tech audit/risk'],
+          additionalInfo: 'Job ID: 183411'
+        },
+        {
+          role: 'Software Engineering – Data, Lakehouse & AI Data Platform Engineer – Analyst',
+          desc: 'Build scalable data pipelines and AI data platforms using modern lakehouse architectures.',
+          skills: ['Data Engineering', 'Big Data', 'AI Platform', 'Python/Java'],
+          package: '₹18.0 - 28.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.5,
+          openings: 5,
+          location: 'Bengaluru',
+          applyUrl: 'https://higher.gs.com/roles/169320?utm_source=chatgpt.com',
+          whoCanApply: ['Graduates with strong programming and data engineering skills'],
+          additionalInfo: 'Job ID: 169320'
+        },
+        {
+          role: 'Asset & Wealth Management – Private Bank Technology – Associate',
+          desc: 'Develop technological solutions for the Private Wealth Management business.',
+          skills: ['Java', 'Spring Boot', 'Microservices', 'Finance'],
+          package: '₹25.0 - 38.0 LPA',
+          branch: 'BE/BTech / MCA',
+          cgpa: 7.0,
+          openings: 3,
+          location: 'Hyderabad',
+          applyUrl: 'https://higher.gs.com/roles/171196?utm_source=chatgpt.com',
+          whoCanApply: ['Software engineers with 3-6 years of experience'],
+          additionalInfo: 'Job ID: 171196'
+        },
+        {
+          role: 'Asset & Wealth Management – Margin Engineering – Associate',
+          desc: 'Work within Margin Engineering to develop low-latency risk management systems.',
+          skills: ['C++', 'Java', 'Low Latency', 'Risk Management Systems'],
+          package: '₹25.0 - 38.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 2,
+          location: 'Hyderabad',
+          applyUrl: 'https://higher.gs.com/roles/167750?utm_source=chatgpt.com',
+          whoCanApply: ['Software engineers with background in high-performance systems'],
+          additionalInfo: 'Job ID: 167750'
+        },
+        {
+          role: 'Associate Software Engineering (L2)',
+          desc: 'Core software engineering role focusing on full-stack development and system scaling.',
+          skills: ['Full Stack', 'Java/Python', 'React', 'System Design'],
+          package: '₹22.0 - 35.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 8,
+          location: 'Bengaluru',
+          applyUrl: 'https://higher.gs.com/roles/162216?utm_source=chatgpt.com',
+          whoCanApply: ['Experienced software developers (2-5 years)'],
+          additionalInfo: 'Job ID: 162216'
+        },
+        {
+          role: '2027 India – Bengaluru/Hyderabad – Engineering – Summer Analyst',
+          desc: 'Summer Analyst internship program for pre-final year students to gain hands-on engineering experience.',
+          skills: ['Data Structures', 'Algorithms', 'Programming Basics'],
+          package: '₹1.0 - 1.5 LPM (Stipend)',
+          branch: 'BE/BTech / Dual Degree (Pre-final year)',
+          cgpa: 8.0,
+          openings: 50,
+          location: 'Bengaluru / Hyderabad',
+          applyUrl: 'https://higher.gs.com/roles/170476?utm_source=chatgpt.com',
+          whoCanApply: ['Pre-final year engineering students'],
+          additionalInfo: 'Job ID: 170476'
+        },
+        {
+          role: 'Compliance Engineering – Software Engineering',
+          desc: 'Develop engineering solutions for regulatory compliance and risk management models.',
+          skills: ['Backend Development', 'Data Processing', 'Regulatory Tech'],
+          package: '₹18.0 - 28.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 4,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.goldmansachs.com/careers?utm_source=chatgpt.com',
+          whoCanApply: ['Graduates with interest in FinTech compliance'],
+          additionalInfo: 'Job ID: 26832*'
+        },
+        {
+          role: 'Global Banking & Markets – Analytics and Exhibit Group – Analyst',
+          desc: 'Analyst role focusing on financial data analytics and automated exhibit generation for global markets.',
+          skills: ['Data Analytics', 'Python', 'SQL', 'Financial Modeling'],
+          package: '₹16.0 - 25.0 LPA',
+          branch: 'BE/BTech / MBA / Economics',
+          cgpa: 7.5,
+          openings: 5,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.goldmansachs.com/careers?utm_source=chatgpt.com',
+          whoCanApply: ['Candidates with strong analytical and quantitative skills'],
+          additionalInfo: 'Job ID: 146897997*'
+        },
+        {
+          role: 'Global Banking & Markets Operations – Documentation – Senior Analyst',
+          desc: 'Senior Analyst managing operations documentation and process automation workflows.',
+          skills: ['Operations', 'Documentation', 'Process Automation'],
+          package: '₹14.0 - 20.0 LPA',
+          branch: 'Any Graduate / PG',
+          cgpa: 6.5,
+          openings: 3,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.goldmansachs.com/careers?utm_source=chatgpt.com',
+          whoCanApply: ['Candidates with relevant banking operations experience'],
+          additionalInfo: 'Job ID: 146896889*'
+        },
+        {
+          role: 'Compliance – Compl Surveillance & Models Engineering – Vice President',
+          desc: 'VP role leading the engineering of compliance surveillance models and algorithms.',
+          skills: ['Engineering Leadership', 'Model Engineering', 'Compliance', 'Machine Learning'],
+          package: '₹45.0 - 70.0 LPA',
+          branch: 'BE/BTech / ME/MTech',
+          cgpa: 7.0,
+          openings: 1,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.goldmansachs.com/careers?utm_source=chatgpt.com',
+          whoCanApply: ['Senior engineering leaders with domain expertise'],
+          additionalInfo: 'Global Compliance Division'
+        }
+      ];
+
+      return officialGsRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (30 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: 'Open',
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('icici')) {
+      const officialIcicRoles = [
+        {
+          role: 'Credit Manager',
+          desc: 'Credit Manager role focusing on credit risk assessment, financial analysis, and loan portfolio management.',
+          skills: ['Credit Risk', 'Financial Analysis', 'Banking', 'Risk Assessment'],
+          package: '₹9.0 - 15.0 LPA',
+          branch: 'MBA / BCom / BE (Any)',
+          cgpa: 6.5,
+          openings: 5,
+          location: 'Mumbai / Hybrid',
+          applyUrl: 'https://www.icicicareers.com/CareerApplicant/Career/job-details/2204493?utm_source=chatgpt.com',
+          whoCanApply: ['Candidates with finance and credit risk background'],
+          additionalInfo: 'Job ID: 2204493'
+        },
+        {
+          role: 'Relationship Manager – Wholesale Banking',
+          desc: 'Relationship Manager for Wholesale Banking, managing corporate clients and large banking portfolios.',
+          skills: ['Wholesale Banking', 'Client Management', 'Sales', 'Finance'],
+          package: '₹12.0 - 18.0 LPA',
+          branch: 'MBA / PGDM / BE',
+          cgpa: 6.5,
+          openings: 4,
+          location: 'Bengaluru / On-site',
+          applyUrl: 'https://www.icicicareers.com/CareerApplicant/Career/job-details/2201145?utm_source=chatgpt.com',
+          whoCanApply: ['Professionals with experience in wholesale banking'],
+          additionalInfo: 'Job ID: 2201145'
+        },
+        {
+          role: 'Application Security Manager',
+          desc: 'Information Security role focusing on application security, vulnerability assessment, and threat mitigation.',
+          skills: ['AppSec', 'VAPT', 'Information Security', 'Cybersecurity'],
+          package: '₹15.0 - 22.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 2,
+          location: 'Mumbai / Hybrid',
+          applyUrl: 'https://www.icicicareers.com/CareerApplicant/Career/job-details/2544251?utm_source=chatgpt.com',
+          whoCanApply: ['IT professionals with 5-8 years of security experience'],
+          additionalInfo: 'Job ID: 2544251'
+        },
+        {
+          role: 'Product Manager – Retail Banking',
+          desc: 'Manage and grow retail banking products, focusing on customer experience and digital transformation.',
+          skills: ['Product Management', 'Retail Banking', 'Agile', 'Strategy'],
+          package: '₹14.0 - 20.0 LPA',
+          branch: 'MBA / BE / BTech',
+          cgpa: 7.0,
+          openings: 3,
+          location: 'Mumbai / On-site',
+          applyUrl: 'https://www.icicicareers.com/CareerApplicant/Career/home/?utm_source=chatgpt.com',
+          whoCanApply: ['Professionals with product management experience'],
+          additionalInfo: 'Job ID: 23080'
+        },
+        {
+          role: 'Technical Manager – Mortgage Valuation Group',
+          desc: 'Technical Manager role overseeing the IT infrastructure and software systems for the Mortgage Valuation Group.',
+          skills: ['Technical Management', 'IT Infrastructure', 'Banking Systems'],
+          package: '₹16.0 - 24.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 2,
+          location: 'Pune / Hybrid',
+          applyUrl: 'https://www.icicicareers.com/CareerApplicant/Career/home/?utm_source=chatgpt.com',
+          whoCanApply: ['Experienced tech managers'],
+          additionalInfo: 'Job ID: 24553'
+        },
+        {
+          role: 'Operations Manager',
+          desc: 'Oversee IT operations, ensure system availability, and manage digital operations teams.',
+          skills: ['IT Operations', 'Team Management', 'Process Optimization'],
+          package: '₹12.0 - 18.0 LPA',
+          branch: 'BE/BTech / MBA',
+          cgpa: 6.5,
+          openings: 3,
+          location: 'Bengaluru / On-site',
+          applyUrl: 'https://www.icicicareers.com/CareerApplicant/Career/home/?utm_source=chatgpt.com',
+          whoCanApply: ['Candidates with strong operations management background'],
+          additionalInfo: 'Job ID: 24554'
+        },
+        {
+          role: 'ICICI Bank Probationary Officer Program',
+          desc: 'Probationary Officer (PO) Program for young graduates to fast-track their career in banking.',
+          skills: ['Banking Operations', 'Finance', 'Customer Service', 'Sales'],
+          package: '₹5.0 - 8.0 LPA',
+          branch: 'BE/BTech / BCom / BSc (Any)',
+          cgpa: 6.0,
+          openings: 50,
+          location: 'Pan India',
+          applyUrl: 'https://www.icicicareers.com/CareerApplicant/Career/home/?utm_source=chatgpt.com',
+          whoCanApply: ['Fresh graduates with 0-2 years of experience'],
+          additionalInfo: 'Job ID: 2547189'
+        },
+        {
+          role: 'Apprenticeship Programme',
+          desc: 'Apprenticeship program offering hands-on experience in various banking and IT operations.',
+          skills: ['Basic IT', 'Banking Basics', 'Communication', 'Operations'],
+          package: '₹3.0 - 4.5 LPA',
+          branch: 'BE/BTech / Any Graduate',
+          cgpa: 5.5,
+          openings: 100,
+          location: 'Pan India',
+          applyUrl: 'https://www.icicicareers.com/CareerApplicant/Career/home/?utm_source=chatgpt.com',
+          whoCanApply: ['Fresh graduates looking for apprenticeship'],
+          additionalInfo: 'Job ID: 2550803'
+        },
+        {
+          role: 'Software Engineer – Full Stack',
+          desc: 'Develop full stack web applications for ICICI Bank digital banking platforms using modern JavaScript frameworks.',
+          skills: ['React', 'Node.js', 'Java', 'Full Stack'],
+          package: '₹8.0 - 14.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 10,
+          location: 'Mumbai / Hybrid',
+          applyUrl: 'https://www.icicicareers.com/CareerApplicant/Career/home/?utm_source=chatgpt.com',
+          whoCanApply: ['Software engineering graduates'],
+          additionalInfo: 'Digital Banking Tech Team'
+        },
+        {
+          role: 'Data Scientist / ML Engineer',
+          desc: 'Apply machine learning models for risk management, fraud detection, and customer insights in banking.',
+          skills: ['Machine Learning', 'Python', 'Data Science', 'SQL'],
+          package: '₹12.0 - 18.0 LPA',
+          branch: 'BE/BTech - CS, IT, AI/ML',
+          cgpa: 7.0,
+          openings: 5,
+          location: 'Bengaluru / On-site',
+          applyUrl: 'https://www.icicicareers.com/CareerApplicant/Career/home/?utm_source=chatgpt.com',
+          whoCanApply: ['Candidates with background in Data Science and ML'],
+          additionalInfo: 'Analytics and Data Science CoE'
+        }
+      ];
+
+      return officialIcicRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (22 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: 'Open',
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('hdfc')) {
+      const officialHdfcRoles = [
+        {
+          role: 'Manager – Analytics Support & PLP',
+          desc: 'Analytics Support and PLP role (Job ID 71527) focusing on data analytics and process automation in banking.',
+          skills: ['Analytics', 'SQL', 'Python', 'Banking'],
+          package: '₹12.0 - 18.0 LPA',
+          branch: 'MBA / BCom / BE (Any)',
+          cgpa: 7.0,
+          openings: 3,
+          location: 'Mumbai / On-site',
+          applyUrl: 'https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE&utm_source=chatgpt.com#detail/job/71527',
+          whoCanApply: ['Candidates with strong analytics background'],
+          additionalInfo: 'HDFC Bank Corporate Office'
+        },
+        {
+          role: 'Tech & Digital – Sr QA Engineer',
+          desc: 'Senior Quality Assurance Engineer (Job ID 69040) responsible for automation and manual testing of digital products.',
+          skills: ['QA', 'Automation', 'Selenium', 'Java'],
+          package: '₹10.0 - 15.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 5,
+          location: 'Bengaluru / Hybrid',
+          applyUrl: 'https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE&utm_source=chatgpt.com#detail/job/69040',
+          whoCanApply: ['Engineering graduates with testing experience'],
+          additionalInfo: 'Tech & Digital Division'
+        },
+        {
+          role: 'Tech & Digital – Lead Site Reliability Engineer',
+          desc: 'Lead SRE (Job ID 68733) to maintain high availability and performance of critical banking platforms.',
+          skills: ['SRE', 'AWS/Azure', 'Kubernetes', 'CI/CD'],
+          package: '₹18.0 - 25.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 2,
+          location: 'Pune / Remote',
+          applyUrl: 'https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE&utm_source=chatgpt.com#detail/job/68733',
+          whoCanApply: ['Experienced DevOps / SRE professionals'],
+          additionalInfo: 'Tech & Digital Division'
+        },
+        {
+          role: 'Tech & Digital – Lead Site Reliability Engineer',
+          desc: 'Lead SRE (Job ID 68297) focusing on scalable cloud infrastructure and continuous deployment pipelines.',
+          skills: ['SRE', 'AWS/Azure', 'Kubernetes', 'CI/CD'],
+          package: '₹18.0 - 25.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 7.0,
+          openings: 2,
+          location: 'Bengaluru / Hybrid',
+          applyUrl: 'https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE&utm_source=chatgpt.com#detail/job/68297',
+          whoCanApply: ['Experienced DevOps / SRE professionals'],
+          additionalInfo: 'Tech & Digital Division'
+        },
+        {
+          role: 'Tech & Digital – Software Engineer – Full Stack',
+          desc: 'Full Stack Software Engineer (Job ID 66205) to develop end-to-end features for customer-facing banking portals.',
+          skills: ['Full Stack', 'Java', 'React', 'Spring Boot'],
+          package: '₹8.0 - 14.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 10,
+          location: 'Mumbai / On-site',
+          applyUrl: 'https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE&utm_source=chatgpt.com#detail/job/66205',
+          whoCanApply: ['Graduates with full stack development skills'],
+          additionalInfo: 'Tech & Digital Division'
+        },
+        {
+          role: 'Tech & Digital – Engineering Manager',
+          desc: 'Engineering Manager (Job ID 58657) to lead technical teams, guide architecture, and ensure successful delivery.',
+          skills: ['Engineering Management', 'System Design', 'Agile'],
+          package: '₹25.0 - 35.0 LPA',
+          branch: 'BE/BTech / MCA',
+          cgpa: 7.0,
+          openings: 1,
+          location: 'Bengaluru / Remote',
+          applyUrl: 'https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE&utm_source=chatgpt.com#detail/job/58657',
+          whoCanApply: ['Senior candidates with technical leadership experience'],
+          additionalInfo: 'Tech & Digital Division'
+        },
+        {
+          role: 'Tech & Digital – Architect – Solutions',
+          desc: 'Solutions Architect (Job ID 55050) responsible for designing resilient and secure enterprise microservices architectures.',
+          skills: ['Solution Architecture', 'Microservices', 'Cloud'],
+          package: '₹28.0 - 40.0 LPA',
+          branch: 'BE/BTech / ME/MTech',
+          cgpa: 7.0,
+          openings: 1,
+          location: 'Mumbai / Hybrid',
+          applyUrl: 'https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE&utm_source=chatgpt.com#detail/job/55050',
+          whoCanApply: ['Experienced architects with deep enterprise software knowledge'],
+          additionalInfo: 'Tech & Digital Division'
+        },
+        {
+          role: 'Tech & Digital – Sr Database Engineer',
+          desc: 'Senior Database Engineer (Job ID 51520) managing complex Oracle and NoSQL databases for high-throughput banking systems.',
+          skills: ['Database Design', 'SQL', 'Oracle', 'Performance Tuning'],
+          package: '₹14.0 - 20.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 3,
+          location: 'Pune / On-site',
+          applyUrl: 'https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE&utm_source=chatgpt.com#detail/job/51520',
+          whoCanApply: ['Candidates with extensive database management experience'],
+          additionalInfo: 'Tech & Digital Division'
+        },
+        {
+          role: 'RA – Manager – Digital Lending Solutions & Automation – RBG',
+          desc: 'Manager for Digital Lending Solutions & Automation (Job ID 46328). Drive automation initiatives for the retail banking group.',
+          skills: ['Digital Lending', 'Automation', 'RPA', 'Banking Solutions'],
+          package: '₹15.0 - 22.0 LPA',
+          branch: 'MBA / BCom / BE (Any)',
+          cgpa: 7.0,
+          openings: 2,
+          location: 'Mumbai / On-site',
+          applyUrl: 'https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE&utm_source=chatgpt.com#detail/job/46328',
+          whoCanApply: ['Candidates with blend of tech and finance domain knowledge'],
+          additionalInfo: 'Retail Banking Group'
+        },
+        {
+          role: 'Tech & Digital – Software Engineer Backend',
+          desc: 'Backend Software Engineer (Job ID 24178) building robust APIs and backend services for digital platforms.',
+          skills: ['Backend', 'Java/Node.js', 'API Development'],
+          package: '₹7.0 - 12.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 15,
+          location: 'Bengaluru / Hybrid',
+          applyUrl: 'https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE&utm_source=chatgpt.com#detail/job/24178',
+          whoCanApply: ['Engineering graduates with backend development skills'],
+          additionalInfo: 'Tech & Digital Division'
+        }
+      ];
+
+      return officialHdfcRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (20 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: 'Open',
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('bosch')) {
+      const officialBoschRoles = [
+        {
+          role: 'C / C++ Communication Gateway – Software Engineer',
+          desc: 'Responsible for software development of C/C++ Communication Gateway for Industrial IoT applications.',
+          skills: ['C/C++', 'Linux', 'MQTT', 'Industrial IoT'],
+          package: '₹8.0 - 12.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 5,
+          location: 'Bangalore, India',
+          applyUrl: 'https://jobs.smartrecruiters.com/BoschGroup/744000141324575-c-c-communication-gateway-software-engineer?utm_source=chatgpt.com',
+          whoCanApply: ['Engineering graduates with strong C/C++ background'],
+          additionalInfo: 'Bosch Engineering and Business Solutions.'
+        },
+        {
+          role: 'AWS Serverless Web-Based Developer',
+          desc: 'Develop serverless web applications using TypeScript, Angular and AWS Cloud services.',
+          skills: ['TypeScript', 'Angular', 'AWS', 'CI/CD'],
+          package: '₹9.0 - 14.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 5,
+          location: 'India',
+          applyUrl: 'https://jobs.smartrecruiters.com/BoschGroup/744000128205453-aws-serverless-web-based-developer?utm_source=chatgpt.com',
+          whoCanApply: ['Engineering graduates with Web & Cloud experience'],
+          additionalInfo: 'Focus on highly scalable AWS solutions.'
+        },
+        {
+          role: 'Senior Software Engineer – Python / Automation & Developer Platforms',
+          desc: 'Design and develop automation platforms using Python and DevOps methodologies.',
+          skills: ['Python', 'CI/CD', 'DevOps'],
+          package: '₹12.0 - 18.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 3,
+          location: 'Bangalore, India',
+          applyUrl: 'https://jobs.smartrecruiters.com/BoschGroup/744000144693399-senior-software-engineer-python-automation-developer-platforms?utm_source=chatgpt.com',
+          whoCanApply: ['Senior candidates with Python and Automation expertise'],
+          additionalInfo: 'Developer platforms team.'
+        },
+        {
+          role: 'Software Developer – AUTOSAR / Embedded C',
+          desc: 'Develop embedded automotive software complying with AUTOSAR standards. Work on CAN/LIN/FlexRay networks.',
+          skills: ['Embedded C', 'AUTOSAR', 'CAN/LIN/FlexRay', 'Python'],
+          package: '₹7.0 - 11.0 LPA',
+          branch: 'BE/BTech - Electronics, CS',
+          cgpa: 7.0,
+          openings: 10,
+          location: 'Bangalore, India',
+          applyUrl: 'https://jobs.smartrecruiters.com/BoschGroup/744000152431390?utm_source=chatgpt.com',
+          whoCanApply: ['Graduates with Embedded Systems focus'],
+          additionalInfo: 'Automotive Electronics.'
+        },
+        {
+          role: '2026 Java / Eclipse Development',
+          desc: 'Java development using Eclipse RCP and related frameworks for Bosch specific tools.',
+          skills: ['Java', 'Eclipse', 'Software Development'],
+          package: '₹5.0 - 15.0 LPA',
+          branch: 'BE/BTech/ME/MTech',
+          cgpa: 6.5,
+          openings: 8,
+          location: 'Bangalore, India',
+          applyUrl: 'https://jobs.smartrecruiters.com/BoschGroup/744000152431877?utm_source=chatgpt.com',
+          whoCanApply: ['BE/BTech/ME/MTech graduates with 2-10 years of experience'],
+          additionalInfo: 'Multiple openings available.'
+        },
+        {
+          role: '2026 Java / Eclipse Development',
+          desc: 'Java development using Eclipse RCP and related frameworks for Bosch specific tools in Coimbatore location.',
+          skills: ['Java', 'Eclipse', 'Software Development'],
+          package: '₹5.0 - 12.0 LPA',
+          branch: 'BE/BTech/ME/MTech',
+          cgpa: 6.5,
+          openings: 8,
+          location: 'Coimbatore, India',
+          applyUrl: 'https://jobs.smartrecruiters.com/BoschGroup/744000151571648?utm_source=chatgpt.com',
+          whoCanApply: ['BE/BTech/ME/MTech graduates with 2-10 years of experience'],
+          additionalInfo: 'Multiple openings available in Coimbatore.'
+        },
+        {
+          role: 'Embedded Application Software Developer – Brake Systems',
+          desc: 'Develop application software for Brake Systems. Use MATLAB/Simulink and ASCET for model-based design and code generation.',
+          skills: ['Embedded C/C++', 'MATLAB/Simulink', 'ASCET', 'AUTOSAR/ASPICE'],
+          package: '₹6.5 - 10.0 LPA',
+          branch: 'BE/BTech/ME/MTech - Automotive, EC',
+          cgpa: 7.0,
+          openings: 6,
+          location: 'Coimbatore, India',
+          applyUrl: 'https://jobs.smartrecruiters.com/BoschGroup/744000149849174?utm_source=chatgpt.com',
+          whoCanApply: ['Engineering graduates with background in Automotive Software'],
+          additionalInfo: 'Active Safety Systems.'
+        },
+        {
+          role: 'Full Stack Software Developer with AI Expertise',
+          desc: 'Design and develop AI-powered full stack web applications. Work with React on the frontend and FastAPI/Python on the backend.',
+          skills: ['React', 'TypeScript', 'Python', 'REST API', 'FastAPI', 'AI'],
+          package: '₹10.0 - 16.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 5,
+          location: 'India',
+          applyUrl: 'https://jobs.smartrecruiters.com/BoschGroup/744000149769988-full-stack-software-developer-with-ai-expertise?utm_source=chatgpt.com',
+          whoCanApply: ['Graduates with strong Web and AI integration skills'],
+          additionalInfo: 'Innovative AI solutions team.'
+        },
+        {
+          role: 'Software Engineer – Cloud / Data Engineering / DevOps',
+          desc: 'Build robust data pipelines in the cloud using Databricks and implement standard DevOps practices.',
+          skills: ['Cloud', 'data pipelines', 'Databricks', 'DevOps'],
+          package: '₹9.0 - 15.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 5,
+          location: 'India',
+          applyUrl: 'https://jobs.smartrecruiters.com/BoschGroup/744000151592409?utm_source=chatgpt.com',
+          whoCanApply: ['Engineering graduates focused on Cloud and Data'],
+          additionalInfo: 'Cloud & Data Engineering team.'
+        },
+        {
+          role: 'MES Application Engineer',
+          desc: 'Drive the development, standardization, and deployment of Manufacturing Execution System (MES) software interfaces and provide expert consultation.',
+          skills: ['OPCON XML', 'Oracle Database', 'C#', 'Bosch Nexeed MES'],
+          package: '₹6.0 - 10.0 LPA',
+          branch: 'Degree in Engineering (Electronics, Automation, Electrical)',
+          cgpa: 6.0,
+          openings: 4,
+          location: 'India',
+          applyUrl: 'https://jobs.smartrecruiters.com/BoschGroup/744000145185264-mes-application-engineer?utm_source=chatgpt.com',
+          whoCanApply: ['Engineering graduates in automation/electronics with IT knowledge'],
+          additionalInfo: 'Automotive Electronics / Manufacturing IT.'
+        }
+      ];
+
+      return officialBoschRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: 'Open',
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('tcs')) {
+      const officialTCSRoles = [
+        {
+          role: 'Google Cloud DevOps Architect',
+          desc: 'Design and implement cloud-native architectures on GCP. we are looking for GCP architect with Devops experience... GCP DevOps Engineer, Google Cloud Platform (GCP), Kubernetes, Terraform, CI/CD',
+          skills: ['GCP', 'DevOps', 'Kubernetes', 'Terraform', 'CI/CD'],
+          package: '₹15.0 - 24.0 LPA',
+          branch: 'BACHELOR OF ENGINEERING',
+          cgpa: 6.5,
+          openings: 5,
+          location: 'Bengaluru, India',
+          applyUrl: 'https://ibegin.tcsapps.com/candidate/next/en-IN/jobs/416526J',
+          whoCanApply: [
+            'BACHELOR OF ENGINEERING',
+            'Strong experience in GCP architecture and DevOps practices',
+            'Proficiency with Docker, Kubernetes, and Terraform',
+            'Relevant GCP certifications are highly preferred'
+          ],
+          additionalInfo: 'Experience: 7 - 12 Years. Job Req ID: 416526J.',
+          deadline: new Date('2026-10-30T23:59:59.999Z').toISOString()
+        },
+        {
+          role: 'Azure migration expert',
+          desc: 'Provide expertise in migrating enterprise workloads to Microsoft Azure. Handle re-hosting, re-platforming, and database migrations using Azure Migrate and ASR.',
+          skills: ['Azure', 'Cloud Migration', 'Azure Site Recovery', 'Terraform'],
+          package: '₹12.0 - 18.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 8,
+          location: 'Chennai / Mumbai, India',
+          applyUrl: 'Azure migration expert',
+          whoCanApply: [
+            'Degree in Computer Science or Information Technology',
+            'Hands-on experience with Azure migration strategies',
+            'Understanding of hybrid cloud environments and network security',
+            'Microsoft Azure certifications (AZ-104/AZ-305) preferred'
+          ],
+          additionalInfo: 'TCS Microsoft Business Unit (MBU).'
+        },
+        {
+          role: 'Workday Integration Developer',
+          desc: 'Develop, test, and deploy Workday integrations (EIB, Core Connectors, Document Transformation, and Studio). Ensure smooth data flow between Workday and third-party systems.',
+          skills: ['Workday', 'Integration Studio', 'EIB', 'XSLT', 'XML'],
+          package: '₹8.0 - 14.0 LPA',
+          branch: 'BE/BTech / MCA - CS, IT',
+          cgpa: 6.0,
+          openings: 12,
+          location: 'Pune / Noida, India',
+          applyUrl: 'Workday Integration Developer',
+          whoCanApply: [
+            'Bachelor degree or equivalent in IT / Computer Science',
+            'Experience building inbound and outbound integrations in Workday',
+            'Proficiency with XML, XSLT, and Web Services (REST/SOAP)',
+            'Workday Integration certification is a plus'
+          ],
+          additionalInfo: 'TCS Enterprise Application Services.'
+        },
+        {
+          role: 'Java Full Stack Developer',
+          desc: 'Role: Java Full stack developer. Primary skills: Java, Spring Boot, Microservices, Angular. Build scalable web applications following agile methodologies and CI/CD practices.',
+          skills: ['Java', 'Spring Boot', 'Angular', 'Microservices'],
+          package: '₹6.5 - 11.0 LPA',
+          branch: 'BACHELOR OF ENGINEERING',
+          cgpa: 6.0,
+          openings: 20,
+          location: 'Kolkata, India',
+          applyUrl: 'https://ibegin.tcsapps.com/candidate/next/en-IN/jobs/408818J',
+          whoCanApply: [
+            'BACHELOR OF ENGINEERING',
+            'Solid experience with Java, Spring Framework, and RESTful APIs',
+            'Hands-on experience with Angular',
+            'Familiarity with Git and Jenkins'
+          ],
+          additionalInfo: 'Experience: 3 - 6 Years. Job Req ID: 408818J.',
+          deadline: new Date('2026-10-30T23:59:59.999Z').toISOString()
+        },
+        {
+          role: 'Hadoop Developer',
+          desc: 'Design and develop Big Data solutions using the Hadoop ecosystem (HDFS, Hive, Spark, Kafka). Optimize data processing pipelines for high volume data ingestion and transformation.',
+          skills: ['Hadoop', 'Spark', 'Hive', 'Kafka', 'MapReduce'],
+          package: '₹8.0 - 13.0 LPA',
+          branch: 'BACHELOR OF ENGINEERING',
+          cgpa: 6.0,
+          openings: 10,
+          location: 'Hyderabad, India',
+          applyUrl: 'https://ibegin.tcsapps.com/candidate/next/en-IN/jobs/406958J',
+          whoCanApply: [
+            'BACHELOR OF ENGINEERING',
+            'Experience in Big Data ecosystems including Hadoop, Spark, and Hive',
+            'Strong programming skills in Python, Scala, or Java',
+            'Ability to write complex SQL queries and perform data modeling'
+          ],
+          additionalInfo: 'Experience: 4 - 8 Years. Job Req ID: 406958J.',
+          deadline: new Date('2026-10-30T23:59:59.999Z').toISOString()
+        },
+        {
+          role: 'Java Backend Developer',
+          desc: 'Dear Candidate, we are looking for Java Backend Developer. Required Skills: Java Spring Boot, Microservices.',
+          skills: ['Java', 'Spring Boot', 'Microservices'],
+          package: '₹7.0 - 12.0 LPA',
+          branch: 'BACHELOR OF ENGINEERING',
+          cgpa: 6.0,
+          openings: 25,
+          location: 'Bengaluru / Chennai / Hyderabad / Mumbai / Pune, India',
+          applyUrl: 'https://ibegin.tcsapps.com/candidate/next/en-IN/jobs/408821J',
+          whoCanApply: [
+            'BACHELOR OF ENGINEERING',
+            'Deep understanding of core Java, collections, and concurrency',
+            'Experience building RESTful microservices with Spring Boot',
+            'Knowledge of relational and NoSQL database management'
+          ],
+          additionalInfo: 'Experience: 4 - 12 Years. Job Req ID: 408821J.',
+          deadline: new Date('2026-10-30T23:59:59.999Z').toISOString()
+        },
+        {
+          role: 'React Developer',
+          desc: 'Greetings from TCS. We are Hiring for ReactJS Developer. Should be having very good practical development experience in React JS. Able to design the existing application re-write in React JS. Should have very good communication skills and experience in Agile way of working.',
+          skills: ['ReactJS', 'JavaScript', 'Web Performance'],
+          package: '₹6.0 - 10.0 LPA',
+          branch: 'BACHELOR OF ENGINEERING',
+          cgpa: 6.0,
+          openings: 15,
+          location: 'Indore, India',
+          applyUrl: 'https://ibegin.tcsapps.com/candidate/next/en-IN/jobs/406844J',
+          whoCanApply: [
+            'BACHELOR OF ENGINEERING',
+            'Proficiency in ReactJS development',
+            'Strong foundation in JavaScript and communication skills',
+            'Familiarity with Agile methodologies'
+          ],
+          additionalInfo: 'Experience: 4 - 8 Years. Job Req ID: 406844J.',
+          deadline: new Date('2026-10-30T23:59:59.999Z').toISOString()
+        },
+        {
+          role: 'AWS Data Engineer',
+          desc: 'Develop and maintain ETL/data ingestion pipelines using PySpark and AWS services. Design and implement Lambda-based event-driven workflows. Optimize Spark jobs for performance, scalability, and cost efficiency.',
+          skills: ['AWS', 'Python', 'AWS redshift', 'PySpark', 'ETL'],
+          package: '₹8.0 - 14.0 LPA',
+          branch: 'BACHELOR OF ENGINEERING / B.Sc / B.Tech / M.E / M.IT',
+          cgpa: 6.5,
+          openings: 12,
+          location: 'Indore, India',
+          applyUrl: 'https://ibegin.tcsapps.com/candidate/next/en-IN/jobs/420162J',
+          whoCanApply: [
+            'BACHELOR OF ENGINEERING, BACHELOR OF SCIENCE (B.Sc), BACHELOR OF TECHNOLOGY, MASTER OF ENGINEERING, Master of Information Technology',
+            'Hands-on experience with AWS data services (Glue, Athena, Redshift, EMR)',
+            'Strong programming skills in Python and PySpark',
+            'Understanding of ETL/ELT processes and data warehousing concepts'
+          ],
+          additionalInfo: 'Experience: 4 - 10 Years. Job Req ID: 420162J.',
+          deadline: new Date('2026-10-31T23:59:59.999Z').toISOString()
+        },
+        {
+          role: 'Hadoop Developer',
+          desc: 'Greetings from TCS. We are hiring for Hadoop Developer. Extensive experience and hands on implementation experience with Spark, Scala, Impala, Hive, Kafka, SQOOP. Extensive experience with Design and Implementation of Big data solutions.',
+          skills: ['Kafka', 'Scala', 'Spark', 'Hive', 'Impala', 'SQOOP'],
+          package: '₹8.0 - 13.0 LPA',
+          branch: 'BACHELOR OF ENGINEERING',
+          cgpa: 6.0,
+          openings: 8,
+          location: 'Chennai, India',
+          applyUrl: 'https://ibegin.tcsapps.com/candidate/next/en-IN/jobs/406950J',
+          whoCanApply: [
+            'BACHELOR OF ENGINEERING',
+            'Solid experience with Hadoop ecosystem tools and distributed systems',
+            'Working knowledge on Cloudera and Apache tools/utilities',
+            'Experience in performance tuning and query optimization'
+          ],
+          additionalInfo: 'Experience: 4 - 8 Years. Job Req ID: 406950J.',
+          deadline: new Date('2026-10-30T23:59:59.999Z').toISOString()
+        },
+        {
+          role: 'AWS Terraform Engineer',
+          desc: 'Walkin with TCS for AWS Terraform Engineer role. Should have expertise on AWS services as IAM, EC2, S3, RDS, ELB, EBS, CloudWatch, Cloudtrail, ACM, VPC, Lambda, Dynamodb, SNS. Proficient in infrastructure as Code (Terraform/CloudFormation).',
+          skills: ['AWS', 'DevOps', 'Jenkins', 'IAM', 'Terraform', 'CloudFormation'],
+          package: '₹10.0 - 16.0 LPA',
+          branch: 'BACHELOR OF ENGINEERING',
+          cgpa: 6.5,
+          openings: 6,
+          location: 'Hyderabad, India',
+          applyUrl: 'https://ibegin.tcsapps.com/candidate/next/en-IN/jobs/420141J',
+          whoCanApply: [
+            'BACHELOR OF ENGINEERING',
+            'Extensive experience with AWS cloud infrastructure and services',
+            'Expertise in writing Terraform modules and managing state files',
+            'Hands-on experience on DevOps tools like Jenkins, GIT will be added advantage'
+          ],
+          additionalInfo: 'Experience: 5 - 10 Years. Job Req ID: 420141J.',
+          deadline: new Date('2026-10-31T23:59:59.999Z').toISOString()
+        }
+      ];
+
+      return officialTCSRoles.map((r, index) => ({
+        _id: (index + 1).toString(),
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: r.deadline || new Date(Date.now() + (15 - index) * 24 * 60 * 60 * 1000).toISOString(),
+        status: 'Open',
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
     if (company?.name && company.name.toLowerCase().includes('cognizant')) {
       const officialCognizantRoles = [
         {
@@ -813,7 +1928,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           role: 'HR Project Associate (f/m/d) - 6 months limited contract',
           desc: 'Coordinate and execute HR digital transformation initiatives and project management workstreams. Support internal HR process optimization and cross-functional HR communications.',
           skills: ['HR Project Management', 'Accounting/Auditing', 'Process Optimization', 'HR Operations'],
-          package: '€48,000 - 62,000 / year',
+          package: '₹48.0 - 0.0 LPA',
           branch: 'MBA / BBA / Any Graduate',
           cgpa: 6.5,
           openings: 5,
@@ -831,7 +1946,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           role: 'SAP iXp Intern - Solution Adoption Campaign Coordinator',
           desc: 'Drive customer solution adoption campaigns, coordinate digital marketing deliverables, and track customer engagement metrics across SAP cloud portfolios.',
           skills: ['Solution Adoption', 'Digital Marketing', 'Campaign Management', 'Data Analytics'],
-          package: '$30 - 38 / hr (Stipend)',
+          package: '₹30.0 - 38.0 LPA',
           branch: 'BE/BTech / BBA / MBA (Any)',
           cgpa: 6.5,
           openings: 8,
@@ -849,7 +1964,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           role: 'SAP iXp Intern - Solution Adoption Campaign Coordinator',
           desc: 'Coordinate enterprise customer enablement programs, execute communication campaigns, and measure product adoption for SAP North America accounts.',
           skills: ['Campaign Strategy', 'Customer Enablement', 'SAP Cloud', 'Communication'],
-          package: '$30 - 38 / hr (Stipend)',
+          package: '₹30.0 - 38.0 LPA',
           branch: 'BE/BTech / BBA / MBA (Any)',
           cgpa: 6.5,
           openings: 8,
@@ -867,7 +1982,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           role: 'SAP iXp Intern - Marketing and Communications Coordinator',
           desc: 'Create compelling internal and external corporate communications, manage social media campaigns, and organize global employee engagement events.',
           skills: ['Marketing Strategy', 'Content Writing', 'Corporate Communications', 'Social Media'],
-          package: '$32 - 40 / hr (Stipend)',
+          package: '₹32.0 - 40.0 LPA',
           branch: 'Mass Media / Communications / BBA / Any Graduate',
           cgpa: 6.5,
           openings: 6,
@@ -885,7 +2000,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           role: 'SAP iXp Intern - Marketing and Communications Coordinator',
           desc: 'Support marketing strategy execution, content authoring, and brand communication across SAP executive briefing centers and product divisions.',
           skills: ['Marketing Operations', 'Brand Communications', 'Event Management', 'Public Relations'],
-          package: '$30 - 38 / hr (Stipend)',
+          package: '₹30.0 - 38.0 LPA',
           branch: 'Communications / BBA / BE / Any Graduate',
           cgpa: 6.5,
           openings: 6,
@@ -903,7 +2018,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           role: 'SAP iXp Intern – Experience Center | SAP Labs Latin America',
           desc: 'Facilitate technology demos, assist client visits at SAP Labs Latin America Experience Center, and explore emerging SAP enterprise prototypes.',
           skills: ['Technology Demos', 'Customer Experience', 'SAP Ecosystem', 'Innovation Labs'],
-          package: 'Regional Stipend + Benefits',
+          package: '₹6.0 - 9.0 LPA',
           branch: 'BE/BTech - CS, IT, ECE / Business',
           cgpa: 6.0,
           openings: 5,
@@ -921,7 +2036,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           role: 'Working Student - SAP Business AI Adoption & Activation',
           desc: 'Support adoption of generative AI and machine learning features across SAP product portfolios. Create enablement assets, conduct AI use-case analysis, and engage pilot users.',
           skills: ['Business AI', 'Generative AI', 'Product Activation', 'Python / Analytics'],
-          package: '€18 - 24 / hr (Stipend)',
+          package: '₹18.0 - 24.0 LPA',
           branch: 'BE/BTech / Master in CS, AI, Data Science, Business',
           cgpa: 7.0,
           openings: 10,
@@ -939,7 +2054,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           role: '(Junior) Data Engineer - Integration & AI',
           desc: 'Build enterprise data integration pipelines, train AI/ML models, and develop automated data transformation services across cloud platforms.',
           skills: ['Python', 'SQL', 'Data Engineering', 'Machine Learning', 'Cloud Integration'],
-          package: '₹14.0 - 20.0 LPA equivalent',
+          package: '₹14.0 - 20.0 LPA',
           branch: 'BE/BTech - CS, IT, Data Science, AI',
           cgpa: 6.5,
           openings: 12,
@@ -957,7 +2072,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           role: 'Platform Engineer',
           desc: 'Design, build, and maintain cloud infrastructure platforms, automated CI/CD pipelines, and Kubernetes container clusters supporting SAP cloud solutions.',
           skills: ['Kubernetes', 'Docker', 'AWS/GCP/Azure', 'Terraform', 'CI/CD'],
-          package: '$130,000 - 165,000 / year',
+          package: '₹130.0 - 0.0 LPA',
           branch: 'BE/BTech / MTech - CS, IT, Cloud',
           cgpa: 7.0,
           openings: 8,
@@ -975,7 +2090,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
           role: 'Director of Government Affairs - UKI',
           desc: 'Lead government relations, public policy advocacy, and digital economy engagement with UK and Ireland public sector officials and industry bodies.',
           skills: ['Government Affairs', 'Public Policy', 'Digital Strategy', 'Stakeholder Management'],
-          package: '£120,000 - 150,000 / year',
+          package: '₹120.0 - 0.0 LPA',
           branch: 'Master / LLB / MBA / Any Graduate',
           cgpa: 7.0,
           openings: 2,
