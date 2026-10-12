@@ -57,6 +57,7 @@ const StudentDashboard = ({
                     onOpenCompanies={onOpenCompanies}
                     onOpenPlacements={onOpenPlacements}
                     onOpenNoticeBoard={onOpenNoticeBoard}
+                    onOpenSpecificCompany={onOpenSpecificCompany}
                 />
             );
             case 'overview': return <StudentOverview user={user} />;
@@ -76,6 +77,7 @@ const StudentDashboard = ({
                     onOpenCompanies={onOpenCompanies}
                     onOpenPlacements={onOpenPlacements}
                     onOpenNoticeBoard={onOpenNoticeBoard}
+                    onOpenSpecificCompany={onOpenSpecificCompany}
                 />
             ) : <StudentOverview user={user} />;
         }

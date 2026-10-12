@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import './CompanyOffers.css';
+import { apiFetch } from '../utils/api';
 
 const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenCompanies, onOpenPlacements, onOpenNoticeBoard, onOpenProfile }) => {
   const [jobs, setJobs] = useState([]);
@@ -16,10 +17,10 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
     if (!company) return;
 
     // Fetch real-time data from backend
-    fetch(`http://localhost:5000/api/jobs/company/${company.name}`)
+    apiFetch(`/api/jobs/company/${encodeURIComponent(company.name)}`)
       .then(res => res.json())
       .then(data => {
-        setJobs(data);
+        setJobs(Array.isArray(data) ? data : []);
         setLoading(false);
       })
       .catch(err => {
@@ -32,6 +33,465 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
   const getFallbackJobs = (company) => {
     const category = company?.category || 'it';
     const companyScore = company?.name ? company.name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) : 0;
+
+    if (company?.name && company.name.toLowerCase().includes('mu sigma')) {
+      const officialMuSigmaRoles = [
+        {
+          role: 'Trainee Decision Scientist',
+          desc: 'Analyze data, solve business problems, use statistics and communicate insights. (Best fresher target)',
+          skills: ['Aptitude', 'Excel', 'SQL', 'Python', 'Communication'],
+          package: '₹6.5 - 9.0 LPA',
+          branch: 'BE/BTech (All Branches)',
+          cgpa: 6.5,
+          openings: 25,
+          location: 'Bengaluru / Pune',
+          applyUrl: 'https://www.mu-sigma.com/career/',
+          whoCanApply: [
+            'Best fresher target: Engineering graduates with strong analytical & problem-solving aptitude',
+            'Strong foundation in statistics, data reasoning, and curiosity to learn',
+            'Solid communication skills to convey analytical findings to business leaders',
+            'Hands-on comfort with Python, Excel, and SQL for decision sciences'
+          ],
+          additionalInfo: 'Official Application Information: Apply directly via Mu Sigma Career Portal (https://www.mu-sigma.com/career/).'
+        },
+        {
+          role: 'Data Engineer',
+          desc: 'Build data pipelines, clean data and manage databases.',
+          skills: ['Python', 'SQL', 'ETL', 'Databases'],
+          package: '₹7.0 - 10.5 LPA',
+          branch: 'BE/BTech - CS, IT, AI&DS',
+          cgpa: 6.5,
+          openings: 12,
+          location: 'Pune / Bengaluru',
+          applyUrl: 'https://myinternships.in/jobs/mu-sigma-data-engineer-jobs-pune-6dc4e0',
+          whoCanApply: [
+            'Engineering graduates skilled in database schema design, pipeline architecture, and ETL tools',
+            'Strong SQL query writing, optimization, and Python data processing',
+            'Interest in building large-scale, automated data pipelines'
+          ],
+          additionalInfo: 'Third-party listing via myinternships.in; verify with Mu Sigma before applying.'
+        },
+        {
+          role: 'Data Analyst',
+          desc: 'Analyze datasets, identify trends and prepare reports.',
+          skills: ['SQL', 'Excel', 'Statistics', 'Power BI/Tableau'],
+          package: '₹6.0 - 8.5 LPA',
+          branch: 'BE/BTech (All Branches) / MCA',
+          cgpa: 6.0,
+          openings: 15,
+          location: 'Bengaluru / Pune',
+          applyUrl: 'https://www.linkedin.com/jobs/search/?keywords=Mu%20Sigma%20Data%20Analyst',
+          whoCanApply: [
+            'Candidates with strong analytical abilities, statistics, and business sense',
+            'Hands-on experience in SQL queries, data modeling, and Excel functions',
+            'Proficiency in visualizing datasets with Power BI or Tableau dashboards'
+          ],
+          additionalInfo: 'Search active Mu Sigma openings on LinkedIn.'
+        },
+        {
+          role: 'Analytics Engineer',
+          desc: 'Transform raw data into reliable datasets for analytics.',
+          skills: ['SQL', 'Python', 'Data Modelling'],
+          package: '₹7.5 - 11.0 LPA',
+          branch: 'BE/BTech - CS, IT, AI&DS',
+          cgpa: 6.5,
+          openings: 10,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.linkedin.com/jobs/search/?keywords=Mu%20Sigma%20Analytics%20Engineer',
+          whoCanApply: [
+            'Graduates skilled in dimensional modeling, data warehouse design, and transformation pipelines',
+            'Strong command over SQL transformations and Python scripting',
+            'Passionate about delivering clean, analytics-ready datasets'
+          ],
+          additionalInfo: 'Search active Mu Sigma openings on LinkedIn.'
+        },
+        {
+          role: 'Software Engineer',
+          desc: 'Develop and maintain software applications and APIs.',
+          skills: ['JavaScript', 'Python/Java', 'DSA', 'APIs'],
+          package: '₹7.0 - 10.0 LPA',
+          branch: 'BE/BTech - CS, IT, ECE / MCA',
+          cgpa: 6.5,
+          openings: 18,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.linkedin.com/jobs/search/?keywords=Mu%20Sigma%20Software%20Engineer',
+          whoCanApply: [
+            'Solid foundation in Data Structures, Algorithms (DSA), and Object-Oriented Design',
+            'Experience creating and maintaining robust APIs using Python, Java, or JavaScript/Node',
+            'Familiarity with modern software engineering practices, testing, and Git'
+          ],
+          additionalInfo: 'Search active Mu Sigma openings on LinkedIn.'
+        },
+        {
+          role: 'Machine Learning Engineer',
+          desc: 'Develop predictive models and data-driven solutions.',
+          skills: ['Python', 'Statistics', 'Machine Learning'],
+          package: '₹8.0 - 12.0 LPA',
+          branch: 'BE/BTech / MTech - CS, AI&DS, IT',
+          cgpa: 7.0,
+          openings: 8,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.linkedin.com/jobs/search/?keywords=Mu%20Sigma%20Machine%20Learning%20Engineer',
+          whoCanApply: [
+            'Solid background in statistical learning, linear algebra, and predictive algorithms',
+            'Experience with Python ML libraries (Scikit-learn, Pandas, NumPy, etc.)',
+            'Ability to translate real-world business challenges into predictive ML workflows'
+          ],
+          additionalInfo: 'Search active Mu Sigma openings on LinkedIn.'
+        },
+        {
+          role: 'BI Developer',
+          desc: 'Build dashboards and reporting solutions for business teams.',
+          skills: ['SQL', 'Power BI/Tableau', 'Data Visualization'],
+          package: '₹6.5 - 9.5 LPA',
+          branch: 'BE/BTech (Any Branch) / MCA',
+          cgpa: 6.0,
+          openings: 10,
+          location: 'Bengaluru / Pune',
+          applyUrl: 'https://www.linkedin.com/jobs/search/?keywords=Mu%20Sigma%20BI%20Developer',
+          whoCanApply: [
+            'Hands-on expertise developing interactive dashboards using Power BI or Tableau',
+            'Strong SQL proficiency for querying, filtering, and metric calculation',
+            'Good understanding of business metrics, KPIs, and visual storytelling'
+          ],
+          additionalInfo: 'Search active Mu Sigma openings on LinkedIn.'
+        }
+      ];
+
+      return officialMuSigmaRoles.map((r, index) => ({
+        _id: `musigma-${index + 1}`,
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (24 - index * 2) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index === 0 ? 'Open' : (index > 4 ? 'Closing Soon' : 'Open'),
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && company.name.toLowerCase().includes('jaro')) {
+      const officialJaroRoles = [
+        {
+          role: 'Software Developer',
+          desc: 'Develop and maintain software applications for ed-tech platforms.',
+          skills: ['JavaScript', 'React', 'Node.js', 'SQL'],
+          package: '₹4.5 - 7.0 LPA',
+          branch: 'BE/BTech - CS, IT / MCA',
+          cgpa: 6.0,
+          openings: 10,
+          location: 'Mumbai',
+          applyUrl: 'https://www.linkedin.com/jobs/search/?keywords=Software%20Developer%20Jaro%20Education',
+          whoCanApply: [
+            'Freshers or experienced graduates with strong JavaScript & React fundamentals',
+            'Understanding of REST APIs and relational databases',
+            'Good analytical and debugging capabilities'
+          ],
+          additionalInfo: 'Official careers: https://www.jaroeducation.com/careers | https://www.jaroeducation.com/job-openings'
+        },
+        {
+          role: 'Web Developer',
+          desc: 'Build and maintain websites using HTML, CSS and JavaScript.',
+          skills: ['HTML', 'CSS', 'JavaScript', 'WordPress'],
+          package: '₹3.5 - 6.0 LPA',
+          branch: 'BE/BTech (Any Branch) / BCA / MCA',
+          cgpa: 5.5,
+          openings: 8,
+          location: 'Mumbai',
+          applyUrl: 'https://www.linkedin.com/jobs/search/?keywords=Web%20Developer%20Jaro%20Education',
+          whoCanApply: [
+            'Proficiency in responsive web development (HTML5, CSS3, ES6+)',
+            'Experience building cross-browser web interfaces',
+            'Familiarity with CMS platforms and web performance optimization'
+          ],
+          additionalInfo: 'Official careers: https://www.jaroeducation.com/careers'
+        },
+        {
+          role: 'Frontend Developer',
+          desc: 'Create responsive interfaces using React and JavaScript.',
+          skills: ['React', 'JavaScript', 'CSS', 'UI/UX'],
+          package: '₹4.0 - 7.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.0,
+          openings: 6,
+          location: 'Mumbai',
+          applyUrl: 'https://www.linkedin.com/jobs/search/?keywords=Frontend%20Developer%20Jaro%20Education',
+          whoCanApply: [
+            'Hands-on proficiency with React components, hooks, and state management',
+            'Ability to turn Figma / UI mockups into pixel-perfect code',
+            'Passion for clean design and smooth user experience'
+          ],
+          additionalInfo: 'Official careers: https://www.jaroeducation.com/job-openings'
+        },
+        {
+          role: 'QA Engineer',
+          desc: 'Test applications, report bugs and verify fixes.',
+          skills: ['Manual Testing', 'Selenium', 'Test Cases', 'Bug Tracking'],
+          package: '₹3.5 - 5.5 LPA',
+          branch: 'BE/BTech - CS, IT, ECE',
+          cgpa: 6.0,
+          openings: 6,
+          location: 'Mumbai',
+          applyUrl: 'https://www.linkedin.com/jobs/search/?keywords=QA%20Engineer%20Jaro%20Education',
+          whoCanApply: [
+            'Knowledge of STLC, defect lifecycles, and test scenario creation',
+            'Experience with manual and basic automated testing tools',
+            'Strong attention to detail and clear communication'
+          ],
+          additionalInfo: 'Official careers: https://www.jaroeducation.com/careers'
+        },
+        {
+          role: 'IT Support Engineer',
+          desc: 'Troubleshoot software, hardware and technical issues.',
+          skills: ['IT Support', 'Networking', 'Troubleshooting', 'OS Administration'],
+          package: '₹3.0 - 5.0 LPA',
+          branch: 'BE/BTech (All Branches) / Diploma',
+          cgpa: 5.5,
+          openings: 12,
+          location: 'Mumbai',
+          applyUrl: 'https://www.linkedin.com/jobs/search/?keywords=IT%20Support%20Engineer%20Jaro%20Education',
+          whoCanApply: [
+            'Good understanding of networking basics, Windows/Linux OS, and hardware maintenance',
+            'Strong problem-solving attitude and customer service mindset',
+            'Willingness to handle multi-shift support tasks'
+          ],
+          additionalInfo: 'Official careers: https://www.jaroeducation.com/careers'
+        }
+      ];
+
+      return officialJaroRoles.map((r, index) => ({
+        _id: `jaro-${index + 1}`,
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (20 - index * 2) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 3 ? 'Open' : 'Closing Soon',
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && (company.name.toLowerCase().includes('byju') || company.name.toLowerCase().includes("byju's"))) {
+      const officialByjuRoles = [
+        {
+          role: 'Software Engineer',
+          desc: 'Develop, debug and maintain software products for educational platforms.',
+          skills: ['Java', 'Python', 'DSA', 'Microservices'],
+          package: '₹6.0 - 10.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 15,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.linkedin.com/jobs/search/?keywords=Software%20Engineer%20BYJU%27S',
+          whoCanApply: [
+            'Solid knowledge of Data Structures, Algorithms, and System Architecture',
+            'Hands-on experience in Java or Python development',
+            'Enthusiasm for scalable ed-tech software architecture'
+          ],
+          additionalInfo: "Official careers: https://byjus.com/careers-at-byjus/ | Verify live vacancies on official page."
+        },
+        {
+          role: 'Frontend Developer',
+          desc: 'Develop user interfaces using React, HTML, CSS and JavaScript.',
+          skills: ['React', 'HTML', 'CSS', 'JavaScript', 'TypeScript'],
+          package: '₹5.5 - 9.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.0,
+          openings: 10,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.linkedin.com/jobs/search/?keywords=Frontend%20Developer%20BYJU%27S',
+          whoCanApply: [
+            'Deep expertise in React, modern JavaScript, and component-driven UI',
+            'Understanding of responsive design, animation, and UI performance',
+            'Familiarity with Redux or modern state containers'
+          ],
+          additionalInfo: "Official careers: https://byjus.com/careers-at-byjus/"
+        },
+        {
+          role: 'Backend Developer',
+          desc: 'Build APIs, server-side logic and database integrations.',
+          skills: ['Node.js', 'Express', 'MongoDB', 'REST APIs'],
+          package: '₹6.0 - 10.0 LPA',
+          branch: 'BE/BTech - CS, IT / MCA',
+          cgpa: 6.5,
+          openings: 12,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.linkedin.com/jobs/search/?keywords=Backend%20Developer%20BYJU%27S',
+          whoCanApply: [
+            'Proficiency in server-side JavaScript (Node.js, Express) or Python',
+            'Strong database schema design (MongoDB, PostgreSQL)',
+            'Experience creating secure, high-traffic RESTful web services'
+          ],
+          additionalInfo: "Official careers: https://byjus.com/careers-at-byjus/"
+        },
+        {
+          role: 'Full Stack Developer',
+          desc: 'Work on frontend, backend and database features end-to-end.',
+          skills: ['React', 'Node.js', 'MongoDB', 'Express', 'System Design'],
+          package: '₹7.0 - 12.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 8,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.linkedin.com/jobs/search/?keywords=Full%20Stack%20Developer%20BYJU%27S',
+          whoCanApply: [
+            'Full-stack development experience from database modeling to client UI',
+            'Knowledge of cloud services, caching, and CI/CD pipelines',
+            'Strong problem-solving and full-cycle product development skills'
+          ],
+          additionalInfo: "Official careers: https://byjus.com/careers-at-byjus/"
+        },
+        {
+          role: 'QA Engineer',
+          desc: 'Test educational applications and identify software defects.',
+          skills: ['Manual Testing', 'Automation', 'Selenium', 'API Testing'],
+          package: '₹4.5 - 7.0 LPA',
+          branch: 'BE/BTech - CS, IT, ECE',
+          cgpa: 6.0,
+          openings: 10,
+          location: 'Bengaluru',
+          applyUrl: 'https://www.linkedin.com/jobs/search/?keywords=QA%20Engineer%20BYJU%27S',
+          whoCanApply: [
+            'Experience creating test suites, automation scripts, and regression packs',
+            'Hands-on familiarity with Postman for API testing and Selenium for web',
+            'Detailed-oriented mind with focus on seamless end-user learning experience'
+          ],
+          additionalInfo: "Official careers: https://byjus.com/careers-at-byjus/"
+        }
+      ];
+
+      return officialByjuRoles.map((r, index) => ({
+        _id: `byju-${index + 1}`,
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (22 - index * 2) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 3 ? 'Open' : 'Closing Soon',
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
+
+    if (company?.name && (company.name.toLowerCase() === 'ibm' || company.name.toLowerCase().includes('ibm'))) {
+      const officialIbmRoles = [
+        {
+          role: 'Software Developer – Entry Level',
+          desc: 'Write, test and maintain software code as part of IBM engineering teams.',
+          skills: ['Java', 'Python', 'SQL', 'Git', 'Agile'],
+          package: '₹6.0 - 10.0 LPA',
+          branch: 'BE/BTech - CS, IT, ECE',
+          cgpa: 6.5,
+          openings: 20,
+          location: 'Bengaluru / Pune',
+          applyUrl: 'https://www.ibm.com/in-en/careers/search?field_keyword_18%5B0%5D=Entry%20Level&field_keyword_05%5B0%5D=India',
+          whoCanApply: [
+            'Fresh engineering graduates with solid programming foundation (Java/Python/C++)',
+            'Understanding of software design principles, version control, and data structures',
+            'Strong team-collaboration skills in Agile environments'
+          ],
+          additionalInfo: 'Official careers: https://www.ibm.com/in-en/careers/software-engineering | Search entry-level India roles.'
+        },
+        {
+          role: 'Full Stack Developer',
+          desc: 'Build frontend and backend applications and APIs for enterprise IBM platforms.',
+          skills: ['React', 'Node.js', 'Java', 'Cloud', 'REST APIs'],
+          package: '₹7.0 - 12.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 15,
+          location: 'Bengaluru / Hyderabad',
+          applyUrl: 'https://www.ibm.com/in-en/careers/software-engineering',
+          whoCanApply: [
+            'Full stack web application development expertise',
+            'Proficiency in frontend technologies and enterprise backend stacks (Java/Spring Boot, Node)',
+            'Experience deploying microservices in hybrid-cloud setups'
+          ],
+          additionalInfo: 'Official careers: https://www.ibm.com/in-en/careers/software-engineering'
+        },
+        {
+          role: 'Frontend Developer',
+          desc: 'Develop web interfaces using modern web technologies and Carbon Design System.',
+          skills: ['React', 'TypeScript', 'HTML/CSS', 'Carbon Design System'],
+          package: '₹6.0 - 10.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.0,
+          openings: 12,
+          location: 'Bengaluru / Kochi',
+          applyUrl: 'https://www.ibm.com/in-en/careers/software-engineering',
+          whoCanApply: [
+            'Proficiency in React, TypeScript, and modern responsive CSS standards',
+            'Understanding of accessible design (WCAG), user journeys, and component systems',
+            'Ability to build modular, maintainable web applications'
+          ],
+          additionalInfo: 'Official careers: https://www.ibm.com/in-en/careers/software-engineering'
+        },
+        {
+          role: 'DevOps Engineer',
+          desc: 'Automate software deployment, cloud infrastructure and CI/CD pipelines.',
+          skills: ['Docker', 'Kubernetes', 'CI/CD', 'Linux', 'Jenkins'],
+          package: '₹7.0 - 12.0 LPA',
+          branch: 'BE/BTech - CS, IT',
+          cgpa: 6.5,
+          openings: 10,
+          location: 'Bengaluru / Pune',
+          applyUrl: 'https://www.ibm.com/in-en/careers/software-engineering',
+          whoCanApply: [
+            'Knowledge of containerization (Docker, Kubernetes) and infrastructure as code',
+            'Hands-on experience with Jenkins, GitHub Actions, or GitLab CI pipelines',
+            'Linux systems administration and cloud platform fundamentals'
+          ],
+          additionalInfo: 'Official careers: https://www.ibm.com/in-en/careers/software-engineering'
+        },
+        {
+          role: 'Test Engineer',
+          desc: 'Create test cases, automate testing and ensure enterprise software quality.',
+          skills: ['Selenium', 'JUnit', 'Test Automation', 'API Testing'],
+          package: '₹5.5 - 9.0 LPA',
+          branch: 'BE/BTech - CS, IT, Electronics',
+          cgpa: 6.0,
+          openings: 14,
+          location: 'Bengaluru / Ahmedabad',
+          applyUrl: 'https://www.ibm.com/in-en/careers/software-engineering',
+          whoCanApply: [
+            'Expertise in automated testing frameworks (JUnit, TestNG, Selenium)',
+            'API validation and integration testing capabilities',
+            'Quality mindset with focus on test coverage, regression automation, and performance metrics'
+          ],
+          additionalInfo: 'Official careers: https://www.ibm.com/in-en/careers/software-engineering'
+        }
+      ];
+
+      return officialIbmRoles.map((r, index) => ({
+        _id: `ibm-${index + 1}`,
+        role: r.role,
+        package: r.package,
+        location: r.location,
+        criteria: { minCgpa: r.cgpa, allowedBranches: [r.branch] },
+        deadline: new Date(Date.now() + (25 - index * 2) * 24 * 60 * 60 * 1000).toISOString(),
+        status: index < 3 ? 'Open' : 'Closing Soon',
+        description: r.desc,
+        requiredSkills: r.skills,
+        openings: r.openings,
+        whoCanApply: r.whoCanApply,
+        additionalInfo: r.additionalInfo,
+        applyUrl: r.applyUrl
+      }));
+    }
 
     if (company?.name && company.name.toLowerCase().includes('morgan stanley')) {
       const officialMsRoles = [
@@ -4156,7 +4616,7 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
             <img src={company?.logo} alt={company?.name} />
           </div>
           <div className="co-detail-info">
-            <h2>{company?.name} Placement Drive 2024</h2>
+            <h2>{company?.name} Placement Drive {new Date().getFullYear()}</h2>
             <p className="co-detail-location">📍 {company?.location}</p>
           </div>
           <div className="co-detail-meta">
@@ -4166,11 +4626,16 @@ const CompanyOffers = ({ company, onBack, user, onOpenLogin, onOpenHome, onOpenC
             </div>
             <div className="meta-item">
               <span className="meta-label">Overall Package</span>
-              <span className="meta-value">₹5.0 - 8.0 LPA</span>
+              <span className="meta-value">
+                {company?.name?.toLowerCase().includes('mu sigma') ? '₹6.0 - 12.0 LPA' :
+                 company?.name?.toLowerCase().includes('jaro') ? '₹3.0 - 7.0 LPA' :
+                 company?.name?.toLowerCase().includes('byju') ? '₹4.5 - 12.0 LPA' :
+                 company?.name?.toLowerCase().includes('ibm') ? '₹5.5 - 12.0 LPA' : '₹5.0 - 8.0 LPA'}
+              </span>
             </div>
             <div className="meta-item">
               <span className="meta-label">Application Deadline</span>
-              <span className="meta-value">25 Oct, 2024</span>
+              <span className="meta-value">30 Nov, {new Date().getFullYear()}</span>
             </div>
             <div className="meta-item">
               <span className="meta-label">Status</span>

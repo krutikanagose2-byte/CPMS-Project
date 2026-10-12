@@ -5,6 +5,127 @@ import Footer from './Footer';
 
 const NOTICES = [
   {
+    id: 101,
+    title: 'Mu Sigma Campus Drive 2026 Batch - 7 Engineering Roles Announced',
+    category: 'Placement Drive',
+    date: '14 Oct 2026',
+    isNew: true,
+    isUrgent: true,
+    summary: 'Mu Sigma announces campus hiring across 7 engineering-focused roles including Trainee Decision Scientist, Data Engineer, ML Engineer & Software Engineer with CTC up to ₹12.0 LPA.',
+    content: `Training & Placement Cell, PRMIT&R Badnera
+
+Notice regarding Mu Sigma Campus Recruitment Drive for 2026 passing out batch.
+
+Mu Sigma is hiring talented engineering graduates across 7 strategic roles:
+1. Trainee Decision Scientist (Best Fresher Target) – JD: Analyze data, solve business problems, use statistics and communicate insights. (Aptitude, Excel, SQL, Python, communication). CTC: ₹6.5 - 9.0 LPA.
+2. Data Engineer – JD: Build data pipelines, clean data and manage databases. (Python, SQL, ETL, databases). CTC: ₹7.0 - 10.5 LPA.
+3. Data Analyst – JD: Analyze datasets, identify trends and prepare reports. (SQL, Excel, statistics, Power BI/Tableau). CTC: ₹6.0 - 8.5 LPA.
+4. Analytics Engineer – JD: Transform raw data into reliable datasets for analytics. (SQL, Python, data modelling). CTC: ₹7.5 - 11.0 LPA.
+5. Software Engineer – JD: Develop and maintain software applications and APIs. (JavaScript, Python/Java, DSA, APIs). CTC: ₹7.0 - 10.0 LPA.
+6. Machine Learning Engineer – JD: Develop predictive models and data-driven solutions. (Python, statistics, machine learning). CTC: ₹8.0 - 12.0 LPA.
+7. BI Developer – JD: Build dashboards and reporting solutions for business teams. (SQL, Power BI/Tableau, data visualization). CTC: ₹6.5 - 9.5 LPA.
+
+Eligibility:
+- B.E./B.Tech (All Engineering Branches) / MCA
+- Minimum 6.0 - 6.5 CGPA depending on the specific profile
+- No active backlogs at the time of final onboarding
+
+Apply & View Full Details:
+Head over to Companies -> Mu Sigma -> Placement Offers section in the CPMS portal to view role requirements and submit applications.`,
+  },
+  {
+    id: 102,
+    title: 'Jaro Education – 5 Engineering Roles for Freshers (Ed-Tech)',
+    category: 'Placement Drive',
+    date: '14 Oct 2026',
+    isNew: true,
+    isUrgent: false,
+    summary: 'Jaro Education is hiring for Software Developer, Web Developer, Frontend Developer, QA Engineer & IT Support Engineer roles at their Mumbai office. CTC ₹3.0 – ₹7.0 LPA.',
+    content: `Training & Placement Cell, PRMIT&R Badnera
+
+Notice regarding Jaro Education Engineering Roles for 2026 passing out batch.
+
+Official Careers Links:
+• https://www.jaroeducation.com/careers
+• https://www.jaroeducation.com/job-openings
+
+Jaro Education is an ed-tech company offering the following fresher-friendly roles:
+1. Software Developer – Develop and maintain software applications for ed-tech platforms. (JavaScript, React, Node.js, SQL). CTC: ₹4.5 - 7.0 LPA.
+2. Web Developer – Build and maintain websites using HTML, CSS and JavaScript. (HTML, CSS, JavaScript, WordPress). CTC: ₹3.5 - 6.0 LPA.
+3. Frontend Developer – Create responsive interfaces using React and JavaScript. (React, JavaScript, CSS). CTC: ₹4.0 - 7.0 LPA.
+4. QA Engineer – Test applications, report bugs and verify fixes. (Manual Testing, Selenium, Test Cases). CTC: ₹3.5 - 5.5 LPA.
+5. IT Support Engineer – Troubleshoot software, hardware and technical issues. (Troubleshooting, Networking, OS Administration). CTC: ₹3.0 - 5.0 LPA.
+
+Eligibility:
+- B.E./B.Tech (CS, IT) / MCA
+- Minimum 5.5 - 6.0 CGPA depending on the specific profile
+- No active backlogs at the time of final onboarding
+
+Apply & View Full Details:
+Head over to Companies -> Jaro Education -> Placement Offers section in the CPMS portal to view role requirements and submit applications.`,
+  },
+  {
+    id: 103,
+    title: "BYJU'S (Think & Learn) – 5 Engineering Roles (Ed-Tech)",
+    category: 'Placement Drive',
+    date: '14 Oct 2026',
+    isNew: true,
+    isUrgent: false,
+    summary: "BYJU'S is hiring for Software Engineer, Frontend Developer, Backend Developer, Full Stack Developer & QA Engineer at Bengaluru. CTC ₹4.5 – ₹12.0 LPA.",
+    content: `Training & Placement Cell, PRMIT&R Badnera
+
+Notice regarding BYJU'S Engineering Roles for 2026 passing out batch.
+
+Official Careers Link:
+• https://byjus.com/careers-at-byjus/
+
+BYJU'S is hiring talented engineering graduates across 5 roles:
+1. Software Engineer – Develop, debug and maintain software products for educational platforms. (Java, Python, DSA, Microservices). CTC: ₹6.0 - 10.0 LPA.
+2. Frontend Developer – Develop user interfaces using React, HTML, CSS and JavaScript. (React, HTML, CSS, TypeScript). CTC: ₹5.5 - 9.0 LPA.
+3. Backend Developer – Build APIs, server-side logic and database integrations. (Node.js, Express, MongoDB, REST APIs). CTC: ₹6.0 - 10.0 LPA.
+4. Full Stack Developer – Work on frontend, backend and database features end-to-end. (React, Node.js, MongoDB, Express). CTC: ₹7.0 - 12.0 LPA.
+5. QA Engineer – Test educational applications and identify software defects. (Manual Testing, Automation, Selenium). CTC: ₹4.5 - 7.0 LPA.
+
+Eligibility:
+- B.E./B.Tech (CS, IT) / MCA
+- Minimum 6.0 - 6.5 CGPA depending on the specific profile
+- No active backlogs at the time of final onboarding
+
+Apply & View Full Details:
+Head over to Companies -> BYJU'S -> Placement Offers section in the CPMS portal to view role requirements and submit applications.`,
+  },
+  {
+    id: 104,
+    title: 'IBM India – 5 Engineering Roles for Freshers',
+    category: 'Placement Drive',
+    date: '14 Oct 2026',
+    isNew: true,
+    isUrgent: true,
+    summary: 'IBM India is hiring for Software Developer (Entry Level), Full Stack Developer, Frontend Developer, DevOps Engineer & Test Engineer. CTC ₹5.5 – ₹12.0 LPA.',
+    content: `Training & Placement Cell, PRMIT&R Badnera
+
+Notice regarding IBM India Engineering Roles for 2026 passing out batch.
+
+Official IBM Careers:
+• https://www.ibm.com/in-en/careers/software-engineering
+• https://www.ibm.com/in-en/careers/search
+
+IBM India is hiring fresh engineering graduates across 5 engineering roles:
+1. Software Developer – Entry Level – Write, test and maintain software code as part of IBM's engineering team. (Java, Python, SQL, Git, Agile). CTC: ₹6.0 - 10.0 LPA.
+2. Full Stack Developer – Build frontend and backend applications and APIs for IBM platforms. (React, Node.js, Java, REST APIs, Cloud). CTC: ₹7.0 - 12.0 LPA.
+3. Frontend Developer – Develop web interfaces using modern web technologies for IBM products. (React, TypeScript, HTML/CSS, Carbon Design System). CTC: ₹6.0 - 10.0 LPA.
+4. DevOps Engineer – Automate software deployment, infrastructure and CI/CD pipelines. (Docker, Kubernetes, Jenkins, Linux). CTC: ₹7.0 - 12.0 LPA.
+5. Test Engineer – Create test cases, automate testing and ensure software quality. (Selenium, JUnit, Test Automation, API Testing). CTC: ₹5.5 - 9.0 LPA.
+
+Eligibility:
+- B.E./B.Tech (CS, IT, ECE) / MCA
+- Minimum 6.0 - 6.5 CGPA depending on the specific profile
+- No active backlogs at the time of final onboarding
+
+Apply & View Full Details:
+Head over to Companies -> IBM -> Placement Offers section in the CPMS portal to view role requirements and submit applications.`,
+  },
+  {
     id: 1,
     title: 'Cognizant GenC Elevate - Off-Campus Drive 2026 Batch',
     category: 'Placement Drive',

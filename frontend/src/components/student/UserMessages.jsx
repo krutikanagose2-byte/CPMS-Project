@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './UserMessages.css';
+import { apiFetch } from '../../utils/api';
 
 export default function UserMessages({ user }) {
     const isAdmin = user?.role === 'admin';
@@ -41,7 +42,7 @@ export default function UserMessages({ user }) {
         setLoading(true);
         setError('');
         try {
-            const res = await fetch('http://localhost:5000/api/messages');
+            const res = await apiFetch('/api/messages');
             if (!res.ok) throw new Error('Failed to fetch messages');
             const data = await res.json();
             setMessages(data);
@@ -97,7 +98,7 @@ export default function UserMessages({ user }) {
         if (!replyText.trim()) return;
         setIsSubmittingReply(true);
         try {
-            const res = await fetch(`http://localhost:5000/api/messages/${messageId}/reply`, {
+            const res = await apiFetch(`/api/messages/${messageId}/reply`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -124,7 +125,7 @@ export default function UserMessages({ user }) {
 
     const handleUpdateStatus = async (messageId, newStatus) => {
         try {
-            const res = await fetch(`http://localhost:5000/api/messages/${messageId}/status`, {
+            const res = await apiFetch(`/api/messages/${messageId}/status`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ status: newStatus })
@@ -143,7 +144,7 @@ export default function UserMessages({ user }) {
     const handleDeleteMessage = async (messageId) => {
         if (!window.confirm('Are you sure you want to delete this message record?')) return;
         try {
-            const res = await fetch(`http://localhost:5000/api/messages/${messageId}`, {
+            const res = await apiFetch(`/api/messages/${messageId}`, {
                 method: 'DELETE'
             });
 
@@ -165,7 +166,7 @@ export default function UserMessages({ user }) {
 
         setIsSubmittingNew(true);
         try {
-            const res = await fetch('http://localhost:5000/api/messages', {
+            const res = await apiFetch('/api/messages', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(composeData)

@@ -6,6 +6,7 @@ import AptitudeAssessment from './AptitudeAssessment';
 import AIBotInterview from './AIBotInterview';
 import CaseStudy from './CaseStudy';
 import FinalInterview from './FinalInterview';
+import EngineeringRoles from './EngineeringRoles';
 
 const MuSigmaMenu = ({ company, onBack, onOpenAIInterview }) => {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -24,6 +25,8 @@ const MuSigmaMenu = ({ company, onBack, onOpenAIInterview }) => {
     switch (activeMenu) {
       case 'Pattern':
         return <Pattern company={company} currentYear={currentYear} />;
+      case 'Engineering Target Roles':
+        return <EngineeringRoles company={company} />;
       case 'Syllabus':
         return <Syllabus company={company} currentYear={currentYear} />;
       case 'Aptitude Assessment':
@@ -56,6 +59,14 @@ const MuSigmaMenu = ({ company, onBack, onOpenAIInterview }) => {
           <h2 className="csr-menu-title">{company.name.toUpperCase()} MENU</h2>
         </div>
         <nav className="csr-menu">
+          <div
+            className={`csr-menu-item ${activeMenu === 'Engineering Target Roles' ? 'active' : ''}`}
+            onClick={() => setActiveMenu('Engineering Target Roles')}
+          >
+            <span className="csr-menu-icon">🎯</span>
+            7 Engineering Roles
+          </div>
+
           <div
             className={`csr-menu-item ${activeMenu === 'Pattern' ? 'active' : ''}`}
             onClick={() => setActiveMenu('Pattern')}
@@ -109,9 +120,10 @@ const MuSigmaMenu = ({ company, onBack, onOpenAIInterview }) => {
       <main className="csr-main">
         <div className="csr-tabs-wrapper">
           <div className="csr-tabs">
-            {['Pattern', 'Syllabus'].map(tab => {
-              const isActive = (activeMenu === 'Pattern' && tab === 'Pattern') ||
-                (activeMenu !== 'Pattern' && tab === 'Syllabus');
+            {['Pattern', '7 Engineering Roles', 'Syllabus'].map(tab => {
+              const isActive = (tab === 'Pattern' && activeMenu === 'Pattern') ||
+                (tab === '7 Engineering Roles' && activeMenu === 'Engineering Target Roles') ||
+                (tab === 'Syllabus' && activeMenu !== 'Pattern' && activeMenu !== 'Engineering Target Roles');
 
               return (
                 <button
@@ -120,6 +132,7 @@ const MuSigmaMenu = ({ company, onBack, onOpenAIInterview }) => {
                   onClick={() => {
                     setActiveTab(tab);
                     if (tab === 'Pattern') setActiveMenu('Pattern');
+                    else if (tab === '7 Engineering Roles') setActiveMenu('Engineering Target Roles');
                     else if (tab === 'Syllabus') setActiveMenu('Syllabus');
                   }}
                 >
