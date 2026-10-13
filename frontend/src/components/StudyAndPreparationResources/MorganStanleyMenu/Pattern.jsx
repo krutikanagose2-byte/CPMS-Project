@@ -34,7 +34,6 @@ const Pattern = ({ company, currentYear }) => {
               <tr><td>Technical Interview 1</td><td>DSA + Coding + Core CS</td></tr>
               <tr><td>Technical Interview 2</td><td>Advanced Technical + Projects</td></tr>
               <tr><td>HR/Behavioral</td><td>Communication + Fit</td></tr>
-              <tr><td>Final Selection</td><td>Final result</td></tr>
             </tbody>
           </table>
         </div>
@@ -64,7 +63,6 @@ const Pattern = ({ company, currentYear }) => {
                 <li><strong>Technical Interview 1:</strong> DSA + Coding + Core CS</li>
                 <li><strong>Technical Interview 2:</strong> Advanced Technical + Projects</li>
                 <li><strong>HR/Behavioral:</strong> Communication + Fit</li>
-                <li><strong>Final Selection:</strong> Final result</li>
               </ol>
             </div>
           )}

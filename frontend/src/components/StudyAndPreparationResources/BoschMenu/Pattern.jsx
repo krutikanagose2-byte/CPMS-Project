@@ -31,10 +31,9 @@ const Pattern = ({ company, currentYear }) => {
             </thead>
             <tbody>
               <tr><td>Written/Online Test</td><td>Aptitude/Psychometric + Technical</td></tr>
-              <tr><td>GD/Presentation</td><td>If required</td></tr>
+              <tr><td>Group Discussion(GD)</td><td>If required</td></tr>
               <tr><td>Technical Interview</td><td>Core technical + Projects</td></tr>
               <tr><td>HR/Personal Interview</td><td>HR + Fit</td></tr>
-              <tr><td>Final Selection</td><td>Final result</td></tr>
             </tbody>
           </table>
         </div>
@@ -61,10 +60,9 @@ const Pattern = ({ company, currentYear }) => {
               <h3 className="csr-curr-subtitle">{company?.name || 'Bosch'} Rounds Overview:</h3>
               <ol className="csr-curr-list num-list">
                 <li><strong>Written/Online Test:</strong> Aptitude/Psychometric + Technical</li>
-                <li><strong>GD/Presentation:</strong> If required</li>
+                <li><strong>Group Discussion(GD):</strong> If required</li>
                 <li><strong>Technical Interview:</strong> Core technical + Projects</li>
                 <li><strong>HR/Personal Interview:</strong> HR + Fit</li>
-                <li><strong>Final Selection:</strong> Final result</li>
               </ol>
             </div>
           )}

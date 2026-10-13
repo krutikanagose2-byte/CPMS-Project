@@ -5,7 +5,6 @@ import Syllabus from './Syllabus';
 import OnlineAptitudeTest from './OnlineAptitudeTest';
 import InterviewRound from './InterviewRound';
 import HRFinal from './HRFinal';
-import FinalSelection from './FinalSelection';
 
 const HDFCBankMenu = ({ company, onBack, onOpenAIInterview }) => {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -32,8 +31,6 @@ const HDFCBankMenu = ({ company, onBack, onOpenAIInterview }) => {
         return <InterviewRound company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'HR/Final':
         return <HRFinal company={company} onOpenAIInterview={onOpenAIInterview} />;
-      case 'Final Selection':
-        return <FinalSelection company={company} />;
       default:
         return (
           <div className="csr-content-body">
@@ -98,9 +95,6 @@ const HDFCBankMenu = ({ company, onBack, onOpenAIInterview }) => {
               <div className={`csr-menu-item ${activeMenu === 'HR/Final' ? 'active' : ''}`} onClick={() => setActiveMenu('HR/Final')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
                 HR/Final
               </div>
-              <div className={`csr-menu-item ${activeMenu === 'Final Selection' ? 'active' : ''}`} onClick={() => setActiveMenu('Final Selection')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
-                Final Selection
-              </div>
             </div>
           )}
         </nav>
@@ -128,6 +122,7 @@ const HDFCBankMenu = ({ company, onBack, onOpenAIInterview }) => {
               );
             })}
           </div>
+          <div id="csr-portal-back-btn"></div>
         </div>
         {renderContent()}
       </main>

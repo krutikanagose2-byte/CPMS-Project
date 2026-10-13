@@ -6,7 +6,6 @@ import OnlineAptitudeTest from './OnlineAptitudeTest';
 import TechnicalTest from './TechnicalTest';
 import Interview1 from './Interview1';
 import Interview2 from './Interview2';
-import FinalSelection from './FinalSelection';
 
 const JioMenu = ({ company, onBack, onOpenAIInterview }) => {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -35,8 +34,6 @@ const JioMenu = ({ company, onBack, onOpenAIInterview }) => {
         return <Interview1 company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Interview 2':
         return <Interview2 company={company} onOpenAIInterview={onOpenAIInterview} />;
-      case 'Final Selection':
-        return <FinalSelection company={company} />;
       default:
         return (
           <div className="csr-content-body">
@@ -104,9 +101,6 @@ const JioMenu = ({ company, onBack, onOpenAIInterview }) => {
               <div className={`csr-menu-item ${activeMenu === 'Interview 2' ? 'active' : ''}`} onClick={() => setActiveMenu('Interview 2')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
                 Interview 2
               </div>
-              <div className={`csr-menu-item ${activeMenu === 'Final Selection' ? 'active' : ''}`} onClick={() => setActiveMenu('Final Selection')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
-                Final Selection
-              </div>
             </div>
           )}
         </nav>
@@ -134,6 +128,7 @@ const JioMenu = ({ company, onBack, onOpenAIInterview }) => {
               );
             })}
           </div>
+          <div id="csr-portal-back-btn"></div>
         </div>
         {renderContent()}
       </main>

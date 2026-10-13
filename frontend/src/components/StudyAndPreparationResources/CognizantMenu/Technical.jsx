@@ -101,14 +101,14 @@ const Technical = ({ company }) => {
                 type: 'PDF Material',
                 category: 'Technical',
                 company: 'Cognizant',
-                url: '/pyq/pyq1.pdf',
+                url: '/pyq/tech_pyq1.pdf',
                 badgeBg: '#dbeafe',
                 badgeColor: '#2563eb'
               }}
             />
-            <a href="/pyq/pyq1.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            <a href="/pyq/tech_pyq1.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
               <div className="pyq-image-container">
-                <img src="/pyq/custom_cover.png" alt="PYQ 1" className="pyq-image" />
+                <img src="/pyq/tech_pyq1_thumb.png" alt="PYQ 1" className="pyq-image" />
               </div>
               <div className="pyq-info">
                 <h4 className="pyq-name">Technical PYQ 1</h4>
@@ -124,17 +124,40 @@ const Technical = ({ company }) => {
                 type: 'PDF Material',
                 category: 'Technical',
                 company: 'Cognizant',
-                url: '/pyq/pyq2.pdf',
+                url: '/pyq/tech_pyq2.pdf',
                 badgeBg: '#dbeafe',
                 badgeColor: '#2563eb'
               }}
             />
-            <a href="/pyq/pyq2.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            <a href="/pyq/tech_pyq2.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
               <div className="pyq-image-container">
-                <img src="/pyq/custom_cover.png" alt="PYQ 2" className="pyq-image" />
+                <img src="/pyq/tech_pyq2_thumb.png" alt="PYQ 2" className="pyq-image" />
               </div>
               <div className="pyq-info">
                 <h4 className="pyq-name">Technical PYQ 2</h4>
+              </div>
+            </a>
+          </div>
+
+          <div className="pyq-card" style={{ position: 'relative' }}>
+            <CardThreeDotsMenu
+              item={{
+                id: 'tech-pyq-3',
+                title: 'Technical PYQ Set 3',
+                type: 'PDF Material',
+                category: 'Technical',
+                company: 'Cognizant',
+                url: '/pyq/tech_pyq3.pdf',
+                badgeBg: '#dbeafe',
+                badgeColor: '#2563eb'
+              }}
+            />
+            <a href="/pyq/tech_pyq3.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <div className="pyq-image-container">
+                <img src="/pyq/tech_pyq3_thumb.png" alt="PYQ 3" className="pyq-image" />
+              </div>
+              <div className="pyq-info">
+                <h4 className="pyq-name">Technical PYQ 3</h4>
               </div>
             </a>
           </div>

@@ -4,11 +4,11 @@ import LogicalReasoning from '../CognizantMenu/LogicalReasoning';
 import VerbalAbility from '../CognizantMenu/VerbalAbility';
 import Psychometric from '../CognizantMenu/Psychometric';
 
-const aptitudeTopics = [
-  { id: 1, title: 'Quantitative Aptitude', questions: 150, color: '#e0f2fe', iconColor: '#0ea5e9' },
-  { id: 2, title: 'Logical Reasoning', questions: 120, color: '#fef3c7', iconColor: '#f59e0b' },
-  { id: 3, title: 'Verbal Ability', questions: 100, color: '#f3e8ff', iconColor: '#a855f7' },
-  { id: 4, title: 'Psychometric', questions: 450, color: '#fee2e2', iconColor: '#ef4444' },
+const assessmentTopics = [
+  { id: 1, title: 'Quantitative Aptitude', questions: '150+ Questions', color: '#e0f2fe', iconColor: '#0ea5e9', icon: '📐' },
+  { id: 2, title: 'Logical Reasoning', questions: '120+ Questions', color: '#fef3c7', iconColor: '#f59e0b', icon: '🧩' },
+  { id: 3, title: 'Verbal Ability', questions: '100+ Questions', color: '#f3e8ff', iconColor: '#a855f7', icon: '📖' },
+  { id: 4, title: 'Psychometric', questions: '450+ Questions', color: '#fee2e2', iconColor: '#ef4444', icon: '🧠' }
 ];
 
 const OnlineAssessment = ({ company }) => {
@@ -17,10 +17,13 @@ const OnlineAssessment = ({ company }) => {
   if (selectedTopic === 'Quantitative Aptitude') {
     return (
       <div style={{ padding: '20px' }}>
-         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '5px'}}>
-           ← Back to Assessment
-         </button>
-         <QuantitativeAptitude />
+        <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to Assessment
+        </button>
+        <QuantitativeAptitude company={company} />
       </div>
     );
   }
@@ -28,10 +31,13 @@ const OnlineAssessment = ({ company }) => {
   if (selectedTopic === 'Logical Reasoning') {
     return (
       <div style={{ padding: '20px' }}>
-         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '5px'}}>
-           ← Back to Assessment
-         </button>
-         <LogicalReasoning />
+        <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to Assessment
+        </button>
+        <LogicalReasoning company={company} />
       </div>
     );
   }
@@ -39,10 +45,13 @@ const OnlineAssessment = ({ company }) => {
   if (selectedTopic === 'Verbal Ability') {
     return (
       <div style={{ padding: '20px' }}>
-         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '5px'}}>
-           ← Back to Assessment
-         </button>
-         <VerbalAbility />
+        <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to Assessment
+        </button>
+        <VerbalAbility company={company} />
       </div>
     );
   }
@@ -50,10 +59,13 @@ const OnlineAssessment = ({ company }) => {
   if (selectedTopic === 'Psychometric') {
     return (
       <div style={{ padding: '20px' }}>
-         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '5px'}}>
-           ← Back to Assessment
-         </button>
-         <Psychometric />
+        <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to Assessment
+        </button>
+        <Psychometric company={company} />
       </div>
     );
   }
@@ -61,27 +73,31 @@ const OnlineAssessment = ({ company }) => {
   return (
     <div className="csr-content-body">
       <div className="csr-content-card">
-        <h2 className="csr-section-title">Online Assessment</h2>
+        <h2 className="csr-section-title">{company?.name || 'KPMG'} - Online Assessment</h2>
         <p className="csr-paragraph">
-          The Online Assessment for {company?.name || 'KPMG'} typically includes Aptitude, Logical/Verbal reasoning, and a Psychometric test to assess candidates.
+          The Online Assessment for KPMG typically includes Aptitude, Logical/Verbal reasoning, and a Psychometric test.
         </p>
 
-        <div className="csr-topics-grid">
-          {aptitudeTopics.map((topic) => (
+        <div className="csr-topics-grid" style={{ marginTop: '24px' }}>
+          {assessmentTopics.map((topic) => (
             <div
               key={topic.id}
               className="csr-topic-card"
-              style={{ backgroundColor: topic.color, cursor: 'pointer' }}
+              style={{ cursor: 'pointer' }}
               onClick={() => setSelectedTopic(topic.title)}
             >
-              <div className="csr-topic-icon-wrapper" style={{ color: topic.iconColor }}>
-                <span className="csr-topic-icon">📚</span>
+              <div className="csr-topic-icon" style={{ backgroundColor: topic.color, color: topic.iconColor }}>
+                <span style={{ fontSize: '20px' }}>{topic.icon}</span>
               </div>
               <div className="csr-topic-info">
                 <h3 className="csr-topic-title">{topic.title}</h3>
-                <p className="csr-topic-questions">{topic.questions}+ Questions</p>
+                <span className="csr-topic-questions">{topic.questions}</span>
               </div>
-              <div className="csr-topic-arrow">→</div>
+              <div className="csr-topic-arrow">
+                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
             </div>
           ))}
         </div>

@@ -3,10 +3,9 @@ import '../CognizantMenu/CognizantMenu.css';
 import Pattern from './Pattern';
 import Syllabus from './Syllabus';
 import WrittenOnlineTest from './WrittenOnlineTest';
-import GDPresentation from './GDPresentation';
+import GroupDiscussion from './GroupDiscussion';
 import TechnicalInterview from './TechnicalInterview';
 import HRInterview from './HRInterview';
-import FinalSelection from './FinalSelection';
 
 const BoschMenu = ({ company, onBack, onOpenAIInterview }) => {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -29,14 +28,13 @@ const BoschMenu = ({ company, onBack, onOpenAIInterview }) => {
         return <Syllabus company={company} currentYear={currentYear} />;
       case 'Written/Online Test':
         return <WrittenOnlineTest company={company} />;
+      case 'Group Discussion(GD)':
       case 'GD/Presentation':
-        return <GDPresentation company={company} />;
+        return <GroupDiscussion company={company} />;
       case 'Technical Interview':
         return <TechnicalInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'HR/Personal Interview':
         return <HRInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
-      case 'Final Selection':
-        return <FinalSelection company={company} />;
       default:
         return (
           <div className="csr-content-body">
@@ -95,17 +93,14 @@ const BoschMenu = ({ company, onBack, onOpenAIInterview }) => {
               <div className={`csr-menu-item ${activeMenu === 'Written/Online Test' ? 'active' : ''}`} onClick={() => setActiveMenu('Written/Online Test')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
                 Written/Online Test
               </div>
-              <div className={`csr-menu-item ${activeMenu === 'GD/Presentation' ? 'active' : ''}`} onClick={() => setActiveMenu('GD/Presentation')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
-                GD/Presentation
+              <div className={`csr-menu-item ${activeMenu === 'Group Discussion(GD)' ? 'active' : ''}`} onClick={() => setActiveMenu('Group Discussion(GD)')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
+                Group Discussion(GD)
               </div>
               <div className={`csr-menu-item ${activeMenu === 'Technical Interview' ? 'active' : ''}`} onClick={() => setActiveMenu('Technical Interview')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
                 Technical Interview
               </div>
               <div className={`csr-menu-item ${activeMenu === 'HR/Personal Interview' ? 'active' : ''}`} onClick={() => setActiveMenu('HR/Personal Interview')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
                 HR/Personal Interview
-              </div>
-              <div className={`csr-menu-item ${activeMenu === 'Final Selection' ? 'active' : ''}`} onClick={() => setActiveMenu('Final Selection')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
-                Final Selection
               </div>
             </div>
           )}
@@ -134,6 +129,7 @@ const BoschMenu = ({ company, onBack, onOpenAIInterview }) => {
               );
             })}
           </div>
+          <div id="csr-portal-back-btn"></div>
         </div>
         {renderContent()}
       </main>

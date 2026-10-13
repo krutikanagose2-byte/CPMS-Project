@@ -6,7 +6,6 @@ import OnlineAssessment from './OnlineAssessment';
 import TechnicalInterview1 from './TechnicalInterview1';
 import TechnicalInterview2 from './TechnicalInterview2';
 import HRBehavioral from './HRBehavioral';
-import FinalSelection from './FinalSelection';
 
 const MorganStanleyMenu = ({ company, onBack, onOpenAIInterview }) => {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -35,8 +34,6 @@ const MorganStanleyMenu = ({ company, onBack, onOpenAIInterview }) => {
         return <TechnicalInterview2 company={company} />;
       case 'HR/Behavioral':
         return <HRBehavioral company={company} onOpenAIInterview={onOpenAIInterview} />;
-      case 'Final Selection':
-        return <FinalSelection company={company} />;
       default:
         return (
           <div className="csr-content-body">
@@ -104,9 +101,6 @@ const MorganStanleyMenu = ({ company, onBack, onOpenAIInterview }) => {
               <div className={`csr-menu-item ${activeMenu === 'HR/Behavioral' ? 'active' : ''}`} onClick={() => setActiveMenu('HR/Behavioral')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
                 HR/Behavioral
               </div>
-              <div className={`csr-menu-item ${activeMenu === 'Final Selection' ? 'active' : ''}`} onClick={() => setActiveMenu('Final Selection')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
-                Final Selection
-              </div>
             </div>
           )}
         </nav>
@@ -134,6 +128,7 @@ const MorganStanleyMenu = ({ company, onBack, onOpenAIInterview }) => {
               );
             })}
           </div>
+          <div id="csr-portal-back-btn"></div>
         </div>
         {renderContent()}
       </main>

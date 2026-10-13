@@ -1,14 +1,11 @@
 import React from 'react';
-import CommunicationAssessment from '../CognizantMenu/CommunicationAssessment';
+import GroupDiscussionModule from '../Common/GroupDiscussionModule';
 
 const GDJAM = ({ company }) => {
   return (
     <div className="csr-content-body">
       <div className="csr-content-card">
-        <h2 className="csr-section-title">{company?.name || 'Jaro Education'} - GD/JAM</h2>
-        <p className="csr-paragraph">Communication + Group Discussion</p>
-        <CommunicationAssessment />
-
+        <GroupDiscussionModule company={company} title="GD/JAM - Group Discussion" />
       </div>
     </div>
   );

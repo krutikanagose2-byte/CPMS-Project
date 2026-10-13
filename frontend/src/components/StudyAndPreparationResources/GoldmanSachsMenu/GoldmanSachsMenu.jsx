@@ -5,7 +5,6 @@ import Syllabus from './Syllabus';
 import OnlineWrittenTest from './OnlineWrittenTest';
 import FirstInterview from './FirstInterview';
 import FinalSuperday from './FinalSuperday';
-import FinalSelection from './FinalSelection';
 
 const GoldmanSachsMenu = ({ company, onBack, onOpenAIInterview }) => {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -32,8 +31,6 @@ const GoldmanSachsMenu = ({ company, onBack, onOpenAIInterview }) => {
         return <FirstInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Final/Superday':
         return <FinalSuperday company={company} onOpenAIInterview={onOpenAIInterview} />;
-      case 'Final Selection':
-        return <FinalSelection company={company} />;
       default:
         return (
           <div className="csr-content-body">
@@ -98,9 +95,6 @@ const GoldmanSachsMenu = ({ company, onBack, onOpenAIInterview }) => {
               <div className={`csr-menu-item ${activeMenu === 'Final/Superday' ? 'active' : ''}`} onClick={() => setActiveMenu('Final/Superday')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
                 Final/Superday
               </div>
-              <div className={`csr-menu-item ${activeMenu === 'Final Selection' ? 'active' : ''}`} onClick={() => setActiveMenu('Final Selection')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
-                Final Selection
-              </div>
             </div>
           )}
         </nav>
@@ -128,6 +122,7 @@ const GoldmanSachsMenu = ({ company, onBack, onOpenAIInterview }) => {
               );
             })}
           </div>
+          <div id="csr-portal-back-btn"></div>
         </div>
         {renderContent()}
       </main>

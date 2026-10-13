@@ -5,7 +5,6 @@ import Syllabus from './Syllabus';
 import OnlineAssessment from './OnlineAssessment';
 import TechnicalBusinessInterview from './TechnicalBusinessInterview';
 import HRBehaviouralInterview from './HRBehaviouralInterview';
-import FinalSelection from './FinalSelection';
 
 const PwCMenu = ({ company, onBack, onOpenAIInterview }) => {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -32,8 +31,6 @@ const PwCMenu = ({ company, onBack, onOpenAIInterview }) => {
         return <TechnicalBusinessInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'HR/Behavioural Interview':
         return <HRBehaviouralInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
-      case 'Final Selection':
-        return <FinalSelection company={company} />;
       default:
         return (
           <div className="csr-content-body">
@@ -98,9 +95,6 @@ const PwCMenu = ({ company, onBack, onOpenAIInterview }) => {
               <div className={`csr-menu-item ${activeMenu === 'HR/Behavioural Interview' ? 'active' : ''}`} onClick={() => setActiveMenu('HR/Behavioural Interview')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
                 HR/Behavioural Interview
               </div>
-              <div className={`csr-menu-item ${activeMenu === 'Final Selection' ? 'active' : ''}`} onClick={() => setActiveMenu('Final Selection')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
-                Final Selection
-              </div>
             </div>
           )}
         </nav>
@@ -128,6 +122,7 @@ const PwCMenu = ({ company, onBack, onOpenAIInterview }) => {
               );
             })}
           </div>
+          <div id="csr-portal-back-btn"></div>
         </div>
         {renderContent()}
       </main>
