@@ -15,14 +15,12 @@ const Syllabus = ({ company, currentYear }) => {
 
         <h3 className="csr-subsection-title">1. Written/Online Test</h3>
         <p className="csr-paragraph">Aptitude/Psychometric + Technical</p>
-        <h3 className="csr-subsection-title">2. GD/Presentation</h3>
+        <h3 className="csr-subsection-title">2. Group Discussion(GD)</h3>
         <p className="csr-paragraph">If required</p>
         <h3 className="csr-subsection-title">3. Technical Interview</h3>
         <p className="csr-paragraph">Core technical + Projects</p>
         <h3 className="csr-subsection-title">4. HR/Personal Interview</h3>
         <p className="csr-paragraph">HR + Fit</p>
-        <h3 className="csr-subsection-title">5. Final Selection</h3>
-        <p className="csr-paragraph">Final result</p>
 
       </div>
     </div>

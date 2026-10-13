@@ -53,7 +53,12 @@ const OnlineAssessment = ({ company }) => {
   if (selectedTopic === 'Verbal') {
     return (
       <div style={{ padding: '20px' }}>
-         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Online Assessment</button>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '5px'}}>
+           <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+             <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+           </svg>
+           Back to Online Assessment
+         </button>
          <VerbalAbility />
       </div>
     );
@@ -62,7 +67,12 @@ const OnlineAssessment = ({ company }) => {
   if (selectedTopic === 'Data Interpretation') {
     return (
       <div style={{ padding: '20px' }}>
-         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Online Assessment</button>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '5px'}}>
+           <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+             <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+           </svg>
+           Back to Online Assessment
+         </button>
          <DataInterpretation />
       </div>
     );
@@ -71,7 +81,12 @@ const OnlineAssessment = ({ company }) => {
   if (selectedTopic === 'Visual Reasoning') {
     return (
       <div style={{ padding: '20px' }}>
-         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Online Assessment</button>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '5px'}}>
+           <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+             <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+           </svg>
+           Back to Online Assessment
+         </button>
          <VisualReasoning />
       </div>
     );
@@ -80,7 +95,12 @@ const OnlineAssessment = ({ company }) => {
   if (selectedTopic === 'Psychometric') {
     return (
       <div style={{ padding: '20px' }}>
-         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Online Assessment</button>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '5px'}}>
+           <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+             <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+           </svg>
+           Back to Online Assessment
+         </button>
          <Psychometric />
       </div>
     );
@@ -89,7 +109,12 @@ const OnlineAssessment = ({ company }) => {
   if (selectedTopic === 'Cryptarithmetic') {
     return (
       <div style={{ padding: '20px' }}>
-         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Online Assessment</button>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '5px'}}>
+           <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+             <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+           </svg>
+           Back to Online Assessment
+         </button>
          <Cryptarithmetic />
       </div>
     );
@@ -98,7 +123,12 @@ const OnlineAssessment = ({ company }) => {
   if (selectedTopic === 'Essay Writing') {
     return (
       <div style={{ padding: '20px' }}>
-         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px'}}>+? Back to Online Assessment</button>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '5px'}}>
+           <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+             <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+           </svg>
+           Back to Online Assessment
+         </button>
          <EssayWriting />
       </div>
     );

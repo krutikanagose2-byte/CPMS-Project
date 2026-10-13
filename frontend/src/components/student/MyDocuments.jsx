@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { apiFetch } from '../../utils/api';
 
 const MyDocuments = ({ user, onUpdateUser }) => {
     const fileInputRef = useRef(null);
@@ -31,7 +32,7 @@ const MyDocuments = ({ user, onUpdateUser }) => {
         if (!userId) return;
         setIsSaving(true);
         try {
-            const response = await fetch(`http://localhost:5000/api/student/profile/${userId}`, {
+            const response = await apiFetch(`/api/student/profile/${userId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ ...user, myDocuments: updatedDocs })

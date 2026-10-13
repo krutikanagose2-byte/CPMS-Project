@@ -5,7 +5,6 @@ import Syllabus from './Syllabus';
 import OnlineAssessment from './OnlineAssessment';
 import TechnicalInterview1 from './TechnicalInterview1';
 import FinalInterviewLoop from './FinalInterviewLoop';
-import FinalSelection from './FinalSelection';
 
 const AmazonMenu = ({ company, onBack, onOpenAIInterview }) => {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -32,8 +31,6 @@ const AmazonMenu = ({ company, onBack, onOpenAIInterview }) => {
         return <TechnicalInterview1 company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Final Interview Loop':
         return <FinalInterviewLoop company={company} onOpenAIInterview={onOpenAIInterview} />;
-      case 'Offer/Final Selection':
-        return <FinalSelection company={company} />;
       default:
         return (
           <div className="csr-content-body">
@@ -98,9 +95,6 @@ const AmazonMenu = ({ company, onBack, onOpenAIInterview }) => {
               <div className={`csr-menu-item ${activeMenu === 'Final Interview Loop' ? 'active' : ''}`} onClick={() => setActiveMenu('Final Interview Loop')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
                 Final Interview Loop
               </div>
-              <div className={`csr-menu-item ${activeMenu === 'Offer/Final Selection' ? 'active' : ''}`} onClick={() => setActiveMenu('Offer/Final Selection')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
-                Offer/Final Selection
-              </div>
             </div>
           )}
         </nav>
@@ -128,6 +122,7 @@ const AmazonMenu = ({ company, onBack, onOpenAIInterview }) => {
               );
             })}
           </div>
+          <div id="csr-portal-back-btn"></div>
         </div>
         {renderContent()}
       </main>

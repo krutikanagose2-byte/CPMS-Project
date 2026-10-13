@@ -117,6 +117,9 @@ export default function App() {
           handleUpdateUser(userData);
           window.history.pushState({}, '', '/Home');
           setPage('home');
+          setTimeout(() => {
+            alert(`Welcome ${userData?.name || 'User'}! Login Successful`);
+          }, 20);
         }}
       />
     );

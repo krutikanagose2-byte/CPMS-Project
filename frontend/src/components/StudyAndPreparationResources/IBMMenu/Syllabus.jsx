@@ -21,8 +21,6 @@ const Syllabus = ({ company, currentYear }) => {
         <p className="csr-paragraph">English proficiency</p>
         <h3 className="csr-subsection-title">4. Technical/Interview Round</h3>
         <p className="csr-paragraph">Role-specific technical + Projects</p>
-        <h3 className="csr-subsection-title">5. HR/Final Selection</h3>
-        <p className="csr-paragraph">Final result</p>
 
       </div>
     </div>

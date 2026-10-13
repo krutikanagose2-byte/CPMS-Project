@@ -6,7 +6,6 @@ import OnlineTest from './OnlineTest';
 import GDJAM from './GDJAM';
 import PersonalInterview from './PersonalInterview';
 import HRInterview from './HRInterview';
-import FinalSelection from './FinalSelection';
 
 const JaroEducationMenu = ({ company, onBack, onOpenAIInterview }) => {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -35,8 +34,6 @@ const JaroEducationMenu = ({ company, onBack, onOpenAIInterview }) => {
         return <PersonalInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'HR Interview':
         return <HRInterview company={company} onOpenAIInterview={onOpenAIInterview} />;
-      case 'Final Selection':
-        return <FinalSelection company={company} />;
       default:
         return (
           <div className="csr-content-body">
@@ -104,9 +101,6 @@ const JaroEducationMenu = ({ company, onBack, onOpenAIInterview }) => {
               <div className={`csr-menu-item ${activeMenu === 'HR Interview' ? 'active' : ''}`} onClick={() => setActiveMenu('HR Interview')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
                 HR Interview
               </div>
-              <div className={`csr-menu-item ${activeMenu === 'Final Selection' ? 'active' : ''}`} onClick={() => setActiveMenu('Final Selection')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
-                Final Selection
-              </div>
             </div>
           )}
         </nav>
@@ -134,6 +128,7 @@ const JaroEducationMenu = ({ company, onBack, onOpenAIInterview }) => {
               );
             })}
           </div>
+          <div id="csr-portal-back-btn"></div>
         </div>
         {renderContent()}
       </main>

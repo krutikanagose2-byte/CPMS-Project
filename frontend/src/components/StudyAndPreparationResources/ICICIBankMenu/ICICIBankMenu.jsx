@@ -5,7 +5,6 @@ import Syllabus from './Syllabus';
 import OnlineAptitudeTest from './OnlineAptitudeTest';
 import Interview1 from './Interview1';
 import Interview2 from './Interview2';
-import FinalSelection from './FinalSelection';
 
 const ICICIBankMenu = ({ company, onBack, onOpenAIInterview }) => {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -32,8 +31,6 @@ const ICICIBankMenu = ({ company, onBack, onOpenAIInterview }) => {
         return <Interview1 company={company} onOpenAIInterview={onOpenAIInterview} />;
       case 'Interview 2':
         return <Interview2 company={company} onOpenAIInterview={onOpenAIInterview} />;
-      case 'Final selection':
-        return <FinalSelection company={company} />;
       default:
         return (
           <div className="csr-content-body">
@@ -98,9 +95,6 @@ const ICICIBankMenu = ({ company, onBack, onOpenAIInterview }) => {
               <div className={`csr-menu-item ${activeMenu === 'Interview 2' ? 'active' : ''}`} onClick={() => setActiveMenu('Interview 2')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
                 Interview 2
               </div>
-              <div className={`csr-menu-item ${activeMenu === 'Final selection' ? 'active' : ''}`} onClick={() => setActiveMenu('Final selection')} style={{ paddingLeft: '40px', fontSize: '0.95em' }}>
-                Final selection
-              </div>
             </div>
           )}
         </nav>
@@ -128,6 +122,7 @@ const ICICIBankMenu = ({ company, onBack, onOpenAIInterview }) => {
               );
             })}
           </div>
+          <div id="csr-portal-back-btn"></div>
         </div>
         {renderContent()}
       </main>

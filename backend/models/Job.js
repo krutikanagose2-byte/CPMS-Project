@@ -37,6 +37,26 @@ const jobSchema = new mongoose.Schema({
     deadline: {
         type: Date,
     },
+    openings: {
+        type: Number,
+        default: 5,
+    },
+    whoCanApply: {
+        type: [String],
+        default: [],
+    },
+    additionalInfo: {
+        type: String,
+        default: "",
+    },
+    applyUrl: {
+        type: String,
+        default: "",
+    },
+    status: {
+        type: String,
+        default: "Open",
+    },
     createdAt: {
         type: Date,
         default: Date.now,

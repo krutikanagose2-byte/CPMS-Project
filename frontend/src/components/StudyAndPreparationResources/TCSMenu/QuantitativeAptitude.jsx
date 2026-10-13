@@ -76,21 +76,24 @@ const QuantitativeAptitude = () => {
           <CardThreeDotsMenu
             item={{
               id: 'tcs-quant-pyq-1',
-              title: 'TCS Quant PYQ 1',
+              title: 'TCS Quant PYQ 1 - Quantitative Aptitude (Set 1)',
               type: 'PDF Material',
               category: 'Aptitude',
               company: 'TCS',
-              url: '/pyq/pyq1.pdf',
+              url: '/pyq/quant_pyq1.pdf',
               badgeBg: '#dbeafe',
               badgeColor: '#2563eb'
             }}
           />
-          <a href="/pyq/pyq1.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+          <a href="/pyq/quant_pyq1.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
             <div className="pyq-image-container">
-              <img src="/pyq/custom_cover.png" alt="PYQ 1" className="pyq-image" />
+              <img src="/pyq/quant_pyq1_thumb.png" alt="Quant PYQ 1" className="pyq-image" />
             </div>
             <div className="pyq-info">
               <h4 className="pyq-name">Quant PYQ 1</h4>
+              <p style={{ margin: '4px 0 0', fontSize: '12px', color: '#64748b', lineHeight: '1.4' }}>
+                Number System, Percentages, Profit & Loss, SI/CI, Time & Work
+              </p>
             </div>
           </a>
         </div>
@@ -98,21 +101,24 @@ const QuantitativeAptitude = () => {
           <CardThreeDotsMenu
             item={{
               id: 'tcs-quant-pyq-2',
-              title: 'TCS Quant PYQ 2',
+              title: 'TCS Quant PYQ 2 - Quantitative Aptitude (Set 2)',
               type: 'PDF Material',
               category: 'Aptitude',
               company: 'TCS',
-              url: '/pyq/pyq2.pdf',
+              url: '/pyq/quant_pyq2.pdf',
               badgeBg: '#dbeafe',
               badgeColor: '#2563eb'
             }}
           />
-          <a href="/pyq/pyq2.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+          <a href="/pyq/quant_pyq2.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
             <div className="pyq-image-container">
-              <img src="/pyq/custom_cover.png" alt="PYQ 2" className="pyq-image" />
+              <img src="/pyq/quant_pyq2_thumb.png" alt="Quant PYQ 2" className="pyq-image" />
             </div>
             <div className="pyq-info">
               <h4 className="pyq-name">Quant PYQ 2</h4>
+              <p style={{ margin: '4px 0 0', fontSize: '12px', color: '#64748b', lineHeight: '1.4' }}>
+                Speed, Distance, Trains, Boats, Ratios, Averages, Pipes & Cisterns
+              </p>
             </div>
           </a>
         </div>
@@ -120,21 +126,24 @@ const QuantitativeAptitude = () => {
           <CardThreeDotsMenu
             item={{
               id: 'tcs-quant-pyq-3',
-              title: 'TCS Quant PYQ 3',
+              title: 'TCS Quant PYQ 3 - Quantitative Aptitude (Set 3)',
               type: 'PDF Material',
               category: 'Aptitude',
               company: 'TCS',
-              url: '/pyq/pyq3.pdf',
+              url: '/pyq/quant_pyq3.pdf',
               badgeBg: '#dbeafe',
               badgeColor: '#2563eb'
             }}
           />
-          <a href="/pyq/pyq3.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+          <a href="/pyq/quant_pyq3.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
             <div className="pyq-image-container">
-              <img src="/pyq/custom_cover.png" alt="PYQ 3" className="pyq-image" />
+              <img src="/pyq/quant_pyq3_thumb.png" alt="Quant PYQ 3" className="pyq-image" />
             </div>
             <div className="pyq-info">
               <h4 className="pyq-name">Quant PYQ 3</h4>
+              <p style={{ margin: '4px 0 0', fontSize: '12px', color: '#64748b', lineHeight: '1.4' }}>
+                Permutation, Probability, Mensuration, Alligation & DI
+              </p>
             </div>
           </a>
         </div>
