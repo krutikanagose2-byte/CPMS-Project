@@ -7,6 +7,7 @@ const studentRoutes = require("./routes/studentRoutes");
 const jobRoutes = require("./routes/jobRoutes");
 const interviewRoutes = require("./routes/interviewRoutes");
 const messageRoutes = require("./routes/messageRoutes");
+const studyMaterialRoutes = require("./routes/studyMaterialRoutes");
 
 const app = express();
 
@@ -16,7 +17,7 @@ app.use(cors({
   origin: true,
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
-  allowedHeaders: ["Content-Type", "Authorization", "Accept"]
+  allowedHeaders: ["Content-Type", "Authorization", "Accept", "x-user-role", "x-user-id", "x-user-enrollment"]
 }));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
@@ -30,6 +31,7 @@ app.use("/api/student", studentRoutes);
 app.use("/api/jobs", jobRoutes);
 app.use("/api/interview", interviewRoutes);
 app.use("/api/messages", messageRoutes);
+app.use("/api/study-materials", studyMaterialRoutes);
 
 
 const PORT = process.env.PORT || 5000;
