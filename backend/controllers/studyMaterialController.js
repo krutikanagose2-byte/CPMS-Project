@@ -123,10 +123,6 @@ const verifyAdminRole = async (req) => {
   return false;
 };
 
-const escapeRegex = (string) => {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-};
-
 // 1. Get all study materials (Accessible to all registered users)
 exports.getAllStudyMaterials = async (req, res) => {
   try {
@@ -141,20 +137,19 @@ exports.getAllStudyMaterials = async (req, res) => {
     let query = {};
 
     if (type && type !== "All" && type !== "all") {
-      query.type = type.toLowerCase().trim();
+      query.type = type.toLowerCase();
     }
 
     if (category && category !== "All" && category !== "all") {
-      query.category = { $regex: new RegExp(escapeRegex(category.trim()), "i") };
+      query.category = { $regex: new RegExp(category, "i") };
     }
 
     if (company && company !== "All" && company !== "all") {
-      query.company = { $regex: new RegExp(escapeRegex(company.trim()), "i") };
+      query.company = { $regex: new RegExp(company, "i") };
     }
 
     if (search && search.trim() !== "") {
-      const escaped = escapeRegex(search.trim());
-      const regex = new RegExp(escaped, "i");
+      const regex = new RegExp(search.trim(), "i");
       query.$or = [
         { title: regex },
         { description: regex },
