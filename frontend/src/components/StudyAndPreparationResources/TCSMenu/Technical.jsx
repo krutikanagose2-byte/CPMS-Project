@@ -1,30 +1,21 @@
 import React, { useState } from 'react';
 import TopicsGrid from './TopicsGrid';
-import QuizComponent from './QuizComponent';
-import {
-  cCodingQuestions, cppCodingQuestions, javaCodingQuestions,
-  pythonCodingQuestions, sqlCodingQuestions, javascriptCodingQuestions,
-  webDevCodingQuestions
-} from './TechnicalQuestions';
+import CodingAssessmentEnvironment from '../../common/CodingAssessmentEnvironment';
 
 const Technical = ({ company }) => {
   const [selectedTopic, setSelectedTopic] = useState(null);
 
   const topics = [
-    { id: 1, title: 'C', questions: 15, color: '#e0f2fe', iconColor: '#0ea5e9', data: cCodingQuestions },
-    { id: 2, title: 'C++', questions: 15, color: '#fef3c7', iconColor: '#f59e0b', data: cppCodingQuestions },
-    { id: 3, title: 'Java', questions: 15, color: '#f3e8ff', iconColor: '#a855f7', data: javaCodingQuestions },
-    { id: 4, title: 'Python', questions: 15, color: '#dcfce7', iconColor: '#22c55e', data: pythonCodingQuestions },
-    { id: 5, title: 'SQL', questions: 15, color: '#ffedd5', iconColor: '#f97316', data: sqlCodingQuestions },
-    { id: 7, title: 'Web Development (HTML/CSS/JS)', questions: 11, color: '#e0f2fe', iconColor: '#0ea5e9', data: webDevCodingQuestions },
+    { id: 1, title: 'C', questions: 10, color: '#e0f2fe', iconColor: '#0ea5e9' },
+    { id: 2, title: 'C++', questions: 10, color: '#fef3c7', iconColor: '#f59e0b' },
+    { id: 3, title: 'Java', questions: 10, color: '#f3e8ff', iconColor: '#a855f7' },
+    { id: 4, title: 'Python', questions: 10, color: '#dcfce7', iconColor: '#22c55e' },
+    { id: 5, title: 'SQL', questions: 10, color: '#ffedd5', iconColor: '#f97316' },
+    { id: 6, title: 'Web Development (HTML/CSS/JS)', questions: 10, color: '#e0f2fe', iconColor: '#0ea5e9' },
   ];
 
   const handleTopicClick = (t) => {
-    if (t.data) {
-      setSelectedTopic(t);
-    } else {
-      alert('Content for ' + t.title + ' will be added soon!');
-    }
+    setSelectedTopic(t);
   };
 
   const handleBackToTopics = () => {
@@ -33,11 +24,10 @@ const Technical = ({ company }) => {
 
   if (selectedTopic) {
     return (
-      <QuizComponent
-        topicTitle={selectedTopic.title}
-        questions={selectedTopic.data}
+      <CodingAssessmentEnvironment
+        initialLanguage={selectedTopic.title}
         onBack={handleBackToTopics}
-        hideOptions={true}
+        companyName={company?.name || 'TCS'}
       />
     );
   }

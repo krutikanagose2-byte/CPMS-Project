@@ -7,11 +7,13 @@ import VisualReasoning from './VisualReasoning';
 import Psychometric from './Psychometric';
 import Cryptarithmetic from './Cryptarithmetic';
 import EssayWriting from './EssayWriting';
+import CodingAssessmentEnvironment from '../../common/CodingAssessmentEnvironment';
 
 const aptitudeTopics = [
   { id: 1, title: 'Quantitative Aptitude', questions: 150, color: '#e0f2fe', iconColor: '#0ea5e9' },
   { id: 2, title: 'Logical Reasoning', questions: 120, color: '#fef3c7', iconColor: '#f59e0b' },
   { id: 3, title: 'Verbal', questions: 100, color: '#f3e8ff', iconColor: '#a855f7' },
+  { id: 4, title: 'Coding & Technical', questions: 60, color: '#e0e7ff', iconColor: '#4f46e5' },
   { id: 5, title: 'Data Interpretation', questions: 90, color: '#ffedd5', iconColor: '#f97316' },
   { id: 6, title: 'Visual Reasoning', questions: 60, color: '#fee2e2', iconColor: '#ef4444' },
   { id: 7, title: 'Psychometric', questions: 50, color: '#fef3c7', iconColor: '#f59e0b' },
@@ -130,6 +132,18 @@ const OnlineAssessment = ({ company }) => {
            Back to Online Assessment
          </button>
          <EssayWriting />
+      </div>
+    );
+  }
+
+  if (selectedTopic === 'Coding & Technical' || selectedTopic === 'Coding') {
+    return (
+      <div style={{ padding: '20px' }}>
+         <CodingAssessmentEnvironment
+           initialLanguage="c"
+           onBack={() => setSelectedTopic(null)}
+           companyName={company?.name || 'Capgemini'}
+         />
       </div>
     );
   }
