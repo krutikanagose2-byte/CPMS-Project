@@ -1,5 +1,6 @@
 import React from 'react';
 import './RecommendedVideos.css';
+import SaveBookmarkButton from './SaveBookmarkButton';
 
 // Curated database of verified high-quality placement preparation videos
 const TOPIC_VIDEOS = {
@@ -370,31 +371,57 @@ const RecommendedVideos = ({ topic = 'Quantitative Aptitude', customTitle = null
       </div>
 
       <div className="rec-videos-grid">
-        {videos.map((video) => (
-          <a
-            key={video.id}
-            href={video.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rec-video-card"
-            title={`Watch "${video.title}" on YouTube (opens in new tab)`}
-          >
-            <div className="rec-video-thumb-container">
-              <img
-                src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
-                alt={video.title}
-                className="rec-video-thumb"
-                loading="lazy"
-              />
-              <div className="rec-video-play-overlay">
-                <div className="rec-play-btn" aria-label="Play Video">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
+        {videos.map((video) => {
+          const videoItem = {
+            id: `yt-${video.id}`,
+            videoId: video.id,
+            title: video.title,
+            channel: video.channel,
+            type: 'YouTube Video',
+            category: normalizedKey,
+            tag: video.tag,
+            duration: video.duration,
+            badge: video.badge,
+            url: video.url,
+            thumbnail: `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`,
+            badgeBg: '#fee2e2',
+            badgeColor: '#dc2626'
+          };
+
+          return (
+            <a
+              key={video.id}
+              href={video.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rec-video-card"
+              title={`Watch "${video.title}" on YouTube (opens in new tab)`}
+            >
+              <div className="rec-video-thumb-container">
+                <img
+                  src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                  alt={video.title}
+                  className="rec-video-thumb"
+                  loading="lazy"
+                />
+                <div className="rec-video-play-overlay">
+                  <div className="rec-play-btn" aria-label="Play Video">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
                 </div>
+                <span className="rec-video-badge">{video.badge}</span>
+                <SaveBookmarkButton
+                  item={videoItem}
+                  customStyle={{
+                    position: 'absolute',
+                    top: '10px',
+                    right: '10px',
+                    zIndex: 15
+                  }}
+                />
               </div>
-              <span className="rec-video-badge">{video.badge}</span>
-            </div>
 
             <div className="rec-video-content">
               <div className="rec-video-meta-top">
@@ -420,7 +447,8 @@ const RecommendedVideos = ({ topic = 'Quantitative Aptitude', customTitle = null
               </div>
             </div>
           </a>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

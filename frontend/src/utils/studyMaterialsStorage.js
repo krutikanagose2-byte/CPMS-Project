@@ -1,7 +1,75 @@
-// Utility for managing saved courses / materials & ongoing learning in localStorage
+// Utility for managing saved study materials & ongoing learning with MongoDB backend persistence and localStorage caching
+import { apiFetch } from './api';
 
 const SAVED_MATERIALS_KEY = 'cpms_saved_study_materials';
 const ONGOING_COURSES_KEY = 'cpms_ongoing_learning_courses';
+
+// Retrieve currently logged-in user from storage
+export const getLoggedInUser = () => {
+    try {
+        const session = sessionStorage.getItem('user');
+        if (session) return JSON.parse(session);
+        const local = localStorage.getItem('user');
+        if (local) return JSON.parse(local);
+    } catch (e) {
+        console.error('Failed to read logged in user', e);
+    }
+    return null;
+};
+
+// Sync updated saved materials list to backend DB
+const syncSavedMaterialsToBackend = async (materials) => {
+    try {
+        const user = getLoggedInUser();
+        const userId = user?._id || user?.id;
+        if (!userId) return;
+
+        // Keep local user session in sync
+        const updatedUser = { ...user, savedStudyMaterials: materials };
+        try {
+            sessionStorage.setItem('user', JSON.stringify(updatedUser));
+            localStorage.setItem('user', JSON.stringify(updatedUser));
+        } catch (e) {}
+
+        // Persist to MongoDB through student profile API
+        await apiFetch(`/api/student/profile/${userId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ savedStudyMaterials: materials })
+        });
+    } catch (err) {
+        console.warn('Background sync of saved study materials to database failed (stored locally):', err);
+    }
+};
+
+// Sync when user logs in or updates profile
+export const syncUserSavedMaterials = (user) => {
+    if (!user) return;
+    try {
+        const localMaterials = getSavedMaterials();
+        const dbMaterials = Array.isArray(user.savedStudyMaterials) ? user.savedStudyMaterials : [];
+
+        // Merge keeping unique by item.id
+        const map = new Map();
+        localMaterials.forEach(item => {
+            if (item && item.id) map.set(item.id, item);
+        });
+        dbMaterials.forEach(item => {
+            if (item && item.id) map.set(item.id, item);
+        });
+
+        const merged = Array.from(map.values());
+        localStorage.setItem(SAVED_MATERIALS_KEY, JSON.stringify(merged));
+        window.dispatchEvent(new CustomEvent('studyMaterialsUpdated'));
+
+        // If local had newer items not yet in DB, sync them up
+        if (merged.length > dbMaterials.length) {
+            syncSavedMaterialsToBackend(merged);
+        }
+    } catch (e) {
+        console.error('Failed to sync user saved materials', e);
+    }
+};
 
 export const getSavedMaterials = () => {
     try {
@@ -14,29 +82,37 @@ export const getSavedMaterials = () => {
 };
 
 export const isMaterialSaved = (id) => {
+    if (!id) return false;
     const saved = getSavedMaterials();
     return saved.some(item => item.id === id);
 };
 
 export const saveMaterial = (item) => {
+    if (!item || !item.id) return false;
     const saved = getSavedMaterials();
     if (!saved.some(i => i.id === item.id)) {
-        const updated = [...saved, { ...item, savedAt: new Date().toISOString() }];
+        const updated = [{ ...item, savedAt: new Date().toISOString() }, ...saved];
         localStorage.setItem(SAVED_MATERIALS_KEY, JSON.stringify(updated));
         window.dispatchEvent(new CustomEvent('studyMaterialsUpdated'));
+        // Asynchronously persist to backend database
+        syncSavedMaterialsToBackend(updated);
         return true;
     }
     return false;
 };
 
 export const removeSavedMaterial = (id) => {
+    if (!id) return;
     const saved = getSavedMaterials();
     const updated = saved.filter(i => i.id !== id);
     localStorage.setItem(SAVED_MATERIALS_KEY, JSON.stringify(updated));
     window.dispatchEvent(new CustomEvent('studyMaterialsUpdated'));
+    // Asynchronously persist to backend database
+    syncSavedMaterialsToBackend(updated);
 };
 
 export const toggleSaveMaterial = (item) => {
+    if (!item || !item.id) return false;
     if (isMaterialSaved(item.id)) {
         removeSavedMaterial(item.id);
         return false;
@@ -84,6 +160,7 @@ export const getOngoingCourses = () => {
 
 export const markAsOngoing = (item) => {
     try {
+        if (!item || !item.id) return;
         const ongoing = getOngoingCourses();
         if (!ongoing.some(i => i.id === item.id)) {
             const updated = [{ ...item, progress: 10, lastAccessed: new Date().toISOString() }, ...ongoing];

@@ -26,9 +26,9 @@ const ProfileSavedCoursesPreview = ({ onNavigateTab }) => {
     if (saved.length === 0 && ongoing.length === 0) {
         return (
             <div style={{ textAlign: 'center', padding: '16px', color: '#64748b', fontSize: '13px' }}>
-                <p style={{ margin: 0 }}>No saved courses yet.</p>
-                <p style={{ margin: '4px 0 0 0', fontSize: '12px' }}>
-                    Click <b>⋮ (3 dots menu)</b> on any course card in Company Preparation to save for later.
+                <p style={{ margin: 0, fontWeight: '500' }}>No saved resources yet.</p>
+                <p style={{ margin: '6px 0 0 0', fontSize: '12px' }}>
+                    Click the <b>Bookmark icon (🔖)</b> on any YouTube video or PDF PYQ card in Company Preparation to save for later.
                 </p>
             </div>
         );
@@ -36,44 +36,115 @@ const ProfileSavedCoursesPreview = ({ onNavigateTab }) => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {saved.slice(0, 3).map(item => (
-                <div key={item.id} style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '10px 14px',
-                    backgroundColor: '#f8fafc',
-                    borderRadius: '8px',
-                    border: '1px solid #e2e8f0'
-                }}>
-                    <div>
-                        <span style={{ fontSize: '11px', fontWeight: '600', color: item.badgeColor || '#2563eb' }}>
-                            🔖 {item.company ? `${item.company} • ` : ''}{item.category || item.type || 'Course'}
-                        </span>
-                        <h4 style={{ margin: '2px 0 0 0', fontSize: '13.5px', fontWeight: '600', color: '#1e293b' }}>
-                            {item.title}
-                        </h4>
+            {saved.slice(0, 4).map(item => {
+                const isVideo = (item.type && item.type.toLowerCase().includes('video')) || (item.url && item.url.includes('youtube'));
+                return (
+                    <div key={item.id} style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        padding: '10px 14px',
+                        backgroundColor: '#f8fafc',
+                        borderRadius: '10px',
+                        border: '1px solid #e2e8f0',
+                        gap: '12px'
+                    }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 0 }}>
+                            {item.thumbnail ? (
+                                <img
+                                    src={item.thumbnail}
+                                    alt={item.title}
+                                    style={{
+                                        width: '48px',
+                                        height: '36px',
+                                        borderRadius: '6px',
+                                        objectFit: 'cover',
+                                        flexShrink: 0
+                                    }}
+                                    onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.style.display = 'none';
+                                    }}
+                                />
+                            ) : (
+                                <div style={{
+                                    width: '40px',
+                                    height: '34px',
+                                    borderRadius: '6px',
+                                    backgroundColor: isVideo ? '#fee2e2' : '#eff6ff',
+                                    color: isVideo ? '#dc2626' : '#2563eb',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontSize: '16px',
+                                    flexShrink: 0
+                                }}>
+                                    {isVideo ? '▶' : '📄'}
+                                </div>
+                            )}
+
+                            <div style={{ minWidth: 0 }}>
+                                <span style={{
+                                    fontSize: '11px',
+                                    fontWeight: '700',
+                                    color: isVideo ? '#dc2626' : '#2563eb'
+                                }}>
+                                    {isVideo ? '▶ YouTube' : '📄 PDF'} • {item.category || item.type || 'Resource'}
+                                </span>
+                                <h4 style={{
+                                    margin: '2px 0 0 0',
+                                    fontSize: '13px',
+                                    fontWeight: '600',
+                                    color: '#1e293b',
+                                    whiteSpace: 'nowrap',
+                                    overflow: 'hidden',
+                                    textOverflow: 'ellipsis'
+                                }} title={item.title}>
+                                    {item.title}
+                                </h4>
+                            </div>
+                        </div>
+
+                        <button
+                            onClick={() => {
+                                if (item.url) window.open(item.url, '_blank', 'noopener,noreferrer');
+                            }}
+                            style={{
+                                padding: '6px 14px',
+                                backgroundColor: isVideo ? '#dc2626' : 'var(--primary, #2563eb)',
+                                color: '#fff',
+                                border: 'none',
+                                borderRadius: '6px',
+                                fontSize: '12px',
+                                fontWeight: '600',
+                                cursor: 'pointer',
+                                whiteSpace: 'nowrap',
+                                flexShrink: 0
+                            }}
+                        >
+                            {isVideo ? 'Watch ↗' : 'Open ↗'}
+                        </button>
                     </div>
-                    <button
-                        onClick={() => {
-                            if (item.url) window.open(item.url, '_blank');
-                        }}
-                        style={{
-                            padding: '6px 12px',
-                            backgroundColor: 'var(--primary, #2563eb)',
-                            color: '#fff',
-                            border: 'none',
-                            borderRadius: '6px',
-                            fontSize: '12px',
-                            fontWeight: '600',
-                            cursor: 'pointer',
-                            whiteSpace: 'nowrap'
-                        }}
-                    >
-                        Study ↗
-                    </button>
-                </div>
-            ))}
+                );
+            })}
+
+            {saved.length > 4 && onNavigateTab && (
+                <button
+                    onClick={() => onNavigateTab('materials')}
+                    style={{
+                        padding: '8px',
+                        background: 'transparent',
+                        border: '1px dashed #cbd5e1',
+                        borderRadius: '8px',
+                        color: 'var(--primary, #2563eb)',
+                        fontSize: '12px',
+                        fontWeight: '600',
+                        cursor: 'pointer'
+                    }}
+                >
+                    View all {saved.length} saved resources in Study Materials &rarr;
+                </button>
+            )}
         </div>
     );
 };

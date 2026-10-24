@@ -1,6 +1,7 @@
 import React from 'react';
 import './TopicsGrid.css';
 import RecommendedVideos from '../../common/RecommendedVideos';
+import { enhancePyqElements } from '../../common/SaveBookmarkButton';
 
 const resolveTopic = (topicName, bannerTitle, bannerSubtitle, bannerButtonText) => {
   if (topicName) return topicName;
@@ -19,6 +20,7 @@ const resolveTopic = (topicName, bannerTitle, bannerSubtitle, bannerButtonText) 
 
 const TopicsGrid = ({ topics, bannerTitle, bannerSubtitle, bannerButtonText, onTopicClick, headerContent, topicName, hideVideos }) => {
   const currentTopic = resolveTopic(topicName, bannerTitle, bannerSubtitle, bannerButtonText);
+  const enhancedHeader = enhancePyqElements(headerContent, currentTopic);
 
   return (
     <div className="csr-content-body">
@@ -26,7 +28,7 @@ const TopicsGrid = ({ topics, bannerTitle, bannerSubtitle, bannerButtonText, onT
         
         {!hideVideos && <RecommendedVideos topic={currentTopic} />}
 
-        {headerContent && headerContent}
+        {enhancedHeader && enhancedHeader}
 
         <div className="csr-topics-header">
           <h2 className="csr-topics-title">All Topics</h2>

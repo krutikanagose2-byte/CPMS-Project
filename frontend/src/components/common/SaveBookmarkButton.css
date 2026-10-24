@@ -1,0 +1,106 @@
+/* SaveBookmarkButton.css */
+
+.save-bookmark-btn-wrap {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  z-index: 25;
+}
+
+.save-bookmark-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #475569;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  outline: none;
+}
+
+.save-bookmark-btn:hover {
+  transform: scale(1.1);
+  background: #ffffff;
+  color: #2563eb;
+  border-color: #93c5fd;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
+}
+
+.save-bookmark-btn:active {
+  transform: scale(0.96);
+}
+
+/* Saved Active State */
+.save-bookmark-btn.is-saved {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #1d4ed8;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.38);
+}
+
+.save-bookmark-btn.is-saved:hover {
+  background: #1d4ed8;
+  border-color: #1e40af;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(29, 78, 216, 0.45);
+}
+
+.save-bookmark-icon {
+  width: 17px;
+  height: 17px;
+  display: block;
+  transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.save-bookmark-btn:hover .save-bookmark-icon {
+  transform: scale(1.05);
+}
+
+/* With label variant */
+.save-bookmark-btn.has-label {
+  width: auto;
+  height: 34px;
+  border-radius: 20px;
+  padding: 0 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Micro Feedback Toast */
+.save-bookmark-toast {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  animation: bookmarkToastFade 0.2s ease;
+  z-index: 100;
+  letter-spacing: 0.2px;
+}
+
+@keyframes bookmarkToastFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

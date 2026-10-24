@@ -16,6 +16,7 @@ import StudyAndPreparationResources from './components/StudyAndPreparationResour
 import InterviewSetup from './components/VirtualInterview/InterviewSetup';
 import ActiveInterview from './components/VirtualInterview/ActiveInterview';
 import InterviewReport from './components/VirtualInterview/InterviewReport';
+import { syncUserSavedMaterials } from './utils/studyMaterialsStorage';
 
 export default function App() {
   const [page, setPage] = useState(() => {
@@ -97,10 +98,17 @@ export default function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  useEffect(() => {
+    if (user) {
+      syncUserSavedMaterials(user);
+    }
+  }, []);
+
   const handleUpdateUser = (updatedUser) => {
     setUser(updatedUser);
     if (updatedUser) {
       sessionStorage.setItem('user', JSON.stringify(updatedUser));
+      syncUserSavedMaterials(updatedUser);
     } else {
       sessionStorage.removeItem('user');
     }

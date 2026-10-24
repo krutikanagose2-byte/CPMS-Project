@@ -133,6 +133,10 @@ const userSchema = new mongoose.Schema({
     myDocuments: {
         type: Array,
         default: []
+    },
+    savedStudyMaterials: {
+        type: Array,
+        default: []
     }
 }, { strict: false, timestamps: true });
 
