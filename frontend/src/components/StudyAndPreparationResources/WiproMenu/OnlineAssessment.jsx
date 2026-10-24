@@ -7,11 +7,13 @@ import VisualReasoning from './VisualReasoning';
 import Psychometric from './Psychometric';
 import Cryptarithmetic from './Cryptarithmetic';
 import EssayWriting from './EssayWriting';
+import Technical from './Technical';
 
 const aptitudeTopics = [
   { id: 1, title: 'Quantitative Aptitude', questions: 150, color: '#e0f2fe', iconColor: '#0ea5e9' },
   { id: 2, title: 'Logical Reasoning', questions: 120, color: '#fef3c7', iconColor: '#f59e0b' },
   { id: 3, title: 'Verbal', questions: 100, color: '#f3e8ff', iconColor: '#a855f7' },
+  { id: 4, title: 'Coding & Technical', questions: 86, color: '#e0e7ff', iconColor: '#4f46e5' },
   { id: 5, title: 'Data Interpretation', questions: 90, color: '#ffedd5', iconColor: '#f97316' },
   { id: 6, title: 'Visual Reasoning', questions: 60, color: '#fee2e2', iconColor: '#ef4444' },
   { id: 7, title: 'Psychometric', questions: 50, color: '#fef3c7', iconColor: '#f59e0b' },
@@ -130,6 +132,20 @@ const OnlineAssessment = ({ company }) => {
            Back to Online Assessment
          </button>
          <EssayWriting />
+      </div>
+    );
+  }
+
+  if (selectedTopic === 'Coding & Technical' || selectedTopic === 'Coding') {
+    return (
+      <div style={{ padding: '20px' }}>
+         <button onClick={() => setSelectedTopic(null)} className="csr-back-btn" style={{marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '5px'}}>
+           <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+             <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+           </svg>
+           Back to Online Assessment
+         </button>
+         <Technical company={company} />
       </div>
     );
   }

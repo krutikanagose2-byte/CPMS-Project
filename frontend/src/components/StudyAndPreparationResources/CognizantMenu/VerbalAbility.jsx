@@ -53,54 +53,8 @@ const VerbalAbility = () => {
   }
 
   const pyqHeaderContent = (
-    <>
-      {/* Video Lectures & Playlists Section */}
-      <div className="pyq-section">
-        <h2 className="csr-topics-title" style={{ marginBottom: '20px' }}>Video Lectures & Playlists</h2>
-        <div className="pyq-grid">
-          <div className="pyq-card" style={{ position: 'relative' }}>
-            <CardThreeDotsMenu
-              item={{
-                id: 'verbal-video-playlist',
-                title: 'Verbal Ability Complete Video Playlist',
-                type: 'YouTube Video Playlist',
-                category: 'Verbal Ability',
-                company: 'Cognizant',
-                url: 'https://youtube.com/playlist?list=PLMufDeLh5x2BWYJy0ldl6vgrQ4nZm1Qap',
-                badgeBg: '#fee2e2',
-                badgeColor: '#ef4444'
-              }}
-            />
-            <div className="pyq-image-container">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/videoseries?list=PLMufDeLh5x2BWYJy0ldl6vgrQ4nZm1Qap"
-                title="Verbal Ability Video Playlist"
-                style={{ width: '100%', height: '100%', border: 'none' }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-            <div className="pyq-info">
-              <a 
-                href="https://youtube.com/playlist?list=PLMufDeLh5x2BWYJy0ldl6vgrQ4nZm1Qap" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ textDecoration: 'none', color: '#1e293b' }}
-              >
-                <h4 className="pyq-name" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
-                  <svg width="18" height="18" fill="#ef4444" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                  </svg>
-                  Verbal Ability Playlist
-                </h4>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="pyq-section">
-        <h2 className="csr-topics-title" style={{ marginBottom: '20px' }}>Previous Year Questions</h2>
+    <div className="pyq-section">
+      <h2 className="csr-topics-title" style={{ marginBottom: '20px' }}>Previous Year Questions</h2>
         <div className="pyq-grid">
           <div className="pyq-card" style={{ position: 'relative' }}>
             <CardThreeDotsMenu
@@ -172,11 +126,11 @@ const VerbalAbility = () => {
           </div>
         </div>
       </div>
-    </>
   );
 
   return (
     <TopicsGrid
+      topicName="Verbal Ability"
       topics={verbalTopics}
       bannerTitle="Ready to Test Your Verbal Ability?"
       bannerSubtitle="Take a full length test and analyze your English skills."

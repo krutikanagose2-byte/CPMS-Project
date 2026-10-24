@@ -85,6 +85,7 @@ const VerbalAbility = () => {
 
   return (
     <TopicsGrid 
+      topicName="Verbal Ability"
       topics={verbalTopics}
       bannerTitle="Ready to Test Your Verbal Ability?"
       bannerSubtitle="Take a full length test and analyze your English skills."

@@ -101,6 +101,7 @@ const QuantitativeAptitude = () => {
 
   return (
     <TopicsGrid 
+      topicName="Quantitative Aptitude"
       topics={aptitudeTopics}
       bannerTitle="Ready to Test Your Aptitude?"
       bannerSubtitle="Take a full length test and analyze your numerical ability."

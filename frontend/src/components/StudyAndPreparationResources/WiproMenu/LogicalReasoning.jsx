@@ -114,6 +114,7 @@ const LogicalReasoning = () => {
 
   return (
     <TopicsGrid 
+      topicName="Logical Reasoning"
       topics={logicalReasoningTopics}
       bannerTitle="Ready to Test Your Skills?"
       bannerSubtitle="Take a full length test and analyze your performance."

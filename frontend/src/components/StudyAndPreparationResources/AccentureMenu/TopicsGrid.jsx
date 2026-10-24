@@ -1,11 +1,31 @@
 import React from 'react';
 import './TopicsGrid.css';
+import RecommendedVideos from '../../common/RecommendedVideos';
 
-const TopicsGrid = ({ topics, bannerTitle, bannerSubtitle, bannerButtonText, onTopicClick, headerContent }) => {
+const resolveTopic = (topicName, bannerTitle, bannerSubtitle, bannerButtonText) => {
+  if (topicName) return topicName;
+  const str = `${bannerTitle || ''} ${bannerSubtitle || ''} ${bannerButtonText || ''}`.toLowerCase();
+  if (str.includes('numerical') || str.includes('quantitative') || str.includes('quant')) return 'Quantitative Aptitude';
+  if (str.includes('logical') || str.includes('reasoning')) return 'Logical Reasoning';
+  if (str.includes('verbal') || str.includes('english')) return 'Verbal Ability';
+  if (str.includes('technical') || str.includes('coding')) return 'Coding';
+  if (str.includes('data interpretation')) return 'Data Interpretation';
+  if (str.includes('visual reasoning')) return 'Visual Reasoning';
+  if (str.includes('psychometric')) return 'Psychometric';
+  if (str.includes('cryptarithmetic')) return 'Cryptarithmetic';
+  if (str.includes('essay')) return 'Essay Writing';
+  return 'Quantitative Aptitude';
+};
+
+const TopicsGrid = ({ topics, bannerTitle, bannerSubtitle, bannerButtonText, onTopicClick, headerContent, topicName, hideVideos }) => {
+  const currentTopic = resolveTopic(topicName, bannerTitle, bannerSubtitle, bannerButtonText);
+
   return (
     <div className="csr-content-body">
       <div className="csr-topics-container">
         
+        {!hideVideos && <RecommendedVideos topic={currentTopic} />}
+
         {headerContent && headerContent}
 
         <div className="csr-topics-header">
