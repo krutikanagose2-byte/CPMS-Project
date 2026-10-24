@@ -7,6 +7,7 @@ import {
     isMaterialSaved,
     markAsOngoing
 } from '../../utils/studyMaterialsStorage';
+import { apiFetch } from '../../utils/api';
 import './StudentStudyMaterials.css';
 
 const StudentStudyMaterials = ({ user: propUser }) => {
@@ -28,12 +29,9 @@ const StudentStudyMaterials = ({ user: propUser }) => {
 
     const isAdmin = currentUser?.role === 'admin' || currentUser?.enrollmentNo === '24BTBT2005';
 
-    // Tabs: Admin gets 'Manage All Resources' as primary tab, Students get 'Explore Study Materials'
-    const adminTabs = ['Manage All Resources', 'Explore Study Materials', 'Saved for Later', 'Ongoing Courses'];
-    const studentTabs = ['Explore Study Materials', 'Saved for Later', 'Ongoing Courses'];
-    const tabs = isAdmin ? adminTabs : studentTabs;
-
-    const [selectedTab, setSelectedTab] = useState(isAdmin ? 'Manage All Resources' : 'Explore Study Materials');
+    // Unified tabs for both students and admins
+    const tabs = ['Study Materials', 'Saved for Later', 'Ongoing Courses'];
+    const [selectedTab, setSelectedTab] = useState('Study Materials');
 
     // Data states
     const [sharedMaterials, setSharedMaterials] = useState([]);
@@ -78,7 +76,7 @@ const StudentStudyMaterials = ({ user: propUser }) => {
     const fetchSharedMaterials = async () => {
         setIsLoadingShared(true);
         try {
-            const res = await fetch('http://localhost:5000/api/study-materials');
+            const res = await apiFetch('/api/study-materials');
             const data = await res.json();
             if (data && data.success && Array.isArray(data.data)) {
                 setSharedMaterials(data.data);
@@ -94,7 +92,10 @@ const StudentStudyMaterials = ({ user: propUser }) => {
         loadSavedData();
         fetchSharedMaterials();
 
-        const handleUpdate = () => loadSavedData();
+        const handleUpdate = () => {
+            loadSavedData();
+            fetchSharedMaterials();
+        };
         window.addEventListener('studyMaterialsUpdated', handleUpdate);
         return () => window.removeEventListener('studyMaterialsUpdated', handleUpdate);
     }, []);
@@ -182,19 +183,19 @@ const StudentStudyMaterials = ({ user: propUser }) => {
 
         setIsSubmitting(true);
         try {
-            const url = modalMode === 'edit'
-                ? `http://localhost:5000/api/study-materials/${formData._id}`
-                : 'http://localhost:5000/api/study-materials';
+            const endpoint = modalMode === 'edit'
+                ? `/api/study-materials/${formData._id}`
+                : '/api/study-materials';
 
             const method = modalMode === 'edit' ? 'PUT' : 'POST';
 
-            const res = await fetch(url, {
+            const res = await apiFetch(endpoint, {
                 method,
                 headers: {
                     'Content-Type': 'application/json',
-                    'x-user-role': currentUser?.role || 'admin',
-                    'x-user-id': currentUser?._id || currentUser?.id,
-                    'x-user-enrollment': currentUser?.enrollmentNo || '24BTBT2005'
+                    'x-user-role': currentUser?.role || (isAdmin ? 'admin' : 'student'),
+                    'x-user-id': currentUser?._id || currentUser?.id || '',
+                    'x-user-enrollment': currentUser?.enrollmentNo || (isAdmin ? '24BTBT2005' : '')
                 },
                 body: JSON.stringify({
                     title: formData.title,
@@ -212,9 +213,10 @@ const StudentStudyMaterials = ({ user: propUser }) => {
 
             const data = await res.json();
             if (res.ok && data.success) {
-                showToast(modalMode === 'edit' ? 'Study material updated successfully!' : 'New study material added successfully!');
+                showToast(modalMode === 'edit' ? 'Study material updated successfully!' : 'New study material published for all users!');
                 setIsModalOpen(false);
                 fetchSharedMaterials();
+                window.dispatchEvent(new CustomEvent('studyMaterialsUpdated'));
             } else {
                 showToast(data.message || 'Failed to save study material.', 'error');
             }
@@ -237,12 +239,12 @@ const StudentStudyMaterials = ({ user: propUser }) => {
         if (!window.confirm(confirmMsg)) return;
 
         try {
-            const res = await fetch(`http://localhost:5000/api/study-materials/${material._id}`, {
+            const res = await apiFetch(`/api/study-materials/${material._id}`, {
                 method: 'DELETE',
                 headers: {
-                    'x-user-role': currentUser?.role || 'admin',
-                    'x-user-id': currentUser?._id || currentUser?.id,
-                    'x-user-enrollment': currentUser?.enrollmentNo || '24BTBT2005'
+                    'x-user-role': currentUser?.role || (isAdmin ? 'admin' : 'student'),
+                    'x-user-id': currentUser?._id || currentUser?.id || '',
+                    'x-user-enrollment': currentUser?.enrollmentNo || (isAdmin ? '24BTBT2005' : '')
                 }
             });
 
@@ -252,6 +254,7 @@ const StudentStudyMaterials = ({ user: propUser }) => {
                 // Also remove from personal bookmarks if present
                 removeSavedMaterial(material._id);
                 fetchSharedMaterials();
+                window.dispatchEvent(new CustomEvent('studyMaterialsUpdated'));
             } else {
                 showToast(data.message || 'Failed to delete study material.', 'error');
             }
@@ -358,43 +361,66 @@ const StudentStudyMaterials = ({ user: propUser }) => {
     // -------------------------------------------------------------
     // TAB 1: ADMIN RESOURCE MANAGER (Manage All Resources)
     // -------------------------------------------------------------
-    const renderAdminResourceManager = () => {
+    const renderStudyMaterials = () => {
         return (
             <div className="admin-materials-view">
                 {/* Top Action & Stats Bar */}
-                <div className="admin-materials-topbar">
-                    <div className="topbar-left">
-                        <div className="admin-section-heading">
-                            <span className="section-icon">📚</span>
-                            <div>
-                                <h3 className="section-title">Admin Study Materials Hub</h3>
-                                <p className="section-subtitle">
-                                    Add, edit, or delete shared learning resources for all registered students across the college.
-                                </p>
+                {isAdmin ? (
+                    <div className="admin-materials-topbar">
+                        <div className="topbar-left">
+                            <div className="admin-section-heading">
+                                <span className="section-icon">📚</span>
+                                <div>
+                                    <h3 className="section-title">Admin Study Materials Hub</h3>
+                                    <p className="section-subtitle">
+                                        Add, edit, or delete shared learning resources for all registered students across the college.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Quick Stats Chips */}
+                            <div className="admin-stats-strip">
+                                <span className="stat-chip">Total: <strong>{sharedMaterials.length}</strong></span>
+                                <span className="stat-chip">Videos: <strong>{sharedVideoCount}</strong></span>
+                                <span className="stat-chip">PDF Papers: <strong>{sharedPdfCount}</strong></span>
+                                <span className="stat-chip">Notes: <strong>{sharedNotesCount}</strong></span>
+                                <span className="stat-chip">Courses: <strong>{sharedCourseCount}</strong></span>
                             </div>
                         </div>
 
-                        {/* Quick Stats Chips */}
-                        <div className="admin-stats-strip">
-                            <span className="stat-chip">Total: <strong>{sharedMaterials.length}</strong></span>
-                            <span className="stat-chip">Videos: <strong>{sharedVideoCount}</strong></span>
-                            <span className="stat-chip">PDF Papers: <strong>{sharedPdfCount}</strong></span>
-                            <span className="stat-chip">Notes: <strong>{sharedNotesCount}</strong></span>
-                            <span className="stat-chip">Courses: <strong>{sharedCourseCount}</strong></span>
+                        <div className="topbar-right">
+                            <button
+                                type="button"
+                                className="btn-add-resource"
+                                onClick={handleOpenAddModal}
+                                title="Add a new study material to the database"
+                            >
+                                <span className="btn-icon">+</span> Add New Study Material
+                            </button>
                         </div>
                     </div>
-
-                    <div className="topbar-right">
-                        <button
-                            type="button"
-                            className="btn-add-resource"
-                            onClick={handleOpenAddModal}
-                            title="Add a new study material to the database"
-                        >
-                            <span className="btn-icon">+</span> Add New Study Material
-                        </button>
+                ) : (
+                    <div className="admin-materials-topbar" style={{ background: 'linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%)', borderRadius: '12px', padding: '16px 20px', border: '1px solid #dbeafe', marginBottom: '20px' }}>
+                        <div className="topbar-left">
+                            <div className="admin-section-heading">
+                                <span className="section-icon" style={{ background: '#dbeafe', color: '#1d4ed8' }}>🎓</span>
+                                <div>
+                                    <h3 className="section-title" style={{ color: '#1e3a8a' }}>Placement Study Materials Hub</h3>
+                                    <p className="section-subtitle" style={{ color: '#3b82f6' }}>
+                                        Curated YouTube lectures, previous year question papers (PDFs), hand-written revision notes, and full certification courses uploaded by placement faculty.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="admin-stats-strip" style={{ marginTop: '10px' }}>
+                                <span className="stat-chip">Available: <strong>{sharedMaterials.length}</strong></span>
+                                <span className="stat-chip">Videos: <strong>{sharedVideoCount}</strong></span>
+                                <span className="stat-chip">PDF Papers: <strong>{sharedPdfCount}</strong></span>
+                                <span className="stat-chip">Notes: <strong>{sharedNotesCount}</strong></span>
+                                <span className="stat-chip">Courses: <strong>{sharedCourseCount}</strong></span>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                )}
 
                 {/* Filter and Search Bar */}
                 <div className="materials-controls-bar">
@@ -549,7 +575,7 @@ const StudentStudyMaterials = ({ user: propUser }) => {
                                             <span className="meta-author-name">{material.author || 'PRMIT&R Placement Cell'}</span>
                                         </div>
 
-                                        {/* Action Buttons: Primary Resource Link + Admin Controls */}
+                                        {/* Action Buttons: Primary Resource Link + Bookmark + Admin Controls */}
                                         <div className="card-actions-row">
                                             <button
                                                 type="button"
@@ -559,24 +585,35 @@ const StudentStudyMaterials = ({ user: propUser }) => {
                                                 {material.type === 'video' ? '▶ Watch Video ↗' : material.type === 'pdf' ? '📄 Open PDF ↗' : material.type === 'notes' ? '📝 Read Notes ↗' : '🌐 View Course ↗'}
                                             </button>
 
-                                            <div className="admin-card-btn-group">
-                                                <button
-                                                    type="button"
-                                                    className="btn-admin-edit"
-                                                    onClick={(e) => handleOpenEditModal(material, e)}
-                                                    title="Edit this study material"
-                                                >
-                                                    ✏️ Edit
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    className="btn-admin-delete"
-                                                    onClick={(e) => handleDeleteMaterial(material, e)}
-                                                    title="Delete this study material from database"
-                                                >
-                                                    🗑️
-                                                </button>
-                                            </div>
+                                            <button
+                                                type="button"
+                                                className={`btn-save-toggle ${isMaterialSaved(material._id) ? 'saved' : ''}`}
+                                                onClick={(e) => handleToggleBookmark(material, e)}
+                                                title={isMaterialSaved(material._id) ? 'Remove from Saved for Later' : 'Save for Later in your Profile'}
+                                            >
+                                                {isMaterialSaved(material._id) ? '✓ Saved' : '🔖 Save'}
+                                            </button>
+
+                                            {isAdmin && (
+                                                <div className="admin-card-btn-group">
+                                                    <button
+                                                        type="button"
+                                                        className="btn-admin-edit"
+                                                        onClick={(e) => handleOpenEditModal(material, e)}
+                                                        title="Edit this study material"
+                                                    >
+                                                        ✏️ Edit
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        className="btn-admin-delete"
+                                                        onClick={(e) => handleDeleteMaterial(material, e)}
+                                                        title="Delete this study material from database"
+                                                    >
+                                                        🗑️
+                                                    </button>
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
@@ -588,201 +625,17 @@ const StudentStudyMaterials = ({ user: propUser }) => {
                         <span className="empty-icon">📂</span>
                         <h4>No Study Materials Found</h4>
                         <p>No resources match your current filter or search criteria.</p>
-                        <button type="button" className="btn-add-resource" onClick={handleOpenAddModal}>
-                            + Upload First Study Material
-                        </button>
+                        {isAdmin && (
+                            <button type="button" className="btn-add-resource" onClick={handleOpenAddModal}>
+                                + Upload First Study Material
+                            </button>
+                        )}
                     </div>
                 )}
             </div>
         );
     };
 
-    // -------------------------------------------------------------
-    // TAB 2: EXPLORE SHARED STUDY MATERIALS (For All Registered Users)
-    // -------------------------------------------------------------
-    const renderExploreSharedMaterials = () => {
-        return (
-            <div className="admin-materials-view">
-                <div className="materials-controls-bar" style={{ marginTop: '12px' }}>
-                    <div className="type-filter-group">
-                        <button
-                            type="button"
-                            className={`type-pill ${activeTypeFilter === 'All' ? 'active' : ''}`}
-                            onClick={() => setActiveTypeFilter('All')}
-                        >
-                            All ({sharedMaterials.length})
-                        </button>
-                        <button
-                            type="button"
-                            className={`type-pill pill-video ${activeTypeFilter === 'video' ? 'active' : ''}`}
-                            onClick={() => setActiveTypeFilter('video')}
-                        >
-                            ▶ Videos ({sharedVideoCount})
-                        </button>
-                        <button
-                            type="button"
-                            className={`type-pill pill-pdf ${activeTypeFilter === 'pdf' ? 'active' : ''}`}
-                            onClick={() => setActiveTypeFilter('pdf')}
-                        >
-                            📄 PDF Papers ({sharedPdfCount})
-                        </button>
-                        <button
-                            type="button"
-                            className={`type-pill pill-notes ${activeTypeFilter === 'notes' ? 'active' : ''}`}
-                            onClick={() => setActiveTypeFilter('notes')}
-                        >
-                            📝 Notes ({sharedNotesCount})
-                        </button>
-                        <button
-                            type="button"
-                            className={`type-pill pill-course ${activeTypeFilter === 'course' ? 'active' : ''}`}
-                            onClick={() => setActiveTypeFilter('course')}
-                        >
-                            🌐 Courses ({sharedCourseCount})
-                        </button>
-                    </div>
-
-                    <div className="filter-search-row">
-                        <select
-                            className="category-dropdown"
-                            value={activeCategoryFilter}
-                            onChange={(e) => setActiveCategoryFilter(e.target.value)}
-                        >
-                            <option value="All">All Categories</option>
-                            <option value="Quantitative Aptitude">Quantitative Aptitude</option>
-                            <option value="Logical Reasoning">Logical Reasoning</option>
-                            <option value="Verbal Ability">Verbal Ability</option>
-                            <option value="Technical & Coding">Technical & Coding</option>
-                            <option value="Data Interpretation">Data Interpretation</option>
-                            <option value="Company Specific">Company Specific</option>
-                            <option value="General Preparation">General Preparation</option>
-                        </select>
-
-                        <div className="search-box-wrapper">
-                            <span className="search-icon">🔍</span>
-                            <input
-                                type="text"
-                                className="search-input"
-                                placeholder="Search by topic, company, channel..."
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                            />
-                            {searchQuery && (
-                                <button className="clear-search-btn" onClick={() => setSearchQuery('')}>×</button>
-                            )}
-                        </div>
-                    </div>
-                </div>
-
-                {isLoadingShared ? (
-                    <div className="materials-loading-state">
-                        <div className="spinner-blue"></div>
-                        <p>Loading college study resources...</p>
-                    </div>
-                ) : filteredSharedMaterials.length > 0 ? (
-                    <div className="materials-cards-grid">
-                        {filteredSharedMaterials.map((material) => {
-                            const isSaved = isMaterialSaved(material._id);
-                            return (
-                                <div key={material._id} className="admin-material-card">
-                                    <div
-                                        className="card-thumb-container"
-                                        onClick={() => handleOpenResource(material)}
-                                        title={`Open ${material.title}`}
-                                    >
-                                        {material.thumbnail ? (
-                                            <img
-                                                src={material.thumbnail}
-                                                alt={material.title}
-                                                className="card-thumb-img"
-                                                onError={(e) => {
-                                                    e.target.onerror = null;
-                                                    e.target.src = material.type === 'video'
-                                                        ? 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&auto=format&fit=crop&q=60'
-                                                        : '/pyq/tech_pyq1_thumb.png';
-                                                }}
-                                            />
-                                        ) : (
-                                            <div className="thumb-fallback-box">
-                                                <span className="thumb-fallback-icon">
-                                                    {material.type === 'video' ? '▶' : material.type === 'pdf' ? '📄' : material.type === 'notes' ? '📝' : '🌐'}
-                                                </span>
-                                            </div>
-                                        )}
-
-                                        <div className="thumb-badge-overlay">
-                                            {renderTypeBadge(material.type)}
-                                        </div>
-
-                                        <button
-                                            type="button"
-                                            className={`card-bookmark-btn ${isSaved ? 'saved' : ''}`}
-                                            onClick={(e) => handleToggleBookmark(material, e)}
-                                            title={isSaved ? 'Remove from Saved for Later' : 'Save for Later'}
-                                        >
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill={isSaved ? '#2563eb' : 'none'} stroke={isSaved ? '#2563eb' : '#ffffff'} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-                                            </svg>
-                                        </button>
-                                    </div>
-
-                                    <div className="card-content-area">
-                                        <div className="card-tags-row">
-                                            <span className="card-cat-pill">{material.category}</span>
-                                            {material.company && material.company !== 'All Companies' && (
-                                                <span className="card-comp-pill">{material.company}</span>
-                                            )}
-                                        </div>
-
-                                        <h4 className="card-title" title={material.title}>
-                                            {material.title}
-                                        </h4>
-
-                                        {material.description && (
-                                            <p className="card-description">
-                                                {material.description}
-                                            </p>
-                                        )}
-
-                                        <div className="card-meta-author">
-                                            <span className="meta-author-icon">👤</span>
-                                            <span className="meta-author-name">{material.author || 'PRMIT&R Placement Cell'}</span>
-                                        </div>
-
-                                        <div className="card-actions-row">
-                                            <button
-                                                type="button"
-                                                className="btn-action-primary"
-                                                onClick={() => handleOpenResource(material)}
-                                            >
-                                                {material.type === 'video' ? '▶ Watch Video ↗' : material.type === 'pdf' ? '📄 Open PDF ↗' : material.type === 'notes' ? '📝 Read Notes ↗' : '🌐 View Course ↗'}
-                                            </button>
-
-                                            <button
-                                                type="button"
-                                                className={`btn-save-toggle ${isSaved ? 'saved' : ''}`}
-                                                onClick={(e) => handleToggleBookmark(material, e)}
-                                            >
-                                                {isSaved ? '✓ Saved' : '🔖 Save'}
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                ) : (
-                    <div className="empty-materials-state">
-                        <span className="empty-icon">📚</span>
-                        <h4>No Resources Available</h4>
-                        <p>No study materials match your search filters.</p>
-                    </div>
-                )}
-            </div>
-        );
-    };
-
-    // -------------------------------------------------------------
     // TAB 3: SAVED FOR LATER (Personal Bookmarks)
     // -------------------------------------------------------------
     const renderSavedForLater = () => {
@@ -1132,13 +985,10 @@ const StudentStudyMaterials = ({ user: propUser }) => {
                                     }}
                                 >
                                     <span>
-                                        {tab === 'Manage All Resources' ? '🛠️' : tab === 'Explore Study Materials' ? '🌐' : tab === 'Saved for Later' ? '📌' : '⚡'}
+                                        {tab === 'Study Materials' ? '📚' : tab === 'Saved for Later' ? '📌' : '⚡'}
                                     </span>
                                     {tab}
-                                    {tab === 'Manage All Resources' && (
-                                        <span className="tab-pill-counter">{sharedMaterials.length}</span>
-                                    )}
-                                    {tab === 'Explore Study Materials' && (
+                                    {tab === 'Study Materials' && (
                                         <span className="tab-pill-counter">{sharedMaterials.length}</span>
                                     )}
                                     {tab === 'Saved for Later' && savedList.length > 0 && (
@@ -1151,8 +1001,7 @@ const StudentStudyMaterials = ({ user: propUser }) => {
                 </div>
 
                 {/* Tab Body */}
-                {selectedTab === 'Manage All Resources' && renderAdminResourceManager()}
-                {selectedTab === 'Explore Study Materials' && renderExploreSharedMaterials()}
+                {selectedTab === 'Study Materials' && renderStudyMaterials()}
                 {selectedTab === 'Saved for Later' && renderSavedForLater()}
                 {selectedTab === 'Ongoing Courses' && renderOngoingCourses()}
             </div>

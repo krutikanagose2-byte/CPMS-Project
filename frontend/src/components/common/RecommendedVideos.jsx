@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './RecommendedVideos.css';
 import SaveBookmarkButton from './SaveBookmarkButton';
+import { apiFetch } from '../../utils/api';
 
 // Curated database of verified high-quality placement preparation videos
 const TOPIC_VIDEOS = {
@@ -348,8 +349,70 @@ const normalizeTopicKey = (rawTopic) => {
 
 const RecommendedVideos = ({ topic = 'Quantitative Aptitude', customTitle = null }) => {
   const normalizedKey = normalizeTopicKey(topic);
-  const videos = TOPIC_VIDEOS[normalizedKey] || TOPIC_VIDEOS['Quantitative Aptitude'];
+  const staticVideos = TOPIC_VIDEOS[normalizedKey] || TOPIC_VIDEOS['Quantitative Aptitude'];
   const displayTitle = customTitle || `${normalizedKey} Preparation Videos`;
+
+  const [dbVideos, setDbVideos] = useState([]);
+
+  useEffect(() => {
+    let isMounted = true;
+    const fetchDbVideos = async () => {
+      try {
+        const res = await apiFetch('/api/study-materials?type=video');
+        const data = await res.json();
+        if (isMounted && data?.success && Array.isArray(data.data)) {
+          const norm = normalizedKey.toLowerCase();
+          const matched = data.data.filter(item => {
+            const cat = (item.category || '').toLowerCase();
+            const title = (item.title || '').toLowerCase();
+            const comp = (item.company || '').toLowerCase();
+            const hasCatMatch = cat.includes(norm) || norm.includes(cat);
+            const hasTagMatch = item.tags && item.tags.some(t => t.toLowerCase().includes(norm));
+            const hasTitleMatch = norm === 'coding'
+              ? (title.includes('coding') || title.includes('dsa') || title.includes('program') || title.includes('technical'))
+              : false;
+            return hasCatMatch || hasTagMatch || hasTitleMatch;
+          }).map(item => {
+            const ytMatch = item.url ? item.url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/) : null;
+            const videoId = ytMatch ? ytMatch[1] : item._id;
+            return {
+              id: videoId,
+              title: item.title,
+              channel: item.author || 'PRMIT&R Placement Cell',
+              badge: item.company && item.company !== 'All Companies' ? item.company : 'Faculty Curated',
+              tag: item.category || normalizedKey,
+              duration: 'High Yield',
+              url: item.url,
+              thumbnail: item.thumbnail || `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+              _isDb: true
+            };
+          });
+          setDbVideos(matched);
+        }
+      } catch (err) {
+        // Fallback gracefully
+      }
+    };
+
+    fetchDbVideos();
+    const handleUpdate = () => fetchDbVideos();
+    window.addEventListener('studyMaterialsUpdated', handleUpdate);
+    return () => {
+      isMounted = false;
+      window.removeEventListener('studyMaterialsUpdated', handleUpdate);
+    };
+  }, [normalizedKey]);
+
+  // Merge database videos at the front of static curated videos, avoiding duplicate URLs or IDs
+  const combinedVideos = [...dbVideos];
+  const seenUrls = new Set(dbVideos.map(v => v.url));
+  const seenIds = new Set(dbVideos.map(v => v.id));
+
+  for (const v of staticVideos) {
+    if (!seenUrls.has(v.url) && !seenIds.has(v.id)) {
+      combinedVideos.push(v);
+    }
+  }
 
   return (
     <section className="rec-videos-section" aria-label="Recommended YouTube Preparation Videos">
@@ -371,7 +434,7 @@ const RecommendedVideos = ({ topic = 'Quantitative Aptitude', customTitle = null
       </div>
 
       <div className="rec-videos-grid">
-        {videos.map((video) => {
+        {combinedVideos.map((video) => {
           const videoItem = {
             id: `yt-${video.id}`,
             videoId: video.id,
@@ -383,7 +446,7 @@ const RecommendedVideos = ({ topic = 'Quantitative Aptitude', customTitle = null
             duration: video.duration,
             badge: video.badge,
             url: video.url,
-            thumbnail: `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`,
+            thumbnail: video.thumbnail || `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`,
             badgeBg: '#fee2e2',
             badgeColor: '#dc2626'
           };
@@ -399,7 +462,7 @@ const RecommendedVideos = ({ topic = 'Quantitative Aptitude', customTitle = null
             >
               <div className="rec-video-thumb-container">
                 <img
-                  src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                  src={video.thumbnail || `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
                   alt={video.title}
                   className="rec-video-thumb"
                   loading="lazy"
